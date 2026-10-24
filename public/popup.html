@@ -1,0 +1,172 @@
+<!doctype html>
+<!--
+    Valora Chrome Extension
+    Copyright (C) 2026 Miguel Nischor
+
+    File: public/popup.html
+    Description: Markup of the popup user interface.
+    Author: Miguel Nischor <miguel@nischor.com.br>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Valora</title>
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <main>
+            <header class="header">
+                <img src="icons/icon-32.png" alt="" width="24" height="24" />
+                <h1>Valora</h1>
+                <span class="tagline" data-i18n="tagline">Business calculators</span>
+                <button
+                    id="settings-open"
+                    type="button"
+                    class="icon-button"
+                    aria-label="Settings"
+                    title="Settings"
+                    data-i18n-aria-label="settingsButtonTitle"
+                    data-i18n-title="settingsButtonTitle"
+                >
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                        <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h12M20 18h0"
+                        />
+                        <circle cx="16" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="2" />
+                        <circle cx="8" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="2" />
+                        <circle cx="18" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </header>
+
+            <div id="main-view" class="main-view">
+                <div class="toolbar">
+                    <label for="calculator" class="visually-hidden" data-i18n="calculatorLabel">Calculator</label>
+                    <select id="calculator"></select>
+                    <button
+                        id="example"
+                        type="button"
+                        title="Fill in sample values"
+                        data-i18n="exampleButton"
+                        data-i18n-title="exampleButtonTitle"
+                    >
+                        Example
+                    </button>
+                    <button
+                        id="reset"
+                        type="button"
+                        title="Clear all fields"
+                        data-i18n="resetButton"
+                        data-i18n-title="resetButtonTitle"
+                    >
+                        Reset
+                    </button>
+                </div>
+                <p id="description" class="description muted"></p>
+
+                <div class="layout">
+                    <section class="card inputs" aria-label="Inputs" data-i18n-aria-label="inputsLabel">
+                        <div id="fields" class="fields"></div>
+                        <div id="market" class="market" hidden>
+                            <span id="market-text" class="market-text"></span>
+                            <button id="market-action" type="button"></button>
+                        </div>
+                    </section>
+
+                    <section class="card results" aria-label="Results" data-i18n-aria-label="resultsLabel">
+                        <p id="results-empty" class="muted" data-i18n="resultsEmpty">
+                            Fill in the fields to see the results.
+                        </p>
+                        <div id="results-body" class="results-body" aria-live="polite" hidden>
+                            <div class="headline">
+                                <span id="headline-label" class="muted"></span>
+                                <output id="headline-value" class="headline-value"></output>
+                            </div>
+                            <dl id="result-list" class="result-list"></dl>
+                        </div>
+                        <p class="formula muted">
+                            <strong data-i18n="formulaLabel">Formula</strong>
+                            <span id="formula"></span>
+                        </p>
+                        <div class="actions">
+                            <button id="copy" type="button" class="primary" data-i18n="copyResults" disabled>
+                                Copy results
+                            </button>
+                            <p id="status" class="status" role="status" aria-live="polite"></p>
+                        </div>
+                    </section>
+                </div>
+
+                <footer class="footer" data-i18n="footer">
+                    Everything is computed on your device. Nothing is sent anywhere. Results are estimates for planning,
+                    not financial advice.
+                </footer>
+            </div>
+
+            <section
+                id="settings-view"
+                class="card settings"
+                aria-label="Settings"
+                data-i18n-aria-label="settingsHeading"
+                hidden
+            >
+                <div class="settings-head">
+                    <button id="settings-back" type="button" class="primary" data-i18n="settingsBack">Back</button>
+                    <h2 data-i18n="settingsHeading">Settings</h2>
+                </div>
+                <div class="field-pair">
+                    <div class="field">
+                        <label for="currency" data-i18n="currencyLabel">Currency</label>
+                        <select id="currency"></select>
+                    </div>
+                    <div class="field">
+                        <label for="decimals" data-i18n="decimalsLabel"
+                            >Decimal places for percentages and ratios</label
+                        >
+                        <select id="decimals"></select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="check">
+                        <input id="remember-inputs" type="checkbox" />
+                        <span data-i18n="rememberInputsLabel">Remember what I typed while the browser is open</span>
+                    </label>
+                    <p class="hint" data-i18n="rememberInputsHint">
+                        Kept in browser memory only and erased when Chrome closes. Turning this off deletes it now.
+                    </p>
+                </div>
+                <div class="field">
+                    <label class="check">
+                        <input id="live-rates" type="checkbox" />
+                        <span data-i18n="liveRatesLabel"
+                            >Fetch the Selic rate and the dollar quote from the Central Bank of Brazil</span
+                        >
+                    </label>
+                    <p class="hint" data-i18n="liveRatesHint">
+                        Off by default. When on, Chrome asks permission to contact api.bcb.gov.br, which receives no
+                        information about you. Turning this off removes the permission.
+                    </p>
+                </div>
+                <p id="settings-status" class="status" role="status" aria-live="polite"></p>
+            </section>
+        </main>
+        <script src="popup.js"></script>
+    </body>
+</html>
