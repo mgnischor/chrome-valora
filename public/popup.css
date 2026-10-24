@@ -181,7 +181,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 3px;
+    gap: 2px;
     min-width: 0;
 }
 
@@ -213,7 +213,7 @@ select,
 textarea {
     width: 100%;
     min-width: 0;
-    padding: 5px 8px;
+    padding: 4px 8px;
     color: var(--text);
     background: var(--bg);
     border: 1px solid var(--border);
@@ -342,7 +342,7 @@ button:disabled {
 }
 
 .headline-value {
-    color: var(--accent);
+    color: var(--text);
     font-size: 24px;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
@@ -350,8 +350,47 @@ button:disabled {
     overflow-wrap: anywhere;
 }
 
-.headline-value.negative {
+/* A named outcome (for example a Fleuriet type) is text, not a figure, so it is set smaller. */
+.headline-value.text {
+    font-size: 17px;
+}
+
+/*
+ * Indicators are coloured by how they read: red is bad, green is good and the normal text colour is neutral. A small
+ * mark repeats the rating so it does not depend on colour alone.
+ */
+[data-rating] {
+    cursor: help;
+}
+
+[data-rating="good"] {
+    color: var(--positive);
+}
+
+[data-rating="bad"] {
     color: var(--negative);
+}
+
+[data-rating="neutral"] {
+    color: var(--text);
+}
+
+[data-rating]::before {
+    margin-right: 0.35em;
+    font-size: 0.55em;
+    vertical-align: 0.2em;
+}
+
+[data-rating="good"]::before {
+    content: "\25b2";
+}
+
+[data-rating="bad"]::before {
+    content: "\25bc";
+}
+
+[data-rating="neutral"]::before {
+    content: "\25cf";
 }
 
 .result-list {
