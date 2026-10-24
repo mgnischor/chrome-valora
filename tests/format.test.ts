@@ -123,7 +123,7 @@ describe("formatInputValue", () => {
     });
 
     it("round-trips through the parser in every supported locale", () => {
-        for (const locale of ["en-US", "pt-BR", "es", "es-MX", "de-DE"]) {
+        for (const locale of ["en-US", "pt-BR", "es", "es-MX", "de-DE", "de-CH", "fr-FR", "it-IT", "ru-RU", "pl-PL"]) {
             for (const value of [0, 1, 0.5, 1234.5678, -42.1, 1_000_000, 0.000123]) {
                 const text = formatInputValue(value, "number", locale);
                 expect(parseNumber(text, decimalSeparator(locale)), `${locale}: ${text}`).toBeCloseTo(value, 9);
