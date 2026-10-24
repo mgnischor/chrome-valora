@@ -37,6 +37,8 @@ export const CURRENCIES = [
     "COP",
     "INR",
     "CNY",
+    "PLN",
+    "RUB",
 ] as const;
 
 /** Allowed numbers of decimal places for percentages, ratios and other non-monetary results. */
@@ -64,6 +66,11 @@ const REGION_CURRENCY: Readonly<Record<string, (typeof CURRENCIES)[number]>> = {
     CH: "CHF",
     IN: "INR",
     CN: "CNY",
+    PL: "PLN",
+    RU: "RUB",
+    AT: "EUR",
+    BE: "EUR",
+    LU: "EUR",
 };
 
 /** Currency suggested for a bare language such as `pt`, when the region is not known. */
@@ -75,6 +82,8 @@ const LANGUAGE_CURRENCY: Readonly<Record<string, (typeof CURRENCIES)[number]>> =
     it: "EUR",
     ja: "JPY",
     zh: "CNY",
+    pl: "PLN",
+    ru: "RUB",
 };
 
 /** Everything persisted between sessions. Calculator inputs are kept separately and only in memory. */
