@@ -31,14 +31,15 @@ computed on your device.
 - **Exact conventions** – ROI, margin and markup are different things and are labelled as such;
   percentages are typed as percentages and stored as fractions; the break-even point rounds up to whole
   units without floating-point noise.
-- **Display options** – 14 currencies (or none), 0–4 decimal places for percentages and ratios, and a
+- **Display options** – 16 currencies (or none), 0–4 decimal places for percentages and ratios, and a
   currency symbol that follows your locale.
 - **Copy results** – copies the calculator's name, your inputs and the results as plain text.
 - **Example / Reset** – fill a calculator with sample figures to see how it works, or clear it.
 - **Remembers what you typed** (optional, on by default) – kept in browser memory only and erased when
   Chrome closes. See [Privacy](#privacy).
 - **Roomy popup** that uses the full 640 × 400 px an extension popup can have.
-- **Localized** in English (US), Brazilian Portuguese and Spanish. The extension follows the browser's UI
+- **Localized** in English (US), Brazilian Portuguese, Spanish, French, German, Italian, Russian and Polish.
+  The extension follows the browser's UI
   language automatically; any other language falls back to English. See [Localization](#localization).
 - **Light / dark theme**, keyboard accessible, no analytics, and no network access unless you turn on
   live rates.
@@ -75,7 +76,7 @@ After a rebuild, press the reload button on the extension's card in `chrome://ex
 
 ```
 public/                 Static files copied to dist/ (manifest, HTML, CSS, icons)
-public/_locales/        Translations: en_US (default), pt_BR and es
+public/_locales/        Translations: en_US (default), pt_BR, es, fr, de, it, ru and pl
 scripts/                Build tooling: build, package, minify, zip and icon generator
 src/core/               Pure, DOM-free logic: parser, finance math, Brazilian rules, calculators, validation
 src/shared/             Settings, draft, formatting, i18n helpers, optional Central Bank client
