@@ -37,7 +37,7 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LOCALES_DIR = path.join(ROOT, "public", "_locales");
 const DEFAULT_LOCALE = "en_US";
-const EXPECTED_LOCALES = ["en_US", "es", "pt_BR"];
+const EXPECTED_LOCALES = ["de", "en_US", "es", "fr", "it", "pl", "pt_BR", "ru"];
 
 /** Shape of one entry of a `messages.json` file. */
 interface Message {
@@ -150,9 +150,11 @@ describe("locales", () => {
             const untranslated = Object.keys(defaults).filter(
                 (key) => messages[key]!.message === defaults[key]!.message && /[a-z]{4,}/i.test(defaults[key]!.message)
             );
-            // Names that are the same in every language (ROI, CAGR, Markup, ...) are allowed; sentences are not.
+            // Names that are the same in every language (ROI, CAGR, Markup, "Selic $SELIC$ · Dollar $USD$", ...) are
+            // allowed; sentences are not. Placeholders and symbols do not count as words.
+            const wordCount = (text: string) => (text.replace(/\$[A-Z]+\$/g, "").match(/\p{L}{2,}/gu) ?? []).length;
             expect(
-                untranslated.filter((key) => defaults[key]!.message.split(/\s+/).length > 3),
+                untranslated.filter((key) => wordCount(defaults[key]!.message) > 3),
                 locale
             ).toEqual([]);
         }
