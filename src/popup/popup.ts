@@ -20,7 +20,7 @@
 */
 import { CALCULATORS, GROUPS, getCalculator, isCalculatorId } from "../core/calculators";
 import { evaluate, readInputs, type FieldError } from "../core/inputs";
-import type { Calculator, FieldSpec, Result, Values } from "../core/types";
+import type { Calculator, FieldSpec, Rating, Result, Values } from "../core/types";
 import { clearDraft, loadDraft, saveDraft, type Draft } from "../shared/draft";
 import {
     NO_CURRENCY,
@@ -32,7 +32,7 @@ import {
     type FormatOptions,
     type ReportRow,
 } from "../shared/format";
-import { applyTranslations, t, uiLanguage } from "../shared/i18n";
+import { applyTranslations, t, uiLanguage, type MessageKey } from "../shared/i18n";
 import {
     MARKET_PERMISSIONS,
     clearRates,
@@ -47,6 +47,7 @@ import {
     calculatorDescriptionKey,
     calculatorFormulaKey,
     calculatorNameKey,
+    categoryKey,
     choiceKey,
     fieldKey,
     groupKey,
@@ -383,23 +384,89 @@ function buildCalculatorSelect(): void {
  * @returns The text, or the localized "not defined" text when the value is undefined.
  */
 function resultText(result: Result): string {
+    if (result.kind === "category" && result.value !== null) {
+        return t(categoryKey(calculator.id, result.id, result.value));
+    }
     return result.value === null
         ? t("resultUndefined")
         : formatValue(result.value, result.kind, formatOptions(), result.currency);
 }
 
+/** Message keys of the rating names. */
+const RATING_MESSAGES = {
+    good: "ratingGood",
+    neutral: "ratingNeutral",
+    bad: "ratingBad",
+} as const satisfies Record<Rating, MessageKey>;
+
 /**
- * Shows a result value, flagging undefined and negative values.
+ * Writes the rule behind a rating in words, with the limits formatted like the result.
+ *
+ * @param result - The rated result.
+ * @returns For a band rule, the limits ("Below 1: bad · 1 to 1.5: neutral · Above 1.5: good"); for a category rule,
+ * the names of the categories grouped by rating; otherwise an empty string.
+ */
+function ratingRule(result: Result): string {
+    const options = formatOptions();
+    if (result.bands) {
+        const { direction, bad, good } = result.bands;
+        const show = (limit: number) => formatValue(limit, result.kind, options, result.currency);
+        if (bad === good) {
+            return t(direction === "higher" ? "ratingRuleSplitHigher" : "ratingRuleSplitLower", show(bad));
+        }
+        return t(direction === "higher" ? "ratingRuleHigher" : "ratingRuleLower", [show(bad), show(good)]);
+    }
+    const rule = calculator.outputs.find((output) => output.id === result.id)?.rating;
+    if (!rule || !("byCategory" in rule)) return "";
+    return (["good", "neutral", "bad"] as const)
+        .map((level) => {
+            const names = Object.entries(rule.byCategory)
+                .filter(([, rated]) => rated === level)
+                .map(([category]) => t(categoryKey(calculator.id, result.id, Number(category))));
+            return names.length === 0 ? "" : `${t(RATING_MESSAGES[level])}: ${names.join(", ")}`;
+        })
+        .filter((part) => part !== "")
+        .join(" \u00b7 ");
+}
+
+/**
+ * Builds the legend shown when the pointer rests on a rated result: how it reads, the rule, and what the colours mean.
+ *
+ * @param result - The rated result.
+ * @param level - How the result reads.
+ * @returns A multi-line text for the `title` attribute.
+ */
+function ratingTooltip(result: Result, level: Rating): string {
+    return [t(RATING_MESSAGES[level]), ratingRule(result), t("ratingLegend"), t("ratingDisclaimer")]
+        .filter((line) => line !== "")
+        .join("\n");
+}
+
+/**
+ * Shows a result value, flagging undefined values and colouring rated indicators: red is bad, green is good and the
+ * normal text colour is neutral. Hovering a rated value explains the colours.
  *
  * @param node - Element that displays the value.
  * @param result - The result.
  */
 function showValue(node: HTMLElement, result: Result): void {
-    node.textContent = resultText(result);
+    const text = resultText(result);
+    node.textContent = text;
     node.classList.toggle("undefined", result.value === null);
-    node.classList.toggle("negative", result.value !== null && result.value < 0);
-    if (result.value === null) node.title = t("resultUndefinedHint");
-    else node.removeAttribute("title");
+    node.classList.toggle("text", result.kind === "category");
+    node.removeAttribute("title");
+    node.removeAttribute("aria-label");
+
+    if (result.value === null) {
+        node.removeAttribute("data-rating");
+        node.title = t("resultUndefinedHint");
+    } else if (result.ratingLevel !== null) {
+        node.dataset.rating = result.ratingLevel;
+        node.title = ratingTooltip(result, result.ratingLevel);
+        node.setAttribute("aria-label", `${text}: ${t(RATING_MESSAGES[result.ratingLevel])}`);
+    } else {
+        node.removeAttribute("data-rating");
+    }
 }
 
 /**
