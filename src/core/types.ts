@@ -20,7 +20,7 @@
 */
 
 /** Calculators are listed under these headings. */
-export type GroupId = "returns" | "profitability" | "liquidity" | "investment" | "markets";
+export type GroupId = "returns" | "profitability" | "liquidity" | "accounting" | "investment" | "markets";
 
 /**
  * How an input field is read and displayed.
@@ -44,8 +44,10 @@ export type FieldKind = "currency" | "percent" | "number" | "integer" | "choice"
  * - `number`: a count or a number of periods.
  * - `days`: a duration in days.
  * - `exchangeRate`: an exchange rate such as R$ 5.0377, shown with four decimals.
+ * - `category`: one of a few named outcomes, such as a Fleuriet structure type. The value is the number of the
+ *   category and the popup shows its localized name (`OutputSpec.categories` lists the numbers).
  */
-export type ValueKind = "currency" | "percent" | "ratio" | "multiple" | "number" | "days" | "exchangeRate";
+export type ValueKind = "currency" | "percent" | "ratio" | "multiple" | "number" | "days" | "exchangeRate" | "category";
 
 /** Market figures that a field can be filled in with when live rates are enabled. */
 export type MarketSource = "selic" | "usdBrl";
@@ -79,12 +81,48 @@ export interface FieldSpec {
     source?: MarketSource;
 }
 
+/** How an indicator reads: bad is shown in red, neutral in the normal text colour and good in green. */
+export type Rating = "bad" | "neutral" | "good";
+
+/**
+ * Rates a number against two limits. With `direction: "higher"`, a value below `bad` is bad, a value above `good` is
+ * good and anything in between (including the limits) is neutral. With `"lower"` it is the other way round: above
+ * `bad` is bad and below `good` is good. Two equal limits make a sign test, such as "below zero is bad".
+ *
+ * A limit is a number in stored units (a fraction for a percentage), or the id of an input field whose value is the
+ * limit, for example an IRR compared with the discount rate.
+ */
+export interface RatingBands {
+    direction: "higher" | "lower";
+    bad: number | string;
+    good: number | string;
+}
+
+/** Rates the numbered categories of a `category` output. */
+export interface CategoryRatings {
+    byCategory: Readonly<Record<number, Rating>>;
+}
+
+/** The rule that colours an indicator. */
+export type RatingRule = RatingBands | CategoryRatings;
+
+/** The limits of a {@link RatingBands} once any field reference has been replaced by its value. */
+export interface ResolvedBands {
+    direction: "higher" | "lower";
+    bad: number;
+    good: number;
+}
+
 /** Describes one result of a calculator. The first output of a calculator is its headline result. */
 export interface OutputSpec {
     id: string;
     kind: ValueKind;
     /** ISO 4217 code of a `currency` or `exchangeRate` output that is always in one currency. Otherwise it follows the settings. */
     currency?: string;
+    /** For a `category` output: every number the calculator can report. Each one needs a message in the locale files. */
+    categories?: readonly number[];
+    /** How to colour the result. Outputs without a rule are shown in the normal colour. */
+    rating?: RatingRule;
 }
 
 /** Computed results by output id. `null` marks a result that is not defined for the given inputs. */
@@ -109,4 +147,8 @@ export interface Calculator {
 export interface Result extends OutputSpec {
     /** The value, or `null` when it is undefined for the inputs. */
     value: number | null;
+    /** How the value reads, or `null` when the output has no rule or the value is undefined. */
+    ratingLevel: Rating | null;
+    /** The limits behind a band rule, with field references resolved; `null` for other rules. */
+    bands: ResolvedBands | null;
 }
