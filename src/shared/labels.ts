@@ -69,6 +69,15 @@ export const outputKey = (calculator: string, output: string): MessageKey =>
 
 /**
  * @param calculator - Calculator id.
+ * @param output - Output id of a `category` output.
+ * @param value - One of the output's categories.
+ * @returns Key of the name of that category.
+ */
+export const categoryKey = (calculator: string, output: string, value: number): MessageKey =>
+    `cat_${calculator}_${output}_${value}` as MessageKey;
+
+/**
+ * @param calculator - Calculator id.
  * @param field - Field id of a `choice` field.
  * @param value - One of the field's choices.
  * @returns Key of the text of that option.
