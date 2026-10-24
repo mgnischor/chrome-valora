@@ -8,15 +8,16 @@ financiamentos. Tudo é calculado no seu dispositivo.
 
 ## Recursos
 
-- **16 calculadoras em cinco grupos**, cada uma com a fórmula exibida abaixo dos resultados:
+- **29 calculadoras em seis grupos**, cada uma com a fórmula exibida abaixo dos resultados:
 
-    | Grupo                        | Calculadoras                                                                                                 |
-    | ---------------------------- | ------------------------------------------------------------------------------------------------------------ |
-    | Retornos                     | ROI · CAGR · ROE e ROA (com o multiplicador de patrimônio)                                                   |
-    | Rentabilidade e preços       | Margem e markup · Preço para uma margem desejada · Ponto de equilíbrio                                       |
-    | Liquidez e solvência         | Liquidez corrente, seca e imediata e capital de giro · Ciclo de conversão de caixa · Endividamento           |
-    | Investimento e financiamento | VPL, TIR, índice de lucratividade e payback (simples e descontado) · Valor futuro · Parcela de financiamento |
-    | Selic e dólar                | Renda fixa atrelada à Selic · Poupança x Selic · Compra de dólares · Dólar x Selic                           |
+    | Grupo                        | Calculadoras                                                                                                                                                                                                                                      |
+    | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Retornos                     | ROI · CAGR · ROE e ROA (com o multiplicador de patrimônio)                                                                                                                                                                                        |
+    | Rentabilidade e preços       | Margem e markup · Preço para uma margem desejada · Ponto de equilíbrio                                                                                                                                                                            |
+    | Liquidez e solvência         | Liquidez corrente, seca e imediata e capital de giro · Ciclo de conversão de caixa · Endividamento                                                                                                                                                |
+    | Análise contábil             | Margens da DRE · DuPont (3 e 5 etapas) · Modelo Fleuriet · Z-score de Altman · Alavancagem operacional e financeira · Depreciação                                                                                                                 |
+    | Investimento e financiamento | VPL, TIR, índice de lucratividade e payback (simples e descontado) · Valor futuro · Parcela de financiamento · WACC (CAPM) · EVA · Fluxo de caixa livre (FCFF, FCFE) · Preço e duration de títulos · Conversão de taxas e taxa real · SAC x Price |
+    | Selic e dólar                | Renda fixa atrelada à Selic · Poupança x Selic · Compra de dólares · Dólar x Selic                                                                                                                                                                |
 
 - **Números do jeito que você digita** – `1,234.56`, `1.234,56`, `1 234,56`, `R$ 1.500`, `12,5%` e
   `(300)` para −300 são todos entendidos, e casos ambíguos como `1.234` são resolvidos pelo idioma do seu
@@ -25,6 +26,10 @@ financiamentos. Tudo é calculado no seu dispositivo.
   vivo_ e os campos de Selic e dólar das calculadoras de mercado se preenchem sozinhos. O Chrome pede
   autorização para um único host, `api.bcb.gov.br`, e a extensão passa a ler duas séries temporais
   públicas. Veja [Taxas ao vivo](#taxas-ao-vivo).
+- **Indicadores coloridos** – resultados com uma leitura consagrada aparecem em vermelho (ruim), na cor normal
+  (neutro) ou em verde (bom), com uma pequena marca ▼ ● ▲ para que a cor não seja o único sinal. Passe o mouse
+  sobre o valor para ver como ele se lê, a regra por trás e uma legenda. Veja
+  [Classificação dos indicadores](#classificação-dos-indicadores).
 - **Resultados honestos** – o que não pode ser calculado (divisor zero, uma TIR que não existe, um
   payback que nunca é atingido) aparece como _Indefinido_, em vez de `NaN`, `Infinity` ou um número
   inventado. Os campos usados como divisor rejeitam zero logo na entrada.
@@ -171,6 +176,58 @@ Seguem convenções brasileiras, simplificadas para planejamento (`src/core/braz
 
 As taxas e as regras mudam com o tempo: a tabela de imposto, a regra da poupança e as alíquotas de IOF
 cabem ao usuário conferir. O IOF e o spread são dados de entrada, não valores padrão.
+
+### Modelos contábeis
+
+`src/core/accounting.ts` reúne os modelos. Cada um é uma função pura com testes de respostas conhecidas.
+
+- **Fleuriet** – CDG = fundos permanentes − ativo não circulante; NCG = ativo circulante operacional − passivo
+  circulante operacional; T = CDG − NCG. O tipo (I a VI) vem dos sinais dessas três grandezas, e zero conta
+  como positivo. Definir T como CDG − NCG pressupõe um balanço equilibrado.
+- **DuPont** – 3 etapas (margem × giro do ativo × multiplicador de patrimônio) e 5 etapas (carga tributária ×
+  carga de juros × margem operacional × giro do ativo × multiplicador de patrimônio). Um fator que dividiria
+  por zero, como a carga tributária quando o LAIR é 0, aparece como _Indefinido_.
+- **Altman** – o Z-score original (limites 1,81 e 2,99) e o Z″-score para mercados emergentes (4,35 e 5,85),
+  ambos com os mesmos dados. O valor do patrimônio é o valor de mercado nas companhias abertas e o valor
+  contábil nas demais.
+- **Depreciação** – linear, saldos decrescentes em dobro (nunca abaixo do valor residual e sem passar para
+  linear) e soma dos dígitos dos anos.
+- **DRE** – um prejuízo não paga imposto e também não vira restituição.
+- **Títulos** são precificados em data de cupom, sem juros acumulados. **SAC e Price** usam a taxa anual ÷ 12,
+  como a calculadora de financiamento. As demais (graus de alavancagem, WACC com CAPM, EVA, fluxo de caixa
+  livre, conversão de taxas) usam fórmulas de livro-texto.
+
+### Classificação dos indicadores
+
+Uma saída pode ter uma regra `rating` em `src/core/calculators.ts`, e `evaluate` a converte em `bad`, `neutral`
+ou `good` (`src/core/rating.ts`). Há três tipos de regra:
+
+- **Faixas** – dois limites e uma direção. Quando quanto mais melhor, um valor abaixo do primeiro limite é
+  ruim, um acima do segundo é bom e o que fica entre eles, limites incluídos, é neutro. Quando quanto menos
+  melhor, é o espelho. Dois limites iguais formam um teste de sinal (prejuízo é ruim, lucro é bom).
+- **Contra uma entrada** – um limite pode ser o id de um campo de entrada, de modo que a TIR é comparada com a
+  taxa de desconto informada pelo usuário.
+- **Categorias** – um tipo de Fleuriet ou uma zona de Altman é associado a uma classificação.
+
+Os limites são regras práticas, e o que é saudável varia conforme o setor, o que a legenda informa. Saídas sem
+regra (um preço, uma parcela, uma duration) mantêm a cor normal.
+
+| Indicador                     | Ruim               | Neutro             | Bom                |
+| ----------------------------- | ------------------ | ------------------ | ------------------ |
+| Liquidez corrente             | < 1                | 1 – 1,5            | > 1,5              |
+| Liquidez seca                 | < 0,8              | 0,8 – 1            | > 1                |
+| Liquidez imediata             | < 0,2              | 0,2 – 0,5          | > 0,5              |
+| Dívida sobre patrimônio       | > 2                | 1 – 2              | < 1                |
+| Cobertura de juros            | < 1,5              | 1,5 – 3            | > 3                |
+| Ciclo de conversão de caixa   | > 60 dias          | 0 – 60 dias        | < 0 dias           |
+| ROE                           | < 0 %              | 0 – 10 %           | > 10 %             |
+| ROA                           | < 0 %              | 0 – 5 %            | > 5 %              |
+| Z de Altman                   | < 1,81             | 1,81 – 2,99        | > 2,99             |
+| Z″ de Altman                  | < 4,35             | 4,35 – 5,85        | > 5,85             |
+| Tipo de Fleuriet              | IV, V, VI          | III                | I, II              |
+| Lucro, margem, VPL, EVA, FCL… | < 0                | 0                  | > 0                |
+| TIR                           | < taxa de desconto | = taxa de desconto | > taxa de desconto |
+| Índice de lucratividade       | < 1                | 1                  | > 1                |
 
 ### Permissões
 
