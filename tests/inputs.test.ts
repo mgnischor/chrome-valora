@@ -149,8 +149,8 @@ describe("evaluate", () => {
             calculate: () => ({ a: 1, b: 2 }),
         };
         expect(evaluate(calculator, {})).toEqual([
-            { id: "b", kind: "percent", value: 2 },
-            { id: "a", kind: "currency", value: 1 },
+            { id: "b", kind: "percent", value: 2, ratingLevel: null, bands: null },
+            { id: "a", kind: "currency", value: 1, ratingLevel: null, bands: null },
         ]);
     });
 
