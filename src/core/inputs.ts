@@ -19,6 +19,7 @@
     limitations under the License.
 */
 import { parseNumber, parseSeries, type DecimalSeparator } from "./parse";
+import { rateResult } from "./rating";
 import type { Calculator, FieldSpec, Result, Values } from "./types";
 
 /**
@@ -153,7 +154,9 @@ export function readInputs(
 export function evaluate(calculator: Calculator, values: Values): Result[] {
     const outputs = calculator.calculate(values);
     return calculator.outputs.map((spec) => {
-        const value = outputs[spec.id];
-        return { ...spec, value: typeof value === "number" && Number.isFinite(value) ? value : null };
+        const raw = outputs[spec.id];
+        const value = typeof raw === "number" && Number.isFinite(raw) ? raw : null;
+        const rated = value !== null && spec.rating ? rateResult(spec.rating, value, values) : null;
+        return { ...spec, value, ratingLevel: rated?.level ?? null, bands: rated?.bands ?? null };
     });
 }
