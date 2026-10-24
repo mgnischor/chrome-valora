@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.zip
+release/
+docs/chrome-web-store.md
