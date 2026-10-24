@@ -1,7 +1,9 @@
 {
     "extName": { "message": "Valora – Calculadora Empresarial" },
     "extShortName": { "message": "Valora" },
-    "extDescription": { "message": "Calculadoras de negocios: ROI, liquidez, punto de equilibrio, VAN, TIR y más. Todo se calcula en tu dispositivo." },
+    "extDescription": {
+        "message": "Calculadoras de negocios: ROI, liquidez, punto de equilibrio, VAN, TIR y más. Todo se calcula en tu dispositivo."
+    },
     "actionTitle": { "message": "Valora – calculadoras de negocios" },
     "commandOpen": { "message": "Abrir Valora" },
     "tagline": { "message": "Calculadoras de negocios" },
@@ -15,13 +17,17 @@
     "settingsButtonTitle": { "message": "Ajustes" },
     "resultsEmpty": { "message": "Completa los campos para ver los resultados." },
     "resultUndefined": { "message": "Indefinido" },
-    "resultUndefinedHint": { "message": "Este resultado no está definido para estos valores, por ejemplo por una división entre cero o porque no existe solución." },
+    "resultUndefinedHint": {
+        "message": "Este resultado no está definido para estos valores, por ejemplo por una división entre cero o porque no existe solución."
+    },
     "formulaLabel": { "message": "Fórmula" },
     "copyResults": { "message": "Copiar resultados" },
     "statusCopied": { "message": "Resultados copiados." },
     "statusCopyFailed": { "message": "No se pudo copiar al portapapeles." },
     "statusSaveFailed": { "message": "No se pudieron guardar tus ajustes." },
-    "footer": { "message": "Todo se calcula en tu dispositivo. No se envía nada a ningún sitio. Los resultados son estimaciones para planificar, no asesoramiento financiero." },
+    "footer": {
+        "message": "Calculado en tu dispositivo; nada de lo que escribes se envía. Estimaciones, no asesoramiento financiero."
+    },
     "seriesHint": { "message": "Un valor por línea (o separados por punto y coma). Usa el signo menos para salidas." },
     "settingsHeading": { "message": "Ajustes" },
     "settingsBack": { "message": "Volver" },
@@ -29,16 +35,27 @@
     "currencyNone": { "message": "Sin símbolo" },
     "decimalsLabel": { "message": "Decimales de porcentajes e índices" },
     "rememberInputsLabel": { "message": "Recordar lo que escribí mientras el navegador esté abierto" },
-    "rememberInputsHint": { "message": "Se guarda solo en la memoria del navegador y se borra al cerrar Chrome. Desactivarlo lo borra ahora." },
+    "rememberInputsHint": {
+        "message": "Se guarda solo en la memoria del navegador y se borra al cerrar Chrome. Desactivarlo lo borra ahora."
+    },
     "errorNotNumber": { "message": "Introduce un número válido." },
     "errorNotInteger": { "message": "Introduce un número entero." },
     "errorMin": { "message": "Debe ser como mínimo $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
     "errorMinExclusive": { "message": "Debe ser mayor que $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
     "errorMax": { "message": "Debe ser como máximo $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
     "errorNotAllowed": { "message": "Elige un valor de la lista." },
-    "errorTooFewEntries": { "message": "Introduce al menos $COUNT$ valor(es).", "placeholders": { "count": { "content": "$1" } } },
-    "errorTooManyEntries": { "message": "Introduce como máximo $COUNT$ valores.", "placeholders": { "count": { "content": "$1" } } },
-    "errorInvalidEntry": { "message": "El elemento $POSITION$ no es un número válido.", "placeholders": { "position": { "content": "$1" } } },
+    "errorTooFewEntries": {
+        "message": "Introduce al menos $COUNT$ valor(es).",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "Introduce como máximo $COUNT$ valores.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "El elemento $POSITION$ no es un número válido.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
     "group_returns": { "message": "Rendimientos" },
     "group_profitability": { "message": "Rentabilidad y precios" },
     "group_liquidity": { "message": "Liquidez y solvencia" },
@@ -85,8 +102,12 @@
     "out_pricing_markup": { "message": "Markup necesario" },
     "out_pricing_profit": { "message": "Beneficio por unidad" },
     "calc_breakeven_name": { "message": "Punto de equilibrio" },
-    "calc_breakeven_desc": { "message": "Cuántas unidades hay que vender para cubrir los costes fijos y, si quieres, alcanzar un objetivo de beneficio." },
-    "calc_breakeven_formula": { "message": "Unidades = (Costes fijos + Beneficio objetivo) ÷ (Precio − Coste variable)" },
+    "calc_breakeven_desc": {
+        "message": "Cuántas unidades hay que vender para cubrir los costes fijos y, si quieres, alcanzar un objetivo de beneficio."
+    },
+    "calc_breakeven_formula": {
+        "message": "Unidades = (Costes fijos + Beneficio objetivo) ÷ (Precio − Coste variable)"
+    },
     "field_breakeven_fixedCosts": { "message": "Costes fijos" },
     "field_breakeven_price": { "message": "Precio por unidad" },
     "field_breakeven_variableCost": { "message": "Coste variable por unidad" },
@@ -96,8 +117,12 @@
     "out_breakeven_contributionMargin": { "message": "Margen de contribución por unidad" },
     "out_breakeven_contributionMarginRatio": { "message": "Ratio de margen de contribución" },
     "calc_liquidity_name": { "message": "Ratios de liquidez" },
-    "calc_liquidity_desc": { "message": "Si la empresa puede pagar sus obligaciones a corto plazo con sus activos a corto plazo." },
-    "calc_liquidity_formula": { "message": "Corriente = Activo corriente ÷ Pasivo corriente · Ácida = (Efectivo + Cuentas por cobrar) ÷ Pasivo corriente · Efectivo = Efectivo ÷ Pasivo corriente" },
+    "calc_liquidity_desc": {
+        "message": "Si la empresa puede pagar sus obligaciones a corto plazo con sus activos a corto plazo."
+    },
+    "calc_liquidity_formula": {
+        "message": "Corriente = Activo corriente ÷ Pasivo corriente · Ácida = (Efectivo + Cuentas por cobrar) ÷ Pasivo corriente · Efectivo = Efectivo ÷ Pasivo corriente"
+    },
     "field_liquidity_cash": { "message": "Efectivo y equivalentes" },
     "field_liquidity_receivables": { "message": "Cuentas por cobrar" },
     "field_liquidity_inventory": { "message": "Inventario" },
@@ -108,7 +133,9 @@
     "out_liquidity_cashRatio": { "message": "Ratio de efectivo" },
     "out_liquidity_workingCapital": { "message": "Capital de trabajo" },
     "calc_cashCycle_name": { "message": "Ciclo de conversión de efectivo" },
-    "calc_cashCycle_desc": { "message": "Cuántos días queda inmovilizado el efectivo entre el pago a proveedores y el cobro a clientes." },
+    "calc_cashCycle_desc": {
+        "message": "Cuántos días queda inmovilizado el efectivo entre el pago a proveedores y el cobro a clientes."
+    },
     "calc_cashCycle_formula": { "message": "CCE = Días de inventario + Días de cobro − Días de pago" },
     "field_cashCycle_revenue": { "message": "Ingresos del período" },
     "field_cashCycle_cogs": { "message": "Coste de ventas" },
@@ -126,8 +153,12 @@
     "choice_cashCycle_periodDays_90": { "message": "90 días (trimestre)" },
     "choice_cashCycle_periodDays_30": { "message": "30 días (mes)" },
     "calc_leverage_name": { "message": "Apalancamiento y cobertura de intereses" },
-    "calc_leverage_desc": { "message": "Cuánto depende la empresa de la deuda y con qué holgura sus resultados cubren los intereses." },
-    "calc_leverage_formula": { "message": "Deuda/Patrimonio = Deuda ÷ Patrimonio · Deuda/Capital = Deuda ÷ (Deuda + Patrimonio) · Cobertura = EBIT ÷ Intereses" },
+    "calc_leverage_desc": {
+        "message": "Cuánto depende la empresa de la deuda y con qué holgura sus resultados cubren los intereses."
+    },
+    "calc_leverage_formula": {
+        "message": "Deuda/Patrimonio = Deuda ÷ Patrimonio · Deuda/Capital = Deuda ÷ (Deuda + Patrimonio) · Cobertura = EBIT ÷ Intereses"
+    },
     "field_leverage_totalDebt": { "message": "Deuda total" },
     "field_leverage_equity": { "message": "Patrimonio neto" },
     "field_leverage_ebit": { "message": "EBIT (beneficio operativo)" },
@@ -136,7 +167,9 @@
     "out_leverage_debtToCapital": { "message": "Deuda sobre capital total" },
     "out_leverage_interestCoverage": { "message": "Cobertura de intereses" },
     "calc_investment_name": { "message": "Análisis de inversión (VAN, TIR, recuperación)" },
-    "calc_investment_desc": { "message": "¿Vale la pena el proyecto? Descuenta los flujos de caja futuros y muestra cuándo se recupera." },
+    "calc_investment_desc": {
+        "message": "¿Vale la pena el proyecto? Descuenta los flujos de caja futuros y muestra cuándo se recupera."
+    },
     "calc_investment_formula": { "message": "VAN = Σ FCₜ ÷ (1 + r)ᵗ − Inversión · TIR: la tasa en la que VAN = 0" },
     "field_investment_rate": { "message": "Tasa de descuento (por período)" },
     "field_investment_initialInvestment": { "message": "Inversión inicial" },
@@ -148,7 +181,9 @@
     "out_investment_discountedPayback": { "message": "Recuperación descontada (períodos)" },
     "calc_futureValue_name": { "message": "Valor futuro (interés compuesto)" },
     "calc_futureValue_desc": { "message": "Cuánto crece una suma, más depósitos regulares, con interés compuesto." },
-    "calc_futureValue_formula": { "message": "VF = VA × (1 + i)ⁿ + Depósito × ((1 + i)ⁿ − 1) ÷ i, con i = tasa anual ÷ períodos por año" },
+    "calc_futureValue_formula": {
+        "message": "VF = VA × (1 + i)ⁿ + Depósito × ((1 + i)ⁿ − 1) ÷ i, con i = tasa anual ÷ períodos por año"
+    },
     "field_futureValue_presentValue": { "message": "Monto inicial" },
     "field_futureValue_contribution": { "message": "Depósito en cada período" },
     "field_futureValue_annualRate": { "message": "Tasa de interés anual" },
@@ -178,14 +213,23 @@
     "marketRetry": { "message": "Reintentar" },
     "marketLoading": { "message": "Obteniendo tasas…" },
     "marketFailed": { "message": "No se pudo acceder al Banco Central. Revisa tu conexión." },
-    "marketRates": { "message": "Selic $SELIC$ · Dólar $USD$ · $DATE$", "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } } },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Dólar $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
     "statusMarketPermissionDenied": { "message": "Permiso denegado, por lo que no se obtuvieron tasas." },
     "liveRatesLabel": { "message": "Obtener la tasa Selic y la cotización del dólar del Banco Central de Brasil" },
-    "liveRatesHint": { "message": "Desactivado por defecto. Al activarlo, Chrome pide permiso para acceder a api.bcb.gov.br, que no recibe ninguna información sobre ti. Desactivarlo elimina el permiso." },
+    "liveRatesHint": {
+        "message": "Desactivado por defecto. Al activarlo, Chrome pide permiso para acceder a api.bcb.gov.br, que no recibe ninguna información sobre ti. Desactivarlo elimina el permiso."
+    },
     "group_markets": { "message": "Selic y dólar" },
     "calc_selicYield_name": { "message": "Renta fija ligada a la Selic (Tesouro Selic, CDB)" },
-    "calc_selicYield_desc": { "message": "Cuánto rinde, después del impuesto a la renta, una inversión que paga una parte de la Selic." },
-    "calc_selicYield_formula": { "message": "Beneficio neto = Monto × (crecimiento − 1) × (1 − impuesto); el crecimiento es diario, base de 252 días hábiles al año" },
+    "calc_selicYield_desc": {
+        "message": "Cuánto rinde, después del impuesto a la renta, una inversión que paga una parte de la Selic."
+    },
+    "calc_selicYield_formula": {
+        "message": "Beneficio neto = Monto × (crecimiento − 1) × (1 − impuesto); el crecimiento es diario, base de 252 días hábiles al año"
+    },
     "field_selicYield_amount": { "message": "Monto invertido" },
     "field_selicYield_months": { "message": "Plazo (meses)" },
     "field_selicYield_selic": { "message": "Tasa Selic (anual)" },
@@ -199,8 +243,12 @@
     "choice_selicYield_taxTreatment_1": { "message": "Tabla regresiva (CDB, Tesouro)" },
     "choice_selicYield_taxTreatment_0": { "message": "Exento (LCI, LCA)" },
     "calc_savings_name": { "message": "Cuenta de ahorro (poupança) vs inversión ligada a la Selic" },
-    "calc_savings_desc": { "message": "Compara la cuenta de ahorro con un producto de renta fija con impuesto y halla el porcentaje de la Selic en que empatan." },
-    "calc_savings_formula": { "message": "Ahorro: 0,5% al mes si la Selic supera 8,5%, si no 70% de la Selic. La renta fija paga impuesto regresivo" },
+    "calc_savings_desc": {
+        "message": "Compara la cuenta de ahorro con un producto de renta fija con impuesto y halla el porcentaje de la Selic en que empatan."
+    },
+    "calc_savings_formula": {
+        "message": "Ahorro: 0,5% al mes si la Selic supera 8,5%, si no 70% de la Selic. La renta fija paga impuesto regresivo"
+    },
     "field_savings_amount": { "message": "Monto invertido" },
     "field_savings_months": { "message": "Plazo (meses)" },
     "field_savings_selic": { "message": "Tasa Selic (anual)" },
@@ -210,7 +258,9 @@
     "out_savings_fixedIncomeFinal": { "message": "Renta fija al final (neta)" },
     "out_savings_breakEvenPercent": { "message": "% de la Selic para empatar" },
     "calc_dollarConversion_name": { "message": "Compra de dólares (spread e IOF)" },
-    "calc_dollarConversion_desc": { "message": "Cuántos dólares compran tus reales una vez contados el spread del banco y el IOF." },
+    "calc_dollarConversion_desc": {
+        "message": "Cuántos dólares compran tus reales una vez contados el spread del banco y el IOF."
+    },
     "calc_dollarConversion_formula": { "message": "Dólares = Reales ÷ (Cotización × (1 + Spread) × (1 + IOF))" },
     "field_dollarConversion_amount": { "message": "Monto en reales" },
     "field_dollarConversion_rate": { "message": "Cotización del dólar (R$ por US$)" },
@@ -221,7 +271,9 @@
     "out_dollarConversion_cost": { "message": "Costo del spread y del IOF" },
     "out_dollarConversion_costPercent": { "message": "Costo como parte del monto" },
     "calc_dollarVsSelic_name": { "message": "Dólar vs Selic" },
-    "calc_dollarVsSelic_desc": { "message": "¿Dónde debe estar el dólar al final para que tener dólares supere a la Selic? Comparación antes del impuesto a la renta." },
+    "calc_dollarVsSelic_desc": {
+        "message": "¿Dónde debe estar el dólar al final para que tener dólares supere a la Selic? Comparación antes del impuesto a la renta."
+    },
     "calc_dollarVsSelic_formula": { "message": "Dólar de equilibrio = resultado de la Selic ÷ dólares al final" },
     "field_dollarVsSelic_amount": { "message": "Monto en reales" },
     "field_dollarVsSelic_months": { "message": "Plazo (meses)" },
