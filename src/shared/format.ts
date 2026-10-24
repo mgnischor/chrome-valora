@@ -92,6 +92,9 @@ export function formatValue(value: number, kind: ValueKind, options: FormatOptio
             };
             return formatNumber(withoutNegativeZero(value, 4), locale, style);
         }
+        case "category":
+            // Named by the popup, which has the translations; this is only a safe fallback.
+            return String(value);
         case "currency": {
             const hasSymbol = currency !== NO_CURRENCY;
             const digits = hasSymbol ? currencyDigits(locale, currency) : 2;
