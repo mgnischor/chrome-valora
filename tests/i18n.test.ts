@@ -28,6 +28,7 @@ import {
     calculatorDescriptionKey,
     calculatorFormulaKey,
     calculatorNameKey,
+    categoryKey,
     choiceKey,
     fieldKey,
     groupKey,
@@ -97,7 +98,10 @@ function calculatorKeys(): string[] {
             keys.push(fieldKey(calculator.id, field.id));
             for (const choice of field.choices ?? []) keys.push(choiceKey(calculator.id, field.id, choice));
         }
-        for (const output of calculator.outputs) keys.push(outputKey(calculator.id, output.id));
+        for (const output of calculator.outputs) {
+            keys.push(outputKey(calculator.id, output.id));
+            for (const category of output.categories ?? []) keys.push(categoryKey(calculator.id, output.id, category));
+        }
     }
     return keys;
 }
