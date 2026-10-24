@@ -31,14 +31,15 @@ financiación. Todo se calcula en tu dispositivo.
 - **Convenciones exactas** – ROI, margen y markup son cosas distintas y se rotulan como tales; los
   porcentajes se escriben como porcentajes y se guardan como fracciones; el punto de equilibrio se
   redondea hacia arriba a unidades enteras sin ruido de coma flotante.
-- **Opciones de visualización** – 14 monedas (o ninguna), de 0 a 4 decimales para porcentajes e índices,
+- **Opciones de visualización** – 16 monedas (o ninguna), de 0 a 4 decimales para porcentajes e índices,
   y un símbolo de moneda que sigue tu idioma.
 - **Copiar resultados** – copia el nombre de la calculadora, tus datos y los resultados como texto plano.
 - **Ejemplo / Borrar** – rellena una calculadora con valores de ejemplo para ver cómo funciona, o bórrala.
 - **Recuerda lo que escribiste** (opcional, activado por defecto) – se guarda solo en la memoria del
   navegador y se borra al cerrar Chrome. Consulta [Privacidad](#privacidad).
 - **Popup amplio** que usa los 640 × 400 px completos que puede tener el popup de una extensión.
-- **Localizada** en inglés (EE. UU.), portugués de Brasil y español. La extensión sigue automáticamente
+- **Localizada** en inglés (EE. UU.), portugués de Brasil, español, francés, alemán, italiano, ruso y polaco.
+  La extensión sigue automáticamente
   el idioma de la interfaz del navegador; cualquier otro idioma usa inglés. Consulta
   [Localización](#localización).
 - **Tema claro / oscuro**, accesible con teclado, sin analíticas y sin acceso a la red, salvo que
@@ -76,7 +77,7 @@ Tras recompilar, pulsa el botón de recarga en la tarjeta de la extensión en `c
 
 ```
 public/                 Archivos estáticos copiados a dist/ (manifiesto, HTML, CSS, iconos)
-public/_locales/        Traducciones: en_US (por defecto), pt_BR y es
+public/_locales/        Traducciones: en_US (por defecto), pt_BR, es, fr, de, it, ru y pl
 scripts/                Herramientas de compilación: build, package, minify, zip y generador de iconos
 src/core/               Lógica pura, sin DOM: analizador, matemática financiera, reglas brasileñas, calculadoras, validación
 src/shared/             Ajustes, borrador, formato, i18n, cliente opcional del Banco Central
