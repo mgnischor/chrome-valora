@@ -8,15 +8,16 @@ computed on your device.
 
 ## Features
 
-- **16 calculators in five groups**, each with its formula shown under the results:
+- **29 calculators in six groups**, each with its formula shown under the results:
 
-    | Group                   | Calculators                                                                             |
-    | ----------------------- | --------------------------------------------------------------------------------------- |
-    | Returns                 | ROI · CAGR · ROE & ROA (with the equity multiplier)                                     |
-    | Profitability & pricing | Margin & markup · Price for a target margin · Break-even point                          |
-    | Liquidity & solvency    | Current / quick / cash ratios and working capital · Cash conversion cycle · Leverage    |
-    | Investment & financing  | NPV, IRR, profitability index and (discounted) payback · Future value · Loan payment    |
-    | Selic & dollar          | Selic-linked fixed income · Savings account vs Selic · Buying dollars · Dollar vs Selic |
+    | Group                   | Calculators                                                                                                                                                                                                 |
+    | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Returns                 | ROI · CAGR · ROE & ROA (with the equity multiplier)                                                                                                                                                         |
+    | Profitability & pricing | Margin & markup · Price for a target margin · Break-even point                                                                                                                                              |
+    | Liquidity & solvency    | Current / quick / cash ratios and working capital · Cash conversion cycle · Leverage                                                                                                                        |
+    | Accounting analysis     | Income statement margins · DuPont (3 and 5 steps) · Fleuriet model · Altman Z-score · Operating & financial leverage · Depreciation                                                                         |
+    | Investment & financing  | NPV, IRR, profitability index and (discounted) payback · Future value · Loan payment · WACC (CAPM) · EVA · Free cash flow (FCFF, FCFE) · Bond price & duration · Rate conversion & real rate · SAC vs Price |
+    | Selic & dollar          | Selic-linked fixed income · Savings account vs Selic · Buying dollars · Dollar vs Selic                                                                                                                     |
 
 - **Numbers the way you type them** – `1,234.56`, `1.234,56`, `1 234,56`, `R$ 1.500`, `12,5%` and
   `(300)` for −300 are all understood, and ambiguous cases such as `1.234` are resolved by your browser's
@@ -25,6 +26,9 @@ computed on your device.
   rates_ and the Selic and dollar fields of the market calculators fill themselves in. Chrome asks you
   to allow one host, `api.bcb.gov.br`, and the extension then reads two public time series. See
   [Live rates](#live-rates).
+- **Colour-coded indicators** – results with an accepted reading are shown in red (bad), the normal colour
+  (neutral) or green (good), with a small ▼ ● ▲ mark so colour is not the only cue. Hover a value to see how it
+  reads, the rule behind it and a legend. See [Indicator ratings](#indicator-ratings).
 - **Honest results** – anything that cannot be computed (a zero divisor, an IRR that does not exist, a
   payback that is never reached) is shown as _Not defined_ instead of `NaN`, `Infinity` or a made-up
   number. Fields that are used as divisors reject zero up front.
@@ -168,6 +172,58 @@ They follow Brazilian conventions, simplified for planning (`src/core/brazil.ts`
 
 The rates and rules change over time: the tax table, the savings rule and the IOF rates are the user's to
 check. The IOF and the spread are inputs, not defaults.
+
+### Accounting models
+
+`src/core/accounting.ts` holds the models. Each one is a pure function with known-answer tests.
+
+- **Fleuriet** – CDG = permanent funds − non-current assets; NCG = operating current assets − operating
+  current liabilities; T = CDG − NCG. The type (I to VI) comes from the signs of the three figures, and zero
+  counts as positive. Defining T as CDG − NCG assumes a balanced balance sheet.
+- **DuPont** – 3 steps (margin × asset turnover × equity multiplier) and 5 steps (tax burden × interest burden ×
+  operating margin × asset turnover × equity multiplier). A factor that would divide by zero, such as the tax
+  burden when EBT is 0, is shown as _Not defined_.
+- **Altman** – the original Z-score (cut-offs 1.81 and 2.99) and the Z″-score for emerging markets (4.35 and
+  5.85), both from the same inputs. The equity value is the market value for listed companies and the book
+  value otherwise.
+- **Depreciation** – straight line, double declining balance (never below the salvage value, with no switch to
+  straight line) and sum of the years' digits.
+- **Income statement** – a loss pays no tax, and is not turned into a refund.
+- **Bonds** are priced on a coupon date, without accrued interest. **SAC and Price** use the annual rate ÷ 12,
+  like the loan calculator. The remaining calculators (leverage degrees, WACC with CAPM, EVA, free cash flow,
+  rate conversion) use textbook formulas.
+
+### Indicator ratings
+
+An output can carry a `rating` rule in `src/core/calculators.ts`, and `evaluate` turns it into `bad`, `neutral`
+or `good` (`src/core/rating.ts`). There are three kinds of rule:
+
+- **Bands** – two limits and a direction. With more-is-better, a value below the first limit is bad, one above the
+  second is good and anything between them, limits included, is neutral. Less-is-better is the mirror image.
+  Two equal limits make a sign test (a loss is bad, a profit is good).
+- **Against an input** – a limit can be the id of an input field, so the IRR is compared with the discount rate
+  that the user entered.
+- **Categories** – a Fleuriet type or an Altman zone is mapped to a rating.
+
+The limits are rules of thumb, and what is healthy varies by industry, which the legend says. Outputs without a
+rule (a price, a payment, a duration) keep the normal colour.
+
+| Indicator                      | Bad             | Neutral         | Good            |
+| ------------------------------ | --------------- | --------------- | --------------- |
+| Current ratio                  | < 1             | 1 – 1.5         | > 1.5           |
+| Quick ratio                    | < 0.8           | 0.8 – 1         | > 1             |
+| Cash ratio                     | < 0.2           | 0.2 – 0.5       | > 0.5           |
+| Debt-to-equity                 | > 2             | 1 – 2           | < 1             |
+| Interest coverage              | < 1.5           | 1.5 – 3         | > 3             |
+| Cash conversion cycle          | > 60 days       | 0 – 60 days     | < 0 days        |
+| ROE                            | < 0 %           | 0 – 10 %        | > 10 %          |
+| ROA                            | < 0 %           | 0 – 5 %         | > 5 %           |
+| Altman Z                       | < 1.81          | 1.81 – 2.99     | > 2.99          |
+| Altman Z″                      | < 4.35          | 4.35 – 5.85     | > 5.85          |
+| Fleuriet type                  | IV, V, VI       | III             | I, II           |
+| Profit, margin, NPV, EVA, FCF… | < 0             | 0               | > 0             |
+| IRR                            | < discount rate | = discount rate | > discount rate |
+| Profitability index            | < 1             | 1               | > 1             |
 
 ### Permissions
 
