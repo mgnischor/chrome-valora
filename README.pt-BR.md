@@ -31,7 +31,7 @@ financiamentos. Tudo é calculado no seu dispositivo.
 - **Convenções exatas** – ROI, margem e markup são coisas diferentes e são identificados como tais;
   percentuais são digitados como percentuais e armazenados como frações; o ponto de equilíbrio é
   arredondado para cima em unidades inteiras, sem ruído de ponto flutuante.
-- **Opções de exibição** – 14 moedas (ou nenhuma), de 0 a 4 casas decimais para percentuais e índices, e
+- **Opções de exibição** – 16 moedas (ou nenhuma), de 0 a 4 casas decimais para percentuais e índices, e
   um símbolo de moeda que segue o seu idioma.
 - **Copiar resultados** – copia o nome da calculadora, os seus dados e os resultados como texto simples.
 - **Exemplo / Limpar** – preencha uma calculadora com valores de exemplo para ver como funciona, ou
@@ -39,7 +39,8 @@ financiamentos. Tudo é calculado no seu dispositivo.
 - **Lembra o que você digitou** (opcional, ativado por padrão) – fica apenas na memória do navegador e é
   apagado quando o Chrome fecha. Veja [Privacidade](#privacidade).
 - **Popup espaçoso**, que usa os 640 × 400 px completos que um popup de extensão pode ter.
-- **Localizado** em inglês (EUA), português do Brasil e espanhol. A extensão segue automaticamente o
+- **Localizado** em inglês (EUA), português do Brasil, espanhol, francês, alemão, italiano, russo e polonês.
+  A extensão segue automaticamente o
   idioma da interface do navegador; qualquer outro idioma usa o inglês. Veja
   [Localização](#localização).
 - **Tema claro / escuro**, acessível pelo teclado, sem análises de uso e sem acesso à rede, a menos que
@@ -77,7 +78,7 @@ Depois de recompilar, clique no botão de recarregar no cartão da extensão em 
 
 ```
 public/                 Arquivos estáticos copiados para dist/ (manifesto, HTML, CSS, ícones)
-public/_locales/        Traduções: en_US (padrão), pt_BR e es
+public/_locales/        Traduções: en_US (padrão), pt_BR, es, fr, de, it, ru e pl
 scripts/                Ferramentas de build: build, package, minify, zip e gerador de ícones
 src/core/               Lógica pura, sem DOM: parser, matemática financeira, regras brasileiras, calculadoras, validação
 src/shared/             Configurações, rascunho, formatação, i18n, cliente opcional do Banco Central
