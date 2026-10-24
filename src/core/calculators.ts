@@ -27,7 +27,29 @@
  * - `calc_<id>_name`, `calc_<id>_desc`, `calc_<id>_formula`
  * - `field_<id>_<field>` and `out_<id>_<output>`
  */
-import { accrualFactor, breakEvenPercentOfRate, calendarDays, incomeTaxRate, savingsFactor } from "./brazil";
+import {
+    ALTMAN_EMERGING_CUTOFFS,
+    ALTMAN_Z_CUTOFFS,
+    DEPRECIATION_DOUBLE_DECLINING,
+    DEPRECIATION_STRAIGHT_LINE,
+    DEPRECIATION_SUM_OF_YEARS,
+    altmanEmergingZ,
+    altmanZ,
+    altmanZone,
+    bondMetrics,
+    depreciationSchedule,
+    fleurietType,
+    priceLoanPlan,
+    sacLoanPlan,
+} from "./accounting";
+import {
+    BUSINESS_DAYS_PER_YEAR,
+    accrualFactor,
+    breakEvenPercentOfRate,
+    calendarDays,
+    incomeTaxRate,
+    savingsFactor,
+} from "./brazil";
 import {
     ceilStable,
     compoundGrowthRate,
@@ -39,10 +61,17 @@ import {
     paybackPeriods,
     presentValue,
 } from "./finance";
-import type { Calculator, FieldSpec, GroupId, Values } from "./types";
+import type { Calculator, CategoryRatings, FieldSpec, GroupId, RatingBands, Values } from "./types";
 
 /** Calculators are listed under these headings, in this order. */
-export const GROUPS: readonly GroupId[] = ["returns", "profitability", "liquidity", "investment", "markets"];
+export const GROUPS: readonly GroupId[] = [
+    "returns",
+    "profitability",
+    "liquidity",
+    "accounting",
+    "investment",
+    "markets",
+];
 
 /** Largest number of cash flows accepted by the investment analysis. */
 export const MAX_CASH_FLOWS = 120;
@@ -73,6 +102,30 @@ function list(values: Values, id: string): readonly number[] {
     if (typeof value === "number" || value === undefined) throw new Error(`Expected a list for "${id}"`);
     return value;
 }
+
+/** Rates a result by its sign: below zero is bad, above zero is good. */
+const SIGN: RatingBands = { direction: "higher", bad: 0, good: 0 };
+
+/**
+ * Rates a result against two limits, where more is better.
+ *
+ * @param bad - Below this is bad (a number, or the id of an input field).
+ * @param good - Above this is good (a number, or the id of an input field).
+ * @returns The rule.
+ */
+const higher = (bad: number | string, good: number | string): RatingBands => ({ direction: "higher", bad, good });
+
+/**
+ * Rates a result against two limits, where less is better.
+ *
+ * @param bad - Above this is bad (a number, or the id of an input field).
+ * @param good - Below this is good (a number, or the id of an input field).
+ * @returns The rule.
+ */
+const lower = (bad: number | string, good: number | string): RatingBands => ({ direction: "lower", bad, good });
+
+/** The three Altman zones: distress is bad, the grey zone is neutral and the safe zone is good. */
+const ZONE_RATINGS: CategoryRatings = { byCategory: { 0: "bad", 1: "neutral", 2: "good" } };
 
 /** An amount of money that cannot be negative. */
 const amount = (id: string, example: number, extra: Partial<FieldSpec> = {}): FieldSpec => ({
@@ -114,8 +167,8 @@ const roi = define({
     group: "returns",
     fields: [positiveAmount("invested", 10_000), amount("returned", 12_500)],
     outputs: [
-        { id: "roi", kind: "percent" },
-        { id: "netProfit", kind: "currency" },
+        { id: "roi", kind: "percent", rating: SIGN },
+        { id: "netProfit", kind: "currency", rating: SIGN },
         { id: "multiple", kind: "multiple" },
     ],
     calculate(values) {
@@ -135,7 +188,7 @@ const cagr = define({
         { id: "years", kind: "number", min: 0, minExclusive: true, max: 1000, example: 5 },
     ],
     outputs: [
-        { id: "cagr", kind: "percent" },
+        { id: "cagr", kind: "percent", rating: SIGN },
         { id: "totalGrowth", kind: "percent" },
     ],
     calculate(values) {
@@ -157,8 +210,8 @@ const roe = define({
         positiveAmount("assets", 2_000_000),
     ],
     outputs: [
-        { id: "roe", kind: "percent" },
-        { id: "roa", kind: "percent" },
+        { id: "roe", kind: "percent", rating: higher(0, 0.1) },
+        { id: "roa", kind: "percent", rating: higher(0, 0.05) },
         { id: "equityMultiplier", kind: "multiple" },
     ],
     calculate(values) {
@@ -178,9 +231,9 @@ const margin = define({
     group: "profitability",
     fields: [amount("cost", 60), positiveAmount("price", 100)],
     outputs: [
-        { id: "margin", kind: "percent" },
+        { id: "margin", kind: "percent", rating: SIGN },
         { id: "markup", kind: "percent" },
-        { id: "profit", kind: "currency" },
+        { id: "profit", kind: "currency", rating: SIGN },
     ],
     calculate(values) {
         const cost = num(values, "cost");
@@ -223,7 +276,7 @@ const breakeven = define({
     outputs: [
         { id: "units", kind: "number" },
         { id: "revenue", kind: "currency" },
-        { id: "contributionMargin", kind: "currency" },
+        { id: "contributionMargin", kind: "currency", rating: SIGN },
         { id: "contributionMarginRatio", kind: "percent" },
     ],
     calculate(values) {
@@ -252,10 +305,10 @@ const liquidity = define({
         positiveAmount("currentLiabilities", 150_000),
     ],
     outputs: [
-        { id: "currentRatio", kind: "ratio" },
-        { id: "quickRatio", kind: "ratio" },
-        { id: "cashRatio", kind: "ratio" },
-        { id: "workingCapital", kind: "currency" },
+        { id: "currentRatio", kind: "ratio", rating: higher(1, 1.5) },
+        { id: "quickRatio", kind: "ratio", rating: higher(0.8, 1) },
+        { id: "cashRatio", kind: "ratio", rating: higher(0.2, 0.5) },
+        { id: "workingCapital", kind: "currency", rating: SIGN },
     ],
     calculate(values) {
         const cash = num(values, "cash");
@@ -283,7 +336,7 @@ const cashCycle = define({
         { id: "periodDays", kind: "choice", choices: [365, 360, 90, 30], example: 365 },
     ],
     outputs: [
-        { id: "cashConversionCycle", kind: "days" },
+        { id: "cashConversionCycle", kind: "days", rating: lower(60, 0) },
         { id: "daysInventory", kind: "days" },
         { id: "daysReceivables", kind: "days" },
         { id: "daysPayables", kind: "days" },
@@ -317,9 +370,9 @@ const leverage = define({
         amount("interestExpense", 40_000),
     ],
     outputs: [
-        { id: "debtToEquity", kind: "ratio" },
+        { id: "debtToEquity", kind: "ratio", rating: lower(2, 1) },
         { id: "debtToCapital", kind: "percent" },
-        { id: "interestCoverage", kind: "multiple" },
+        { id: "interestCoverage", kind: "multiple", rating: higher(1.5, 3) },
     ],
     calculate(values) {
         const debt = num(values, "totalDebt");
@@ -347,9 +400,9 @@ const investment = define({
         },
     ],
     outputs: [
-        { id: "npv", kind: "currency" },
-        { id: "irr", kind: "percent" },
-        { id: "profitabilityIndex", kind: "ratio" },
+        { id: "npv", kind: "currency", rating: SIGN },
+        { id: "irr", kind: "percent", rating: higher("rate", "rate") },
+        { id: "profitabilityIndex", kind: "ratio", rating: higher(1, 1) },
         { id: "payback", kind: "number" },
         { id: "discountedPayback", kind: "number" },
     ],
@@ -480,7 +533,7 @@ const savings = define({
         percent("percentOfRate", 1.1, { min: 0, max: 5, default: 1 }),
     ],
     outputs: [
-        { id: "advantage", kind: "currency", currency: "BRL" },
+        { id: "advantage", kind: "currency", rating: SIGN, currency: "BRL" },
         { id: "savingsFinal", kind: "currency", currency: "BRL" },
         { id: "fixedIncomeFinal", kind: "currency", currency: "BRL" },
         { id: "breakEvenPercent", kind: "percent" },
@@ -543,7 +596,7 @@ const dollarVsSelic = define({
         { id: "requiredChange", kind: "percent" },
         { id: "selicFinal", kind: "currency", currency: "BRL" },
         { id: "dollarFinal", kind: "currency", currency: "BRL" },
-        { id: "difference", kind: "currency", currency: "BRL" },
+        { id: "difference", kind: "currency", rating: SIGN, currency: "BRL" },
     ],
     calculate(values) {
         const amount = num(values, "amount");
@@ -562,6 +615,436 @@ const dollarVsSelic = define({
     },
 });
 
+/** The income tax rate of a company, typed as a percentage. */
+const taxRateField: FieldSpec = percent("taxRate", 0.25, { min: 0, max: 1 });
+
+const incomeStatement = define({
+    id: "incomeStatement",
+    group: "accounting",
+    fields: [
+        positiveAmount("revenue", 1_000_000),
+        amount("cogs", 600_000),
+        amount("operatingExpenses", 150_000),
+        amount("depreciation", 50_000),
+        amount("interestExpense", 40_000),
+        taxRateField,
+    ],
+    outputs: [
+        { id: "netIncome", kind: "currency", rating: SIGN },
+        { id: "grossMargin", kind: "percent" },
+        { id: "ebitdaMargin", kind: "percent" },
+        { id: "operatingMargin", kind: "percent", rating: SIGN },
+        { id: "netMargin", kind: "percent", rating: SIGN },
+    ],
+    calculate(values) {
+        const revenue = num(values, "revenue");
+        const grossProfit = revenue - num(values, "cogs");
+        const ebitda = grossProfit - num(values, "operatingExpenses");
+        const ebit = ebitda - num(values, "depreciation");
+        const pretax = ebit - num(values, "interestExpense");
+        // A loss pays no tax; it is not turned into a refund.
+        const netIncome = pretax - Math.max(pretax, 0) * num(values, "taxRate");
+        return {
+            netIncome,
+            grossMargin: divide(grossProfit, revenue),
+            ebitdaMargin: divide(ebitda, revenue),
+            operatingMargin: divide(ebit, revenue),
+            netMargin: divide(netIncome, revenue),
+        };
+    },
+});
+
+const dupont = define({
+    id: "dupont",
+    group: "accounting",
+    fields: [
+        signedAmount("netIncome", 120_000),
+        positiveAmount("revenue", 1_500_000),
+        positiveAmount("assets", 1_000_000),
+        positiveAmount("equity", 600_000),
+    ],
+    outputs: [
+        { id: "roe", kind: "percent", rating: higher(0, 0.1) },
+        { id: "netMargin", kind: "percent", rating: SIGN },
+        { id: "assetTurnover", kind: "multiple" },
+        { id: "equityMultiplier", kind: "multiple" },
+        { id: "roa", kind: "percent", rating: higher(0, 0.05) },
+    ],
+    calculate(values) {
+        const netIncome = num(values, "netIncome");
+        const revenue = num(values, "revenue");
+        const assets = num(values, "assets");
+        const equity = num(values, "equity");
+        return {
+            roe: divide(netIncome, equity),
+            netMargin: divide(netIncome, revenue),
+            assetTurnover: divide(revenue, assets),
+            equityMultiplier: divide(assets, equity),
+            roa: divide(netIncome, assets),
+        };
+    },
+});
+
+const dupont5 = define({
+    id: "dupont5",
+    group: "accounting",
+    fields: [
+        signedAmount("netIncome", 120_000),
+        signedAmount("pretaxIncome", 180_000),
+        signedAmount("ebit", 220_000),
+        positiveAmount("revenue", 1_500_000),
+        positiveAmount("assets", 1_000_000),
+        positiveAmount("equity", 600_000),
+    ],
+    outputs: [
+        { id: "roe", kind: "percent", rating: higher(0, 0.1) },
+        { id: "taxBurden", kind: "ratio" },
+        { id: "interestBurden", kind: "ratio" },
+        { id: "operatingMargin", kind: "percent" },
+        { id: "assetTurnover", kind: "multiple" },
+        { id: "equityMultiplier", kind: "multiple" },
+    ],
+    calculate(values) {
+        const netIncome = num(values, "netIncome");
+        const pretax = num(values, "pretaxIncome");
+        const ebit = num(values, "ebit");
+        const revenue = num(values, "revenue");
+        const assets = num(values, "assets");
+        const equity = num(values, "equity");
+        return {
+            roe: divide(netIncome, equity),
+            taxBurden: divide(netIncome, pretax),
+            interestBurden: divide(pretax, ebit),
+            operatingMargin: divide(ebit, revenue),
+            assetTurnover: divide(revenue, assets),
+            equityMultiplier: divide(assets, equity),
+        };
+    },
+});
+
+const fleuriet = define({
+    id: "fleuriet",
+    group: "accounting",
+    fields: [
+        amount("operatingCurrentAssets", 500_000),
+        amount("operatingCurrentLiabilities", 300_000),
+        amount("nonCurrentAssets", 700_000),
+        amount("permanentFunds", 1_000_000),
+    ],
+    outputs: [
+        {
+            id: "structureType",
+            kind: "category",
+            rating: { byCategory: { 1: "good", 2: "good", 3: "neutral", 4: "bad", 5: "bad", 6: "bad" } },
+            categories: [1, 2, 3, 4, 5, 6],
+        },
+        { id: "workingCapital", kind: "currency", rating: SIGN },
+        { id: "workingCapitalNeed", kind: "currency" },
+        { id: "treasury", kind: "currency", rating: SIGN },
+    ],
+    calculate(values) {
+        const workingCapital = num(values, "permanentFunds") - num(values, "nonCurrentAssets");
+        const workingCapitalNeed = num(values, "operatingCurrentAssets") - num(values, "operatingCurrentLiabilities");
+        const treasury = workingCapital - workingCapitalNeed;
+        return {
+            structureType: fleurietType(workingCapital, workingCapitalNeed, treasury),
+            workingCapital,
+            workingCapitalNeed,
+            treasury,
+        };
+    },
+});
+
+const altman = define({
+    id: "altman",
+    group: "accounting",
+    fields: [
+        signedAmount("workingCapital", 200_000),
+        signedAmount("retainedEarnings", 300_000),
+        signedAmount("ebit", 180_000),
+        positiveAmount("equityValue", 800_000),
+        amount("sales", 1_500_000),
+        positiveAmount("totalAssets", 1_200_000),
+        positiveAmount("totalLiabilities", 600_000),
+    ],
+    outputs: [
+        { id: "zScore", kind: "ratio", rating: higher(1.81, 2.99) },
+        { id: "zZone", kind: "category", rating: ZONE_RATINGS, categories: [0, 1, 2] },
+        { id: "emergingScore", kind: "ratio", rating: higher(4.35, 5.85) },
+        { id: "emergingZone", kind: "category", rating: ZONE_RATINGS, categories: [0, 1, 2] },
+    ],
+    calculate(values) {
+        const assets = num(values, "totalAssets");
+        const x1 = num(values, "workingCapital") / assets;
+        const x2 = num(values, "retainedEarnings") / assets;
+        const x3 = num(values, "ebit") / assets;
+        const x4 = num(values, "equityValue") / num(values, "totalLiabilities");
+        const x5 = num(values, "sales") / assets;
+        const zScore = altmanZ([x1, x2, x3, x4, x5]);
+        const emergingScore = altmanEmergingZ([x1, x2, x3, x4]);
+        return {
+            zScore,
+            zZone: altmanZone(zScore, ALTMAN_Z_CUTOFFS.distressBelow, ALTMAN_Z_CUTOFFS.safeAbove),
+            emergingScore,
+            emergingZone: altmanZone(
+                emergingScore,
+                ALTMAN_EMERGING_CUTOFFS.distressBelow,
+                ALTMAN_EMERGING_CUTOFFS.safeAbove
+            ),
+        };
+    },
+});
+
+const leverageDegrees = define({
+    id: "leverageDegrees",
+    group: "accounting",
+    fields: [
+        positiveAmount("revenue", 1_000_000),
+        amount("variableCosts", 500_000),
+        amount("fixedCosts", 300_000),
+        amount("interestExpense", 50_000),
+    ],
+    outputs: [
+        { id: "operatingLeverage", kind: "multiple" },
+        { id: "financialLeverage", kind: "multiple" },
+        { id: "combinedLeverage", kind: "multiple" },
+        { id: "ebit", kind: "currency", rating: SIGN },
+    ],
+    calculate(values) {
+        const contribution = num(values, "revenue") - num(values, "variableCosts");
+        const ebit = contribution - num(values, "fixedCosts");
+        const operatingLeverage = divide(contribution, ebit);
+        const financialLeverage = divide(ebit, ebit - num(values, "interestExpense"));
+        return {
+            operatingLeverage,
+            financialLeverage,
+            combinedLeverage:
+                operatingLeverage === null || financialLeverage === null ? null : operatingLeverage * financialLeverage,
+            ebit,
+        };
+    },
+});
+
+const depreciation = define({
+    id: "depreciation",
+    group: "accounting",
+    fields: [
+        positiveAmount("cost", 100_000),
+        amount("salvage", 10_000),
+        { id: "lifeYears", kind: "integer", min: 1, max: 100, example: 5 },
+        {
+            id: "method",
+            kind: "choice",
+            choices: [DEPRECIATION_STRAIGHT_LINE, DEPRECIATION_DOUBLE_DECLINING, DEPRECIATION_SUM_OF_YEARS],
+            example: DEPRECIATION_STRAIGHT_LINE,
+        },
+        { id: "year", kind: "integer", min: 1, max: 100, example: 2 },
+    ],
+    outputs: [
+        { id: "charge", kind: "currency" },
+        { id: "accumulated", kind: "currency" },
+        { id: "bookValue", kind: "currency" },
+    ],
+    calculate(values) {
+        const schedule = depreciationSchedule(
+            num(values, "method"),
+            num(values, "cost"),
+            num(values, "salvage"),
+            num(values, "lifeYears"),
+            num(values, "year")
+        );
+        return { ...schedule };
+    },
+});
+
+const wacc = define({
+    id: "wacc",
+    group: "investment",
+    fields: [
+        positiveAmount("equityValue", 600_000),
+        amount("debtValue", 400_000),
+        percent("riskFree", 0.1, { min: 0, max: 1 }),
+        { id: "beta", kind: "number", min: -5, max: 10, example: 1.2 },
+        percent("marketPremium", 0.06, { min: -0.5, max: 1 }),
+        percent("costOfDebt", 0.14, { min: 0, max: 1 }),
+        taxRateField,
+    ],
+    outputs: [
+        { id: "wacc", kind: "percent" },
+        { id: "costOfEquity", kind: "percent" },
+        { id: "afterTaxCostOfDebt", kind: "percent" },
+        { id: "equityWeight", kind: "percent" },
+        { id: "debtWeight", kind: "percent" },
+    ],
+    calculate(values) {
+        const equity = num(values, "equityValue");
+        const debt = num(values, "debtValue");
+        const capital = equity + debt;
+        const costOfEquity = num(values, "riskFree") + num(values, "beta") * num(values, "marketPremium");
+        const afterTaxCostOfDebt = num(values, "costOfDebt") * (1 - num(values, "taxRate"));
+        const equityWeight = equity / capital;
+        const debtWeight = debt / capital;
+        return {
+            wacc: equityWeight * costOfEquity + debtWeight * afterTaxCostOfDebt,
+            costOfEquity,
+            afterTaxCostOfDebt,
+            equityWeight,
+            debtWeight,
+        };
+    },
+});
+
+const eva = define({
+    id: "eva",
+    group: "investment",
+    fields: [
+        signedAmount("ebit", 250_000),
+        taxRateField,
+        positiveAmount("investedCapital", 1_000_000),
+        percent("wacc", 0.15, { min: 0, max: 1 }),
+    ],
+    outputs: [
+        { id: "eva", kind: "currency", rating: SIGN },
+        { id: "nopat", kind: "currency" },
+        { id: "roic", kind: "percent" },
+        { id: "spread", kind: "percent", rating: SIGN },
+        { id: "capitalCharge", kind: "currency" },
+    ],
+    calculate(values) {
+        const nopat = num(values, "ebit") * (1 - num(values, "taxRate"));
+        const capital = num(values, "investedCapital");
+        const wacc = num(values, "wacc");
+        const roic = nopat / capital;
+        return { eva: nopat - capital * wacc, nopat, roic, spread: roic - wacc, capitalCharge: capital * wacc };
+    },
+});
+
+const freeCashFlow = define({
+    id: "freeCashFlow",
+    group: "investment",
+    fields: [
+        signedAmount("ebit", 250_000),
+        taxRateField,
+        amount("depreciation", 50_000),
+        amount("capex", 80_000),
+        signedAmount("changeInWorkingCapital", 20_000),
+        amount("interestExpense", 40_000),
+        signedAmount("netBorrowing", 30_000),
+    ],
+    outputs: [
+        { id: "fcff", kind: "currency", rating: SIGN },
+        { id: "fcfe", kind: "currency", rating: SIGN },
+        { id: "nopat", kind: "currency" },
+    ],
+    calculate(values) {
+        const taxRate = num(values, "taxRate");
+        const nopat = num(values, "ebit") * (1 - taxRate);
+        const fcff = nopat + num(values, "depreciation") - num(values, "capex") - num(values, "changeInWorkingCapital");
+        return {
+            fcff,
+            fcfe: fcff - num(values, "interestExpense") * (1 - taxRate) + num(values, "netBorrowing"),
+            nopat,
+        };
+    },
+});
+
+const bond = define({
+    id: "bond",
+    group: "investment",
+    fields: [
+        positiveAmount("faceValue", 1_000),
+        percent("couponRate", 0.1, { min: 0, max: 1 }),
+        percent("yieldToMaturity", 0.12, { min: -0.5, max: 2 }),
+        { id: "years", kind: "number", min: 0, minExclusive: true, max: 100, example: 5 },
+        { id: "frequency", kind: "choice", choices: [2, 1, 4, 12], example: 2 },
+    ],
+    outputs: [
+        { id: "price", kind: "currency" },
+        { id: "premium", kind: "percent" },
+        { id: "currentYield", kind: "percent" },
+        { id: "macaulayDuration", kind: "number" },
+        { id: "modifiedDuration", kind: "number" },
+    ],
+    calculate(values) {
+        const face = num(values, "faceValue");
+        const coupon = num(values, "couponRate");
+        const metrics = bondMetrics(
+            face,
+            coupon,
+            num(values, "yieldToMaturity"),
+            num(values, "years"),
+            num(values, "frequency")
+        );
+        if (metrics === null) {
+            return { price: null, premium: null, currentYield: null, macaulayDuration: null, modifiedDuration: null };
+        }
+        return {
+            price: metrics.price,
+            premium: metrics.price / face - 1,
+            currentYield: divide(face * coupon, metrics.price),
+            macaulayDuration: metrics.macaulayDuration,
+            modifiedDuration: metrics.modifiedDuration,
+        };
+    },
+});
+
+const rates = define({
+    id: "rates",
+    group: "investment",
+    fields: [
+        percent("nominalRate", 0.12, { min: -0.99, max: 10 }),
+        { id: "compounding", kind: "choice", choices: [12, 1, 2, 4, 365], example: 12 },
+        percent("inflation", 0.045, { min: -0.5, max: 10 }),
+    ],
+    outputs: [
+        { id: "effectiveAnnual", kind: "percent" },
+        { id: "monthlyEquivalent", kind: "percent" },
+        { id: "dailyEquivalent", kind: "percent" },
+        { id: "realRate", kind: "percent", rating: SIGN },
+    ],
+    calculate(values) {
+        const compounding = num(values, "compounding");
+        const effectiveAnnual = (1 + num(values, "nominalRate") / compounding) ** compounding - 1;
+        return {
+            effectiveAnnual,
+            monthlyEquivalent: (1 + effectiveAnnual) ** (1 / 12) - 1,
+            dailyEquivalent: (1 + effectiveAnnual) ** (1 / BUSINESS_DAYS_PER_YEAR) - 1,
+            realRate: (1 + effectiveAnnual) / (1 + num(values, "inflation")) - 1,
+        };
+    },
+});
+
+const amortization = define({
+    id: "amortization",
+    group: "investment",
+    fields: [
+        positiveAmount("principal", 200_000),
+        percent("annualRate", 0.12, { min: 0, max: 10 }),
+        { id: "termMonths", kind: "integer", min: 1, max: 600, example: 120 },
+    ],
+    outputs: [
+        { id: "pricePayment", kind: "currency" },
+        { id: "priceTotalInterest", kind: "currency" },
+        { id: "sacFirstPayment", kind: "currency" },
+        { id: "sacLastPayment", kind: "currency" },
+        { id: "sacTotalInterest", kind: "currency" },
+    ],
+    calculate(values) {
+        const principal = num(values, "principal");
+        const rate = num(values, "annualRate") / 12;
+        const months = num(values, "termMonths");
+        const price = priceLoanPlan(principal, rate, months);
+        const sac = sacLoanPlan(principal, rate, months);
+        return {
+            pricePayment: price?.firstPayment ?? null,
+            priceTotalInterest: price?.totalInterest ?? null,
+            sacFirstPayment: sac?.firstPayment ?? null,
+            sacLastPayment: sac?.lastPayment ?? null,
+            sacTotalInterest: sac?.totalInterest ?? null,
+        };
+    },
+});
+
 /** Every calculator, in the order they are listed in the popup. */
 export const CALCULATORS = [
     roi,
@@ -576,6 +1059,19 @@ export const CALCULATORS = [
     investment,
     futureValueCalculator,
     loan,
+    incomeStatement,
+    dupont,
+    dupont5,
+    fleuriet,
+    altman,
+    leverageDegrees,
+    depreciation,
+    wacc,
+    eva,
+    freeCashFlow,
+    bond,
+    rates,
+    amortization,
     selicYield,
     savings,
     dollarConversion,
