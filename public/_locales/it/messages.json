@@ -292,5 +292,259 @@
     "out_dollarVsSelic_requiredChange": { "message": "Rialzo del dollaro necessario" },
     "out_dollarVsSelic_selicFinal": { "message": "Selic alla fine (lordo)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Dollari alla fine (lordo)" },
-    "out_dollarVsSelic_difference": { "message": "Dollaro meno Selic" }
+    "out_dollarVsSelic_difference": { "message": "Dollaro meno Selic" },
+    "ratingGood": { "message": "Buono" },
+    "ratingNeutral": { "message": "Neutro" },
+    "ratingBad": { "message": "Cattivo" },
+    "ratingLegend": { "message": "Verde: buono · Normale: neutro · Rosso: cattivo" },
+    "ratingRuleHigher": {
+        "message": "Sotto $BAD$: cattivo · Da $BAD$ a $GOOD$: neutro · Sopra $GOOD$: buono",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "Sopra $BAD$: cattivo · Da $GOOD$ a $BAD$: neutro · Sotto $GOOD$: buono",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "Sotto $VALUE$: cattivo · A $VALUE$: neutro · Sopra $VALUE$: buono",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "Sopra $VALUE$: cattivo · A $VALUE$: neutro · Sotto $VALUE$: buono",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "Regola empirica: ciò che è sano varia in base al settore." },
+    "group_accounting": { "message": "Analisi contabile" },
+    "calc_incomeStatement_name": { "message": "Analisi del conto economico (margini)" },
+    "calc_incomeStatement_desc": { "message": "Va dai ricavi all'utile netto e mostra il margine a ogni passaggio." },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = Ricavi − Costo del venduto − Spese operative · EBIT = EBITDA − Ammortamenti · Netto = (EBIT − Interessi) × (1 − imposta)"
+    },
+    "field_incomeStatement_revenue": { "message": "Ricavi netti" },
+    "field_incomeStatement_cogs": { "message": "Costo del venduto" },
+    "field_incomeStatement_operatingExpenses": { "message": "Spese operative" },
+    "field_incomeStatement_depreciation": { "message": "Ammortamenti" },
+    "field_incomeStatement_interestExpense": { "message": "Oneri finanziari" },
+    "field_incomeStatement_taxRate": { "message": "Aliquota d'imposta" },
+    "out_incomeStatement_netIncome": { "message": "Utile netto" },
+    "out_incomeStatement_grossMargin": { "message": "Margine lordo" },
+    "out_incomeStatement_ebitdaMargin": { "message": "Margine EBITDA" },
+    "out_incomeStatement_operatingMargin": { "message": "Margine operativo (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "Margine netto" },
+    "calc_dupont_name": { "message": "Analisi DuPont (3 passaggi)" },
+    "calc_dupont_desc": {
+        "message": "Scompone il rendimento del capitale proprio in margine, rotazione dell'attivo e leva."
+    },
+    "calc_dupont_formula": { "message": "ROE = Margine netto × Rotazione dell'attivo × Moltiplicatore del capitale" },
+    "field_dupont_netIncome": { "message": "Utile netto" },
+    "field_dupont_revenue": { "message": "Ricavi netti" },
+    "field_dupont_assets": { "message": "Totale attivo" },
+    "field_dupont_equity": { "message": "Patrimonio netto" },
+    "out_dupont_roe": { "message": "Redditività del capitale proprio (ROE)" },
+    "out_dupont_netMargin": { "message": "Margine netto" },
+    "out_dupont_assetTurnover": { "message": "Rotazione dell'attivo" },
+    "out_dupont_equityMultiplier": { "message": "Moltiplicatore del capitale" },
+    "out_dupont_roa": { "message": "Redditività dell'attivo (ROA)" },
+    "calc_dupont5_name": { "message": "Analisi DuPont (5 passaggi)" },
+    "calc_dupont5_desc": {
+        "message": "Scompone il ROE in carico fiscale, carico degli interessi, margine operativo, rotazione dell'attivo e leva."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (UN ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ Ricavi) × (Ricavi ÷ Attivo) × (Attivo ÷ PN)"
+    },
+    "field_dupont5_netIncome": { "message": "Utile netto (UN)" },
+    "field_dupont5_pretaxIncome": { "message": "Utile ante imposte (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (risultato operativo)" },
+    "field_dupont5_revenue": { "message": "Ricavi netti" },
+    "field_dupont5_assets": { "message": "Totale attivo" },
+    "field_dupont5_equity": { "message": "Patrimonio netto" },
+    "out_dupont5_roe": { "message": "Redditività del capitale proprio (ROE)" },
+    "out_dupont5_taxBurden": { "message": "Carico fiscale (UN ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "Carico degli interessi (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "Margine operativo (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "Rotazione dell'attivo" },
+    "out_dupont5_equityMultiplier": { "message": "Moltiplicatore del capitale" },
+    "calc_fleuriet_name": { "message": "Modello Fleuriet (capitale circolante dinamico)" },
+    "calc_fleuriet_desc": {
+        "message": "Classifica la struttura finanziaria in base al capitale circolante (CDG), al suo fabbisogno (NCG) e al saldo di tesoreria (T)."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = Fonti permanenti − Attivo non corrente · NCG = ACO − PCO · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "Attivo corrente operativo" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "Passivo corrente operativo" },
+    "field_fleuriet_nonCurrentAssets": { "message": "Attivo non corrente" },
+    "field_fleuriet_permanentFunds": { "message": "Fonti permanenti" },
+    "out_fleuriet_structureType": { "message": "Struttura finanziaria" },
+    "out_fleuriet_workingCapital": { "message": "Capitale circolante (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "Fabbisogno di capitale circolante (NCG)" },
+    "out_fleuriet_treasury": { "message": "Saldo di tesoreria (T)" },
+    "cat_fleuriet_structureType_1": { "message": "Tipo I – Eccellente" },
+    "cat_fleuriet_structureType_2": { "message": "Tipo II – Solida" },
+    "cat_fleuriet_structureType_3": { "message": "Tipo III – Insoddisfacente" },
+    "cat_fleuriet_structureType_4": { "message": "Tipo IV – Cattiva" },
+    "cat_fleuriet_structureType_5": { "message": "Tipo V – Molto cattiva" },
+    "cat_fleuriet_structureType_6": { "message": "Tipo VI – Alto rischio" },
+    "calc_altman_name": { "message": "Z-score di Altman (rischio di insolvenza)" },
+    "calc_altman_desc": {
+        "message": "Valuta il rischio di difficoltà finanziarie con cinque indici di bilancio e conto economico, in due versioni."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1,2·X1 + 1,4·X2 + 3,3·X3 + 0,6·X4 + 1,0·X5 · Z″ = 3,25 + 6,56·X1 + 3,26·X2 + 6,72·X3 + 1,05·X4"
+    },
+    "field_altman_workingCapital": { "message": "Capitale circolante" },
+    "field_altman_retainedEarnings": { "message": "Utili non distribuiti" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "Valore del patrimonio" },
+    "field_altman_sales": { "message": "Vendite" },
+    "field_altman_totalAssets": { "message": "Totale attivo" },
+    "field_altman_totalLiabilities": { "message": "Totale passività" },
+    "out_altman_zScore": { "message": "Z-score (originale)" },
+    "out_altman_zZone": { "message": "Zona (originale)" },
+    "out_altman_emergingScore": { "message": "Z″-score (mercati emergenti)" },
+    "out_altman_emergingZone": { "message": "Zona (mercati emergenti)" },
+    "cat_altman_zZone_0": { "message": "Zona di rischio" },
+    "cat_altman_zZone_1": { "message": "Zona grigia" },
+    "cat_altman_zZone_2": { "message": "Zona sicura" },
+    "cat_altman_emergingZone_0": { "message": "Zona di rischio" },
+    "cat_altman_emergingZone_1": { "message": "Zona grigia" },
+    "cat_altman_emergingZone_2": { "message": "Zona sicura" },
+    "calc_leverageDegrees_name": { "message": "Gradi di leva operativa e finanziaria" },
+    "calc_leverageDegrees_desc": {
+        "message": "Di quanto una variazione delle vendite muove il risultato operativo e il risultato dopo gli interessi."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "GLO = Margine di contribuzione ÷ EBIT · GLF = EBIT ÷ (EBIT − Interessi) · GLT = GLO × GLF"
+    },
+    "field_leverageDegrees_revenue": { "message": "Ricavi netti" },
+    "field_leverageDegrees_variableCosts": { "message": "Costi variabili" },
+    "field_leverageDegrees_fixedCosts": { "message": "Costi fissi" },
+    "field_leverageDegrees_interestExpense": { "message": "Oneri finanziari" },
+    "out_leverageDegrees_operatingLeverage": { "message": "Leva operativa (GLO)" },
+    "out_leverageDegrees_financialLeverage": { "message": "Leva finanziaria (GLF)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "Leva totale (GLT)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (risultato operativo)" },
+    "calc_depreciation_name": { "message": "Piano di ammortamento del bene" },
+    "calc_depreciation_desc": {
+        "message": "Quota, ammortamento accumulato e valore contabile di un bene in un anno, con tre metodi."
+    },
+    "calc_depreciation_formula": {
+        "message": "Quote costanti = (Costo − Residuo) ÷ Vita · Decrescenti = Valore contabile × 2 ÷ Vita · Somma cifre = (Costo − Residuo) × Vita residua ÷ Σ anni"
+    },
+    "field_depreciation_cost": { "message": "Costo del bene" },
+    "field_depreciation_salvage": { "message": "Valore residuo" },
+    "field_depreciation_lifeYears": { "message": "Vita utile (anni)" },
+    "field_depreciation_method": { "message": "Metodo" },
+    "field_depreciation_year": { "message": "Anno da mostrare" },
+    "out_depreciation_charge": { "message": "Ammortamento dell'anno" },
+    "out_depreciation_accumulated": { "message": "Ammortamento accumulato" },
+    "out_depreciation_bookValue": { "message": "Valore contabile" },
+    "choice_depreciation_method_1": { "message": "Quote costanti" },
+    "choice_depreciation_method_2": { "message": "Saldi decrescenti (doppio)" },
+    "choice_depreciation_method_3": { "message": "Somma delle cifre degli anni" },
+    "calc_wacc_name": { "message": "WACC e costo del capitale proprio (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "Il costo medio del finanziamento di un'azienda, dal costo del capitale proprio (CAPM) e dal debito al netto delle imposte."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × Premio · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − imposta)"
+    },
+    "field_wacc_equityValue": { "message": "Valore del capitale proprio" },
+    "field_wacc_debtValue": { "message": "Valore del debito" },
+    "field_wacc_riskFree": { "message": "Tasso privo di rischio" },
+    "field_wacc_beta": { "message": "Beta" },
+    "field_wacc_marketPremium": { "message": "Premio di rischio" },
+    "field_wacc_costOfDebt": { "message": "Costo del debito (lordo)" },
+    "field_wacc_taxRate": { "message": "Aliquota d'imposta" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "Costo del capitale proprio (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Costo del debito netto imposte (Kd)" },
+    "out_wacc_equityWeight": { "message": "Peso del capitale proprio" },
+    "out_wacc_debtWeight": { "message": "Peso del debito" },
+    "calc_eva_name": { "message": "Valore economico aggiunto (EVA)" },
+    "calc_eva_desc": { "message": "Se l'attività guadagna più di quanto costa il capitale investito." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × Capitale investito · NOPAT = EBIT × (1 − imposta) · ROIC = NOPAT ÷ Capitale investito"
+    },
+    "field_eva_ebit": { "message": "EBIT (risultato operativo)" },
+    "field_eva_taxRate": { "message": "Aliquota d'imposta" },
+    "field_eva_investedCapital": { "message": "Capitale investito" },
+    "field_eva_wacc": { "message": "Costo del capitale (WACC)" },
+    "out_eva_eva": { "message": "Valore economico aggiunto (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "Rendimento del capitale investito (ROIC)" },
+    "out_eva_spread": { "message": "Spread (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "Costo del capitale" },
+    "calc_freeCashFlow_name": { "message": "Flusso di cassa libero (FCFF e FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "La cassa che resta dopo gestione e investimenti, per tutti i finanziatori (FCFF) e per l'azionista (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − imposta) + Amm. − CapEx − ΔCCN · FCFE = FCFF − Interessi × (1 − imposta) + Debito netto"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (risultato operativo)" },
+    "field_freeCashFlow_taxRate": { "message": "Aliquota d'imposta" },
+    "field_freeCashFlow_depreciation": { "message": "Ammortamenti" },
+    "field_freeCashFlow_capex": { "message": "Investimenti (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "Aumento del capitale circolante" },
+    "field_freeCashFlow_interestExpense": { "message": "Oneri finanziari" },
+    "field_freeCashFlow_netBorrowing": { "message": "Nuovo debito netto" },
+    "out_freeCashFlow_fcff": { "message": "Flusso libero per l'impresa (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "Flusso libero per l'azionista (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "Prezzo e duration di un'obbligazione" },
+    "calc_bond_desc": {
+        "message": "Il prezzo di un'obbligazione con cedole, il suo premio o sconto e la sensibilità al rendimento."
+    },
+    "calc_bond_formula": {
+        "message": "Prezzo = Σ Cedola ÷ (1 + y)ᵗ + Nominale ÷ (1 + y)ⁿ · Duration modificata = Macaulay ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "Valore nominale" },
+    "field_bond_couponRate": { "message": "Tasso della cedola (annuo)" },
+    "field_bond_yieldToMaturity": { "message": "Rendimento a scadenza (annuo)" },
+    "field_bond_years": { "message": "Anni a scadenza" },
+    "field_bond_frequency": { "message": "Cedole all'anno" },
+    "out_bond_price": { "message": "Prezzo dell'obbligazione" },
+    "out_bond_premium": { "message": "Premio (+) o sconto (−)" },
+    "out_bond_currentYield": { "message": "Rendimento corrente" },
+    "out_bond_macaulayDuration": { "message": "Duration di Macaulay (anni)" },
+    "out_bond_modifiedDuration": { "message": "Duration modificata (anni)" },
+    "choice_bond_frequency_2": { "message": "Semestrale" },
+    "choice_bond_frequency_1": { "message": "Annuale" },
+    "choice_bond_frequency_4": { "message": "Trimestrale" },
+    "choice_bond_frequency_12": { "message": "Mensile" },
+    "calc_rates_name": { "message": "Conversione dei tassi e tasso reale" },
+    "calc_rates_desc": {
+        "message": "Trasforma un tasso nominale in tassi effettivo, mensile e giornaliero e toglie l'inflazione per trovare il tasso reale."
+    },
+    "calc_rates_formula": {
+        "message": "Effettivo = (1 + nominale ÷ m)ᵐ − 1 · Equivalente = (1 + effettivo)^(1 ÷ n) − 1 · Reale = (1 + effettivo) ÷ (1 + inflazione) − 1"
+    },
+    "field_rates_nominalRate": { "message": "Tasso nominale (annuo)" },
+    "field_rates_compounding": { "message": "Capitalizzazione" },
+    "field_rates_inflation": { "message": "Inflazione (annua)" },
+    "out_rates_effectiveAnnual": { "message": "Tasso effettivo annuo" },
+    "out_rates_monthlyEquivalent": { "message": "Tasso mensile equivalente" },
+    "out_rates_dailyEquivalent": { "message": "Tasso giornaliero equivalente (252 giorni)" },
+    "out_rates_realRate": { "message": "Tasso reale (sopra l'inflazione)" },
+    "choice_rates_compounding_12": { "message": "Mensile" },
+    "choice_rates_compounding_1": { "message": "Annuale" },
+    "choice_rates_compounding_2": { "message": "Semestrale" },
+    "choice_rates_compounding_4": { "message": "Trimestrale" },
+    "choice_rates_compounding_365": { "message": "Giornaliera" },
+    "calc_amortization_name": { "message": "Ammortamento italiano e francese (SAC e Price)" },
+    "calc_amortization_desc": {
+        "message": "Confronta due sistemi di ammortamento: Price paga rate uguali, SAC rimborsa ogni mese la stessa quota capitale."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + debito residuo × i, con i = tasso annuo ÷ 12"
+    },
+    "field_amortization_principal": { "message": "Importo del prestito" },
+    "field_amortization_annualRate": { "message": "Tasso di interesse annuo" },
+    "field_amortization_termMonths": { "message": "Durata (mesi)" },
+    "out_amortization_pricePayment": { "message": "Price: rata mensile" },
+    "out_amortization_priceTotalInterest": { "message": "Price: totale interessi" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: prima rata" },
+    "out_amortization_sacLastPayment": { "message": "SAC: ultima rata" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: totale interessi" }
 }
