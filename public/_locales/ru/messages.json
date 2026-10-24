@@ -291,5 +291,259 @@
     "out_dollarVsSelic_requiredChange": { "message": "Необходимый рост доллара" },
     "out_dollarVsSelic_selicFinal": { "message": "Selic в конце (до налога)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Доллары в конце (до налога)" },
-    "out_dollarVsSelic_difference": { "message": "Доллар минус Selic" }
+    "out_dollarVsSelic_difference": { "message": "Доллар минус Selic" },
+    "ratingGood": { "message": "Хорошо" },
+    "ratingNeutral": { "message": "Нейтрально" },
+    "ratingBad": { "message": "Плохо" },
+    "ratingLegend": { "message": "Зелёный: хорошо · Обычный: нейтрально · Красный: плохо" },
+    "ratingRuleHigher": {
+        "message": "Ниже $BAD$: плохо · От $BAD$ до $GOOD$: нейтрально · Выше $GOOD$: хорошо",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "Выше $BAD$: плохо · От $GOOD$ до $BAD$: нейтрально · Ниже $GOOD$: хорошо",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "Ниже $VALUE$: плохо · При $VALUE$: нейтрально · Выше $VALUE$: хорошо",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "Выше $VALUE$: плохо · При $VALUE$: нейтрально · Ниже $VALUE$: хорошо",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "Ориентир: что считается нормой, зависит от отрасли." },
+    "group_accounting": { "message": "Бухгалтерский анализ" },
+    "calc_incomeStatement_name": { "message": "Анализ отчёта о прибылях и убытках (маржи)" },
+    "calc_incomeStatement_desc": {
+        "message": "Проводит от выручки к чистой прибыли и показывает маржу на каждом шаге."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = Выручка − Себестоимость − Операц. расходы · EBIT = EBITDA − Амортизация · Чистая = (EBIT − Проценты) × (1 − налог)"
+    },
+    "field_incomeStatement_revenue": { "message": "Чистая выручка" },
+    "field_incomeStatement_cogs": { "message": "Себестоимость продаж" },
+    "field_incomeStatement_operatingExpenses": { "message": "Операционные расходы" },
+    "field_incomeStatement_depreciation": { "message": "Амортизация" },
+    "field_incomeStatement_interestExpense": { "message": "Процентные расходы" },
+    "field_incomeStatement_taxRate": { "message": "Ставка налога" },
+    "out_incomeStatement_netIncome": { "message": "Чистая прибыль" },
+    "out_incomeStatement_grossMargin": { "message": "Валовая маржа" },
+    "out_incomeStatement_ebitdaMargin": { "message": "Маржа EBITDA" },
+    "out_incomeStatement_operatingMargin": { "message": "Операционная маржа (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "Чистая маржа" },
+    "calc_dupont_name": { "message": "Анализ Дюпона (3 шага)" },
+    "calc_dupont_desc": {
+        "message": "Раскладывает рентабельность капитала на маржу, оборачиваемость активов и рычаг."
+    },
+    "calc_dupont_formula": { "message": "ROE = Чистая маржа × Оборачиваемость активов × Мультипликатор капитала" },
+    "field_dupont_netIncome": { "message": "Чистая прибыль" },
+    "field_dupont_revenue": { "message": "Чистая выручка" },
+    "field_dupont_assets": { "message": "Всего активов" },
+    "field_dupont_equity": { "message": "Собственный капитал" },
+    "out_dupont_roe": { "message": "Рентабельность капитала (ROE)" },
+    "out_dupont_netMargin": { "message": "Чистая маржа" },
+    "out_dupont_assetTurnover": { "message": "Оборачиваемость активов" },
+    "out_dupont_equityMultiplier": { "message": "Мультипликатор капитала" },
+    "out_dupont_roa": { "message": "Рентабельность активов (ROA)" },
+    "calc_dupont5_name": { "message": "Анализ Дюпона (5 шагов)" },
+    "calc_dupont5_desc": {
+        "message": "Раскладывает ROE на налоговую и процентную нагрузку, операционную маржу, оборачиваемость и рычаг."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (ЧП ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ Выручка) × (Выручка ÷ Активы) × (Активы ÷ Капитал)"
+    },
+    "field_dupont5_netIncome": { "message": "Чистая прибыль (ЧП)" },
+    "field_dupont5_pretaxIncome": { "message": "Прибыль до налога (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (операционная прибыль)" },
+    "field_dupont5_revenue": { "message": "Чистая выручка" },
+    "field_dupont5_assets": { "message": "Всего активов" },
+    "field_dupont5_equity": { "message": "Собственный капитал" },
+    "out_dupont5_roe": { "message": "Рентабельность капитала (ROE)" },
+    "out_dupont5_taxBurden": { "message": "Налоговая нагрузка (ЧП ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "Процентная нагрузка (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "Операционная маржа (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "Оборачиваемость активов" },
+    "out_dupont5_equityMultiplier": { "message": "Мультипликатор капитала" },
+    "calc_fleuriet_name": { "message": "Модель Флёрие (динамический оборотный капитал)" },
+    "calc_fleuriet_desc": {
+        "message": "Классифицирует финансовую структуру по оборотному капиталу (CDG), потребности в нём (NCG) и сальдо казначейства (T)."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = Постоянные источники − Внеоборотные активы · NCG = ОАО − КОО · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "Операционные оборотные активы" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "Операционные краткосроч. обязательства" },
+    "field_fleuriet_nonCurrentAssets": { "message": "Внеоборотные активы" },
+    "field_fleuriet_permanentFunds": { "message": "Постоянные источники" },
+    "out_fleuriet_structureType": { "message": "Финансовая структура" },
+    "out_fleuriet_workingCapital": { "message": "Оборотный капитал (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "Потребность в оборотном капитале (NCG)" },
+    "out_fleuriet_treasury": { "message": "Сальдо казначейства (T)" },
+    "cat_fleuriet_structureType_1": { "message": "Тип I – Отличная" },
+    "cat_fleuriet_structureType_2": { "message": "Тип II – Надёжная" },
+    "cat_fleuriet_structureType_3": { "message": "Тип III – Неудовлетворительная" },
+    "cat_fleuriet_structureType_4": { "message": "Тип IV – Плохая" },
+    "cat_fleuriet_structureType_5": { "message": "Тип V – Очень плохая" },
+    "cat_fleuriet_structureType_6": { "message": "Тип VI – Высокий риск" },
+    "calc_altman_name": { "message": "Z-счёт Альтмана (риск банкротства)" },
+    "calc_altman_desc": {
+        "message": "Оценивает риск финансовых трудностей по пяти коэффициентам баланса и отчёта о прибылях, в двух версиях."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1,2·X1 + 1,4·X2 + 3,3·X3 + 0,6·X4 + 1,0·X5 · Z″ = 3,25 + 6,56·X1 + 3,26·X2 + 6,72·X3 + 1,05·X4"
+    },
+    "field_altman_workingCapital": { "message": "Оборотный капитал" },
+    "field_altman_retainedEarnings": { "message": "Нераспределённая прибыль" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "Стоимость собственного капитала" },
+    "field_altman_sales": { "message": "Продажи" },
+    "field_altman_totalAssets": { "message": "Всего активов" },
+    "field_altman_totalLiabilities": { "message": "Всего обязательств" },
+    "out_altman_zScore": { "message": "Z-счёт (оригинальный)" },
+    "out_altman_zZone": { "message": "Зона (оригинальный)" },
+    "out_altman_emergingScore": { "message": "Z″-счёт (развивающиеся рынки)" },
+    "out_altman_emergingZone": { "message": "Зона (развивающиеся рынки)" },
+    "cat_altman_zZone_0": { "message": "Зона риска" },
+    "cat_altman_zZone_1": { "message": "Серая зона" },
+    "cat_altman_zZone_2": { "message": "Безопасная зона" },
+    "cat_altman_emergingZone_0": { "message": "Зона риска" },
+    "cat_altman_emergingZone_1": { "message": "Серая зона" },
+    "cat_altman_emergingZone_2": { "message": "Безопасная зона" },
+    "calc_leverageDegrees_name": { "message": "Степени операционного и финансового рычага" },
+    "calc_leverageDegrees_desc": {
+        "message": "Насколько изменение продаж меняет операционную прибыль и прибыль после процентов."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = Маржинальный доход ÷ EBIT · DFL = EBIT ÷ (EBIT − Проценты) · DTL = DOL × DFL"
+    },
+    "field_leverageDegrees_revenue": { "message": "Чистая выручка" },
+    "field_leverageDegrees_variableCosts": { "message": "Переменные затраты" },
+    "field_leverageDegrees_fixedCosts": { "message": "Постоянные затраты" },
+    "field_leverageDegrees_interestExpense": { "message": "Процентные расходы" },
+    "out_leverageDegrees_operatingLeverage": { "message": "Операционный рычаг (DOL)" },
+    "out_leverageDegrees_financialLeverage": { "message": "Финансовый рычаг (DFL)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "Совокупный рычаг (DTL)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (операционная прибыль)" },
+    "calc_depreciation_name": { "message": "График амортизации" },
+    "calc_depreciation_desc": {
+        "message": "Амортизация, накопленная амортизация и балансовая стоимость актива за год, тремя методами."
+    },
+    "calc_depreciation_formula": {
+        "message": "Линейный = (Стоимость − Ликвид.) ÷ Срок · Уменьш. остаток = Балансовая × 2 ÷ Срок · По сумме чисел лет = (Стоимость − Ликвид.) × Остаток срока ÷ Σ лет"
+    },
+    "field_depreciation_cost": { "message": "Стоимость актива" },
+    "field_depreciation_salvage": { "message": "Ликвидационная стоимость" },
+    "field_depreciation_lifeYears": { "message": "Срок службы (лет)" },
+    "field_depreciation_method": { "message": "Метод" },
+    "field_depreciation_year": { "message": "Год для показа" },
+    "out_depreciation_charge": { "message": "Амортизация за год" },
+    "out_depreciation_accumulated": { "message": "Накопленная амортизация" },
+    "out_depreciation_bookValue": { "message": "Балансовая стоимость" },
+    "choice_depreciation_method_1": { "message": "Линейный" },
+    "choice_depreciation_method_2": { "message": "Двойной уменьшаемый остаток" },
+    "choice_depreciation_method_3": { "message": "По сумме чисел лет" },
+    "calc_wacc_name": { "message": "WACC и стоимость капитала (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "Средняя стоимость финансирования компании: стоимость собственного капитала (CAPM) и долга после налога."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × Премия · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − налог)"
+    },
+    "field_wacc_equityValue": { "message": "Собств. капитал (стоимость)" },
+    "field_wacc_debtValue": { "message": "Стоимость долга" },
+    "field_wacc_riskFree": { "message": "Безрисковая ставка" },
+    "field_wacc_beta": { "message": "Бета" },
+    "field_wacc_marketPremium": { "message": "Рыночная премия" },
+    "field_wacc_costOfDebt": { "message": "Стоимость долга (до нал.)" },
+    "field_wacc_taxRate": { "message": "Ставка налога" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "Стоимость собств. капитала (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Стоимость долга после налога (Kd)" },
+    "out_wacc_equityWeight": { "message": "Доля собственного капитала" },
+    "out_wacc_debtWeight": { "message": "Доля долга" },
+    "calc_eva_name": { "message": "Экономическая добавленная стоимость (EVA)" },
+    "calc_eva_desc": { "message": "Зарабатывает ли бизнес больше, чем стоит вложенный в него капитал." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × Инвест. капитал · NOPAT = EBIT × (1 − налог) · ROIC = NOPAT ÷ Инвест. капитал"
+    },
+    "field_eva_ebit": { "message": "EBIT (операционная прибыль)" },
+    "field_eva_taxRate": { "message": "Ставка налога" },
+    "field_eva_investedCapital": { "message": "Инвестированный капитал" },
+    "field_eva_wacc": { "message": "Стоимость капитала (WACC)" },
+    "out_eva_eva": { "message": "Экономическая добавленная стоимость (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "Рентабельность инвест. капитала (ROIC)" },
+    "out_eva_spread": { "message": "Спред (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "Плата за капитал" },
+    "calc_freeCashFlow_name": { "message": "Свободный денежный поток (FCFF и FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "Денежные средства после операций и инвестиций: для всех поставщиков капитала (FCFF) и для акционеров (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − налог) + Аморт. − CapEx − ΔОК · FCFE = FCFF − Проценты × (1 − налог) + Чистый долг"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT" },
+    "field_freeCashFlow_taxRate": { "message": "Ставка налога" },
+    "field_freeCashFlow_depreciation": { "message": "Амортизация" },
+    "field_freeCashFlow_capex": { "message": "CapEx (инвестиции)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "Прирост оборот. капитала" },
+    "field_freeCashFlow_interestExpense": { "message": "Процентные расходы" },
+    "field_freeCashFlow_netBorrowing": { "message": "Чистое заимствование" },
+    "out_freeCashFlow_fcff": { "message": "Свободный поток компании (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "Свободный поток акционеров (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "Цена и дюрация облигации" },
+    "calc_bond_desc": { "message": "Цена купонной облигации, её премия или дисконт и чувствительность к доходности." },
+    "calc_bond_formula": {
+        "message": "Цена = Σ Купон ÷ (1 + y)ᵗ + Номинал ÷ (1 + y)ⁿ · Модиф. дюрация = Маколея ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "Номинал" },
+    "field_bond_couponRate": { "message": "Ставка купона (в год)" },
+    "field_bond_yieldToMaturity": { "message": "Доходность к погашению (в год)" },
+    "field_bond_years": { "message": "Лет до погашения" },
+    "field_bond_frequency": { "message": "Купонов в год" },
+    "out_bond_price": { "message": "Цена облигации" },
+    "out_bond_premium": { "message": "Премия (+) или дисконт (−)" },
+    "out_bond_currentYield": { "message": "Текущая доходность" },
+    "out_bond_macaulayDuration": { "message": "Дюрация Маколея (лет)" },
+    "out_bond_modifiedDuration": { "message": "Модифицированная дюрация (лет)" },
+    "choice_bond_frequency_2": { "message": "Раз в полгода" },
+    "choice_bond_frequency_1": { "message": "Раз в год" },
+    "choice_bond_frequency_4": { "message": "Ежеквартально" },
+    "choice_bond_frequency_12": { "message": "Ежемесячно" },
+    "calc_rates_name": { "message": "Пересчёт ставок и реальная ставка" },
+    "calc_rates_desc": {
+        "message": "Переводит номинальную ставку в эффективную, месячную и дневную и убирает инфляцию, чтобы найти реальную."
+    },
+    "calc_rates_formula": {
+        "message": "Эффективная = (1 + номинальная ÷ m)ᵐ − 1 · Эквивалентная = (1 + эфф.)^(1 ÷ n) − 1 · Реальная = (1 + эфф.) ÷ (1 + инфляция) − 1"
+    },
+    "field_rates_nominalRate": { "message": "Номинальная ставка (в год)" },
+    "field_rates_compounding": { "message": "Капитализация" },
+    "field_rates_inflation": { "message": "Инфляция (в год)" },
+    "out_rates_effectiveAnnual": { "message": "Эффективная годовая ставка" },
+    "out_rates_monthlyEquivalent": { "message": "Эквивалентная месячная ставка" },
+    "out_rates_dailyEquivalent": { "message": "Эквивалентная дневная ставка (252 дня)" },
+    "out_rates_realRate": { "message": "Реальная ставка (сверх инфляции)" },
+    "choice_rates_compounding_12": { "message": "Ежемесячно" },
+    "choice_rates_compounding_1": { "message": "Ежегодно" },
+    "choice_rates_compounding_2": { "message": "Раз в полгода" },
+    "choice_rates_compounding_4": { "message": "Ежеквартально" },
+    "choice_rates_compounding_365": { "message": "Ежедневно" },
+    "calc_amortization_name": { "message": "Дифференцированные и аннуитетные платежи (SAC и Price)" },
+    "calc_amortization_desc": {
+        "message": "Сравнивает две системы погашения: Price — равные платежи, SAC — одинаковая доля основного долга каждый месяц."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + остаток долга × i, где i = годовая ставка ÷ 12"
+    },
+    "field_amortization_principal": { "message": "Сумма кредита" },
+    "field_amortization_annualRate": { "message": "Годовая процентная ставка" },
+    "field_amortization_termMonths": { "message": "Срок (месяцев)" },
+    "out_amortization_pricePayment": { "message": "Price: ежемесячный платёж" },
+    "out_amortization_priceTotalInterest": { "message": "Price: всего процентов" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: первый платёж" },
+    "out_amortization_sacLastPayment": { "message": "SAC: последний платёж" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: всего процентов" }
 }
