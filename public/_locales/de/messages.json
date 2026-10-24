@@ -1,0 +1,308 @@
+{
+    "extName": { "message": "Valora – Geschäftsrechner" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "Geschäftsrechner für ROI, Liquidität, Break-even, Kapitalwert, IRR und mehr. Alles wird auf Ihrem Gerät berechnet."
+    },
+    "actionTitle": { "message": "Valora – Geschäftsrechner" },
+    "commandOpen": { "message": "Valora öffnen" },
+    "tagline": { "message": "Geschäftsrechner" },
+    "calculatorLabel": { "message": "Rechner" },
+    "inputsLabel": { "message": "Eingaben" },
+    "resultsLabel": { "message": "Ergebnisse" },
+    "exampleButton": { "message": "Beispiel" },
+    "exampleButtonTitle": { "message": "Mit Beispielwerten füllen" },
+    "resetButton": { "message": "Leeren" },
+    "resetButtonTitle": { "message": "Alle Felder leeren" },
+    "settingsButtonTitle": { "message": "Einstellungen" },
+    "resultsEmpty": { "message": "Füllen Sie die Felder aus, um die Ergebnisse zu sehen." },
+    "resultUndefined": { "message": "Nicht definiert" },
+    "resultUndefinedHint": {
+        "message": "Dieses Ergebnis ist für diese Werte nicht definiert, zum Beispiel wegen einer Division durch null oder weil es keine Lösung gibt."
+    },
+    "formulaLabel": { "message": "Formel" },
+    "copyResults": { "message": "Ergebnisse kopieren" },
+    "statusCopied": { "message": "Ergebnisse kopiert." },
+    "statusCopyFailed": { "message": "Kopieren in die Zwischenablage nicht möglich." },
+    "statusSaveFailed": { "message": "Ihre Einstellungen konnten nicht gespeichert werden." },
+    "footer": {
+        "message": "Auf Ihrem Gerät berechnet; Ihre Eingaben werden nie gesendet. Schätzungen, keine Finanzberatung."
+    },
+    "seriesHint": {
+        "message": "Ein Wert pro Zeile (oder durch Semikolons getrennt). Verwenden Sie ein Minuszeichen für Auszahlungen."
+    },
+    "settingsHeading": { "message": "Einstellungen" },
+    "settingsBack": { "message": "Zurück" },
+    "currencyLabel": { "message": "Währung" },
+    "currencyNone": { "message": "Ohne Symbol" },
+    "decimalsLabel": { "message": "Nachkommastellen für Prozente und Kennzahlen" },
+    "rememberInputsLabel": { "message": "Meine Eingaben merken, solange der Browser geöffnet ist" },
+    "rememberInputsHint": {
+        "message": "Wird nur im Arbeitsspeicher des Browsers gehalten und beim Schließen von Chrome gelöscht. Wenn Sie dies ausschalten, wird es sofort gelöscht."
+    },
+    "errorNotNumber": { "message": "Geben Sie eine gültige Zahl ein." },
+    "errorNotInteger": { "message": "Geben Sie eine ganze Zahl ein." },
+    "errorMin": { "message": "Muss mindestens $VALUE$ sein.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": {
+        "message": "Muss größer als $VALUE$ sein.",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "errorMax": { "message": "Darf höchstens $VALUE$ sein.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "Wählen Sie einen Wert aus der Liste." },
+    "errorTooFewEntries": {
+        "message": "Geben Sie mindestens $COUNT$ Wert(e) ein.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "Geben Sie höchstens $COUNT$ Werte ein.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "Eintrag $POSITION$ ist keine gültige Zahl.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "Renditen" },
+    "group_profitability": { "message": "Rentabilität und Preise" },
+    "group_liquidity": { "message": "Liquidität und Solvenz" },
+    "group_investment": { "message": "Investition und Finanzierung" },
+    "calc_roi_name": { "message": "Kapitalrendite (ROI)" },
+    "calc_roi_desc": {
+        "message": "Wie viel eine Investition im Vergleich zum eingesetzten Betrag gewonnen oder verloren hat."
+    },
+    "calc_roi_formula": { "message": "ROI = (Rückfluss − Investition) ÷ Investition" },
+    "field_roi_invested": { "message": "Investierter Betrag" },
+    "field_roi_returned": { "message": "Zurückerhaltener Betrag" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "Nettogewinn" },
+    "out_roi_multiple": { "message": "Rückflussmultiplikator" },
+    "calc_cagr_name": { "message": "Durchschnittliche jährliche Wachstumsrate (CAGR)" },
+    "calc_cagr_desc": {
+        "message": "Die gleichbleibende jährliche Wachstumsrate, die einen Wert vom Anfang zum Ende führt."
+    },
+    "calc_cagr_formula": { "message": "CAGR = (Ende ÷ Anfang)^(1 ÷ Jahre) − 1" },
+    "field_cagr_startValue": { "message": "Anfangswert" },
+    "field_cagr_endValue": { "message": "Endwert" },
+    "field_cagr_years": { "message": "Jahre" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "Gesamtwachstum" },
+    "calc_roe_name": { "message": "Eigenkapital- und Gesamtkapitalrendite (ROE, ROA)" },
+    "calc_roe_desc": {
+        "message": "Wie viel Gewinn ein Unternehmen mit seinem Eigenkapital und seinen Vermögenswerten erzielt."
+    },
+    "calc_roe_formula": {
+        "message": "ROE = Jahresüberschuss ÷ Eigenkapital · ROA = Jahresüberschuss ÷ Gesamtvermögen"
+    },
+    "field_roe_netIncome": { "message": "Jahresüberschuss" },
+    "field_roe_equity": { "message": "Eigenkapital" },
+    "field_roe_assets": { "message": "Gesamtvermögen" },
+    "out_roe_roe": { "message": "Eigenkapitalrendite (ROE)" },
+    "out_roe_roa": { "message": "Gesamtkapitalrendite (ROA)" },
+    "out_roe_equityMultiplier": { "message": "Eigenkapitalmultiplikator" },
+    "calc_margin_name": { "message": "Marge und Aufschlag (Markup)" },
+    "calc_margin_desc": { "message": "Der Gewinn als Anteil am Verkaufspreis (Marge) und an den Kosten (Aufschlag)." },
+    "calc_margin_formula": { "message": "Marge = (Preis − Kosten) ÷ Preis · Aufschlag = (Preis − Kosten) ÷ Kosten" },
+    "field_margin_cost": { "message": "Stückkosten" },
+    "field_margin_price": { "message": "Verkaufspreis" },
+    "out_margin_margin": { "message": "Marge" },
+    "out_margin_markup": { "message": "Aufschlag" },
+    "out_margin_profit": { "message": "Gewinn pro Stück" },
+    "calc_pricing_name": { "message": "Preis für eine Zielmarge" },
+    "calc_pricing_desc": {
+        "message": "Der Verkaufspreis, der die gewünschte Marge ergibt, und der dafür nötige Aufschlag."
+    },
+    "calc_pricing_formula": { "message": "Preis = Kosten ÷ (1 − Marge) · Aufschlag = Marge ÷ (1 − Marge)" },
+    "field_pricing_cost": { "message": "Stückkosten" },
+    "field_pricing_targetMargin": { "message": "Zielmarge" },
+    "out_pricing_price": { "message": "Verkaufspreis" },
+    "out_pricing_markup": { "message": "Erforderlicher Aufschlag" },
+    "out_pricing_profit": { "message": "Gewinn pro Stück" },
+    "calc_breakeven_name": { "message": "Break-even-Punkt" },
+    "calc_breakeven_desc": {
+        "message": "Wie viele Einheiten Sie verkaufen müssen, um die Fixkosten zu decken und optional ein Gewinnziel zu erreichen."
+    },
+    "calc_breakeven_formula": { "message": "Menge = (Fixkosten + Zielgewinn) ÷ (Preis − variable Kosten)" },
+    "field_breakeven_fixedCosts": { "message": "Fixkosten" },
+    "field_breakeven_price": { "message": "Preis pro Einheit" },
+    "field_breakeven_variableCost": { "message": "Variable Kosten pro Einheit" },
+    "field_breakeven_targetProfit": { "message": "Zielgewinn" },
+    "out_breakeven_units": { "message": "Zu verkaufende Einheiten" },
+    "out_breakeven_revenue": { "message": "Erforderlicher Umsatz" },
+    "out_breakeven_contributionMargin": { "message": "Deckungsbeitrag pro Einheit" },
+    "out_breakeven_contributionMarginRatio": { "message": "Deckungsbeitragsquote" },
+    "calc_liquidity_name": { "message": "Liquiditätskennzahlen" },
+    "calc_liquidity_desc": {
+        "message": "Ob ein Unternehmen seine kurzfristigen Verbindlichkeiten mit seinem kurzfristigen Vermögen bezahlen kann."
+    },
+    "calc_liquidity_formula": {
+        "message": "3. Grades = Umlaufvermögen ÷ kurzfr. Verb. · 2. Grades = (Liquide Mittel + Forderungen) ÷ kurzfr. Verb. · 1. Grades = Liquide Mittel ÷ kurzfr. Verb."
+    },
+    "field_liquidity_cash": { "message": "Liquide Mittel und Äquivalente" },
+    "field_liquidity_receivables": { "message": "Forderungen aus Lieferungen und Leistungen" },
+    "field_liquidity_inventory": { "message": "Vorräte" },
+    "field_liquidity_otherCurrentAssets": { "message": "Sonstiges Umlaufvermögen" },
+    "field_liquidity_currentLiabilities": { "message": "Kurzfristige Verbindlichkeiten" },
+    "out_liquidity_currentRatio": { "message": "Liquidität 3. Grades" },
+    "out_liquidity_quickRatio": { "message": "Liquidität 2. Grades" },
+    "out_liquidity_cashRatio": { "message": "Liquidität 1. Grades" },
+    "out_liquidity_workingCapital": { "message": "Working Capital" },
+    "calc_cashCycle_name": { "message": "Cash-Conversion-Cycle" },
+    "calc_cashCycle_desc": {
+        "message": "Wie viele Tage Geld zwischen der Bezahlung der Lieferanten und dem Zahlungseingang der Kunden gebunden ist."
+    },
+    "calc_cashCycle_formula": { "message": "CCC = Lagerdauer + Forderungsdauer − Zahlungsziel der Verbindlichkeiten" },
+    "field_cashCycle_revenue": { "message": "Umsatz der Periode" },
+    "field_cashCycle_cogs": { "message": "Herstellkosten" },
+    "field_cashCycle_inventory": { "message": "Ø Lagerbestand" },
+    "field_cashCycle_receivables": { "message": "Ø Forderungen" },
+    "field_cashCycle_payables": { "message": "Ø Verbindlichkeiten" },
+    "field_cashCycle_periodDays": { "message": "Tage der Periode" },
+    "out_cashCycle_cashConversionCycle": { "message": "Cash-Conversion-Cycle" },
+    "out_cashCycle_daysInventory": { "message": "Lagerdauer in Tagen" },
+    "out_cashCycle_daysReceivables": { "message": "Forderungsdauer in Tagen" },
+    "out_cashCycle_daysPayables": { "message": "Verbindlichkeitsdauer in Tagen" },
+    "out_cashCycle_inventoryTurnover": { "message": "Lagerumschlag" },
+    "choice_cashCycle_periodDays_365": { "message": "365 Tage (Jahr)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 Tage (kaufmännisches Jahr)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 Tage (Quartal)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 Tage (Monat)" },
+    "calc_leverage_name": { "message": "Verschuldung und Zinsdeckung" },
+    "calc_leverage_desc": {
+        "message": "Wie stark ein Unternehmen auf Schulden angewiesen ist und wie komfortabel sein Ergebnis die Zinsen deckt."
+    },
+    "calc_leverage_formula": {
+        "message": "Verschuldungsgrad = Schulden ÷ Eigenkapital · Schulden/Kapital = Schulden ÷ (Schulden + Eigenkapital) · Zinsdeckung = EBIT ÷ Zinsen"
+    },
+    "field_leverage_totalDebt": { "message": "Gesamtschulden" },
+    "field_leverage_equity": { "message": "Eigenkapital" },
+    "field_leverage_ebit": { "message": "EBIT (operatives Ergebnis)" },
+    "field_leverage_interestExpense": { "message": "Zinsaufwand" },
+    "out_leverage_debtToEquity": { "message": "Verschuldungsgrad (Schulden/Eigenkapital)" },
+    "out_leverage_debtToCapital": { "message": "Schulden am Gesamtkapital" },
+    "out_leverage_interestCoverage": { "message": "Zinsdeckungsgrad" },
+    "calc_investment_name": { "message": "Investitionsanalyse (Kapitalwert, IRR, Amortisation)" },
+    "calc_investment_desc": {
+        "message": "Lohnt sich ein Projekt? Zinst die künftigen Zahlungsströme ab und zeigt, wann es sich amortisiert."
+    },
+    "calc_investment_formula": {
+        "message": "Kapitalwert = Σ ZSₜ ÷ (1 + r)ᵗ − Investition · IRR: der Zinssatz, bei dem der Kapitalwert = 0 ist"
+    },
+    "field_investment_rate": { "message": "Diskontierungszins (pro Periode)" },
+    "field_investment_initialInvestment": { "message": "Anfangsinvestition" },
+    "field_investment_cashFlows": { "message": "Zahlungsströme (Periode 1, 2, 3…)" },
+    "out_investment_npv": { "message": "Kapitalwert (NPV)" },
+    "out_investment_irr": { "message": "Interner Zinsfuß (IRR)" },
+    "out_investment_profitabilityIndex": { "message": "Profitabilitätsindex" },
+    "out_investment_payback": { "message": "Amortisationsdauer (Perioden)" },
+    "out_investment_discountedPayback": { "message": "Diskontierte Amortisationsdauer (Perioden)" },
+    "calc_futureValue_name": { "message": "Endwert (Zinseszins)" },
+    "calc_futureValue_desc": {
+        "message": "Auf welchen Betrag eine Summe samt regelmäßigen Einzahlungen mit Zinseszins anwächst."
+    },
+    "calc_futureValue_formula": {
+        "message": "EW = BW × (1 + i)ⁿ + Einzahlung × ((1 + i)ⁿ − 1) ÷ i, mit i = Jahreszins ÷ Perioden pro Jahr"
+    },
+    "field_futureValue_presentValue": { "message": "Anfangsbetrag" },
+    "field_futureValue_contribution": { "message": "Einzahlung pro Periode" },
+    "field_futureValue_annualRate": { "message": "Jährlicher Zinssatz" },
+    "field_futureValue_years": { "message": "Jahre" },
+    "field_futureValue_frequency": { "message": "Verzinsung und Einzahlungen" },
+    "out_futureValue_futureValue": { "message": "Endwert" },
+    "out_futureValue_totalContributions": { "message": "Insgesamt eingezahlt" },
+    "out_futureValue_interestEarned": { "message": "Erzielte Zinsen" },
+    "choice_futureValue_frequency_12": { "message": "Monatlich" },
+    "choice_futureValue_frequency_1": { "message": "Jährlich" },
+    "choice_futureValue_frequency_2": { "message": "Halbjährlich" },
+    "choice_futureValue_frequency_4": { "message": "Vierteljährlich" },
+    "choice_futureValue_frequency_52": { "message": "Wöchentlich" },
+    "choice_futureValue_frequency_365": { "message": "Täglich" },
+    "calc_loan_name": { "message": "Darlehensrate" },
+    "calc_loan_desc": {
+        "message": "Die feste monatliche Rate eines Darlehens und wie viel Zinsen es insgesamt kostet."
+    },
+    "calc_loan_formula": { "message": "Rate = Darlehen × i ÷ (1 − (1 + i)⁻ⁿ), mit i = Jahreszins ÷ 12" },
+    "field_loan_principal": { "message": "Darlehensbetrag" },
+    "field_loan_annualRate": { "message": "Jährlicher Zinssatz" },
+    "field_loan_termMonths": { "message": "Laufzeit (Monate)" },
+    "out_loan_monthlyPayment": { "message": "Monatliche Rate" },
+    "out_loan_totalPaid": { "message": "Insgesamt gezahlt" },
+    "out_loan_totalInterest": { "message": "Zinsen insgesamt" },
+    "marketOff": { "message": "Selic und Dollar können von der Zentralbank von Brasilien übernommen werden." },
+    "marketEnable": { "message": "Kurse abrufen" },
+    "marketUse": { "message": "Kurse verwenden" },
+    "marketRetry": { "message": "Erneut versuchen" },
+    "marketLoading": { "message": "Kurse werden abgerufen…" },
+    "marketFailed": { "message": "Die Zentralbank ist nicht erreichbar. Prüfen Sie Ihre Verbindung." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Dollar $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "Berechtigung verweigert, daher wurden keine Kurse abgerufen." },
+    "liveRatesLabel": { "message": "Selic-Satz und Dollarkurs von der Zentralbank von Brasilien abrufen" },
+    "liveRatesHint": {
+        "message": "Standardmäßig aus. Wenn aktiviert, fragt Chrome nach der Berechtigung, api.bcb.gov.br zu kontaktieren, das keine Informationen über Sie erhält. Beim Ausschalten wird die Berechtigung entfernt."
+    },
+    "group_markets": { "message": "Selic und Dollar" },
+    "calc_selicYield_name": { "message": "An die Selic gekoppelte Festverzinsung (Tesouro Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "Was eine Anlage, die einen Anteil der Selic zahlt, nach Einkommensteuer abwirft."
+    },
+    "calc_selicYield_formula": {
+        "message": "Nettogewinn = Betrag × (Wachstum − 1) × (1 − Steuer); das Wachstum läuft täglich über 252 Geschäftstage im Jahr"
+    },
+    "field_selicYield_amount": { "message": "Angelegter Betrag" },
+    "field_selicYield_months": { "message": "Laufzeit (Monate)" },
+    "field_selicYield_selic": { "message": "Selic-Satz (pro Jahr)" },
+    "field_selicYield_percentOfRate": { "message": "Gezahlter Anteil der Selic" },
+    "field_selicYield_taxTreatment": { "message": "Einkommensteuer" },
+    "out_selicYield_netFinal": { "message": "Nettobetrag am Ende" },
+    "out_selicYield_netProfit": { "message": "Nettogewinn" },
+    "out_selicYield_incomeTax": { "message": "Einkommensteuer" },
+    "out_selicYield_taxRate": { "message": "Steuersatz" },
+    "out_selicYield_netAnnualRate": { "message": "Nettosatz pro Jahr" },
+    "choice_selicYield_taxTreatment_1": { "message": "Regressive Tabelle (CDB, Tesouro)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Steuerfrei (LCI, LCA)" },
+    "calc_savings_name": { "message": "Sparkonto (Poupança) oder an die Selic gekoppelte Anlage" },
+    "calc_savings_desc": {
+        "message": "Vergleicht das Sparkonto mit einem besteuerten Festzinsprodukt und findet den Selic-Anteil, bei dem beide gleichauf liegen."
+    },
+    "calc_savings_formula": {
+        "message": "Sparkonto: 0,5 % pro Monat, wenn die Selic über 8,5 % liegt, sonst 70 % der Selic. Festzins zahlt regressive Einkommensteuer"
+    },
+    "field_savings_amount": { "message": "Angelegter Betrag" },
+    "field_savings_months": { "message": "Laufzeit (Monate)" },
+    "field_savings_selic": { "message": "Selic-Satz (pro Jahr)" },
+    "field_savings_percentOfRate": { "message": "Gezahlter Anteil der Selic (Festzins)" },
+    "out_savings_advantage": { "message": "Vorteil der Festverzinsung" },
+    "out_savings_savingsFinal": { "message": "Sparkonto am Ende" },
+    "out_savings_fixedIncomeFinal": { "message": "Festverzinsung am Ende (netto)" },
+    "out_savings_breakEvenPercent": { "message": "Selic-Anteil für Gleichstand" },
+    "calc_dollarConversion_name": { "message": "Dollarkauf (Spread und IOF)" },
+    "calc_dollarConversion_desc": {
+        "message": "Wie viele Dollar Ihre Reais kaufen, wenn der Spread der Bank und die IOF-Steuer eingerechnet sind."
+    },
+    "calc_dollarConversion_formula": { "message": "Dollar = Reais ÷ (Kurs × (1 + Spread) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "Betrag in Reais" },
+    "field_dollarConversion_rate": { "message": "Dollarkurs (R$ pro US$)" },
+    "field_dollarConversion_spread": { "message": "Spread der Bank" },
+    "field_dollarConversion_iof": { "message": "IOF (Devisensteuer)" },
+    "out_dollarConversion_usdReceived": { "message": "Erhaltene Dollar" },
+    "out_dollarConversion_effectiveRate": { "message": "Gezahlter effektiver Kurs" },
+    "out_dollarConversion_cost": { "message": "Kosten für Spread und IOF" },
+    "out_dollarConversion_costPercent": { "message": "Kosten als Anteil des Betrags" },
+    "calc_dollarVsSelic_name": { "message": "Dollar gegen Selic" },
+    "calc_dollarVsSelic_desc": {
+        "message": "Wo muss der Dollar am Ende stehen, damit das Halten von Dollar die Selic schlägt? Brutto verglichen, vor Einkommensteuer."
+    },
+    "calc_dollarVsSelic_formula": { "message": "Break-even-Dollar = Selic-Ergebnis ÷ am Ende gehaltene Dollar" },
+    "field_dollarVsSelic_amount": { "message": "Betrag in Reais" },
+    "field_dollarVsSelic_months": { "message": "Laufzeit (Monate)" },
+    "field_dollarVsSelic_spot": { "message": "Dollar heute (R$ pro US$)" },
+    "field_dollarVsSelic_expected": { "message": "Erwarteter Dollar am Ende" },
+    "field_dollarVsSelic_selic": { "message": "Selic-Satz (pro Jahr)" },
+    "field_dollarVsSelic_usdYield": { "message": "Dollar-Rendite (pro Jahr, in US$)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "Break-even-Dollar" },
+    "out_dollarVsSelic_requiredChange": { "message": "Nötiger Dollar-Anstieg" },
+    "out_dollarVsSelic_selicFinal": { "message": "Selic am Ende (brutto)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "Dollar am Ende (brutto)" },
+    "out_dollarVsSelic_difference": { "message": "Dollar minus Selic" }
+}
