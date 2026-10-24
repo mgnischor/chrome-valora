@@ -5,7 +5,7 @@
         "url": "https://github.com/mgnischor/chrome-valora"
     },
     "name": "valora-business-calculator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "private": true,
     "description": "Chrome extension with business calculators: ROI, liquidity, break-even, NPV/IRR and more.",
     "type": "module",
