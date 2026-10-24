@@ -508,5 +508,406 @@
     "out_dollarVsSelic_requiredChange": { "message": "Dollar rise needed", "description": "Label of a result." },
     "out_dollarVsSelic_selicFinal": { "message": "Selic at the end (gross)", "description": "Label of a result." },
     "out_dollarVsSelic_dollarFinal": { "message": "Dollars at the end (gross)", "description": "Label of a result." },
-    "out_dollarVsSelic_difference": { "message": "Dollar minus Selic", "description": "Label of a result." }
+    "out_dollarVsSelic_difference": { "message": "Dollar minus Selic", "description": "Label of a result." },
+    "ratingGood": { "message": "Good", "description": "How an indicator reads: good (shown in green)." },
+    "ratingNeutral": {
+        "message": "Neutral",
+        "description": "How an indicator reads: neutral (shown in the normal colour)."
+    },
+    "ratingBad": { "message": "Bad", "description": "How an indicator reads: bad (shown in red)." },
+    "ratingLegend": {
+        "message": "Green: good · Plain: neutral · Red: bad",
+        "description": "Legend of the indicator colours, shown when hovering an indicator."
+    },
+    "ratingRuleHigher": {
+        "message": "Below $BAD$: bad · $BAD$ to $GOOD$: neutral · Above $GOOD$: good",
+        "description": "Rule of an indicator where more is better. $BAD$ and $GOOD$ are the limits.",
+        "placeholders": {
+            "bad": { "content": "$1", "example": "1.00" },
+            "good": { "content": "$2", "example": "1.50" }
+        }
+    },
+    "ratingRuleLower": {
+        "message": "Above $BAD$: bad · $GOOD$ to $BAD$: neutral · Below $GOOD$: good",
+        "description": "Rule of an indicator where less is better. $BAD$ and $GOOD$ are the limits.",
+        "placeholders": {
+            "bad": { "content": "$1", "example": "2.00" },
+            "good": { "content": "$2", "example": "1.00" }
+        }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "Below $VALUE$: bad · At $VALUE$: neutral · Above $VALUE$: good",
+        "description": "Rule of an indicator where more is better and there is a single limit.",
+        "placeholders": { "value": { "content": "$1", "example": "0.00" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "Above $VALUE$: bad · At $VALUE$: neutral · Below $VALUE$: good",
+        "description": "Rule of an indicator where less is better and there is a single limit.",
+        "placeholders": { "value": { "content": "$1", "example": "0.00" } }
+    },
+    "ratingDisclaimer": {
+        "message": "Rule of thumb: what is healthy varies by industry.",
+        "description": "Caution shown with the indicator legend."
+    },
+    "group_accounting": { "message": "Accounting analysis", "description": "Heading of a group of calculators." },
+    "calc_incomeStatement_name": {
+        "message": "Income statement analysis (margins)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_incomeStatement_desc": {
+        "message": "Walks from revenue to net income and shows the margin at each step.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = Revenue − COGS − Operating expenses · EBIT = EBITDA − Depreciation · Net = (EBIT − Interest) × (1 − tax)",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_incomeStatement_revenue": { "message": "Net revenue", "description": "Label of an input field." },
+    "field_incomeStatement_cogs": { "message": "Cost of goods sold", "description": "Label of an input field." },
+    "field_incomeStatement_operatingExpenses": {
+        "message": "Operating expenses",
+        "description": "Label of an input field."
+    },
+    "field_incomeStatement_depreciation": {
+        "message": "Depreciation & amortization",
+        "description": "Label of an input field."
+    },
+    "field_incomeStatement_interestExpense": {
+        "message": "Interest expense",
+        "description": "Label of an input field."
+    },
+    "field_incomeStatement_taxRate": { "message": "Income tax rate", "description": "Label of an input field." },
+    "out_incomeStatement_netIncome": { "message": "Net income", "description": "Label of a result." },
+    "out_incomeStatement_grossMargin": { "message": "Gross margin", "description": "Label of a result." },
+    "out_incomeStatement_ebitdaMargin": { "message": "EBITDA margin", "description": "Label of a result." },
+    "out_incomeStatement_operatingMargin": {
+        "message": "Operating (EBIT) margin",
+        "description": "Label of a result."
+    },
+    "out_incomeStatement_netMargin": { "message": "Net margin", "description": "Label of a result." },
+    "calc_dupont_name": {
+        "message": "DuPont analysis (3 steps)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_dupont_desc": {
+        "message": "Breaks the return on equity into margin, asset turnover and leverage.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_dupont_formula": {
+        "message": "ROE = Net margin × Asset turnover × Equity multiplier",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_dupont_netIncome": { "message": "Net income", "description": "Label of an input field." },
+    "field_dupont_revenue": { "message": "Net revenue", "description": "Label of an input field." },
+    "field_dupont_assets": { "message": "Total assets", "description": "Label of an input field." },
+    "field_dupont_equity": { "message": "Shareholders' equity", "description": "Label of an input field." },
+    "out_dupont_roe": { "message": "Return on equity (ROE)", "description": "Label of a result." },
+    "out_dupont_netMargin": { "message": "Net margin", "description": "Label of a result." },
+    "out_dupont_assetTurnover": { "message": "Asset turnover", "description": "Label of a result." },
+    "out_dupont_equityMultiplier": { "message": "Equity multiplier", "description": "Label of a result." },
+    "out_dupont_roa": { "message": "Return on assets (ROA)", "description": "Label of a result." },
+    "calc_dupont5_name": {
+        "message": "DuPont analysis (5 steps)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_dupont5_desc": {
+        "message": "Splits the ROE into tax burden, interest burden, operating margin, asset turnover and leverage.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (NI ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ Revenue) × (Revenue ÷ Assets) × (Assets ÷ Equity)",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_dupont5_netIncome": { "message": "Net income (NI)", "description": "Label of an input field." },
+    "field_dupont5_pretaxIncome": { "message": "Pre-tax income (EBT)", "description": "Label of an input field." },
+    "field_dupont5_ebit": { "message": "EBIT (operating profit)", "description": "Label of an input field." },
+    "field_dupont5_revenue": { "message": "Net revenue", "description": "Label of an input field." },
+    "field_dupont5_assets": { "message": "Total assets", "description": "Label of an input field." },
+    "field_dupont5_equity": { "message": "Shareholders' equity", "description": "Label of an input field." },
+    "out_dupont5_roe": { "message": "Return on equity (ROE)", "description": "Label of a result." },
+    "out_dupont5_taxBurden": { "message": "Tax burden (NI ÷ EBT)", "description": "Label of a result." },
+    "out_dupont5_interestBurden": { "message": "Interest burden (EBT ÷ EBIT)", "description": "Label of a result." },
+    "out_dupont5_operatingMargin": { "message": "Operating margin (EBIT)", "description": "Label of a result." },
+    "out_dupont5_assetTurnover": { "message": "Asset turnover", "description": "Label of a result." },
+    "out_dupont5_equityMultiplier": { "message": "Equity multiplier", "description": "Label of a result." },
+    "calc_fleuriet_name": {
+        "message": "Fleuriet model (dynamic working capital)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_fleuriet_desc": {
+        "message": "Classifies the financial structure by working capital (CDG), the need for it (NCG) and the treasury balance (T).",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = Permanent funds − Non-current assets · NCG = Operating current assets − Operating current liabilities · T = CDG − NCG",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_fleuriet_operatingCurrentAssets": {
+        "message": "Operating current assets",
+        "description": "Label of an input field."
+    },
+    "field_fleuriet_operatingCurrentLiabilities": {
+        "message": "Operating current liabilities",
+        "description": "Label of an input field."
+    },
+    "field_fleuriet_nonCurrentAssets": { "message": "Non-current assets", "description": "Label of an input field." },
+    "field_fleuriet_permanentFunds": { "message": "Permanent funds", "description": "Label of an input field." },
+    "out_fleuriet_structureType": { "message": "Financial structure", "description": "Label of a result." },
+    "out_fleuriet_workingCapital": { "message": "Working capital (CDG)", "description": "Label of a result." },
+    "out_fleuriet_workingCapitalNeed": { "message": "Working capital need (NCG)", "description": "Label of a result." },
+    "out_fleuriet_treasury": { "message": "Treasury balance (T)", "description": "Label of a result." },
+    "cat_fleuriet_structureType_1": {
+        "message": "Type I – Excellent",
+        "description": "Name of one possible outcome of a result."
+    },
+    "cat_fleuriet_structureType_2": {
+        "message": "Type II – Solid",
+        "description": "Name of one possible outcome of a result."
+    },
+    "cat_fleuriet_structureType_3": {
+        "message": "Type III – Unsatisfactory",
+        "description": "Name of one possible outcome of a result."
+    },
+    "cat_fleuriet_structureType_4": {
+        "message": "Type IV – Bad",
+        "description": "Name of one possible outcome of a result."
+    },
+    "cat_fleuriet_structureType_5": {
+        "message": "Type V – Very bad",
+        "description": "Name of one possible outcome of a result."
+    },
+    "cat_fleuriet_structureType_6": {
+        "message": "Type VI – High risk",
+        "description": "Name of one possible outcome of a result."
+    },
+    "calc_altman_name": {
+        "message": "Altman Z-score (insolvency risk)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_altman_desc": {
+        "message": "Scores the risk of financial distress from five balance-sheet and income ratios, in two versions.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1.2·X1 + 1.4·X2 + 3.3·X3 + 0.6·X4 + 1.0·X5 · Z″ = 3.25 + 6.56·X1 + 3.26·X2 + 6.72·X3 + 1.05·X4",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_altman_workingCapital": { "message": "Working capital", "description": "Label of an input field." },
+    "field_altman_retainedEarnings": { "message": "Retained earnings", "description": "Label of an input field." },
+    "field_altman_ebit": { "message": "EBIT", "description": "Label of an input field." },
+    "field_altman_equityValue": { "message": "Equity value", "description": "Label of an input field." },
+    "field_altman_sales": { "message": "Sales", "description": "Label of an input field." },
+    "field_altman_totalAssets": { "message": "Total assets", "description": "Label of an input field." },
+    "field_altman_totalLiabilities": { "message": "Total liabilities", "description": "Label of an input field." },
+    "out_altman_zScore": { "message": "Z-score (original)", "description": "Label of a result." },
+    "out_altman_zZone": { "message": "Zone (original)", "description": "Label of a result." },
+    "out_altman_emergingScore": { "message": "Z″-score (emerging markets)", "description": "Label of a result." },
+    "out_altman_emergingZone": { "message": "Zone (emerging markets)", "description": "Label of a result." },
+    "cat_altman_zZone_0": { "message": "Distress zone", "description": "Name of one possible outcome of a result." },
+    "cat_altman_zZone_1": { "message": "Grey zone", "description": "Name of one possible outcome of a result." },
+    "cat_altman_zZone_2": { "message": "Safe zone", "description": "Name of one possible outcome of a result." },
+    "cat_altman_emergingZone_0": {
+        "message": "Distress zone",
+        "description": "Name of one possible outcome of a result."
+    },
+    "cat_altman_emergingZone_1": { "message": "Grey zone", "description": "Name of one possible outcome of a result." },
+    "cat_altman_emergingZone_2": { "message": "Safe zone", "description": "Name of one possible outcome of a result." },
+    "calc_leverageDegrees_name": {
+        "message": "Operating & financial leverage degrees",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_leverageDegrees_desc": {
+        "message": "How much a change in sales moves the operating profit and the profit after interest.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = Contribution margin ÷ EBIT · DFL = EBIT ÷ (EBIT − Interest) · DTL = DOL × DFL",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_leverageDegrees_revenue": { "message": "Net revenue", "description": "Label of an input field." },
+    "field_leverageDegrees_variableCosts": { "message": "Variable costs", "description": "Label of an input field." },
+    "field_leverageDegrees_fixedCosts": { "message": "Fixed costs", "description": "Label of an input field." },
+    "field_leverageDegrees_interestExpense": {
+        "message": "Interest expense",
+        "description": "Label of an input field."
+    },
+    "out_leverageDegrees_operatingLeverage": {
+        "message": "Operating leverage (DOL)",
+        "description": "Label of a result."
+    },
+    "out_leverageDegrees_financialLeverage": {
+        "message": "Financial leverage (DFL)",
+        "description": "Label of a result."
+    },
+    "out_leverageDegrees_combinedLeverage": { "message": "Total leverage (DTL)", "description": "Label of a result." },
+    "out_leverageDegrees_ebit": { "message": "EBIT (operating profit)", "description": "Label of a result." },
+    "calc_depreciation_name": {
+        "message": "Depreciation schedule",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_depreciation_desc": {
+        "message": "Charge, accumulated depreciation and book value of an asset in a given year, by three methods.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_depreciation_formula": {
+        "message": "Straight line = (Cost − Salvage) ÷ Life · Declining = Book value × 2 ÷ Life · Sum of digits = (Cost − Salvage) × Remaining life ÷ Σ years",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_depreciation_cost": { "message": "Cost of the asset", "description": "Label of an input field." },
+    "field_depreciation_salvage": { "message": "Salvage value", "description": "Label of an input field." },
+    "field_depreciation_lifeYears": { "message": "Useful life (years)", "description": "Label of an input field." },
+    "field_depreciation_method": { "message": "Method", "description": "Label of an input field." },
+    "field_depreciation_year": { "message": "Year to show", "description": "Label of an input field." },
+    "out_depreciation_charge": { "message": "Depreciation in the year", "description": "Label of a result." },
+    "out_depreciation_accumulated": { "message": "Accumulated depreciation", "description": "Label of a result." },
+    "out_depreciation_bookValue": { "message": "Book value", "description": "Label of a result." },
+    "choice_depreciation_method_1": { "message": "Straight line", "description": "Option of a drop-down list." },
+    "choice_depreciation_method_2": {
+        "message": "Double declining balance",
+        "description": "Option of a drop-down list."
+    },
+    "choice_depreciation_method_3": {
+        "message": "Sum of the years' digits",
+        "description": "Option of a drop-down list."
+    },
+    "calc_wacc_name": {
+        "message": "WACC & cost of equity (CAPM)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_wacc_desc": {
+        "message": "The average cost of a company's funding, from the CAPM cost of equity and the after-tax cost of debt.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × ERP · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − tax)",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_wacc_equityValue": { "message": "Equity value", "description": "Label of an input field." },
+    "field_wacc_debtValue": { "message": "Debt value", "description": "Label of an input field." },
+    "field_wacc_riskFree": { "message": "Risk-free rate", "description": "Label of an input field." },
+    "field_wacc_beta": { "message": "Beta", "description": "Label of an input field." },
+    "field_wacc_marketPremium": { "message": "Equity risk premium", "description": "Label of an input field." },
+    "field_wacc_costOfDebt": { "message": "Cost of debt (pre-tax)", "description": "Label of an input field." },
+    "field_wacc_taxRate": { "message": "Income tax rate", "description": "Label of an input field." },
+    "out_wacc_wacc": { "message": "WACC", "description": "Label of a result." },
+    "out_wacc_costOfEquity": { "message": "Cost of equity (Ke)", "description": "Label of a result." },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Cost of debt after tax (Kd)", "description": "Label of a result." },
+    "out_wacc_equityWeight": { "message": "Equity weight", "description": "Label of a result." },
+    "out_wacc_debtWeight": { "message": "Debt weight", "description": "Label of a result." },
+    "calc_eva_name": { "message": "Economic value added (EVA)", "description": "Name of the calculator in the list." },
+    "calc_eva_desc": {
+        "message": "Whether the operation earns more than the cost of the capital invested in it.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × Invested capital · NOPAT = EBIT × (1 − tax) · ROIC = NOPAT ÷ Invested capital",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_eva_ebit": { "message": "EBIT (operating profit)", "description": "Label of an input field." },
+    "field_eva_taxRate": { "message": "Income tax rate", "description": "Label of an input field." },
+    "field_eva_investedCapital": { "message": "Invested capital", "description": "Label of an input field." },
+    "field_eva_wacc": { "message": "Cost of capital (WACC)", "description": "Label of an input field." },
+    "out_eva_eva": { "message": "Economic value added (EVA)", "description": "Label of a result." },
+    "out_eva_nopat": { "message": "NOPAT", "description": "Label of a result." },
+    "out_eva_roic": { "message": "Return on invested capital (ROIC)", "description": "Label of a result." },
+    "out_eva_spread": { "message": "Spread (ROIC − WACC)", "description": "Label of a result." },
+    "out_eva_capitalCharge": { "message": "Capital charge", "description": "Label of a result." },
+    "calc_freeCashFlow_name": {
+        "message": "Free cash flow (FCFF and FCFE)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_freeCashFlow_desc": {
+        "message": "The cash left after operations and investments, for all capital providers (FCFF) and for shareholders (FCFE).",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − tax) + D&A − CapEx − ΔNWC · FCFE = FCFF − Interest × (1 − tax) + Net borrowing",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (operating profit)", "description": "Label of an input field." },
+    "field_freeCashFlow_taxRate": { "message": "Income tax rate", "description": "Label of an input field." },
+    "field_freeCashFlow_depreciation": {
+        "message": "Depreciation & amortization",
+        "description": "Label of an input field."
+    },
+    "field_freeCashFlow_capex": { "message": "Capital expenditure (CapEx)", "description": "Label of an input field." },
+    "field_freeCashFlow_changeInWorkingCapital": {
+        "message": "Increase in working capital",
+        "description": "Label of an input field."
+    },
+    "field_freeCashFlow_interestExpense": { "message": "Interest expense", "description": "Label of an input field." },
+    "field_freeCashFlow_netBorrowing": { "message": "Net borrowing", "description": "Label of an input field." },
+    "out_freeCashFlow_fcff": { "message": "Free cash flow to the firm (FCFF)", "description": "Label of a result." },
+    "out_freeCashFlow_fcfe": { "message": "Free cash flow to equity (FCFE)", "description": "Label of a result." },
+    "out_freeCashFlow_nopat": { "message": "NOPAT", "description": "Label of a result." },
+    "calc_bond_name": { "message": "Bond price and duration", "description": "Name of the calculator in the list." },
+    "calc_bond_desc": {
+        "message": "Price of a bond that pays coupons, its premium or discount, and how sensitive it is to the yield.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_bond_formula": {
+        "message": "Price = Σ Coupon ÷ (1 + y)ᵗ + Face ÷ (1 + y)ⁿ · Modified duration = Macaulay ÷ (1 + y)",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_bond_faceValue": { "message": "Face value", "description": "Label of an input field." },
+    "field_bond_couponRate": { "message": "Coupon rate (per year)", "description": "Label of an input field." },
+    "field_bond_yieldToMaturity": {
+        "message": "Yield to maturity (per year)",
+        "description": "Label of an input field."
+    },
+    "field_bond_years": { "message": "Years to maturity", "description": "Label of an input field." },
+    "field_bond_frequency": { "message": "Coupons per year", "description": "Label of an input field." },
+    "out_bond_price": { "message": "Bond price", "description": "Label of a result." },
+    "out_bond_premium": { "message": "Premium (+) or discount (−)", "description": "Label of a result." },
+    "out_bond_currentYield": { "message": "Current yield", "description": "Label of a result." },
+    "out_bond_macaulayDuration": { "message": "Macaulay duration (years)", "description": "Label of a result." },
+    "out_bond_modifiedDuration": { "message": "Modified duration (years)", "description": "Label of a result." },
+    "choice_bond_frequency_2": { "message": "Semiannual", "description": "Option of a drop-down list." },
+    "choice_bond_frequency_1": { "message": "Annual", "description": "Option of a drop-down list." },
+    "choice_bond_frequency_4": { "message": "Quarterly", "description": "Option of a drop-down list." },
+    "choice_bond_frequency_12": { "message": "Monthly", "description": "Option of a drop-down list." },
+    "calc_rates_name": {
+        "message": "Interest rate conversion & real rate",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_rates_desc": {
+        "message": "Turns a nominal rate into effective, monthly and daily rates, and removes inflation to find the real rate.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_rates_formula": {
+        "message": "Effective = (1 + nominal ÷ m)ᵐ − 1 · Equivalent = (1 + effective)^(1 ÷ n) − 1 · Real = (1 + effective) ÷ (1 + inflation) − 1",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_rates_nominalRate": { "message": "Nominal rate (per year)", "description": "Label of an input field." },
+    "field_rates_compounding": { "message": "Compounding", "description": "Label of an input field." },
+    "field_rates_inflation": { "message": "Inflation (per year)", "description": "Label of an input field." },
+    "out_rates_effectiveAnnual": { "message": "Effective annual rate", "description": "Label of a result." },
+    "out_rates_monthlyEquivalent": { "message": "Equivalent monthly rate", "description": "Label of a result." },
+    "out_rates_dailyEquivalent": { "message": "Equivalent daily rate (252 days)", "description": "Label of a result." },
+    "out_rates_realRate": { "message": "Real rate (above inflation)", "description": "Label of a result." },
+    "choice_rates_compounding_12": { "message": "Monthly", "description": "Option of a drop-down list." },
+    "choice_rates_compounding_1": { "message": "Yearly", "description": "Option of a drop-down list." },
+    "choice_rates_compounding_2": { "message": "Twice a year", "description": "Option of a drop-down list." },
+    "choice_rates_compounding_4": { "message": "Quarterly", "description": "Option of a drop-down list." },
+    "choice_rates_compounding_365": { "message": "Daily", "description": "Option of a drop-down list." },
+    "calc_amortization_name": {
+        "message": "SAC vs Price (loan amortization)",
+        "description": "Name of the calculator in the list."
+    },
+    "calc_amortization_desc": {
+        "message": "Compares two amortization systems: Price pays equal installments, SAC repays the same principal each month.",
+        "description": "One-sentence explanation shown under the calculator selector."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + remaining balance × i, with i = annual rate ÷ 12",
+        "description": "Plain-text formula shown under the results. Keep the operators."
+    },
+    "field_amortization_principal": { "message": "Loan amount", "description": "Label of an input field." },
+    "field_amortization_annualRate": { "message": "Annual interest rate", "description": "Label of an input field." },
+    "field_amortization_termMonths": { "message": "Term (months)", "description": "Label of an input field." },
+    "out_amortization_pricePayment": { "message": "Price: monthly payment", "description": "Label of a result." },
+    "out_amortization_priceTotalInterest": { "message": "Price: total interest", "description": "Label of a result." },
+    "out_amortization_sacFirstPayment": { "message": "SAC: first payment", "description": "Label of a result." },
+    "out_amortization_sacLastPayment": { "message": "SAC: last payment", "description": "Label of a result." },
+    "out_amortization_sacTotalInterest": { "message": "SAC: total interest", "description": "Label of a result." }
 }
