@@ -1,5 +1,7 @@
 # Valora – Business Calculator
 
+**English** · [Português (Brasil)](README.pt-BR.md) · [Español](README.es-ES.md)
+
 A Chrome (Manifest V3) extension, written in TypeScript, with business calculators for return on
 investment, margins and pricing, liquidity, leverage, investment appraisal and financing. Everything is
 computed on your device.
