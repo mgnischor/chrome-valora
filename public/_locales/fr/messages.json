@@ -1,0 +1,302 @@
+{
+    "extName": { "message": "Valora – Calculatrice d'entreprise" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "Calculatrices d'entreprise : ROI, liquidité, seuil de rentabilité, VAN, TRI et plus. Tout est calculé sur votre appareil."
+    },
+    "actionTitle": { "message": "Valora – calculatrices d'entreprise" },
+    "commandOpen": { "message": "Ouvrir Valora" },
+    "tagline": { "message": "Calculatrices d'entreprise" },
+    "calculatorLabel": { "message": "Calculatrice" },
+    "inputsLabel": { "message": "Données saisies" },
+    "resultsLabel": { "message": "Résultats" },
+    "exampleButton": { "message": "Exemple" },
+    "exampleButtonTitle": { "message": "Remplir avec des valeurs d'exemple" },
+    "resetButton": { "message": "Effacer" },
+    "resetButtonTitle": { "message": "Effacer tous les champs" },
+    "settingsButtonTitle": { "message": "Paramètres" },
+    "resultsEmpty": { "message": "Remplissez les champs pour voir les résultats." },
+    "resultUndefined": { "message": "Non défini" },
+    "resultUndefinedHint": {
+        "message": "Ce résultat n'est pas défini pour ces valeurs, par exemple à cause d'une division par zéro ou parce qu'aucune solution n'existe."
+    },
+    "formulaLabel": { "message": "Formule" },
+    "copyResults": { "message": "Copier les résultats" },
+    "statusCopied": { "message": "Résultats copiés." },
+    "statusCopyFailed": { "message": "Impossible de copier dans le presse-papiers." },
+    "statusSaveFailed": { "message": "Impossible d'enregistrer vos paramètres." },
+    "footer": {
+        "message": "Calculé sur votre appareil ; rien de ce que vous saisissez n'est envoyé. Estimations, pas des conseils financiers."
+    },
+    "seriesHint": {
+        "message": "Une valeur par ligne (ou séparées par des points-virgules). Utilisez le signe moins pour les sorties."
+    },
+    "settingsHeading": { "message": "Paramètres" },
+    "settingsBack": { "message": "Retour" },
+    "currencyLabel": { "message": "Devise" },
+    "currencyNone": { "message": "Sans symbole" },
+    "decimalsLabel": { "message": "Décimales des pourcentages et des ratios" },
+    "rememberInputsLabel": { "message": "Mémoriser ce que j'ai saisi tant que le navigateur est ouvert" },
+    "rememberInputsHint": {
+        "message": "Conservé uniquement dans la mémoire du navigateur et effacé à la fermeture de Chrome. Désactiver cette option l'efface immédiatement."
+    },
+    "errorNotNumber": { "message": "Saisissez un nombre valide." },
+    "errorNotInteger": { "message": "Saisissez un nombre entier." },
+    "errorMin": { "message": "Doit être au moins $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": {
+        "message": "Doit être supérieur à $VALUE$.",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "errorMax": { "message": "Doit être au plus $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "Choisissez une valeur dans la liste." },
+    "errorTooFewEntries": {
+        "message": "Saisissez au moins $COUNT$ valeur(s).",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "Saisissez au plus $COUNT$ valeurs.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "L'entrée $POSITION$ n'est pas un nombre valide.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "Rendements" },
+    "group_profitability": { "message": "Rentabilité et prix" },
+    "group_liquidity": { "message": "Liquidité et solvabilité" },
+    "group_investment": { "message": "Investissement et financement" },
+    "calc_roi_name": { "message": "Retour sur investissement (ROI)" },
+    "calc_roi_desc": { "message": "Combien un investissement a gagné ou perdu par rapport à la somme engagée." },
+    "calc_roi_formula": { "message": "ROI = (Récupéré − Investi) ÷ Investi" },
+    "field_roi_invested": { "message": "Montant investi" },
+    "field_roi_returned": { "message": "Montant récupéré" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "Bénéfice net" },
+    "out_roi_multiple": { "message": "Multiple du retour" },
+    "calc_cagr_name": { "message": "Taux de croissance annuel composé (TCAC)" },
+    "calc_cagr_desc": {
+        "message": "Le taux de croissance annuel constant qui fait passer une valeur de son début à sa fin."
+    },
+    "calc_cagr_formula": { "message": "TCAC = (Final ÷ Initial)^(1 ÷ Années) − 1" },
+    "field_cagr_startValue": { "message": "Valeur initiale" },
+    "field_cagr_endValue": { "message": "Valeur finale" },
+    "field_cagr_years": { "message": "Années" },
+    "out_cagr_cagr": { "message": "TCAC" },
+    "out_cagr_totalGrowth": { "message": "Croissance totale" },
+    "calc_roe_name": { "message": "Rentabilité des capitaux propres et de l'actif (ROE, ROA)" },
+    "calc_roe_desc": { "message": "Quel bénéfice une entreprise dégage de ses capitaux propres et de ses actifs." },
+    "calc_roe_formula": { "message": "ROE = Résultat net ÷ Capitaux propres · ROA = Résultat net ÷ Actif" },
+    "field_roe_netIncome": { "message": "Résultat net" },
+    "field_roe_equity": { "message": "Capitaux propres" },
+    "field_roe_assets": { "message": "Total de l'actif" },
+    "out_roe_roe": { "message": "Rentabilité des capitaux propres (ROE)" },
+    "out_roe_roa": { "message": "Rentabilité de l'actif (ROA)" },
+    "out_roe_equityMultiplier": { "message": "Multiplicateur de capitaux propres" },
+    "calc_margin_name": { "message": "Marge et majoration (markup)" },
+    "calc_margin_desc": { "message": "Le bénéfice en part du prix de vente (marge) et du coût (majoration)." },
+    "calc_margin_formula": { "message": "Marge = (Prix − Coût) ÷ Prix · Majoration = (Prix − Coût) ÷ Coût" },
+    "field_margin_cost": { "message": "Coût unitaire" },
+    "field_margin_price": { "message": "Prix de vente" },
+    "out_margin_margin": { "message": "Marge" },
+    "out_margin_markup": { "message": "Majoration" },
+    "out_margin_profit": { "message": "Bénéfice par unité" },
+    "calc_pricing_name": { "message": "Prix pour une marge cible" },
+    "calc_pricing_desc": { "message": "Le prix de vente qui donne la marge voulue, et la majoration nécessaire." },
+    "calc_pricing_formula": { "message": "Prix = Coût ÷ (1 − Marge) · Majoration = Marge ÷ (1 − Marge)" },
+    "field_pricing_cost": { "message": "Coût unitaire" },
+    "field_pricing_targetMargin": { "message": "Marge cible" },
+    "out_pricing_price": { "message": "Prix de vente" },
+    "out_pricing_markup": { "message": "Majoration nécessaire" },
+    "out_pricing_profit": { "message": "Bénéfice par unité" },
+    "calc_breakeven_name": { "message": "Seuil de rentabilité" },
+    "calc_breakeven_desc": {
+        "message": "Combien d'unités il faut vendre pour couvrir les coûts fixes et, si vous le souhaitez, atteindre un objectif de bénéfice."
+    },
+    "calc_breakeven_formula": { "message": "Unités = (Coûts fixes + Bénéfice cible) ÷ (Prix − Coût variable)" },
+    "field_breakeven_fixedCosts": { "message": "Coûts fixes" },
+    "field_breakeven_price": { "message": "Prix par unité" },
+    "field_breakeven_variableCost": { "message": "Coût variable par unité" },
+    "field_breakeven_targetProfit": { "message": "Bénéfice cible" },
+    "out_breakeven_units": { "message": "Unités à vendre" },
+    "out_breakeven_revenue": { "message": "Chiffre d'affaires nécessaire" },
+    "out_breakeven_contributionMargin": { "message": "Marge sur coût variable par unité" },
+    "out_breakeven_contributionMarginRatio": { "message": "Taux de marge sur coût variable" },
+    "calc_liquidity_name": { "message": "Ratios de liquidité" },
+    "calc_liquidity_desc": {
+        "message": "Si une entreprise peut payer ses dettes à court terme avec ses actifs à court terme."
+    },
+    "calc_liquidity_formula": {
+        "message": "Générale = Actif circulant ÷ Dettes CT · Réduite = (Trésorerie + Créances) ÷ Dettes CT · Immédiate = Trésorerie ÷ Dettes CT"
+    },
+    "field_liquidity_cash": { "message": "Trésorerie et équivalents" },
+    "field_liquidity_receivables": { "message": "Créances clients" },
+    "field_liquidity_inventory": { "message": "Stocks" },
+    "field_liquidity_otherCurrentAssets": { "message": "Autres actifs circulants" },
+    "field_liquidity_currentLiabilities": { "message": "Dettes à court terme" },
+    "out_liquidity_currentRatio": { "message": "Liquidité générale" },
+    "out_liquidity_quickRatio": { "message": "Liquidité réduite" },
+    "out_liquidity_cashRatio": { "message": "Liquidité immédiate" },
+    "out_liquidity_workingCapital": { "message": "Fonds de roulement" },
+    "calc_cashCycle_name": { "message": "Cycle de conversion de trésorerie" },
+    "calc_cashCycle_desc": {
+        "message": "Combien de jours la trésorerie reste immobilisée entre le paiement des fournisseurs et l'encaissement des clients."
+    },
+    "calc_cashCycle_formula": { "message": "CCT = Jours de stock + Jours de créances − Jours de dettes" },
+    "field_cashCycle_revenue": { "message": "CA de la période" },
+    "field_cashCycle_cogs": { "message": "Coût des ventes" },
+    "field_cashCycle_inventory": { "message": "Stock moyen" },
+    "field_cashCycle_receivables": { "message": "Créances moyennes" },
+    "field_cashCycle_payables": { "message": "Dettes fourn. moyennes" },
+    "field_cashCycle_periodDays": { "message": "Jours dans la période" },
+    "out_cashCycle_cashConversionCycle": { "message": "Cycle de conversion de trésorerie" },
+    "out_cashCycle_daysInventory": { "message": "Jours de stock" },
+    "out_cashCycle_daysReceivables": { "message": "Jours de créances" },
+    "out_cashCycle_daysPayables": { "message": "Jours de dettes fournisseurs" },
+    "out_cashCycle_inventoryTurnover": { "message": "Rotation des stocks" },
+    "choice_cashCycle_periodDays_365": { "message": "365 jours (année)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 jours (année commerciale)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 jours (trimestre)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 jours (mois)" },
+    "calc_leverage_name": { "message": "Endettement et couverture des intérêts" },
+    "calc_leverage_desc": {
+        "message": "Dans quelle mesure une entreprise dépend de la dette, et avec quelle marge ses résultats couvrent les intérêts."
+    },
+    "calc_leverage_formula": {
+        "message": "Dette/Fonds propres = Dette ÷ Fonds propres · Dette/Capital = Dette ÷ (Dette + Fonds propres) · Couverture = EBIT ÷ Intérêts"
+    },
+    "field_leverage_totalDebt": { "message": "Dette totale" },
+    "field_leverage_equity": { "message": "Capitaux propres" },
+    "field_leverage_ebit": { "message": "EBIT (résultat d'exploitation)" },
+    "field_leverage_interestExpense": { "message": "Charges d'intérêts" },
+    "out_leverage_debtToEquity": { "message": "Dette sur capitaux propres" },
+    "out_leverage_debtToCapital": { "message": "Dette sur capital total" },
+    "out_leverage_interestCoverage": { "message": "Couverture des intérêts" },
+    "calc_investment_name": { "message": "Analyse d'investissement (VAN, TRI, délai de récupération)" },
+    "calc_investment_desc": {
+        "message": "Le projet en vaut-il la peine ? Actualise ses flux de trésorerie futurs et indique quand il s'autofinance."
+    },
+    "calc_investment_formula": { "message": "VAN = Σ FTₜ ÷ (1 + r)ᵗ − Investissement · TRI : le taux où VAN = 0" },
+    "field_investment_rate": { "message": "Taux d'actualisation (par période)" },
+    "field_investment_initialInvestment": { "message": "Investissement initial" },
+    "field_investment_cashFlows": { "message": "Flux de trésorerie (période 1, 2, 3…)" },
+    "out_investment_npv": { "message": "Valeur actuelle nette (VAN)" },
+    "out_investment_irr": { "message": "Taux de rendement interne (TRI)" },
+    "out_investment_profitabilityIndex": { "message": "Indice de profitabilité" },
+    "out_investment_payback": { "message": "Délai de récupération (périodes)" },
+    "out_investment_discountedPayback": { "message": "Délai de récupération actualisé (périodes)" },
+    "calc_futureValue_name": { "message": "Valeur future (intérêts composés)" },
+    "calc_futureValue_desc": {
+        "message": "Ce que devient une somme, avec des versements réguliers, grâce aux intérêts composés."
+    },
+    "calc_futureValue_formula": {
+        "message": "VF = VA × (1 + i)ⁿ + Versement × ((1 + i)ⁿ − 1) ÷ i, avec i = taux annuel ÷ périodes par an"
+    },
+    "field_futureValue_presentValue": { "message": "Montant initial" },
+    "field_futureValue_contribution": { "message": "Versement à chaque période" },
+    "field_futureValue_annualRate": { "message": "Taux d'intérêt annuel" },
+    "field_futureValue_years": { "message": "Années" },
+    "field_futureValue_frequency": { "message": "Capitalisation et versements" },
+    "out_futureValue_futureValue": { "message": "Valeur future" },
+    "out_futureValue_totalContributions": { "message": "Total versé" },
+    "out_futureValue_interestEarned": { "message": "Intérêts gagnés" },
+    "choice_futureValue_frequency_12": { "message": "Mensuelle" },
+    "choice_futureValue_frequency_1": { "message": "Annuelle" },
+    "choice_futureValue_frequency_2": { "message": "Semestrielle" },
+    "choice_futureValue_frequency_4": { "message": "Trimestrielle" },
+    "choice_futureValue_frequency_52": { "message": "Hebdomadaire" },
+    "choice_futureValue_frequency_365": { "message": "Quotidienne" },
+    "calc_loan_name": { "message": "Mensualité de prêt" },
+    "calc_loan_desc": { "message": "La mensualité fixe d'un prêt et le total des intérêts qu'il coûte." },
+    "calc_loan_formula": { "message": "Mensualité = Capital × i ÷ (1 − (1 + i)⁻ⁿ), avec i = taux annuel ÷ 12" },
+    "field_loan_principal": { "message": "Montant du prêt" },
+    "field_loan_annualRate": { "message": "Taux d'intérêt annuel" },
+    "field_loan_termMonths": { "message": "Durée (mois)" },
+    "out_loan_monthlyPayment": { "message": "Mensualité" },
+    "out_loan_totalPaid": { "message": "Total payé" },
+    "out_loan_totalInterest": { "message": "Total des intérêts" },
+    "marketOff": {
+        "message": "La Selic et le dollar peuvent être renseignés à partir de la Banque centrale du Brésil."
+    },
+    "marketEnable": { "message": "Récupérer les taux" },
+    "marketUse": { "message": "Utiliser les taux" },
+    "marketRetry": { "message": "Réessayer" },
+    "marketLoading": { "message": "Récupération des taux…" },
+    "marketFailed": { "message": "Impossible de joindre la Banque centrale. Vérifiez votre connexion." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Dollar $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "Autorisation refusée : aucun taux n'a été récupéré." },
+    "liveRatesLabel": {
+        "message": "Récupérer le taux Selic et le cours du dollar auprès de la Banque centrale du Brésil"
+    },
+    "liveRatesHint": {
+        "message": "Désactivé par défaut. Une fois activé, Chrome demande l'autorisation de contacter api.bcb.gov.br, qui ne reçoit aucune information vous concernant. Le désactiver retire l'autorisation."
+    },
+    "group_markets": { "message": "Selic et dollar" },
+    "calc_selicYield_name": { "message": "Revenu fixe indexé sur la Selic (Tesouro Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "Ce que rapporte, après impôt sur le revenu, un placement qui verse une part de la Selic."
+    },
+    "calc_selicYield_formula": {
+        "message": "Bénéfice net = Montant × (croissance − 1) × (1 − impôt) ; la croissance est calculée chaque jour sur 252 jours ouvrés par an"
+    },
+    "field_selicYield_amount": { "message": "Montant investi" },
+    "field_selicYield_months": { "message": "Durée (mois)" },
+    "field_selicYield_selic": { "message": "Taux Selic (par an)" },
+    "field_selicYield_percentOfRate": { "message": "Pourcentage de la Selic versé" },
+    "field_selicYield_taxTreatment": { "message": "Impôt sur le revenu" },
+    "out_selicYield_netFinal": { "message": "Montant net à l'échéance" },
+    "out_selicYield_netProfit": { "message": "Bénéfice net" },
+    "out_selicYield_incomeTax": { "message": "Impôt sur le revenu" },
+    "out_selicYield_taxRate": { "message": "Taux d'imposition" },
+    "out_selicYield_netAnnualRate": { "message": "Taux net par an" },
+    "choice_selicYield_taxTreatment_1": { "message": "Barème dégressif (CDB, Tesouro)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Exonéré (LCI, LCA)" },
+    "calc_savings_name": { "message": "Livret d'épargne (poupança) ou placement indexé sur la Selic" },
+    "calc_savings_desc": {
+        "message": "Compare le livret d'épargne à un produit à revenu fixe imposé et trouve la part de la Selic où ils s'égalent."
+    },
+    "calc_savings_formula": {
+        "message": "Épargne : 0,5 % par mois si la Selic dépasse 8,5 %, sinon 70 % de la Selic. Le revenu fixe paie un impôt dégressif"
+    },
+    "field_savings_amount": { "message": "Montant investi" },
+    "field_savings_months": { "message": "Durée (mois)" },
+    "field_savings_selic": { "message": "Taux Selic (par an)" },
+    "field_savings_percentOfRate": { "message": "Pourcentage de la Selic versé (revenu fixe)" },
+    "out_savings_advantage": { "message": "Avantage du revenu fixe" },
+    "out_savings_savingsFinal": { "message": "Livret d'épargne à l'échéance" },
+    "out_savings_fixedIncomeFinal": { "message": "Revenu fixe à l'échéance (net)" },
+    "out_savings_breakEvenPercent": { "message": "Part de la Selic pour égaliser" },
+    "calc_dollarConversion_name": { "message": "Achat de dollars (spread et IOF)" },
+    "calc_dollarConversion_desc": {
+        "message": "Combien de dollars vos reais achètent une fois le spread de la banque et l'IOF comptés."
+    },
+    "calc_dollarConversion_formula": { "message": "Dollars = Reais ÷ (Cours × (1 + Spread) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "Montant en reais" },
+    "field_dollarConversion_rate": { "message": "Cours du dollar (R$/US$)" },
+    "field_dollarConversion_spread": { "message": "Spread de la banque" },
+    "field_dollarConversion_iof": { "message": "IOF (taxe sur le change)" },
+    "out_dollarConversion_usdReceived": { "message": "Dollars reçus" },
+    "out_dollarConversion_effectiveRate": { "message": "Cours effectif payé" },
+    "out_dollarConversion_cost": { "message": "Coût du spread et de l'IOF" },
+    "out_dollarConversion_costPercent": { "message": "Coût en part du montant" },
+    "calc_dollarVsSelic_name": { "message": "Dollar ou Selic" },
+    "calc_dollarVsSelic_desc": {
+        "message": "Où le dollar doit-il se situer à l'échéance pour que détenir des dollars batte la Selic ? Comparaison brute, avant impôt sur le revenu."
+    },
+    "calc_dollarVsSelic_formula": {
+        "message": "Dollar d'équilibre = résultat de la Selic ÷ dollars détenus à l'échéance"
+    },
+    "field_dollarVsSelic_amount": { "message": "Montant en reais" },
+    "field_dollarVsSelic_months": { "message": "Durée (mois)" },
+    "field_dollarVsSelic_spot": { "message": "Dollar aujourd'hui (R$/US$)" },
+    "field_dollarVsSelic_expected": { "message": "Dollar attendu à l'échéance" },
+    "field_dollarVsSelic_selic": { "message": "Taux Selic (par an)" },
+    "field_dollarVsSelic_usdYield": { "message": "Rendement en dollars (an, US$)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "Dollar d'équilibre" },
+    "out_dollarVsSelic_requiredChange": { "message": "Hausse du dollar nécessaire" },
+    "out_dollarVsSelic_selicFinal": { "message": "Selic à l'échéance (brut)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "Dollars à l'échéance (brut)" },
+    "out_dollarVsSelic_difference": { "message": "Dollar moins Selic" }
+}
