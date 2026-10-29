@@ -50,6 +50,29 @@ describe("suggestCurrency", () => {
         ["fr-FR", "EUR"],
         ["it-IT", "EUR"],
         ["it", "EUR"],
+        ["tr", "TRY"],
+        ["tr-TR", "TRY"],
+        ["uk", "UAH"],
+        ["ko", "KRW"],
+        ["ko-KR", "KRW"],
+        ["vi", "VND"],
+        ["id", "IDR"],
+        ["jv", "IDR"],
+        ["hi", "INR"],
+        ["mr", "INR"],
+        ["ta", "INR"],
+        ["bn", "BDT"],
+        ["bn-IN", "INR"],
+        ["ur", "PKR"],
+        ["ur-IN", "INR"],
+        ["ar", "SAR"],
+        ["ar-AE", "AED"],
+        ["ar-EG", "EGP"],
+        ["fa", "IRR"],
+        ["ha", "NGN"],
+        ["zh-TW", "TWD"],
+        ["zh-HK", "HKD"],
+        ["zh-CN", "CNY"],
         ["en", "USD"],
         ["xx-ZZ", "USD"],
         ["", "USD"],
@@ -80,6 +103,7 @@ describe("sanitizeSettings", () => {
             rememberInputs: true,
             lastCalculator: DEFAULT_CALCULATOR,
             liveRates: false,
+            language: "auto",
         });
     });
 
@@ -90,6 +114,7 @@ describe("sanitizeSettings", () => {
             rememberInputs: false,
             lastCalculator: "loan",
             liveRates: true,
+            language: "ja",
         };
         expect(sanitizeSettings(stored, "en-US")).toEqual(stored);
         expect(sanitizeSettings({ ...stored, currency: "none" }, "en-US").currency).toBe("none");
@@ -97,7 +122,14 @@ describe("sanitizeSettings", () => {
 
     it("replaces unknown currencies, decimals and calculators with the defaults", () => {
         const result = sanitizeSettings(
-            { currency: "XXX", decimals: 9, rememberInputs: "yes", lastCalculator: "removed-calculator", liveRates: 1 },
+            {
+                currency: "XXX",
+                decimals: 9,
+                rememberInputs: "yes",
+                lastCalculator: "removed-calculator",
+                liveRates: 1,
+                language: "klingon",
+            },
             "pt-BR"
         );
         expect(result).toEqual(defaultSettings("pt-BR"));

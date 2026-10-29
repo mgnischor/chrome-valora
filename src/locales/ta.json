@@ -1,0 +1,562 @@
+{
+    "extName": { "message": "Valora – வணிகக் கணிப்பான்" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "ROI, பணப்புழக்கம், சமநிலைப் புள்ளி, NPV, IRR உள்ளிட்டவற்றுக்கான வணிகக் கணிப்பான்கள். கணக்கீடுகள் உங்கள் சாதனத்திலேயே நடக்கும்."
+    },
+    "actionTitle": { "message": "Valora – வணிகக் கணிப்பான்கள்" },
+    "commandOpen": { "message": "Valora-வைத் திற" },
+    "tagline": { "message": "வணிகக் கணிப்பான்கள்" },
+    "calculatorLabel": { "message": "கணிப்பான்" },
+    "inputsLabel": { "message": "உள்ளீடுகள்" },
+    "resultsLabel": { "message": "முடிவுகள்" },
+    "exampleButton": { "message": "எடுத்துக்காட்டு" },
+    "exampleButtonTitle": { "message": "மாதிரி மதிப்புகளை நிரப்பு" },
+    "resetButton": { "message": "மீட்டமை" },
+    "resetButtonTitle": { "message": "அனைத்துப் புலங்களையும் அழி" },
+    "settingsButtonTitle": { "message": "அமைப்புகள்" },
+    "resultsEmpty": { "message": "முடிவுகளைக் காண புலங்களை நிரப்பவும்." },
+    "resultUndefined": { "message": "வரையறுக்கப்படவில்லை" },
+    "resultUndefinedHint": {
+        "message": "இந்த மதிப்புகளுக்கு இந்த முடிவு வரையறுக்கப்படவில்லை; எடுத்துக்காட்டாக பூஜ்யத்தால் வகுத்தல் அல்லது தீர்வு இல்லாமை."
+    },
+    "formulaLabel": { "message": "சூத்திரம்" },
+    "copyResults": { "message": "முடிவுகளை நகலெடு" },
+    "statusCopied": { "message": "முடிவுகள் நகலெடுக்கப்பட்டன." },
+    "statusCopyFailed": { "message": "கிளிப்போர்டில் நகலெடுக்க முடியவில்லை." },
+    "statusSaveFailed": { "message": "உங்கள் அமைப்புகளைச் சேமிக்க முடியவில்லை." },
+    "footer": {
+        "message": "கணக்கீடு உங்கள் சாதனத்திலேயே நடக்கிறது; நீங்கள் தட்டச்சு செய்வது எங்கும் அனுப்பப்படாது. இவை மதிப்பீடுகள், நிதி ஆலோசனை அல்ல."
+    },
+    "seriesHint": {
+        "message": "ஒரு வரிக்கு ஒரு மதிப்பு (அல்லது அரைப்புள்ளியால் பிரிக்கவும்). வெளிச்செல்லும் தொகைகளுக்குக் கழித்தல் குறியைப் பயன்படுத்தவும்."
+    },
+    "languageLabel": { "message": "மொழி" },
+    "languageAuto": { "message": "தானியங்கி (உலாவியின் மொழி)" },
+    "settingsHeading": { "message": "அமைப்புகள்" },
+    "settingsBack": { "message": "பின்செல்" },
+    "currencyLabel": { "message": "நாணயம்" },
+    "currencyNone": { "message": "குறியீடு இல்லாமல்" },
+    "decimalsLabel": { "message": "சதவீதங்கள் மற்றும் விகிதங்களுக்கான தசமத் தானங்கள்" },
+    "rememberInputsLabel": { "message": "உலாவி திறந்திருக்கும் வரை நான் தட்டச்சு செய்ததை நினைவில் வை" },
+    "rememberInputsHint": {
+        "message": "உலாவியின் நினைவகத்தில் மட்டுமே இருக்கும்; Chrome மூடப்பட்டதும் அழிந்துவிடும். இதை அணைத்தால் உடனே அழிக்கப்படும்."
+    },
+    "errorNotNumber": { "message": "சரியான எண்ணை உள்ளிடவும்." },
+    "errorNotInteger": { "message": "முழு எண்ணை உள்ளிடவும்." },
+    "errorMin": { "message": "குறைந்தது $VALUE$ இருக்க வேண்டும்.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": {
+        "message": "$VALUE$-ஐ விட அதிகமாக இருக்க வேண்டும்.",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "errorMax": { "message": "அதிகபட்சம் $VALUE$ இருக்க வேண்டும்.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "பட்டியலிலிருந்து ஒரு மதிப்பைத் தேர்ந்தெடுக்கவும்." },
+    "errorTooFewEntries": {
+        "message": "குறைந்தது $COUNT$ மதிப்புகளை உள்ளிடவும்.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "அதிகபட்சம் $COUNT$ மதிப்புகளை உள்ளிடவும்.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "உள்ளீடு $POSITION$ சரியான எண் அல்ல.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "வருவாய்" },
+    "group_profitability": { "message": "இலாபகரத்தன்மை மற்றும் விலை நிர்ணயம்" },
+    "group_liquidity": { "message": "பணப்புழக்கம் மற்றும் கடன் செலுத்தும் திறன்" },
+    "group_investment": { "message": "முதலீடு மற்றும் நிதியளிப்பு" },
+    "calc_roi_name": { "message": "முதலீட்டின் மீதான வருவாய் (ROI)" },
+    "calc_roi_desc": { "message": "போட்ட தொகையுடன் ஒப்பிட ஒரு முதலீடு எவ்வளவு ஈட்டியது அல்லது இழந்தது." },
+    "calc_roi_formula": { "message": "ROI = (திரும்பப் பெற்றது − முதலீடு) ÷ முதலீடு" },
+    "field_roi_invested": { "message": "முதலீடு செய்த தொகை" },
+    "field_roi_returned": { "message": "திரும்பப் பெற்ற தொகை" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "நிகர இலாபம்" },
+    "out_roi_multiple": { "message": "வருவாய்ப் பெருக்கி" },
+    "calc_cagr_name": { "message": "கூட்டு ஆண்டு வளர்ச்சி விகிதம் (CAGR)" },
+    "calc_cagr_desc": {
+        "message": "ஒரு மதிப்பைத் தொடக்கத்திலிருந்து முடிவுக்குக் கொண்டுசெல்லும் நிலையான ஆண்டு வளர்ச்சி விகிதம்."
+    },
+    "calc_cagr_formula": { "message": "CAGR = (இறுதி ÷ தொடக்கம்)^(1 ÷ ஆண்டுகள்) − 1" },
+    "field_cagr_startValue": { "message": "தொடக்க மதிப்பு" },
+    "field_cagr_endValue": { "message": "இறுதி மதிப்பு" },
+    "field_cagr_years": { "message": "ஆண்டுகள்" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "மொத்த வளர்ச்சி" },
+    "calc_roe_name": { "message": "பங்குரிமை மற்றும் சொத்துகளின் மீதான வருவாய் (ROE, ROA)" },
+    "calc_roe_desc": {
+        "message": "ஒரு நிறுவனம் தன் பங்குதாரர் பங்குரிமையிலிருந்தும் சொத்துகளிலிருந்தும் எவ்வளவு இலாபம் ஈட்டுகிறது."
+    },
+    "calc_roe_formula": { "message": "ROE = நிகர வருமானம் ÷ பங்குரிமை · ROA = நிகர வருமானம் ÷ சொத்துகள்" },
+    "field_roe_netIncome": { "message": "நிகர வருமானம்" },
+    "field_roe_equity": { "message": "பங்குதாரர் பங்குரிமை" },
+    "field_roe_assets": { "message": "மொத்த சொத்துகள்" },
+    "out_roe_roe": { "message": "பங்குரிமையின் மீதான வருவாய் (ROE)" },
+    "out_roe_roa": { "message": "சொத்துகளின் மீதான வருவாய் (ROA)" },
+    "out_roe_equityMultiplier": { "message": "பங்குரிமைப் பெருக்கி" },
+    "calc_margin_name": { "message": "மார்ஜின் மற்றும் மார்க்அப்" },
+    "calc_margin_desc": { "message": "விற்பனை விலையின் (மார்ஜின்) மற்றும் செலவின் (மார்க்அப்) பங்காக இலாபம்." },
+    "calc_margin_formula": { "message": "மார்ஜின் = (விலை − செலவு) ÷ விலை · மார்க்அப் = (விலை − செலவு) ÷ செலவு" },
+    "field_margin_cost": { "message": "ஓர் அலகின் செலவு" },
+    "field_margin_price": { "message": "விற்பனை விலை" },
+    "out_margin_margin": { "message": "மார்ஜின்" },
+    "out_margin_markup": { "message": "மார்க்அப்" },
+    "out_margin_profit": { "message": "ஓர் அலகின் இலாபம்" },
+    "calc_pricing_name": { "message": "இலக்கு மார்ஜினுக்கான விலை" },
+    "calc_pricing_desc": {
+        "message": "நீங்கள் விரும்பும் மார்ஜினைத் தரும் விற்பனை விலையும் அதற்குத் தேவையான மார்க்அப்பும்."
+    },
+    "calc_pricing_formula": { "message": "விலை = செலவு ÷ (1 − மார்ஜின்) · மார்க்அப் = மார்ஜின் ÷ (1 − மார்ஜின்)" },
+    "field_pricing_cost": { "message": "ஓர் அலகின் செலவு" },
+    "field_pricing_targetMargin": { "message": "இலக்கு மார்ஜின்" },
+    "out_pricing_price": { "message": "விற்பனை விலை" },
+    "out_pricing_markup": { "message": "தேவையான மார்க்அப்" },
+    "out_pricing_profit": { "message": "ஓர் அலகின் இலாபம்" },
+    "calc_breakeven_name": { "message": "சமநிலைப் புள்ளி" },
+    "calc_breakeven_desc": {
+        "message": "நிலையான செலவுகளை ஈடுகட்டவும், விரும்பினால் இலாப இலக்கை அடையவும் எத்தனை அலகுகளை விற்க வேண்டும்."
+    },
+    "calc_breakeven_formula": { "message": "அலகுகள் = (நிலையான செலவுகள் + இலக்கு இலாபம்) ÷ (விலை − மாறும் செலவு)" },
+    "field_breakeven_fixedCosts": { "message": "நிலையான செலவுகள்" },
+    "field_breakeven_price": { "message": "ஓர் அலகின் விலை" },
+    "field_breakeven_variableCost": { "message": "ஓர் அலகின் மாறும் செலவு" },
+    "field_breakeven_targetProfit": { "message": "இலக்கு இலாபம்" },
+    "out_breakeven_units": { "message": "விற்க வேண்டிய அலகுகள்" },
+    "out_breakeven_revenue": { "message": "தேவையான வருவாய்" },
+    "out_breakeven_contributionMargin": { "message": "ஓர் அலகின் பங்களிப்பு மார்ஜின்" },
+    "out_breakeven_contributionMarginRatio": { "message": "பங்களிப்பு மார்ஜின் விகிதம்" },
+    "calc_liquidity_name": { "message": "பணப்புழக்க விகிதங்கள்" },
+    "calc_liquidity_desc": {
+        "message": "ஒரு நிறுவனம் தன் குறுகியகாலச் சொத்துகளைக் கொண்டு குறுகியகாலக் கடன்களைச் செலுத்த முடியுமா."
+    },
+    "calc_liquidity_formula": {
+        "message": "நடப்பு = நடப்புச் சொத்துகள் ÷ நடப்புக் கடன்கள் · விரைவு = (பணம் + பெறத்தக்கவை) ÷ நடப்புக் கடன்கள் · பணம் = பணம் ÷ நடப்புக் கடன்கள்"
+    },
+    "field_liquidity_cash": { "message": "பணம் மற்றும் பணத்துக்கு நிகரானவை" },
+    "field_liquidity_receivables": { "message": "பெறத்தக்க கணக்குகள்" },
+    "field_liquidity_inventory": { "message": "சரக்கிருப்பு" },
+    "field_liquidity_otherCurrentAssets": { "message": "பிற நடப்புச் சொத்துகள்" },
+    "field_liquidity_currentLiabilities": { "message": "நடப்புக் கடன்கள்" },
+    "out_liquidity_currentRatio": { "message": "நடப்பு விகிதம்" },
+    "out_liquidity_quickRatio": { "message": "விரைவு விகிதம்" },
+    "out_liquidity_cashRatio": { "message": "பண விகிதம்" },
+    "out_liquidity_workingCapital": { "message": "இயக்க மூலதனம்" },
+    "calc_cashCycle_name": { "message": "பண மாற்றுச் சுழற்சி" },
+    "calc_cashCycle_desc": {
+        "message": "சப்ளையர்களுக்குச் செலுத்துவதற்கும் வாடிக்கையாளர்களிடமிருந்து வசூலிப்பதற்கும் இடையில் பணம் எத்தனை நாள் சிக்கியிருக்கிறது."
+    },
+    "calc_cashCycle_formula": { "message": "CCC = சரக்கிருப்பு நாட்கள் + பெறத்தக்க நாட்கள் − செலுத்தத்தக்க நாட்கள்" },
+    "field_cashCycle_revenue": { "message": "காலத்தின் வருவாய்" },
+    "field_cashCycle_cogs": { "message": "விற்ற பொருட்களின் செலவு" },
+    "field_cashCycle_inventory": { "message": "சராசரி சரக்கிருப்பு" },
+    "field_cashCycle_receivables": { "message": "சராசரி பெறத்தக்கவை" },
+    "field_cashCycle_payables": { "message": "சராசரி செலுத்தத்தக்கவை" },
+    "field_cashCycle_periodDays": { "message": "காலத்தில் உள்ள நாட்கள்" },
+    "out_cashCycle_cashConversionCycle": { "message": "பண மாற்றுச் சுழற்சி" },
+    "out_cashCycle_daysInventory": { "message": "சரக்கிருப்பு நாட்கள்" },
+    "out_cashCycle_daysReceivables": { "message": "பெறத்தக்க நாட்கள்" },
+    "out_cashCycle_daysPayables": { "message": "செலுத்தத்தக்க நாட்கள்" },
+    "out_cashCycle_inventoryTurnover": { "message": "சரக்கிருப்புச் சுழற்சி" },
+    "choice_cashCycle_periodDays_365": { "message": "365 நாட்கள் (ஆண்டு)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 நாட்கள் (வணிக ஆண்டு)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 நாட்கள் (காலாண்டு)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 நாட்கள் (மாதம்)" },
+    "calc_leverage_name": { "message": "கடன் அளவு மற்றும் வட்டி ஈட்டு விகிதம்" },
+    "calc_leverage_desc": {
+        "message": "ஒரு நிறுவனம் கடனை எவ்வளவு சார்ந்திருக்கிறது, அதன் வருமானம் வட்டியை எவ்வளவு எளிதாக ஈடுகட்டுகிறது."
+    },
+    "calc_leverage_formula": {
+        "message": "கடன்/பங்குரிமை = கடன் ÷ பங்குரிமை · கடன்/மூலதனம் = கடன் ÷ (கடன் + பங்குரிமை) · ஈட்டு விகிதம் = EBIT ÷ வட்டி"
+    },
+    "field_leverage_totalDebt": { "message": "மொத்தக் கடன்" },
+    "field_leverage_equity": { "message": "பங்குதாரர் பங்குரிமை" },
+    "field_leverage_ebit": { "message": "EBIT (இயக்க இலாபம்)" },
+    "field_leverage_interestExpense": { "message": "வட்டிச் செலவு" },
+    "out_leverage_debtToEquity": { "message": "கடன்-பங்குரிமை விகிதம்" },
+    "out_leverage_debtToCapital": { "message": "கடன்-மூலதன விகிதம்" },
+    "out_leverage_interestCoverage": { "message": "வட்டி ஈட்டு விகிதம்" },
+    "calc_investment_name": { "message": "முதலீட்டு ஆய்வு (NPV, IRR, திருப்பிப் பெறும் காலம்)" },
+    "calc_investment_desc": {
+        "message": "திட்டம் தகுந்ததா? எதிர்காலப் பணப்புழக்கங்களைத் தள்ளுபடி செய்து, அது எப்போது செலவை ஈடுகட்டும் என்று கண்டறியும்."
+    },
+    "calc_investment_formula": { "message": "NPV = Σ CFₜ ÷ (1 + r)ᵗ − முதலீடு · IRR: NPV = 0 ஆகும் விகிதம்" },
+    "field_investment_rate": { "message": "தள்ளுபடி விகிதம் (ஒரு காலத்துக்கு)" },
+    "field_investment_initialInvestment": { "message": "தொடக்க முதலீடு" },
+    "field_investment_cashFlows": { "message": "பணப்புழக்கங்கள் (காலம் 1, 2, 3…)" },
+    "out_investment_npv": { "message": "நிகர தற்போதைய மதிப்பு (NPV)" },
+    "out_investment_irr": { "message": "அகநிலை வருவாய் விகிதம் (IRR)" },
+    "out_investment_profitabilityIndex": { "message": "இலாபகரத்தன்மைக் குறியீடு" },
+    "out_investment_payback": { "message": "திருப்பிப் பெறும் காலம் (காலங்கள்)" },
+    "out_investment_discountedPayback": { "message": "தள்ளுபடியுடன் திருப்பிப் பெறும் காலம் (காலங்கள்)" },
+    "calc_futureValue_name": { "message": "எதிர்கால மதிப்பு (கூட்டு வட்டி)" },
+    "calc_futureValue_desc": { "message": "வழக்கமான சேமிப்புடன் ஒரு தொகை கூட்டு வட்டியால் எவ்வளவாக வளரும்." },
+    "calc_futureValue_formula": {
+        "message": "FV = PV × (1 + i)ⁿ + சேமிப்பு × ((1 + i)ⁿ − 1) ÷ i, இங்கு i = ஆண்டு விகிதம் ÷ ஆண்டுக்கான காலங்கள்"
+    },
+    "field_futureValue_presentValue": { "message": "தொடக்கத் தொகை" },
+    "field_futureValue_contribution": { "message": "ஒவ்வொரு காலத்தின் சேமிப்பு" },
+    "field_futureValue_annualRate": { "message": "ஆண்டு வட்டி விகிதம்" },
+    "field_futureValue_years": { "message": "ஆண்டுகள்" },
+    "field_futureValue_frequency": { "message": "கூட்டு வட்டி மற்றும் சேமிப்புகள்" },
+    "out_futureValue_futureValue": { "message": "எதிர்கால மதிப்பு" },
+    "out_futureValue_totalContributions": { "message": "மொத்தச் சேமிப்பு" },
+    "out_futureValue_interestEarned": { "message": "ஈட்டிய வட்டி" },
+    "choice_futureValue_frequency_12": { "message": "மாதந்தோறும்" },
+    "choice_futureValue_frequency_1": { "message": "ஆண்டுதோறும்" },
+    "choice_futureValue_frequency_2": { "message": "ஆண்டுக்கு இருமுறை" },
+    "choice_futureValue_frequency_4": { "message": "காலாண்டுதோறும்" },
+    "choice_futureValue_frequency_52": { "message": "வாரந்தோறும்" },
+    "choice_futureValue_frequency_365": { "message": "தினமும்" },
+    "calc_loan_name": { "message": "கடன் தவணை" },
+    "calc_loan_desc": { "message": "ஒரு கடனின் நிலையான மாதத் தவணையும் மொத்தமாக எவ்வளவு வட்டி ஆகிறது என்பதும்." },
+    "calc_loan_formula": { "message": "தவணை = அசல் × i ÷ (1 − (1 + i)⁻ⁿ), இங்கு i = ஆண்டு விகிதம் ÷ 12" },
+    "field_loan_principal": { "message": "கடன் தொகை" },
+    "field_loan_annualRate": { "message": "ஆண்டு வட்டி விகிதம்" },
+    "field_loan_termMonths": { "message": "கால அளவு (மாதங்கள்)" },
+    "out_loan_monthlyPayment": { "message": "மாதத் தவணை" },
+    "out_loan_totalPaid": { "message": "மொத்தம் செலுத்தியது" },
+    "out_loan_totalInterest": { "message": "மொத்த வட்டி" },
+    "marketOff": {
+        "message": "பிரேசிலின் கொள்கை வட்டி விகிதம் (Selic) மற்றும் டாலர் மதிப்பை பிரேசில் மத்திய வங்கியிலிருந்து நிரப்பலாம்."
+    },
+    "marketEnable": { "message": "விகிதங்களைப் பெறு" },
+    "marketUse": { "message": "விகிதங்களைப் பயன்படுத்து" },
+    "marketRetry": { "message": "மீண்டும் முயல்" },
+    "marketLoading": { "message": "விகிதங்கள் பெறப்படுகின்றன…" },
+    "marketFailed": { "message": "மத்திய வங்கியை அடைய முடியவில்லை. உங்கள் இணைப்பைச் சரிபார்க்கவும்." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · டாலர் $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "அனுமதி மறுக்கப்பட்டது, அதனால் எந்த விகிதமும் பெறப்படவில்லை." },
+    "liveRatesLabel": {
+        "message": "பிரேசிலின் கொள்கை வட்டி விகிதம் (Selic) மற்றும் டாலர் மதிப்பை பிரேசில் மத்திய வங்கியிலிருந்து பெறு"
+    },
+    "liveRatesHint": {
+        "message": "இயல்பாக அணைந்திருக்கும். இயக்கினால், உங்களைப் பற்றிய எந்தத் தகவலையும் பெறாத api.bcb.gov.br-உடன் இணைய Chrome அனுமதி கேட்கும். அணைத்தால் அனுமதி நீக்கப்படும்."
+    },
+    "group_markets": { "message": "ரெப்போ விகிதம் மற்றும் டாலர் (பிரேசில்)" },
+    "calc_selicYield_name": { "message": "ரெப்போ விகிதத்துடன் இணைந்த நிலையான வருமானம் (Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "மத்திய வங்கியின் கொள்கை வட்டி விகிதத்தில் (இந்தியாவில் RBI-யின் ரெப்போ விகிதம், பிரேசிலில் Selic) ஒரு பங்கைத் தரும் முதலீடு வருமான வரிக்குப் பிறகு எவ்வளவு தரும்."
+    },
+    "calc_selicYield_formula": {
+        "message": "நிகர இலாபம் = தொகை × (வளர்ச்சி − 1) × (1 − வருமான வரி); வளர்ச்சி ஆண்டின் 252 வேலை நாட்களில் தினமும் சேரும்"
+    },
+    "field_selicYield_amount": { "message": "முதலீடு செய்த தொகை" },
+    "field_selicYield_months": { "message": "கால அளவு (மாதங்கள்)" },
+    "field_selicYield_selic": { "message": "ரெப்போ விகிதம் (Selic, ஆண்டுக்கு)" },
+    "field_selicYield_percentOfRate": { "message": "செலுத்தப்படும் ரெப்போ விகிதத்தின் பங்கு" },
+    "field_selicYield_taxTreatment": { "message": "வருமான வரி" },
+    "out_selicYield_netFinal": { "message": "முடிவில் நிகரத் தொகை" },
+    "out_selicYield_netProfit": { "message": "நிகர இலாபம்" },
+    "out_selicYield_incomeTax": { "message": "வருமான வரி" },
+    "out_selicYield_taxRate": { "message": "வருமான வரி விகிதம்" },
+    "out_selicYield_netAnnualRate": { "message": "ஆண்டுக்கு நிகர விகிதம்" },
+    "choice_selicYield_taxTreatment_1": { "message": "குறையும் வரி அட்டவணை (CDB, அரசுப் பத்திரம்)" },
+    "choice_selicYield_taxTreatment_0": { "message": "வரி விலக்கு (LCI, LCA)" },
+    "calc_savings_name": { "message": "சேமிப்புக் கணக்கு (poupança) vs ரெப்போ விகிதத்துடன் இணைந்த முதலீடு" },
+    "calc_savings_desc": {
+        "message": "சேமிப்புக் கணக்கை (poupança) வரி விதிக்கப்படும் நிலையான வருமானப் பொருளுடன் ஒப்பிட்டு, இரண்டும் சமமாகும் ரெப்போ விகிதப் பங்கைக் கண்டறியும்."
+    },
+    "calc_savings_formula": {
+        "message": "சேமிப்பு: Selic 8.5%-க்கு மேல் இருந்தால் மாதத்துக்கு 0.5%, இல்லையெனில் Selic-இன் 70%. நிலையான வருமானத்துக்கு குறையும் வருமான வரி"
+    },
+    "field_savings_amount": { "message": "முதலீடு செய்த தொகை" },
+    "field_savings_months": { "message": "கால அளவு (மாதங்கள்)" },
+    "field_savings_selic": { "message": "ரெப்போ விகிதம் (Selic, ஆண்டுக்கு)" },
+    "field_savings_percentOfRate": { "message": "செலுத்தப்படும் ரெப்போ விகிதத்தின் பங்கு (நிலையான வருமானம்)" },
+    "out_savings_advantage": { "message": "நிலையான வருமானத்தின் நன்மை" },
+    "out_savings_savingsFinal": { "message": "முடிவில் சேமிப்புக் கணக்கு" },
+    "out_savings_fixedIncomeFinal": { "message": "முடிவில் நிலையான வருமானம் (நிகர)" },
+    "out_savings_breakEvenPercent": { "message": "சமமாக ரெப்போ விகிதப் பங்கு" },
+    "calc_dollarConversion_name": { "message": "டாலர் வாங்குதல் (ஸ்ப்ரெட் மற்றும் IOF வரி)" },
+    "calc_dollarConversion_desc": {
+        "message": "வங்கியின் ஸ்ப்ரெட் மற்றும் IOF அந்நியச் செலாவணி வரியைக் கணக்கிட்ட பிறகு உங்கள் ரியால்களால் எத்தனை டாலர் வாங்கலாம்."
+    },
+    "calc_dollarConversion_formula": { "message": "டாலர் = ரியால் ÷ (மதிப்பு × (1 + ஸ்ப்ரெட்) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "ரியாலில் தொகை" },
+    "field_dollarConversion_rate": { "message": "டாலர் மதிப்பு (ஒரு US$-க்கு R$)" },
+    "field_dollarConversion_spread": { "message": "வங்கி ஸ்ப்ரெட்" },
+    "field_dollarConversion_iof": { "message": "IOF (பிரேசிலின் அந்நியச் செலாவணி வரி)" },
+    "out_dollarConversion_usdReceived": { "message": "பெற்ற டாலர்கள்" },
+    "out_dollarConversion_effectiveRate": { "message": "செலுத்திய உண்மை மதிப்பு" },
+    "out_dollarConversion_cost": { "message": "ஸ்ப்ரெட் மற்றும் IOF செலவு" },
+    "out_dollarConversion_costPercent": { "message": "தொகையின் பங்காகச் செலவு" },
+    "calc_dollarVsSelic_name": { "message": "டாலர் vs ரெப்போ விகிதம் (Selic)" },
+    "calc_dollarVsSelic_desc": {
+        "message": "டாலர்களை வைத்திருப்பது ரெப்போ விகிதத்தை (Selic) வெல்ல முடிவில் டாலர் எங்கே இருக்க வேண்டும்? வருமான வரிக்கு முன், மொத்தமாக ஒப்பிடப்படுகிறது."
+    },
+    "calc_dollarVsSelic_formula": {
+        "message": "சமநிலை டாலர் = ரெப்போ விகித முடிவு ÷ முடிவில் வைத்திருக்கும் டாலர்கள்"
+    },
+    "field_dollarVsSelic_amount": { "message": "ரியாலில் தொகை" },
+    "field_dollarVsSelic_months": { "message": "கால அளவு (மாதங்கள்)" },
+    "field_dollarVsSelic_spot": { "message": "இன்றைய டாலர் (ஒரு US$-க்கு R$)" },
+    "field_dollarVsSelic_expected": { "message": "முடிவில் எதிர்பார்க்கும் டாலர்" },
+    "field_dollarVsSelic_selic": { "message": "ரெப்போ விகிதம் (Selic, ஆண்டுக்கு)" },
+    "field_dollarVsSelic_usdYield": { "message": "டாலர் மீதான வருவாய் (ஆண்டுக்கு, US$-ல்)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "சமநிலை டாலர்" },
+    "out_dollarVsSelic_requiredChange": { "message": "தேவையான டாலர் உயர்வு" },
+    "out_dollarVsSelic_selicFinal": { "message": "முடிவில் ரெப்போ விகித முதலீடு (வரிக்கு முன்)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "முடிவில் டாலர் முதலீடு (வரிக்கு முன்)" },
+    "out_dollarVsSelic_difference": { "message": "டாலர் கழித்தல் ரெப்போ விகிதம்" },
+    "ratingGood": { "message": "நல்லது" },
+    "ratingNeutral": { "message": "நடுநிலை" },
+    "ratingBad": { "message": "மோசம்" },
+    "ratingLegend": { "message": "பச்சை: நல்லது · சாதாரணம்: நடுநிலை · சிவப்பு: மோசம்" },
+    "ratingRuleHigher": {
+        "message": "$BAD$-க்குக் கீழே: மோசம் · $BAD$ முதல் $GOOD$ வரை: நடுநிலை · $GOOD$-க்கு மேலே: நல்லது",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "$BAD$-க்கு மேலே: மோசம் · $GOOD$ முதல் $BAD$ வரை: நடுநிலை · $GOOD$-க்குக் கீழே: நல்லது",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "$VALUE$-க்குக் கீழே: மோசம் · $VALUE$-ல்: நடுநிலை · $VALUE$-க்கு மேலே: நல்லது",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "$VALUE$-க்கு மேலே: மோசம் · $VALUE$-ல்: நடுநிலை · $VALUE$-க்குக் கீழே: நல்லது",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "பொது விதி: எது ஆரோக்கியமானது என்பது தொழிலைப் பொறுத்து மாறும்." },
+    "group_accounting": { "message": "கணக்கியல் ஆய்வு" },
+    "calc_incomeStatement_name": { "message": "வருமானக் கணக்கு ஆய்வு (மார்ஜின்கள்)" },
+    "calc_incomeStatement_desc": {
+        "message": "வருவாயிலிருந்து நிகர வருமானம் வரை சென்று ஒவ்வொரு படியிலும் மார்ஜினைக் காட்டும்."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = வருவாய் − விற்பனைச் செலவு − இயக்கச் செலவுகள் · EBIT = EBITDA − தேய்மானம் · நிகர = (EBIT − வட்டி) × (1 − வரி)"
+    },
+    "field_incomeStatement_revenue": { "message": "நிகர வருவாய்" },
+    "field_incomeStatement_cogs": { "message": "விற்ற பொருட்களின் செலவு" },
+    "field_incomeStatement_operatingExpenses": { "message": "இயக்கச் செலவுகள்" },
+    "field_incomeStatement_depreciation": { "message": "தேய்மானம் மற்றும் கடன்தீர்வு" },
+    "field_incomeStatement_interestExpense": { "message": "வட்டிச் செலவு" },
+    "field_incomeStatement_taxRate": { "message": "வருமான வரி விகிதம்" },
+    "out_incomeStatement_netIncome": { "message": "நிகர வருமானம்" },
+    "out_incomeStatement_grossMargin": { "message": "மொத்த மார்ஜின்" },
+    "out_incomeStatement_ebitdaMargin": { "message": "EBITDA மார்ஜின்" },
+    "out_incomeStatement_operatingMargin": { "message": "இயக்க மார்ஜின் (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "நிகர மார்ஜின்" },
+    "calc_dupont_name": { "message": "டுபான்ட் ஆய்வு (3 படிகள்)" },
+    "calc_dupont_desc": {
+        "message": "பங்குரிமையின் மீதான வருவாயை மார்ஜின், சொத்துச் சுழற்சி, கடன் அளவு எனப் பிரிக்கும்."
+    },
+    "calc_dupont_formula": { "message": "ROE = நிகர மார்ஜின் × சொத்துச் சுழற்சி × பங்குரிமைப் பெருக்கி" },
+    "field_dupont_netIncome": { "message": "நிகர வருமானம்" },
+    "field_dupont_revenue": { "message": "நிகர வருவாய்" },
+    "field_dupont_assets": { "message": "மொத்த சொத்துகள்" },
+    "field_dupont_equity": { "message": "பங்குதாரர் பங்குரிமை" },
+    "out_dupont_roe": { "message": "பங்குரிமையின் மீதான வருவாய் (ROE)" },
+    "out_dupont_netMargin": { "message": "நிகர மார்ஜின்" },
+    "out_dupont_assetTurnover": { "message": "சொத்துச் சுழற்சி" },
+    "out_dupont_equityMultiplier": { "message": "பங்குரிமைப் பெருக்கி" },
+    "out_dupont_roa": { "message": "சொத்துகளின் மீதான வருவாய் (ROA)" },
+    "calc_dupont5_name": { "message": "டுபான்ட் ஆய்வு (5 படிகள்)" },
+    "calc_dupont5_desc": {
+        "message": "ROE-ஐ வரிச் சுமை, வட்டிச் சுமை, இயக்க மார்ஜின், சொத்துச் சுழற்சி, கடன் அளவு எனப் பிரிக்கும்."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (நி.வ. ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ வருவாய்) × (வருவாய் ÷ சொத்துகள்) × (சொத்துகள் ÷ பங்குரிமை)"
+    },
+    "field_dupont5_netIncome": { "message": "நிகர வருமானம் (நி.வ.)" },
+    "field_dupont5_pretaxIncome": { "message": "வரிக்கு முந்தைய வருமானம் (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (இயக்க இலாபம்)" },
+    "field_dupont5_revenue": { "message": "நிகர வருவாய்" },
+    "field_dupont5_assets": { "message": "மொத்த சொத்துகள்" },
+    "field_dupont5_equity": { "message": "பங்குதாரர் பங்குரிமை" },
+    "out_dupont5_roe": { "message": "பங்குரிமையின் மீதான வருவாய் (ROE)" },
+    "out_dupont5_taxBurden": { "message": "வரிச் சுமை (நி.வ. ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "வட்டிச் சுமை (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "இயக்க மார்ஜின் (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "சொத்துச் சுழற்சி" },
+    "out_dupont5_equityMultiplier": { "message": "பங்குரிமைப் பெருக்கி" },
+    "calc_fleuriet_name": { "message": "ஃப்ளூரியே மாதிரி (இயங்குநிலை இயக்க மூலதனம்)" },
+    "calc_fleuriet_desc": {
+        "message": "இயக்க மூலதனம் (CDG), அதன் தேவை (NCG), பண இருப்பு (T) ஆகியவற்றின் அடிப்படையில் நிதி அமைப்பை வகைப்படுத்தும்."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = நிரந்தர நிதிகள் − நடப்பல்லாச் சொத்துகள் · NCG = இயக்க நடப்புச் சொத்துகள் − இயக்க நடப்புக் கடன்கள் · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "இயக்க நடப்புச் சொத்துகள்" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "இயக்க நடப்புக் கடன்கள்" },
+    "field_fleuriet_nonCurrentAssets": { "message": "நடப்பல்லாச் சொத்துகள்" },
+    "field_fleuriet_permanentFunds": { "message": "நிரந்தர நிதிகள்" },
+    "out_fleuriet_structureType": { "message": "நிதி அமைப்பு" },
+    "out_fleuriet_workingCapital": { "message": "இயக்க மூலதனம் (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "இயக்க மூலதனத் தேவை (NCG)" },
+    "out_fleuriet_treasury": { "message": "பண இருப்பு (T)" },
+    "cat_fleuriet_structureType_1": { "message": "வகை I – சிறப்பு" },
+    "cat_fleuriet_structureType_2": { "message": "வகை II – உறுதியானது" },
+    "cat_fleuriet_structureType_3": { "message": "வகை III – திருப்தியற்றது" },
+    "cat_fleuriet_structureType_4": { "message": "வகை IV – மோசம்" },
+    "cat_fleuriet_structureType_5": { "message": "வகை V – மிக மோசம்" },
+    "cat_fleuriet_structureType_6": { "message": "வகை VI – அதிக ஆபத்து" },
+    "calc_altman_name": { "message": "ஆல்ட்மேன் Z-மதிப்பெண் (திவால் ஆபத்து)" },
+    "calc_altman_desc": {
+        "message": "இருப்புநிலை மற்றும் வருமானத்தின் ஐந்து விகிதங்களிலிருந்து நிதி நெருக்கடி ஆபத்தை இரண்டு பதிப்புகளில் மதிப்பிடும்."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1.2·X1 + 1.4·X2 + 3.3·X3 + 0.6·X4 + 1.0·X5 · Z″ = 3.25 + 6.56·X1 + 3.26·X2 + 6.72·X3 + 1.05·X4"
+    },
+    "field_altman_workingCapital": { "message": "இயக்க மூலதனம்" },
+    "field_altman_retainedEarnings": { "message": "தக்கவைத்த வருமானம்" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "பங்குரிமையின் மதிப்பு" },
+    "field_altman_sales": { "message": "விற்பனை" },
+    "field_altman_totalAssets": { "message": "மொத்த சொத்துகள்" },
+    "field_altman_totalLiabilities": { "message": "மொத்தப் பொறுப்புகள்" },
+    "out_altman_zScore": { "message": "Z-மதிப்பெண் (மூலம்)" },
+    "out_altman_zZone": { "message": "மண்டலம் (மூலம்)" },
+    "out_altman_emergingScore": { "message": "Z″-மதிப்பெண் (வளரும் சந்தைகள்)" },
+    "out_altman_emergingZone": { "message": "மண்டலம் (வளரும் சந்தைகள்)" },
+    "cat_altman_zZone_0": { "message": "ஆபத்து மண்டலம்" },
+    "cat_altman_zZone_1": { "message": "சாம்பல் மண்டலம்" },
+    "cat_altman_zZone_2": { "message": "பாதுகாப்பு மண்டலம்" },
+    "cat_altman_emergingZone_0": { "message": "ஆபத்து மண்டலம்" },
+    "cat_altman_emergingZone_1": { "message": "சாம்பல் மண்டலம்" },
+    "cat_altman_emergingZone_2": { "message": "பாதுகாப்பு மண்டலம்" },
+    "calc_leverageDegrees_name": { "message": "இயக்க மற்றும் நிதிக் கடன் அளவின் அளவுகள்" },
+    "calc_leverageDegrees_desc": {
+        "message": "விற்பனை மாற்றம் இயக்க இலாபத்தையும் வட்டிக்குப் பின் இலாபத்தையும் எவ்வளவு அசைக்கிறது."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = பங்களிப்பு மார்ஜின் ÷ EBIT · DFL = EBIT ÷ (EBIT − வட்டி) · DTL = DOL × DFL"
+    },
+    "field_leverageDegrees_revenue": { "message": "நிகர வருவாய்" },
+    "field_leverageDegrees_variableCosts": { "message": "மாறும் செலவுகள்" },
+    "field_leverageDegrees_fixedCosts": { "message": "நிலையான செலவுகள்" },
+    "field_leverageDegrees_interestExpense": { "message": "வட்டிச் செலவு" },
+    "out_leverageDegrees_operatingLeverage": { "message": "இயக்கக் கடன் அளவு (DOL)" },
+    "out_leverageDegrees_financialLeverage": { "message": "நிதிக் கடன் அளவு (DFL)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "மொத்தக் கடன் அளவு (DTL)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (இயக்க இலாபம்)" },
+    "calc_depreciation_name": { "message": "தேய்மான அட்டவணை" },
+    "calc_depreciation_desc": {
+        "message": "ஒரு ஆண்டில் ஒரு சொத்தின் தேய்மானம், திரண்ட தேய்மானம், புத்தக மதிப்பு; மூன்று முறைகளில்."
+    },
+    "calc_depreciation_formula": {
+        "message": "நேர்கோடு = (செலவு − எச்ச மதிப்பு) ÷ ஆயுள் · குறையும் இருப்பு = புத்தக மதிப்பு × 2 ÷ ஆயுள் · ஆண்டுகளின் கூட்டுத்தொகை = (செலவு − எச்சம்) × மீதி ஆயுள் ÷ Σ ஆண்டுகள்"
+    },
+    "field_depreciation_cost": { "message": "சொத்தின் செலவு" },
+    "field_depreciation_salvage": { "message": "எச்ச மதிப்பு" },
+    "field_depreciation_lifeYears": { "message": "பயன்பாட்டு ஆயுள் (ஆண்டுகள்)" },
+    "field_depreciation_method": { "message": "முறை" },
+    "field_depreciation_year": { "message": "காட்ட வேண்டிய ஆண்டு" },
+    "out_depreciation_charge": { "message": "ஆண்டின் தேய்மானம்" },
+    "out_depreciation_accumulated": { "message": "திரண்ட தேய்மானம்" },
+    "out_depreciation_bookValue": { "message": "புத்தக மதிப்பு" },
+    "choice_depreciation_method_1": { "message": "நேர்கோடு" },
+    "choice_depreciation_method_2": { "message": "இரட்டிப்புக் குறையும் இருப்பு" },
+    "choice_depreciation_method_3": { "message": "ஆண்டு இலக்கங்களின் கூட்டுத்தொகை" },
+    "calc_wacc_name": { "message": "WACC மற்றும் பங்குரிமைச் செலவு (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "ஒரு நிறுவனத்தின் சராசரி நிதியளிப்புச் செலவு; CAPM பங்குரிமைச் செலவு மற்றும் வரிக்குப் பின் கடன் செலவிலிருந்து."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × ஆபத்துக் கூடுதல் · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − வரி)"
+    },
+    "field_wacc_equityValue": { "message": "பங்குரிமையின் மதிப்பு" },
+    "field_wacc_debtValue": { "message": "கடனின் மதிப்பு" },
+    "field_wacc_riskFree": { "message": "ஆபத்தற்ற விகிதம்" },
+    "field_wacc_beta": { "message": "பீட்டா" },
+    "field_wacc_marketPremium": { "message": "சந்தை ஆபத்துக் கூடுதல்" },
+    "field_wacc_costOfDebt": { "message": "கடன் செலவு (வரிக்கு முன்)" },
+    "field_wacc_taxRate": { "message": "வருமான வரி விகிதம்" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "பங்குரிமைச் செலவு (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "வரிக்குப் பின் கடன் செலவு (Kd)" },
+    "out_wacc_equityWeight": { "message": "பங்குரிமையின் எடை" },
+    "out_wacc_debtWeight": { "message": "கடனின் எடை" },
+    "calc_eva_name": { "message": "பொருளாதார மதிப்புக் கூட்டல் (EVA)" },
+    "calc_eva_desc": { "message": "தொழில் அதில் போட்ட மூலதனத்தின் செலவை விட அதிகம் ஈட்டுகிறதா." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × முதலீடு செய்த மூலதனம் · NOPAT = EBIT × (1 − வரி) · ROIC = NOPAT ÷ முதலீடு செய்த மூலதனம்"
+    },
+    "field_eva_ebit": { "message": "EBIT (இயக்க இலாபம்)" },
+    "field_eva_taxRate": { "message": "வருமான வரி விகிதம்" },
+    "field_eva_investedCapital": { "message": "முதலீடு செய்த மூலதனம்" },
+    "field_eva_wacc": { "message": "மூலதனச் செலவு (WACC)" },
+    "out_eva_eva": { "message": "பொருளாதார மதிப்புக் கூட்டல் (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "முதலீடு செய்த மூலதனத்தின் மீதான வருவாய் (ROIC)" },
+    "out_eva_spread": { "message": "ஸ்ப்ரெட் (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "மூலதனக் கட்டணம்" },
+    "calc_freeCashFlow_name": { "message": "தடையற்ற பணப்புழக்கம் (FCFF மற்றும் FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "இயக்கம் மற்றும் முதலீட்டுக்குப் பின் மிச்சமிருக்கும் பணம்: எல்லா மூலதனம் வழங்குநர்களுக்கும் (FCFF), பங்குதாரர்களுக்கும் (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − வரி) + தேய்மானம் − CapEx − ΔNWC · FCFE = FCFF − வட்டி × (1 − வரி) + நிகரக் கடன்"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (இயக்க இலாபம்)" },
+    "field_freeCashFlow_taxRate": { "message": "வருமான வரி விகிதம்" },
+    "field_freeCashFlow_depreciation": { "message": "தேய்மானம் மற்றும் கடன்தீர்வு" },
+    "field_freeCashFlow_capex": { "message": "மூலதனச் செலவு (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "இயக்க மூலதன உயர்வு" },
+    "field_freeCashFlow_interestExpense": { "message": "வட்டிச் செலவு" },
+    "field_freeCashFlow_netBorrowing": { "message": "நிகரக் கடன்" },
+    "out_freeCashFlow_fcff": { "message": "நிறுவனத் தடையற்ற பணப்புழக்கம் (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "பங்குதாரர் தடையற்ற பணப்புழக்கம் (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "பத்திர விலை மற்றும் கால அளவு" },
+    "calc_bond_desc": {
+        "message": "கூப்பன் தரும் பத்திரத்தின் விலை, அதன் பிரீமியம் அல்லது தள்ளுபடி, ஈட்டுக்கான உணர்திறன்."
+    },
+    "calc_bond_formula": {
+        "message": "விலை = Σ கூப்பன் ÷ (1 + y)ᵗ + முகமதிப்பு ÷ (1 + y)ⁿ · மாற்றிய கால அளவு = மெக்காலே ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "முகமதிப்பு" },
+    "field_bond_couponRate": { "message": "கூப்பன் விகிதம் (ஆண்டுக்கு)" },
+    "field_bond_yieldToMaturity": { "message": "முதிர்வு வரையிலான ஈட்டு (ஆண்டுக்கு)" },
+    "field_bond_years": { "message": "முதிர்வு வரை ஆண்டுகள்" },
+    "field_bond_frequency": { "message": "ஆண்டுக்குக் கூப்பன்கள்" },
+    "out_bond_price": { "message": "பத்திர விலை" },
+    "out_bond_premium": { "message": "பிரீமியம் (+) அல்லது தள்ளுபடி (−)" },
+    "out_bond_currentYield": { "message": "தற்போதைய ஈட்டு" },
+    "out_bond_macaulayDuration": { "message": "மெக்காலே கால அளவு (ஆண்டுகள்)" },
+    "out_bond_modifiedDuration": { "message": "மாற்றிய கால அளவு (ஆண்டுகள்)" },
+    "choice_bond_frequency_2": { "message": "அரையாண்டுக்கு ஒருமுறை" },
+    "choice_bond_frequency_1": { "message": "ஆண்டுக்கு ஒருமுறை" },
+    "choice_bond_frequency_4": { "message": "காலாண்டுதோறும்" },
+    "choice_bond_frequency_12": { "message": "மாதந்தோறும்" },
+    "calc_rates_name": { "message": "வட்டி விகித மாற்றம் மற்றும் உண்மை விகிதம்" },
+    "calc_rates_desc": {
+        "message": "பெயரளவு விகிதத்தை உண்மையான, மாத, தின விகிதங்களாக மாற்றி, பணவீக்கத்தைக் கழித்து உண்மை விகிதத்தைக் காணும்."
+    },
+    "calc_rates_formula": {
+        "message": "திறன்மிகு = (1 + பெயரளவு ÷ m)ᵐ − 1 · சமமான = (1 + திறன்மிகு)^(1 ÷ n) − 1 · உண்மை = (1 + திறன்மிகு) ÷ (1 + பணவீக்கம்) − 1"
+    },
+    "field_rates_nominalRate": { "message": "பெயரளவு விகிதம் (ஆண்டுக்கு)" },
+    "field_rates_compounding": { "message": "கூட்டு வட்டி" },
+    "field_rates_inflation": { "message": "பணவீக்கம் (ஆண்டுக்கு)" },
+    "out_rates_effectiveAnnual": { "message": "திறன்மிகு ஆண்டு விகிதம்" },
+    "out_rates_monthlyEquivalent": { "message": "சமமான மாத விகிதம்" },
+    "out_rates_dailyEquivalent": { "message": "சமமான தின விகிதம் (252 நாட்கள்)" },
+    "out_rates_realRate": { "message": "உண்மை விகிதம் (பணவீக்கத்துக்கு மேல்)" },
+    "choice_rates_compounding_12": { "message": "மாதந்தோறும்" },
+    "choice_rates_compounding_1": { "message": "ஆண்டுதோறும்" },
+    "choice_rates_compounding_2": { "message": "ஆண்டுக்கு இருமுறை" },
+    "choice_rates_compounding_4": { "message": "காலாண்டுதோறும்" },
+    "choice_rates_compounding_365": { "message": "தினமும்" },
+    "calc_amortization_name": { "message": "SAC vs Price (கடன் தீர்வு)" },
+    "calc_amortization_desc": {
+        "message": "இரு தீர்வு முறைகளை ஒப்பிடுகிறது: Price-ல் தவணைகள் சமம், SAC-ல் ஒவ்வொரு மாதமும் அசலின் அதே பகுதி செலுத்தப்படும்."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + மீதி இருப்பு × i, இங்கு i = ஆண்டு விகிதம் ÷ 12"
+    },
+    "field_amortization_principal": { "message": "கடன் தொகை" },
+    "field_amortization_annualRate": { "message": "ஆண்டு வட்டி விகிதம்" },
+    "field_amortization_termMonths": { "message": "கால அளவு (மாதங்கள்)" },
+    "out_amortization_pricePayment": { "message": "Price: மாதத் தவணை" },
+    "out_amortization_priceTotalInterest": { "message": "Price: மொத்த வட்டி" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: முதல் தவணை" },
+    "out_amortization_sacLastPayment": { "message": "SAC: கடைசித் தவணை" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: மொத்த வட்டி" }
+}

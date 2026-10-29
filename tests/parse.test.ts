@@ -143,3 +143,68 @@ describe("parseSeries", () => {
         expect(parseSeries("  \n ;; ", ".").values).toEqual([]);
     });
 });
+
+describe("numbers in other scripts and groupings", () => {
+    /** Builds a digit string in a script from the Latin digits of a number. */
+    const inScript = (zero: number, text: string) =>
+        [...text].map((char) => (/\d/.test(char) ? String.fromCodePoint(zero + Number(char)) : char)).join("");
+
+    it.each([
+        ["Arabic-Indic", 0x0660],
+        ["Persian", 0x06f0],
+        ["Devanagari", 0x0966],
+        ["Bengali", 0x09e6],
+        ["Gurmukhi", 0x0a66],
+        ["Gujarati", 0x0ae6],
+        ["Tamil", 0x0be6],
+        ["Telugu", 0x0c66],
+        ["Kannada", 0x0ce6],
+        ["Malayalam", 0x0d66],
+        ["full-width", 0xff10],
+    ])("reads %s digits", (_script, zero) => {
+        expect(parseNumber(inScript(zero, "1234"), ".")).toBe(1234);
+        expect(parseNumber(inScript(zero, "-12.5"), ".")).toBe(-12.5);
+        expect(parseNumber(inScript(zero, "7,5"), ",")).toBe(7.5);
+    });
+
+    it("reads the Arabic decimal and thousands marks as the marks of the language", () => {
+        const decimal = String.fromCodePoint(0x066b);
+        const thousands = String.fromCodePoint(0x066c);
+        expect(parseNumber(inScript(0x0660, `1${thousands}234${decimal}5`), ".")).toBe(1234.5);
+        expect(parseNumber(inScript(0x0660, `1${thousands}234${decimal}5`), ",")).toBe(1234.5);
+    });
+
+    it("reads full-width punctuation and the Arabic percent sign", () => {
+        const fullwidth = (text: string) =>
+            [...text].map((c) => String.fromCodePoint(c.codePointAt(0)! + 0xfee0)).join("");
+        expect(parseNumber(fullwidth("1,234.5"), ".")).toBe(1234.5);
+        expect(parseNumber(fullwidth("-8"), ".")).toBe(-8);
+        expect(parseNumber(`12${String.fromCodePoint(0x066a)}`, ".")).toBe(12);
+    });
+
+    it.each([
+        ["12,34,567", 1234567],
+        ["1,23,456", 123456],
+        ["12,34,567.5", 1234567.5],
+        ["1,00,00,000", 10000000],
+    ])("reads the Indian grouping %s", (text, expected) => {
+        expect(parseNumber(text, ".")).toBe(expected);
+    });
+
+    it("still rejects irregular grouping", () => {
+        expect(parseNumber("1,2,34,567", ".")).toBeNull();
+        expect(parseNumber("123,45,678", ".")).toBeNull();
+    });
+
+    it("leaves unknown scripts alone, so they are rejected", () => {
+        expect(parseNumber(String.fromCodePoint(0x4e00), ".")).toBeNull();
+    });
+
+    it("ignores the invisible direction marks that right-to-left languages put around numbers", () => {
+        const lrm = String.fromCodePoint(0x200e);
+        const alm = String.fromCodePoint(0x061c);
+        expect(parseNumber(`${lrm}-42.1`, ".")).toBe(-42.1);
+        expect(parseNumber(`${alm}-42.1`, ".")).toBe(-42.1);
+        expect(parseNumber(`${lrm}12${lrm}`, ".")).toBe(12);
+    });
+});

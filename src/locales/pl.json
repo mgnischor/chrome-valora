@@ -29,6 +29,8 @@
         "message": "Obliczane na Twoim urządzeniu; wpisane dane nie są wysyłane. Szacunki, a nie porada finansowa."
     },
     "seriesHint": { "message": "Jedna wartość w wierszu (lub oddzielone średnikami). Dla wypłat użyj znaku minus." },
+    "languageLabel": { "message": "Język" },
+    "languageAuto": { "message": "Automatycznie (język przeglądarki)" },
     "settingsHeading": { "message": "Ustawienia" },
     "settingsBack": { "message": "Wstecz" },
     "currencyLabel": { "message": "Waluta" },
@@ -208,7 +210,9 @@
     "out_loan_monthlyPayment": { "message": "Rata miesięczna" },
     "out_loan_totalPaid": { "message": "Zapłacono łącznie" },
     "out_loan_totalInterest": { "message": "Odsetki łącznie" },
-    "marketOff": { "message": "Stopę Selic i kurs dolara można uzupełnić danymi Banku Centralnego Brazylii." },
+    "marketOff": {
+        "message": "Stopę referencyjną Brazylii (Selic) i kurs dolara można uzupełnić danymi Banku Centralnego Brazylii."
+    },
     "marketEnable": { "message": "Pobierz stawki" },
     "marketUse": { "message": "Użyj stawek" },
     "marketRetry": { "message": "Spróbuj ponownie" },
@@ -219,45 +223,47 @@
         "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
     },
     "statusMarketPermissionDenied": { "message": "Odmówiono zgody, więc nie pobrano stawek." },
-    "liveRatesLabel": { "message": "Pobieraj stopę Selic i kurs dolara z Banku Centralnego Brazylii" },
+    "liveRatesLabel": {
+        "message": "Pobieraj stopę referencyjną Brazylii (Selic) i kurs dolara z Banku Centralnego Brazylii"
+    },
     "liveRatesHint": {
         "message": "Domyślnie wyłączone. Po włączeniu Chrome poprosi o zgodę na połączenie z api.bcb.gov.br, które nie otrzymuje żadnych informacji o Tobie. Wyłączenie cofa zgodę."
     },
-    "group_markets": { "message": "Selic i dolar" },
-    "calc_selicYield_name": { "message": "Stały dochód powiązany z Selic (Tesouro Selic, CDB)" },
+    "group_markets": { "message": "Stopa referencyjna i dolar (Brazylia)" },
+    "calc_selicYield_name": { "message": "Stały dochód powiązany ze stopą referencyjną (Selic, CDB)" },
     "calc_selicYield_desc": {
-        "message": "Ile po podatku dochodowym przynosi inwestycja wypłacająca część stopy Selic."
+        "message": "Ile po podatku dochodowym przynosi inwestycja wypłacająca część stopy referencyjnej banku centralnego (w Brazylii Selic)."
     },
     "calc_selicYield_formula": {
         "message": "Zysk netto = Kwota × (wzrost − 1) × (1 − podatek); wzrost naliczany jest codziennie, 252 dni robocze w roku"
     },
     "field_selicYield_amount": { "message": "Zainwestowana kwota" },
     "field_selicYield_months": { "message": "Okres (miesiące)" },
-    "field_selicYield_selic": { "message": "Stopa Selic (rocznie)" },
-    "field_selicYield_percentOfRate": { "message": "Wypłacany procent Selic" },
+    "field_selicYield_selic": { "message": "Stopa referencyjna (Selic, rocznie)" },
+    "field_selicYield_percentOfRate": { "message": "Wypłacana część stopy referencyjnej" },
     "field_selicYield_taxTreatment": { "message": "Podatek dochodowy" },
     "out_selicYield_netFinal": { "message": "Kwota netto na końcu" },
     "out_selicYield_netProfit": { "message": "Zysk netto" },
     "out_selicYield_incomeTax": { "message": "Podatek dochodowy" },
     "out_selicYield_taxRate": { "message": "Stawka podatku" },
     "out_selicYield_netAnnualRate": { "message": "Stopa netto rocznie" },
-    "choice_selicYield_taxTreatment_1": { "message": "Tabela regresywna (CDB, Tesouro)" },
-    "choice_selicYield_taxTreatment_0": { "message": "Zwolnione (LCI, LCA)" },
-    "calc_savings_name": { "message": "Konto oszczędnościowe (poupança) a inwestycja powiązana z Selic" },
+    "choice_selicYield_taxTreatment_1": { "message": "Tabela regresywna (CDB, obligacje skarbowe)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Zwolnione z podatku (LCI, LCA)" },
+    "calc_savings_name": { "message": "Konto oszczędnościowe (poupança) a inwestycja powiązana ze stopą referencyjną" },
     "calc_savings_desc": {
-        "message": "Porównuje konto oszczędnościowe z opodatkowanym produktem o stałym dochodzie i znajduje udział Selic, przy którym się równają."
+        "message": "Porównuje konto oszczędnościowe (poupança) z opodatkowanym produktem o stałym dochodzie i znajduje część stopy referencyjnej, przy której się równają."
     },
     "calc_savings_formula": {
         "message": "Oszczędności: 0,5% miesięcznie, gdy Selic jest powyżej 8,5%, w przeciwnym razie 70% Selic. Stały dochód podlega regresywnemu podatkowi"
     },
     "field_savings_amount": { "message": "Zainwestowana kwota" },
     "field_savings_months": { "message": "Okres (miesiące)" },
-    "field_savings_selic": { "message": "Stopa Selic (rocznie)" },
-    "field_savings_percentOfRate": { "message": "Wypłacany procent Selic (stały dochód)" },
+    "field_savings_selic": { "message": "Stopa referencyjna (Selic, rocznie)" },
+    "field_savings_percentOfRate": { "message": "Wypłacana część stopy referencyjnej (stały dochód)" },
     "out_savings_advantage": { "message": "Przewaga stałego dochodu" },
     "out_savings_savingsFinal": { "message": "Oszczędności na końcu" },
     "out_savings_fixedIncomeFinal": { "message": "Stały dochód na końcu (netto)" },
-    "out_savings_breakEvenPercent": { "message": "Udział Selic dla remisu" },
+    "out_savings_breakEvenPercent": { "message": "Część stopy dla remisu" },
     "calc_dollarConversion_name": { "message": "Zakup dolarów (spread i IOF)" },
     "calc_dollarConversion_desc": {
         "message": "Ile dolarów kupią Twoje reale po uwzględnieniu spreadu banku i podatku IOF."
@@ -266,27 +272,29 @@
     "field_dollarConversion_amount": { "message": "Kwota w realach" },
     "field_dollarConversion_rate": { "message": "Kurs dolara (R$ za US$)" },
     "field_dollarConversion_spread": { "message": "Spread banku" },
-    "field_dollarConversion_iof": { "message": "IOF (podatek od wymiany walut)" },
+    "field_dollarConversion_iof": { "message": "IOF (brazylijski podatek od wymiany walut)" },
     "out_dollarConversion_usdReceived": { "message": "Otrzymane dolary" },
     "out_dollarConversion_effectiveRate": { "message": "Zapłacony kurs efektywny" },
     "out_dollarConversion_cost": { "message": "Koszt spreadu i IOF" },
     "out_dollarConversion_costPercent": { "message": "Koszt jako udział w kwocie" },
-    "calc_dollarVsSelic_name": { "message": "Dolar czy Selic" },
+    "calc_dollarVsSelic_name": { "message": "Dolar czy stopa referencyjna (Selic)" },
     "calc_dollarVsSelic_desc": {
-        "message": "Gdzie musi być dolar na końcu, aby trzymanie dolarów pokonało Selic? Porównanie brutto, przed podatkiem dochodowym."
+        "message": "Gdzie musi być dolar na końcu, aby trzymanie dolarów pokonało stopę referencyjną (Selic)? Porównanie brutto, przed podatkiem dochodowym."
     },
-    "calc_dollarVsSelic_formula": { "message": "Dolar progowy = wynik Selic ÷ dolary posiadane na końcu" },
+    "calc_dollarVsSelic_formula": {
+        "message": "Dolar progowy = wynik stopy referencyjnej ÷ dolary posiadane na końcu"
+    },
     "field_dollarVsSelic_amount": { "message": "Kwota w realach" },
     "field_dollarVsSelic_months": { "message": "Okres (miesiące)" },
     "field_dollarVsSelic_spot": { "message": "Dolar dziś (R$ za US$)" },
     "field_dollarVsSelic_expected": { "message": "Oczekiwany dolar na końcu" },
-    "field_dollarVsSelic_selic": { "message": "Stopa Selic (rocznie)" },
+    "field_dollarVsSelic_selic": { "message": "Stopa referencyjna (Selic, rocznie)" },
     "field_dollarVsSelic_usdYield": { "message": "Rentowność w dolarach (rocznie, w US$)" },
     "out_dollarVsSelic_breakEvenRate": { "message": "Dolar progowy" },
     "out_dollarVsSelic_requiredChange": { "message": "Potrzebny wzrost dolara" },
-    "out_dollarVsSelic_selicFinal": { "message": "Selic na końcu (brutto)" },
+    "out_dollarVsSelic_selicFinal": { "message": "Stopa referencyjna na końcu (brutto)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Dolary na końcu (brutto)" },
-    "out_dollarVsSelic_difference": { "message": "Dolar minus Selic" },
+    "out_dollarVsSelic_difference": { "message": "Dolar minus stopa referencyjna" },
     "ratingGood": { "message": "Dobrze" },
     "ratingNeutral": { "message": "Neutralnie" },
     "ratingBad": { "message": "Źle" },

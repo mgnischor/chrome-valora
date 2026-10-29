@@ -1,0 +1,563 @@
+{
+    "extName": { "message": "Valora – Lissafin Kasuwanci" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "Na'urorin lissafin kasuwanci don ROI, kudin hannu, wurin daidaito, NPV, IRR da ƙari. Duk lissafi na faruwa a na'urarka."
+    },
+    "actionTitle": { "message": "Valora – Na'urorin Lissafin Kasuwanci" },
+    "commandOpen": { "message": "Buɗe Valora" },
+    "tagline": { "message": "Na'urorin lissafin kasuwanci" },
+    "calculatorLabel": { "message": "Na'urar lissafi" },
+    "inputsLabel": { "message": "Shigarwa" },
+    "resultsLabel": { "message": "Sakamako" },
+    "exampleButton": { "message": "Misali" },
+    "exampleButtonTitle": { "message": "Cika da ƙimomin misali" },
+    "resetButton": { "message": "Sake saita" },
+    "resetButtonTitle": { "message": "Share duk filayen" },
+    "settingsButtonTitle": { "message": "Saituna" },
+    "resultsEmpty": { "message": "Cika filayen don ganin sakamako." },
+    "resultUndefined": { "message": "Ba a ayyana ba" },
+    "resultUndefinedHint": {
+        "message": "Ba a ayyana wannan sakamakon ga waɗannan ƙimomin ba, misali lokacin raba da sifili ko idan babu amsa."
+    },
+    "formulaLabel": { "message": "Dabara" },
+    "copyResults": { "message": "Kwafi sakamako" },
+    "statusCopied": { "message": "An kwafi sakamakon." },
+    "statusCopyFailed": { "message": "Ba a iya kwafi zuwa allon ɗauka ba." },
+    "statusSaveFailed": { "message": "Ba a iya adana saitunanka ba." },
+    "footer": {
+        "message": "Lissafin na faruwa a na'urarka; abin da ka rubuta ba a aika shi ko'ina. Ƙiyasi ne, ba shawarar kuɗi ba."
+    },
+    "seriesHint": {
+        "message": "Ƙima ɗaya a kowane layi (ko raba da ɗigon waƙafi). Yi amfani da alamar debewa ga kuɗaɗen da ke fita."
+    },
+    "languageLabel": { "message": "Harshe" },
+    "languageAuto": { "message": "Kai tsaye (harshen burauza)" },
+    "settingsHeading": { "message": "Saituna" },
+    "settingsBack": { "message": "Koma baya" },
+    "currencyLabel": { "message": "Kuɗi" },
+    "currencyNone": { "message": "Ba tare da alama ba" },
+    "decimalsLabel": { "message": "Wuraren ɓangaren ƙidaya don kashi-kashi da rabo" },
+    "rememberInputsLabel": { "message": "Tuna abin da na rubuta muddin burauza a buɗe take" },
+    "rememberInputsHint": {
+        "message": "Yana zama a ƙwaƙwalwar burauza kawai kuma yana gogewa idan an rufe Chrome. Kashe shi yana goge shi nan take."
+    },
+    "errorNotNumber": { "message": "Shigar da lamba mai inganci." },
+    "errorNotInteger": { "message": "Shigar da cikakkiyar lamba." },
+    "errorMin": { "message": "Dole ya zama aƙalla $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": { "message": "Dole ya fi $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMax": { "message": "Dole ya zama bai wuce $VALUE$ ba.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "Zaɓi ƙima daga jerin." },
+    "errorTooFewEntries": {
+        "message": "Shigar da ƙimomi aƙalla $COUNT$.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "Shigar da ƙimomi bai wuce $COUNT$ ba.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "Shigarwa ta $POSITION$ ba lamba mai inganci ba ce.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "Riba" },
+    "group_profitability": { "message": "Samun riba da ƙayyade farashi" },
+    "group_liquidity": { "message": "Kuɗin hannu da ikon biyan bashi" },
+    "group_investment": { "message": "Zuba jari da samar da kuɗi" },
+    "calc_roi_name": { "message": "Ribar zuba jari (ROI)" },
+    "calc_roi_desc": { "message": "Nawa jari ya samu ko ya yi asara idan aka kwatanta da kuɗin da aka saka." },
+    "calc_roi_formula": { "message": "ROI = (abin da aka dawo da shi − jari) ÷ jari" },
+    "field_roi_invested": { "message": "Kuɗin da aka zuba" },
+    "field_roi_returned": { "message": "Kuɗin da aka dawo da shi" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "Ribar gaske" },
+    "out_roi_multiple": { "message": "Ninkin riba" },
+    "calc_cagr_name": { "message": "Ƙimar haɓaka ta shekara-shekara mai tarawa (CAGR)" },
+    "calc_cagr_desc": { "message": "Tsayayyar ƙimar haɓaka ta shekara da ke kai ƙima daga farko zuwa ƙarshe." },
+    "calc_cagr_formula": { "message": "CAGR = (ƙarshe ÷ farko)^(1 ÷ shekaru) − 1" },
+    "field_cagr_startValue": { "message": "Ƙimar farko" },
+    "field_cagr_endValue": { "message": "Ƙimar ƙarshe" },
+    "field_cagr_years": { "message": "Shekaru" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "Jimillar haɓaka" },
+    "calc_roe_name": { "message": "Riba kan hannun jari da kadarori (ROE, ROA)" },
+    "calc_roe_desc": { "message": "Nawa riba kamfani ke samu daga hannun jarin masu hannun jari da kadarorinsa." },
+    "calc_roe_formula": {
+        "message": "ROE = kuɗin shiga na gaske ÷ hannun jari · ROA = kuɗin shiga na gaske ÷ kadarori"
+    },
+    "field_roe_netIncome": { "message": "Kuɗin shiga na gaske" },
+    "field_roe_equity": { "message": "Hannun jarin masu hannun jari" },
+    "field_roe_assets": { "message": "Jimillar kadarori" },
+    "out_roe_roe": { "message": "Riba kan hannun jari (ROE)" },
+    "out_roe_roa": { "message": "Riba kan kadarori (ROA)" },
+    "out_roe_equityMultiplier": { "message": "Ninkin hannun jari" },
+    "calc_margin_name": { "message": "Rata da ƙarin kan farashi" },
+    "calc_margin_desc": {
+        "message": "Riba a matsayin kaso na farashin sayarwa (rata) da na kuɗin da aka kashe (ƙari)."
+    },
+    "calc_margin_formula": {
+        "message": "Rata = (farashi − kuɗin kashewa) ÷ farashi · Ƙari = (farashi − kuɗin kashewa) ÷ kuɗin kashewa"
+    },
+    "field_margin_cost": { "message": "Kuɗin kashewa na kowane yanki" },
+    "field_margin_price": { "message": "Farashin sayarwa" },
+    "out_margin_margin": { "message": "Rata" },
+    "out_margin_markup": { "message": "Ƙarin kan farashi" },
+    "out_margin_profit": { "message": "Ribar kowane yanki" },
+    "calc_pricing_name": { "message": "Farashi don ratar da ake nufi" },
+    "calc_pricing_desc": {
+        "message": "Farashin sayarwa da ke ba da ratar da kake so da ƙarin da ake buƙata don hakan."
+    },
+    "calc_pricing_formula": { "message": "Farashi = kuɗin kashewa ÷ (1 − rata) · Ƙari = rata ÷ (1 − rata)" },
+    "field_pricing_cost": { "message": "Kuɗin kashewa na kowane yanki" },
+    "field_pricing_targetMargin": { "message": "Ratar da ake nufi" },
+    "out_pricing_price": { "message": "Farashin sayarwa" },
+    "out_pricing_markup": { "message": "Ƙarin da ake buƙata" },
+    "out_pricing_profit": { "message": "Ribar kowane yanki" },
+    "calc_breakeven_name": { "message": "Wurin daidaito" },
+    "calc_breakeven_desc": {
+        "message": "Yankuna nawa za a sayar don rufe kuɗaɗen kashewa na dindindin kuma a kai ga burin riba idan akwai."
+    },
+    "calc_breakeven_formula": {
+        "message": "Yankuna = (kuɗaɗen dindindin + ribar da ake nufi) ÷ (farashi − kuɗin kashewa mai canjawa)"
+    },
+    "field_breakeven_fixedCosts": { "message": "Kuɗaɗen kashewa na dindindin" },
+    "field_breakeven_price": { "message": "Farashin kowane yanki" },
+    "field_breakeven_variableCost": { "message": "Kuɗin kashewa mai canjawa na kowane yanki" },
+    "field_breakeven_targetProfit": { "message": "Ribar da ake nufi" },
+    "out_breakeven_units": { "message": "Yankunan da za a sayar" },
+    "out_breakeven_revenue": { "message": "Kuɗin shiga da ake buƙata" },
+    "out_breakeven_contributionMargin": { "message": "Ratar gudummawa ta kowane yanki" },
+    "out_breakeven_contributionMarginRatio": { "message": "Rabon ratar gudummawa" },
+    "calc_liquidity_name": { "message": "Rabon kuɗin hannu" },
+    "calc_liquidity_desc": {
+        "message": "Ko kamfani zai iya biyan bashin gajeren lokaci da kadarorinsa na gajeren lokaci."
+    },
+    "calc_liquidity_formula": {
+        "message": "Na yanzu = kadarorin yanzu ÷ basussukan yanzu · Gaggawa = (kuɗi + abin da za a karɓa) ÷ basussukan yanzu · Kuɗi = kuɗi ÷ basussukan yanzu"
+    },
+    "field_liquidity_cash": { "message": "Kuɗi da makamantansu" },
+    "field_liquidity_receivables": { "message": "Asusun da za a karɓa" },
+    "field_liquidity_inventory": { "message": "Kayan ajiya" },
+    "field_liquidity_otherCurrentAssets": { "message": "Sauran kadarorin yanzu" },
+    "field_liquidity_currentLiabilities": { "message": "Basussukan yanzu" },
+    "out_liquidity_currentRatio": { "message": "Rabon na yanzu" },
+    "out_liquidity_quickRatio": { "message": "Rabon gaggawa" },
+    "out_liquidity_cashRatio": { "message": "Rabon kuɗi" },
+    "out_liquidity_workingCapital": { "message": "Jarin aiki" },
+    "calc_cashCycle_name": { "message": "Zagayen mayar da kuɗi" },
+    "calc_cashCycle_desc": {
+        "message": "Kwanaki nawa kuɗi ke makalewa tsakanin biyan masu kawo kaya da karɓa daga abokan ciniki."
+    },
+    "calc_cashCycle_formula": { "message": "CCC = kwanakin kayan ajiya + kwanakin karɓa − kwanakin biya" },
+    "field_cashCycle_revenue": { "message": "Kuɗin shiga na wa'adi" },
+    "field_cashCycle_cogs": { "message": "Kuɗin kayan da aka sayar" },
+    "field_cashCycle_inventory": { "message": "Matsakaicin kayan ajiya" },
+    "field_cashCycle_receivables": { "message": "Matsakaicin abin da za a karɓa" },
+    "field_cashCycle_payables": { "message": "Matsakaicin abin da za a biya" },
+    "field_cashCycle_periodDays": { "message": "Kwanaki a wa'adi" },
+    "out_cashCycle_cashConversionCycle": { "message": "Zagayen mayar da kuɗi" },
+    "out_cashCycle_daysInventory": { "message": "Kwanakin kayan ajiya" },
+    "out_cashCycle_daysReceivables": { "message": "Kwanakin karɓa" },
+    "out_cashCycle_daysPayables": { "message": "Kwanakin biya" },
+    "out_cashCycle_inventoryTurnover": { "message": "Jujjuyawar kayan ajiya" },
+    "choice_cashCycle_periodDays_365": { "message": "Kwanaki 365 (shekara)" },
+    "choice_cashCycle_periodDays_360": { "message": "Kwanaki 360 (shekarar kasuwanci)" },
+    "choice_cashCycle_periodDays_90": { "message": "Kwanaki 90 (kwata)" },
+    "choice_cashCycle_periodDays_30": { "message": "Kwanaki 30 (wata)" },
+    "calc_leverage_name": { "message": "Nauyin bashi da rufe ruwa" },
+    "calc_leverage_desc": {
+        "message": "Yadda kamfani ya dogara da bashi da yadda kuɗin shigarsa ke rufe ruwan bashi cikin sauƙi."
+    },
+    "calc_leverage_formula": {
+        "message": "Bashi/hannun jari = bashi ÷ hannun jari · Bashi/jari = bashi ÷ (bashi + hannun jari) · Rufewa = EBIT ÷ ruwa"
+    },
+    "field_leverage_totalDebt": { "message": "Jimillar bashi" },
+    "field_leverage_equity": { "message": "Hannun jarin masu hannun jari" },
+    "field_leverage_ebit": { "message": "EBIT (ribar aiki)" },
+    "field_leverage_interestExpense": { "message": "Kuɗin ruwan bashi" },
+    "out_leverage_debtToEquity": { "message": "Rabon bashi da hannun jari" },
+    "out_leverage_debtToCapital": { "message": "Rabon bashi da jari" },
+    "out_leverage_interestCoverage": { "message": "Rufe ruwan bashi" },
+    "calc_investment_name": { "message": "Nazarin zuba jari (NPV, IRR, dawowa)" },
+    "calc_investment_desc": {
+        "message": "Shin aikin yana da amfani? Yana rage darajar kwararar kuɗi ta nan gaba kuma yana gano lokacin da za a dawo da kuɗin."
+    },
+    "calc_investment_formula": { "message": "NPV = Σ CFₜ ÷ (1 + r)ᵗ − jari · IRR: ƙimar da NPV = 0" },
+    "field_investment_rate": { "message": "Ƙimar rage daraja (na kowane lokaci)" },
+    "field_investment_initialInvestment": { "message": "Jarin farko" },
+    "field_investment_cashFlows": { "message": "Kwararar kuɗi (lokaci 1, 2, 3…)" },
+    "out_investment_npv": { "message": "Darajar yanzu ta gaske (NPV)" },
+    "out_investment_irr": { "message": "Ƙimar riba ta cikin gida (IRR)" },
+    "out_investment_profitabilityIndex": { "message": "Ma'aunin samun riba" },
+    "out_investment_payback": { "message": "Dawowar jari (lokuta)" },
+    "out_investment_discountedPayback": { "message": "Dawowar jari bayan rage daraja (lokuta)" },
+    "calc_futureValue_name": { "message": "Daraja ta gaba (ruwa mai tarawa)" },
+    "calc_futureValue_desc": {
+        "message": "Yadda wani adadi ke girma da ruwa mai tarawa tare da ajiya na yau da kullum."
+    },
+    "calc_futureValue_formula": {
+        "message": "FV = PV × (1 + i)ⁿ + ajiya × ((1 + i)ⁿ − 1) ÷ i, inda i = ƙimar shekara ÷ lokuta a shekara"
+    },
+    "field_futureValue_presentValue": { "message": "Adadin farko" },
+    "field_futureValue_contribution": { "message": "Ajiya a kowane lokaci" },
+    "field_futureValue_annualRate": { "message": "Ƙimar ruwa ta shekara" },
+    "field_futureValue_years": { "message": "Shekaru" },
+    "field_futureValue_frequency": { "message": "Tarawa da ajiya" },
+    "out_futureValue_futureValue": { "message": "Daraja ta gaba" },
+    "out_futureValue_totalContributions": { "message": "Jimillar ajiya" },
+    "out_futureValue_interestEarned": { "message": "Ruwan da aka samu" },
+    "choice_futureValue_frequency_12": { "message": "Kowane wata" },
+    "choice_futureValue_frequency_1": { "message": "Kowace shekara" },
+    "choice_futureValue_frequency_2": { "message": "Sau biyu a shekara" },
+    "choice_futureValue_frequency_4": { "message": "Kowane kwata" },
+    "choice_futureValue_frequency_52": { "message": "Kowane mako" },
+    "choice_futureValue_frequency_365": { "message": "Kowace rana" },
+    "calc_loan_name": { "message": "Kuɗin biyan bashi" },
+    "calc_loan_desc": { "message": "Kuɗin biyan bashi na wata-wata da jimillar ruwan da ake biya." },
+    "calc_loan_formula": { "message": "Kuɗin biya = asali × i ÷ (1 − (1 + i)⁻ⁿ), inda i = ƙimar shekara ÷ 12" },
+    "field_loan_principal": { "message": "Adadin bashi" },
+    "field_loan_annualRate": { "message": "Ƙimar ruwa ta shekara" },
+    "field_loan_termMonths": { "message": "Wa'adi (watanni)" },
+    "out_loan_monthlyPayment": { "message": "Kuɗin biya na wata" },
+    "out_loan_totalPaid": { "message": "Jimillar da aka biya" },
+    "out_loan_totalInterest": { "message": "Jimillar ruwa" },
+    "marketOff": {
+        "message": "Ana iya cika ƙimar ruwan manufofin Brazil (Selic) da farashin dala daga babban bankin Brazil."
+    },
+    "marketEnable": { "message": "Ɗauko ƙimomi" },
+    "marketUse": { "message": "Yi amfani da ƙimomi" },
+    "marketRetry": { "message": "Sake gwadawa" },
+    "marketLoading": { "message": "Ana ɗauko ƙimomi…" },
+    "marketFailed": { "message": "Ba a iya isa ga babban banki ba. Duba haɗinka." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Dala $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "Ba a ba da izini ba, don haka ba a ɗauko wata ƙima ba." },
+    "liveRatesLabel": {
+        "message": "Ɗauko ƙimar ruwan manufofin Brazil (Selic) da farashin dala daga babban bankin Brazil"
+    },
+    "liveRatesHint": {
+        "message": "A kashe yake ta asali. Idan ka kunna, Chrome zai nemi izinin haɗawa da api.bcb.gov.br, wanda ba ya karɓar wani bayani game da kai. Kashewa yana janye izinin."
+    },
+    "group_markets": { "message": "Ƙimar manufofi (MPR) da dala (Brazil)" },
+    "calc_selicYield_name": { "message": "Kuɗin shiga tsayayye da ke da alaƙa da ƙimar manufofi (Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "Nawa jarin da ke biyan kaso na ƙimar ruwan manufofin babban banki (Selic a Brazil, MPR na CBN a Najeriya) zai bayar bayan harajin kuɗin shiga."
+    },
+    "calc_selicYield_formula": {
+        "message": "Ribar gaske = adadi × (haɓaka − 1) × (1 − harajin kuɗin shiga); haɓakar na tarawa kowace rana a kwanakin aiki 252 na shekara"
+    },
+    "field_selicYield_amount": { "message": "Kuɗin da aka zuba" },
+    "field_selicYield_months": { "message": "Wa'adi (watanni)" },
+    "field_selicYield_selic": { "message": "Ƙimar manufofi (Selic, a shekara)" },
+    "field_selicYield_percentOfRate": { "message": "Kason ƙimar manufofi da ake biya" },
+    "field_selicYield_taxTreatment": { "message": "Harajin kuɗin shiga" },
+    "out_selicYield_netFinal": { "message": "Adadin gaske a ƙarshe" },
+    "out_selicYield_netProfit": { "message": "Ribar gaske" },
+    "out_selicYield_incomeTax": { "message": "Harajin kuɗin shiga" },
+    "out_selicYield_taxRate": { "message": "Ƙimar harajin kuɗin shiga" },
+    "out_selicYield_netAnnualRate": { "message": "Ƙimar gaske a shekara" },
+    "choice_selicYield_taxTreatment_1": { "message": "Teburin haraji mai raguwa (CDB, takardar gwamnati)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Ba haraji (LCI, LCA)" },
+    "calc_savings_name": { "message": "Asusun ajiya (poupança) da jari mai alaƙa da ƙimar manufofi" },
+    "calc_savings_desc": {
+        "message": "Yana kwatanta asusun ajiya (poupança) da kayan kuɗin shiga tsayayye mai haraji, kuma yana gano kason ƙimar manufofi da ake daidaita su."
+    },
+    "calc_savings_formula": {
+        "message": "Ajiya: 0.5% a wata idan Selic ya wuce 8.5%, in ba haka ba 70% na Selic. Kuɗin shiga tsayayye yana da harajin kuɗin shiga mai raguwa"
+    },
+    "field_savings_amount": { "message": "Kuɗin da aka zuba" },
+    "field_savings_months": { "message": "Wa'adi (watanni)" },
+    "field_savings_selic": { "message": "Ƙimar manufofi (Selic, a shekara)" },
+    "field_savings_percentOfRate": { "message": "Kason ƙimar manufofi da ake biya (kuɗin shiga tsayayye)" },
+    "out_savings_advantage": { "message": "Fa'idar kuɗin shiga tsayayye" },
+    "out_savings_savingsFinal": { "message": "Asusun ajiya a ƙarshe" },
+    "out_savings_fixedIncomeFinal": { "message": "Kuɗin shiga tsayayye a ƙarshe (na gaske)" },
+    "out_savings_breakEvenPercent": { "message": "Kason ƙimar manufofi a daidaito" },
+    "calc_dollarConversion_name": { "message": "Sayen dala (bambanci da harajin IOF)" },
+    "calc_dollarConversion_desc": {
+        "message": "Dala nawa za ka samu da reais ɗinka bayan lissafin bambancin banki da harajin musayar kuɗi na IOF."
+    },
+    "calc_dollarConversion_formula": { "message": "Dala = reais ÷ (ƙima × (1 + bambanci) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "Adadi a reais" },
+    "field_dollarConversion_rate": { "message": "Farashin dala (R$ ga kowace US$)" },
+    "field_dollarConversion_spread": { "message": "Bambancin banki" },
+    "field_dollarConversion_iof": { "message": "IOF (harajin musayar kuɗi na Brazil)" },
+    "out_dollarConversion_usdReceived": { "message": "Dala da aka samu" },
+    "out_dollarConversion_effectiveRate": { "message": "Ainihin ƙimar da aka biya" },
+    "out_dollarConversion_cost": { "message": "Kuɗin bambanci da IOF" },
+    "out_dollarConversion_costPercent": { "message": "Kuɗin a matsayin kaso na adadin" },
+    "calc_dollarVsSelic_name": { "message": "Dala da ƙimar manufofi (Selic)" },
+    "calc_dollarVsSelic_desc": {
+        "message": "A ina dala ya kamata ya kasance a ƙarshe don riƙe dala ya doke ƙimar manufofi (Selic)? Kwatanta ne da jimillar adadi kafin harajin kuɗin shiga."
+    },
+    "calc_dollarVsSelic_formula": {
+        "message": "Dala na daidaito = sakamakon ƙimar manufofi ÷ dala da aka riƙe a ƙarshe"
+    },
+    "field_dollarVsSelic_amount": { "message": "Adadi a reais" },
+    "field_dollarVsSelic_months": { "message": "Wa'adi (watanni)" },
+    "field_dollarVsSelic_spot": { "message": "Dalar yau (R$ ga kowace US$)" },
+    "field_dollarVsSelic_expected": { "message": "Dalar da ake tsammani a ƙarshe" },
+    "field_dollarVsSelic_selic": { "message": "Ƙimar manufofi (Selic, a shekara)" },
+    "field_dollarVsSelic_usdYield": { "message": "Riba kan dala (a shekara, a US$)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "Dala na daidaito" },
+    "out_dollarVsSelic_requiredChange": { "message": "Hawan dala da ake buƙata" },
+    "out_dollarVsSelic_selicFinal": { "message": "Jarin ƙimar manufofi a ƙarshe (kafin haraji)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "Jarin dala a ƙarshe (kafin haraji)" },
+    "out_dollarVsSelic_difference": { "message": "Dala debe ƙimar manufofi" },
+    "ratingGood": { "message": "Mai kyau" },
+    "ratingNeutral": { "message": "Tsaka-tsaki" },
+    "ratingBad": { "message": "Mara kyau" },
+    "ratingLegend": { "message": "Kore: mai kyau · Na yau da kullum: tsaka-tsaki · Ja: mara kyau" },
+    "ratingRuleHigher": {
+        "message": "Ƙasa da $BAD$: mara kyau · Daga $BAD$ zuwa $GOOD$: tsaka-tsaki · Sama da $GOOD$: mai kyau",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "Sama da $BAD$: mara kyau · Daga $GOOD$ zuwa $BAD$: tsaka-tsaki · Ƙasa da $GOOD$: mai kyau",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "Ƙasa da $VALUE$: mara kyau · A $VALUE$: tsaka-tsaki · Sama da $VALUE$: mai kyau",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "Sama da $VALUE$: mara kyau · A $VALUE$: tsaka-tsaki · Ƙasa da $VALUE$: mai kyau",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "Ƙa'idar zahiri: abin da ke da lafiya ya bambanta bisa ga masana'anta." },
+    "group_accounting": { "message": "Nazarin lissafin kuɗi" },
+    "calc_incomeStatement_name": { "message": "Nazarin bayanin kuɗin shiga (rata)" },
+    "calc_incomeStatement_desc": {
+        "message": "Yana tafiya daga kuɗin shiga zuwa kuɗin shiga na gaske kuma yana nuna rata a kowane mataki."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = kuɗin shiga − kuɗin sayarwa − kuɗaɗen aiki · EBIT = EBITDA − lalacewar daraja · Na gaske = (EBIT − ruwa) × (1 − haraji)"
+    },
+    "field_incomeStatement_revenue": { "message": "Kuɗin shiga na gaske" },
+    "field_incomeStatement_cogs": { "message": "Kuɗin kayan da aka sayar" },
+    "field_incomeStatement_operatingExpenses": { "message": "Kuɗaɗen aiki" },
+    "field_incomeStatement_depreciation": { "message": "Lalacewar daraja da biyan hankali" },
+    "field_incomeStatement_interestExpense": { "message": "Kuɗin ruwan bashi" },
+    "field_incomeStatement_taxRate": { "message": "Ƙimar harajin kuɗin shiga" },
+    "out_incomeStatement_netIncome": { "message": "Kuɗin shiga na gaske" },
+    "out_incomeStatement_grossMargin": { "message": "Ratar jimilla" },
+    "out_incomeStatement_ebitdaMargin": { "message": "Ratar EBITDA" },
+    "out_incomeStatement_operatingMargin": { "message": "Ratar aiki (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "Ratar gaske" },
+    "calc_dupont_name": { "message": "Nazarin DuPont (matakai 3)" },
+    "calc_dupont_desc": {
+        "message": "Yana rarraba riba kan hannun jari zuwa rata, jujjuyawar kadarori da nauyin bashi."
+    },
+    "calc_dupont_formula": { "message": "ROE = ratar gaske × jujjuyawar kadarori × ninkin hannun jari" },
+    "field_dupont_netIncome": { "message": "Kuɗin shiga na gaske" },
+    "field_dupont_revenue": { "message": "Kuɗin shiga na gaske" },
+    "field_dupont_assets": { "message": "Jimillar kadarori" },
+    "field_dupont_equity": { "message": "Hannun jarin masu hannun jari" },
+    "out_dupont_roe": { "message": "Riba kan hannun jari (ROE)" },
+    "out_dupont_netMargin": { "message": "Ratar gaske" },
+    "out_dupont_assetTurnover": { "message": "Jujjuyawar kadarori" },
+    "out_dupont_equityMultiplier": { "message": "Ninkin hannun jari" },
+    "out_dupont_roa": { "message": "Riba kan kadarori (ROA)" },
+    "calc_dupont5_name": { "message": "Nazarin DuPont (matakai 5)" },
+    "calc_dupont5_desc": {
+        "message": "Yana rarraba ROE zuwa nauyin haraji, nauyin ruwa, ratar aiki, jujjuyawar kadarori da nauyin bashi."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (K.G ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ kuɗin shiga) × (kuɗin shiga ÷ kadarori) × (kadarori ÷ hannun jari)"
+    },
+    "field_dupont5_netIncome": { "message": "Kuɗin shiga na gaske (K.G)" },
+    "field_dupont5_pretaxIncome": { "message": "Kuɗin shiga kafin haraji (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (ribar aiki)" },
+    "field_dupont5_revenue": { "message": "Kuɗin shiga na gaske" },
+    "field_dupont5_assets": { "message": "Jimillar kadarori" },
+    "field_dupont5_equity": { "message": "Hannun jarin masu hannun jari" },
+    "out_dupont5_roe": { "message": "Riba kan hannun jari (ROE)" },
+    "out_dupont5_taxBurden": { "message": "Nauyin haraji (K.G ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "Nauyin ruwa (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "Ratar aiki (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "Jujjuyawar kadarori" },
+    "out_dupont5_equityMultiplier": { "message": "Ninkin hannun jari" },
+    "calc_fleuriet_name": { "message": "Samfurin Fleuriet (jarin aiki mai motsi)" },
+    "calc_fleuriet_desc": {
+        "message": "Yana rarraba tsarin kuɗi bisa jarin aiki (CDG), bukatarsa (NCG) da ragowar kuɗi (T)."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = kuɗaɗen dindindin − kadarori marasa yanzu · NCG = kadarorin yanzu na aiki − basussukan yanzu na aiki · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "Kadarorin yanzu na aiki" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "Basussukan yanzu na aiki" },
+    "field_fleuriet_nonCurrentAssets": { "message": "Kadarori marasa yanzu" },
+    "field_fleuriet_permanentFunds": { "message": "Kuɗaɗen dindindin" },
+    "out_fleuriet_structureType": { "message": "Tsarin kuɗi" },
+    "out_fleuriet_workingCapital": { "message": "Jarin aiki (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "Bukatar jarin aiki (NCG)" },
+    "out_fleuriet_treasury": { "message": "Ragowar kuɗi (T)" },
+    "cat_fleuriet_structureType_1": { "message": "Nau'i na I – Mai kyau ƙwarai" },
+    "cat_fleuriet_structureType_2": { "message": "Nau'i na II – Mai ƙarfi" },
+    "cat_fleuriet_structureType_3": { "message": "Nau'i na III – Ba mai gamsarwa ba" },
+    "cat_fleuriet_structureType_4": { "message": "Nau'i na IV – Mara kyau" },
+    "cat_fleuriet_structureType_5": { "message": "Nau'i na V – Mara kyau ƙwarai" },
+    "cat_fleuriet_structureType_6": { "message": "Nau'i na VI – Haɗari mai yawa" },
+    "calc_altman_name": { "message": "Maki Z na Altman (haɗarin fatara)" },
+    "calc_altman_desc": {
+        "message": "Yana auna haɗarin matsalar kuɗi daga rabo biyar na takardar kadarori da kuɗin shiga, a nau'i biyu."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1.2·X1 + 1.4·X2 + 3.3·X3 + 0.6·X4 + 1.0·X5 · Z″ = 3.25 + 6.56·X1 + 3.26·X2 + 6.72·X3 + 1.05·X4"
+    },
+    "field_altman_workingCapital": { "message": "Jarin aiki" },
+    "field_altman_retainedEarnings": { "message": "Ribar da aka riƙe" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "Darajar hannun jari" },
+    "field_altman_sales": { "message": "Tallace-tallace" },
+    "field_altman_totalAssets": { "message": "Jimillar kadarori" },
+    "field_altman_totalLiabilities": { "message": "Jimillar basussuka" },
+    "out_altman_zScore": { "message": "Maki Z (na asali)" },
+    "out_altman_zZone": { "message": "Yanki (na asali)" },
+    "out_altman_emergingScore": { "message": "Maki Z″ (kasuwanni masu tasowa)" },
+    "out_altman_emergingZone": { "message": "Yanki (kasuwanni masu tasowa)" },
+    "cat_altman_zZone_0": { "message": "Yankin haɗari" },
+    "cat_altman_zZone_1": { "message": "Yankin toka" },
+    "cat_altman_zZone_2": { "message": "Yankin aminci" },
+    "cat_altman_emergingZone_0": { "message": "Yankin haɗari" },
+    "cat_altman_emergingZone_1": { "message": "Yankin toka" },
+    "cat_altman_emergingZone_2": { "message": "Yankin aminci" },
+    "calc_leverageDegrees_name": { "message": "Matakin nauyin aiki da na kuɗi" },
+    "calc_leverageDegrees_desc": { "message": "Yadda canjin tallace-tallace ke motsa ribar aiki da ribar bayan ruwa." },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = ratar gudummawa ÷ EBIT · DFL = EBIT ÷ (EBIT − ruwa) · DTL = DOL × DFL"
+    },
+    "field_leverageDegrees_revenue": { "message": "Kuɗin shiga na gaske" },
+    "field_leverageDegrees_variableCosts": { "message": "Kuɗaɗen kashewa masu canjawa" },
+    "field_leverageDegrees_fixedCosts": { "message": "Kuɗaɗen kashewa na dindindin" },
+    "field_leverageDegrees_interestExpense": { "message": "Kuɗin ruwan bashi" },
+    "out_leverageDegrees_operatingLeverage": { "message": "Nauyin aiki (DOL)" },
+    "out_leverageDegrees_financialLeverage": { "message": "Nauyin kuɗi (DFL)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "Jimillar nauyi (DTL)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (ribar aiki)" },
+    "calc_depreciation_name": { "message": "Jadawalin lalacewar daraja" },
+    "calc_depreciation_desc": {
+        "message": "Lalacewar darajar kadara a shekara, jimillar lalacewar daraja da darajar littafi, ta hanyoyi uku."
+    },
+    "calc_depreciation_formula": {
+        "message": "Madaidaiciya = (kuɗin kashewa − ragowa) ÷ rayuwa · Ragowa mai raguwa = darajar littafi × 2 ÷ rayuwa · Jimillar lambobin shekaru = (kuɗin kashewa − ragowa) × sauran rayuwa ÷ Σ shekaru"
+    },
+    "field_depreciation_cost": { "message": "Kuɗin kadara" },
+    "field_depreciation_salvage": { "message": "Darajar ragowa" },
+    "field_depreciation_lifeYears": { "message": "Rayuwar amfani (shekaru)" },
+    "field_depreciation_method": { "message": "Hanya" },
+    "field_depreciation_year": { "message": "Shekarar da za a nuna" },
+    "out_depreciation_charge": { "message": "Lalacewar darajar shekara" },
+    "out_depreciation_accumulated": { "message": "Jimillar lalacewar daraja" },
+    "out_depreciation_bookValue": { "message": "Darajar littafi" },
+    "choice_depreciation_method_1": { "message": "Madaidaiciya" },
+    "choice_depreciation_method_2": { "message": "Ragowa mai raguwa sau biyu" },
+    "choice_depreciation_method_3": { "message": "Jimillar lambobin shekaru" },
+    "calc_wacc_name": { "message": "WACC da kuɗin hannun jari (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "Matsakaicin kuɗin samar da kuɗin kamfani, daga kuɗin hannun jari na CAPM da kuɗin bashi bayan haraji."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × ƙarin haɗari · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − haraji)"
+    },
+    "field_wacc_equityValue": { "message": "Darajar hannun jari" },
+    "field_wacc_debtValue": { "message": "Darajar bashi" },
+    "field_wacc_riskFree": { "message": "Ƙimar mara haɗari" },
+    "field_wacc_beta": { "message": "Beta" },
+    "field_wacc_marketPremium": { "message": "Ƙarin haɗarin kasuwa" },
+    "field_wacc_costOfDebt": { "message": "Kuɗin bashi (kafin haraji)" },
+    "field_wacc_taxRate": { "message": "Ƙimar harajin kuɗin shiga" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "Kuɗin hannun jari (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Kuɗin bashi bayan haraji (Kd)" },
+    "out_wacc_equityWeight": { "message": "Nauyin hannun jari" },
+    "out_wacc_debtWeight": { "message": "Nauyin bashi" },
+    "calc_eva_name": { "message": "Ƙarin daraja ta tattalin arziki (EVA)" },
+    "calc_eva_desc": { "message": "Ko kasuwanci yana samun fiye da kuɗin jarin da aka zuba a ciki." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × jarin da aka zuba · NOPAT = EBIT × (1 − haraji) · ROIC = NOPAT ÷ jarin da aka zuba"
+    },
+    "field_eva_ebit": { "message": "EBIT (ribar aiki)" },
+    "field_eva_taxRate": { "message": "Ƙimar harajin kuɗin shiga" },
+    "field_eva_investedCapital": { "message": "Jarin da aka zuba" },
+    "field_eva_wacc": { "message": "Kuɗin jari (WACC)" },
+    "out_eva_eva": { "message": "Ƙarin daraja ta tattalin arziki (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "Riba kan jarin da aka zuba (ROIC)" },
+    "out_eva_spread": { "message": "Bambanci (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "Cajin jari" },
+    "calc_freeCashFlow_name": { "message": "Kwararar kuɗi kyauta (FCFF da FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "Kuɗin da ya rage bayan aiki da zuba jari: ga duk masu ba da jari (FCFF) da masu hannun jari (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − haraji) + lalacewar daraja − CapEx − ΔNWC · FCFE = FCFF − ruwa × (1 − haraji) + bashin gaske"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (ribar aiki)" },
+    "field_freeCashFlow_taxRate": { "message": "Ƙimar harajin kuɗin shiga" },
+    "field_freeCashFlow_depreciation": { "message": "Lalacewar daraja da biyan hankali" },
+    "field_freeCashFlow_capex": { "message": "Kashe kuɗin jari (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "Ƙaruwar jarin aiki" },
+    "field_freeCashFlow_interestExpense": { "message": "Kuɗin ruwan bashi" },
+    "field_freeCashFlow_netBorrowing": { "message": "Bashin da aka ci na gaske" },
+    "out_freeCashFlow_fcff": { "message": "Kwararar kuɗi kyauta ta kamfani (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "Kwararar kuɗi kyauta ta masu hannun jari (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "Farashin takardar bashi da tsawon lokaci" },
+    "calc_bond_desc": {
+        "message": "Farashin takardar bashi mai kuɗin ruwa, ƙarinta ko rage darajarta da yadda take kula da riba."
+    },
+    "calc_bond_formula": {
+        "message": "Farashi = Σ kuɗin ruwa ÷ (1 + y)ᵗ + darajar fuska ÷ (1 + y)ⁿ · Tsawon lokaci da aka gyara = Macaulay ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "Darajar fuska" },
+    "field_bond_couponRate": { "message": "Ƙimar kuɗin ruwa (a shekara)" },
+    "field_bond_yieldToMaturity": { "message": "Riba har zuwa cikar wa'adi (a shekara)" },
+    "field_bond_years": { "message": "Shekaru har zuwa cikar wa'adi" },
+    "field_bond_frequency": { "message": "Kuɗin ruwa a shekara" },
+    "out_bond_price": { "message": "Farashin takardar bashi" },
+    "out_bond_premium": { "message": "Ƙari (+) ko rage daraja (−)" },
+    "out_bond_currentYield": { "message": "Ribar yanzu" },
+    "out_bond_macaulayDuration": { "message": "Tsawon lokaci na Macaulay (shekaru)" },
+    "out_bond_modifiedDuration": { "message": "Tsawon lokaci da aka gyara (shekaru)" },
+    "choice_bond_frequency_2": { "message": "Rabin shekara" },
+    "choice_bond_frequency_1": { "message": "Shekara-shekara" },
+    "choice_bond_frequency_4": { "message": "Kowane kwata" },
+    "choice_bond_frequency_12": { "message": "Kowane wata" },
+    "calc_rates_name": { "message": "Sauya ƙimar ruwa da ƙimar gaskiya" },
+    "calc_rates_desc": {
+        "message": "Yana sauya ƙimar suna zuwa ta gaske, ta wata da ta rana, sannan ya cire hauhawar farashi don samun ƙimar gaskiya."
+    },
+    "calc_rates_formula": {
+        "message": "Ta gaske = (1 + ta suna ÷ m)ᵐ − 1 · Makamanci = (1 + ta gaske)^(1 ÷ n) − 1 · Ta gaskiya = (1 + ta gaske) ÷ (1 + hauhawa) − 1"
+    },
+    "field_rates_nominalRate": { "message": "Ƙimar suna (a shekara)" },
+    "field_rates_compounding": { "message": "Tarawa" },
+    "field_rates_inflation": { "message": "Hauhawar farashi (a shekara)" },
+    "out_rates_effectiveAnnual": { "message": "Ƙimar shekara ta gaske" },
+    "out_rates_monthlyEquivalent": { "message": "Ƙimar wata makamanciya" },
+    "out_rates_dailyEquivalent": { "message": "Ƙimar rana makamanciya (kwanaki 252)" },
+    "out_rates_realRate": { "message": "Ƙimar gaskiya (sama da hauhawa)" },
+    "choice_rates_compounding_12": { "message": "Kowane wata" },
+    "choice_rates_compounding_1": { "message": "Kowace shekara" },
+    "choice_rates_compounding_2": { "message": "Sau biyu a shekara" },
+    "choice_rates_compounding_4": { "message": "Kowane kwata" },
+    "choice_rates_compounding_365": { "message": "Kowace rana" },
+    "calc_amortization_name": { "message": "SAC da Price (biyan bashi)" },
+    "calc_amortization_desc": {
+        "message": "Yana kwatanta hanyoyin biyan bashi biyu: a Price kuɗin biya daidai suke, a SAC ana biyan kaso ɗaya na asali kowane wata."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + ragowar bashi × i, inda i = ƙimar shekara ÷ 12"
+    },
+    "field_amortization_principal": { "message": "Adadin bashi" },
+    "field_amortization_annualRate": { "message": "Ƙimar ruwa ta shekara" },
+    "field_amortization_termMonths": { "message": "Wa'adi (watanni)" },
+    "out_amortization_pricePayment": { "message": "Price: kuɗin biya na wata" },
+    "out_amortization_priceTotalInterest": { "message": "Price: jimillar ruwa" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: kuɗin biya na farko" },
+    "out_amortization_sacLastPayment": { "message": "SAC: kuɗin biya na ƙarshe" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: jimillar ruwa" }
+}

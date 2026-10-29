@@ -35,16 +35,18 @@ computed on your device.
 - **Exact conventions** – ROI, margin and markup are different things and are labelled as such;
   percentages are typed as percentages and stored as fractions; the break-even point rounds up to whole
   units without floating-point noise.
-- **Display options** – 16 currencies (or none), 0–4 decimal places for percentages and ratios, and a
+- **Display options** – 30 currencies (or none), 0–4 decimal places for percentages and ratios, and a
   currency symbol that follows your locale.
 - **Copy results** – copies the calculator's name, your inputs and the results as plain text.
 - **Example / Reset** – fill a calculator with sample figures to see how it works, or clear it.
 - **Remembers what you typed** (optional, on by default) – kept in browser memory only and erased when
   Chrome closes. See [Privacy](#privacy).
 - **Roomy popup** that uses the full 640 × 400 px an extension popup can have.
-- **Localized** in English (US), Brazilian Portuguese, Spanish, French, German, Italian, Russian and Polish.
-  The extension follows the browser's UI
-  language automatically; any other language falls back to English. See [Localization](#localization).
+- **Localized in 31 languages**, from English and Brazilian Portuguese to Hindi, Arabic (right-to-left),
+  Japanese and Hausa. The language follows the browser by default and can be changed in the settings. The
+  translations are contextual: the Brazilian _Selic_ becomes the policy rate of each language's main market
+  (_taux directeur_, _Leitzins_, repo rate, 政策金利 …). See [Localization](#localization) and
+  [`docs/localization.md`](docs/localization.md).
 - **Light / dark theme**, keyboard accessible, no analytics, and no network access unless you turn on
   live rates.
 - Open the popup with `Ctrl+Shift+K` (`Command+Shift+K` on macOS); rebind it at
@@ -80,8 +82,8 @@ After a rebuild, press the reload button on the extension's card in `chrome://ex
 
 ```
 public/                 Static files copied to dist/ (manifest, HTML, CSS, icons)
-public/_locales/        Translations: en_US (default), pt_BR, es, fr, de, it, ru and pl
-scripts/                Build tooling: build, package, minify, zip and icon generator
+scripts/                Build tooling: build, package, minify, zip, icon generator and manifest locales
+src/locales/            Translations: 31 languages, one JSON file each (en_US is the source)
 src/core/               Pure, DOM-free logic: parser, finance math, Brazilian rules, calculators, validation
 src/shared/             Settings, draft, formatting, i18n helpers, optional Central Bank client
 src/popup/              Popup UI
@@ -256,26 +258,54 @@ or revised. Check important decisions with a qualified professional.
 
 ### Localization
 
-The extension uses Chrome's built-in `chrome.i18n` system, so the language always follows the browser's
-UI language and needs no setting. Chrome picks the best match: an exact locale such as `pt_BR`, then the
-base language such as `es`, then the default locale `en_US`.
+The popup is translated into 31 languages: English, Chinese (Simplified and Traditional), Spanish, Hindi,
+Bengali, Portuguese (Brazil), Russian, Japanese, Punjabi, Marathi, Telugu, Turkish, Korean, French, German,
+Vietnamese, Tamil, Urdu, Javanese, Italian, Arabic, Gujarati, Persian, Bhojpuri, Hausa, Kannada,
+Indonesian, Polish, Malayalam and Ukrainian. By default the language follows the browser's UI language, and
+the settings let you choose another one, which `chrome.i18n` cannot do. For that reason the translations are
+bundled into the extension and looked up by `src/shared/i18n.ts`, using the same message format as Chrome
+(`$1` and `$NAME$` placeholders). Browser languages are matched to the closest translation: `pt-PT` uses
+Brazilian Portuguese, `es-419` uses Spanish, `zh-TW`/`zh-HK` use Traditional Chinese, any other Chinese
+uses Simplified, and everything else falls back to English.
 
-- **Messages** live in `public/_locales/<locale>/messages.json`. The manifest (name, description,
-  toolbar tooltip, shortcut description) uses `__MSG_<key>__` references.
-- **Static popup text** is localized at startup by `applyTranslations` in `src/shared/i18n.ts`, through
-  `data-i18n` attributes in the HTML. Messages built in code use `t("key", substitutions)`, and message
-  keys are type-checked against `en_US/messages.json`.
+- **Messages** live in `src/locales/<code>.json`, in the format of Chrome's `messages.json`. English
+  (`en_US`) is the source; the other files must define the same keys and placeholders.
+- **Chrome's own strings** (name, description, toolbar tooltip, shortcut label) come from `_locales`. The
+  build generates those folders from `src/locales`, but only for the 26 languages Chrome supports. Punjabi,
+  Urdu, Javanese, Bhojpuri and Hausa have no Chrome UI language, so Chrome's extension page shows English
+  for them. The extension itself is fully translated.
+- **Contextual translation.** The text is adapted to each market instead of translated word for word. The
+  Selic rate is called the policy rate of the language's main market (_taux directeur_, _Leitzins_,
+  _ключевая ставка_, repo rate, _政策金利_, …); Brazilian products and taxes without an equivalent (_CDB_,
+  _LCI_, _poupança_, _IOF_) keep their names and are explained in the same sentence.
+  [`docs/localization.md`](docs/localization.md) lists the term used in each language.
+- **Static popup text** is localized at startup, and again whenever the language changes, by
+  `applyTranslations` in `src/shared/i18n.ts`, through `data-i18n` attributes in the HTML. Messages built in
+  code use `t("key", substitutions)`. Keys are type-checked against `en_US.json`, and `src/shared/catalog.ts`
+  is typed so that a language missing a message fails to compile.
+- **Right-to-left languages** (Arabic, Persian, Urdu) set `dir="rtl"` on the page and mirror the layout.
+  Number fields, formulas and result values stay left-to-right.
 - **Calculator texts follow a naming convention**, built in `src/shared/labels.ts`: `calc_<id>_name`,
   `calc_<id>_desc`, `calc_<id>_formula`, `field_<id>_<field>`, `out_<id>_<output>`,
   `choice_<id>_<field>_<value>` and `group_<group>`. The compiler cannot check these keys, so
   `tests/i18n.test.ts` verifies that every calculator, field, output and choice has a message in every
   locale, and that no message is unused.
-- **Numbers and currencies** are formatted with `Intl.NumberFormat` in the browser's UI language.
-- **Adding a language:** copy `public/_locales/en_US` to a new folder named after the locale (for
-  example `fr` or `de`), translate every `message`, and keep the `placeholders` blocks unchanged. Then
-  add the folder name to `EXPECTED_LOCALES` in `tests/i18n.test.ts`.
-- **Testing a language:** start Chrome with `--lang=pt-BR` (or change the language in
-  `chrome://settings/languages` and restart Chrome), then reload the extension.
+- **Numbers and currencies** are formatted with `Intl.NumberFormat` in the active language, always with
+  Latin digits so that results match the formulas and can be read back. The parser also accepts native digits
+  (Arabic-Indic, Persian, Devanagari, Bengali, full-width…), Indian grouping (`12,34,567`) and Arabic
+  decimal and thousands marks. Currency suggestions follow the language and region.
+- **Adding a language:** copy `src/locales/en_US.json` to `src/locales/<code>.json` and translate every
+  `message` (keep the `placeholders` blocks as they are); add one entry to `LOCALES` in
+  `src/shared/locales.ts` (code, name in that language, language tag, direction); add the import and the
+  entry to `src/shared/catalog.ts`. If Chrome supports the language as a UI language, also add its code to
+  `MANIFEST_LOCALES` in `scripts/manifest-locales.mjs`. The tests then check that the new file has the same
+  keys and placeholders as English, that it is translated and not a copy, that the Brazilian product names
+  are kept, that no message is unused and that the description stays within the Web Store limit of 132
+  characters.
+- **Testing a language:** pick it in the settings, or start Chrome with `--lang=pt-BR` to test the
+  automatic choice.
+- **Review status:** the translations have not been reviewed by native speakers; see
+  [`docs/localization.md`](docs/localization.md).
 
 ### Adding a calculator
 

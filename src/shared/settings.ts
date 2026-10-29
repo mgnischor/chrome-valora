@@ -20,6 +20,7 @@
 */
 import { DEFAULT_CALCULATOR, isCalculatorId, type CalculatorId } from "../core/calculators";
 import { NO_CURRENCY } from "./format";
+import { AUTO_LANGUAGE, isLocaleCode } from "./locales";
 
 /** Currencies offered in the settings, besides "no currency". */
 export const CURRENCIES = [
@@ -39,6 +40,20 @@ export const CURRENCIES = [
     "CNY",
     "PLN",
     "RUB",
+    "TRY",
+    "UAH",
+    "KRW",
+    "VND",
+    "IDR",
+    "BDT",
+    "PKR",
+    "SAR",
+    "AED",
+    "EGP",
+    "IRR",
+    "NGN",
+    "TWD",
+    "HKD",
 ] as const;
 
 /** Allowed numbers of decimal places for percentages, ratios and other non-monetary results. */
@@ -71,6 +86,20 @@ const REGION_CURRENCY: Readonly<Record<string, (typeof CURRENCIES)[number]>> = {
     AT: "EUR",
     BE: "EUR",
     LU: "EUR",
+    TR: "TRY",
+    UA: "UAH",
+    KR: "KRW",
+    VN: "VND",
+    ID: "IDR",
+    BD: "BDT",
+    PK: "PKR",
+    SA: "SAR",
+    AE: "AED",
+    EG: "EGP",
+    IR: "IRR",
+    NG: "NGN",
+    TW: "TWD",
+    HK: "HKD",
 };
 
 /** Currency suggested for a bare language such as `pt`, when the region is not known. */
@@ -84,6 +113,26 @@ const LANGUAGE_CURRENCY: Readonly<Record<string, (typeof CURRENCIES)[number]>> =
     zh: "CNY",
     pl: "PLN",
     ru: "RUB",
+    tr: "TRY",
+    uk: "UAH",
+    ko: "KRW",
+    vi: "VND",
+    id: "IDR",
+    jv: "IDR",
+    hi: "INR",
+    bho: "INR",
+    mr: "INR",
+    gu: "INR",
+    ta: "INR",
+    te: "INR",
+    kn: "INR",
+    ml: "INR",
+    pa: "INR",
+    bn: "BDT",
+    ur: "PKR",
+    ar: "SAR",
+    fa: "IRR",
+    ha: "NGN",
 };
 
 /** Everything persisted between sessions. Calculator inputs are kept separately and only in memory. */
@@ -98,6 +147,8 @@ export interface Settings {
     lastCalculator: CalculatorId;
     /** Download the Selic rate and the dollar quote from the Central Bank of Brazil. Off until the user turns it on. */
     liveRates: boolean;
+    /** `"auto"` follows the browser's language; otherwise the code of a supported language. */
+    language: string;
 }
 
 const STORAGE_KEY = "settings";
@@ -127,6 +178,7 @@ export function defaultSettings(language: string): Settings {
         rememberInputs: true,
         lastCalculator: DEFAULT_CALCULATOR,
         liveRates: false,
+        language: AUTO_LANGUAGE,
     };
 }
 
@@ -151,6 +203,7 @@ export function sanitizeSettings(raw: unknown, language: string): Settings {
         rememberInputs: typeof input.rememberInputs === "boolean" ? input.rememberInputs : defaults.rememberInputs,
         lastCalculator: isCalculatorId(input.lastCalculator) ? input.lastCalculator : defaults.lastCalculator,
         liveRates: typeof input.liveRates === "boolean" ? input.liveRates : defaults.liveRates,
+        language: typeof input.language === "string" && isLocaleCode(input.language) ? input.language : AUTO_LANGUAGE,
     };
 }
 

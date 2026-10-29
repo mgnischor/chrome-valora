@@ -31,6 +31,8 @@
     "seriesHint": {
         "message": "Une valeur par ligne (ou séparées par des points-virgules). Utilisez le signe moins pour les sorties."
     },
+    "languageLabel": { "message": "Langue" },
+    "languageAuto": { "message": "Automatique (langue du navigateur)" },
     "settingsHeading": { "message": "Paramètres" },
     "settingsBack": { "message": "Retour" },
     "currencyLabel": { "message": "Devise" },
@@ -215,7 +217,7 @@
     "out_loan_totalPaid": { "message": "Total payé" },
     "out_loan_totalInterest": { "message": "Total des intérêts" },
     "marketOff": {
-        "message": "La Selic et le dollar peuvent être renseignés à partir de la Banque centrale du Brésil."
+        "message": "Le taux directeur du Brésil (Selic) et le cours du dollar peuvent être renseignés à partir de la Banque centrale du Brésil."
     },
     "marketEnable": { "message": "Récupérer les taux" },
     "marketUse": { "message": "Utiliser les taux" },
@@ -228,46 +230,46 @@
     },
     "statusMarketPermissionDenied": { "message": "Autorisation refusée : aucun taux n'a été récupéré." },
     "liveRatesLabel": {
-        "message": "Récupérer le taux Selic et le cours du dollar auprès de la Banque centrale du Brésil"
+        "message": "Récupérer le taux directeur du Brésil (Selic) et le cours du dollar auprès de la Banque centrale du Brésil"
     },
     "liveRatesHint": {
         "message": "Désactivé par défaut. Une fois activé, Chrome demande l'autorisation de contacter api.bcb.gov.br, qui ne reçoit aucune information vous concernant. Le désactiver retire l'autorisation."
     },
-    "group_markets": { "message": "Selic et dollar" },
-    "calc_selicYield_name": { "message": "Revenu fixe indexé sur la Selic (Tesouro Selic, CDB)" },
+    "group_markets": { "message": "Taux directeur et dollar (Brésil)" },
+    "calc_selicYield_name": { "message": "Revenu fixe indexé sur le taux directeur (Selic, CDB)" },
     "calc_selicYield_desc": {
-        "message": "Ce que rapporte, après impôt sur le revenu, un placement qui verse une part de la Selic."
+        "message": "Ce que rapporte, après impôt sur le revenu, un placement qui verse une part du taux directeur de la banque centrale (la Selic au Brésil)."
     },
     "calc_selicYield_formula": {
         "message": "Bénéfice net = Montant × (croissance − 1) × (1 − impôt) ; la croissance est calculée chaque jour sur 252 jours ouvrés par an"
     },
     "field_selicYield_amount": { "message": "Montant investi" },
     "field_selicYield_months": { "message": "Durée (mois)" },
-    "field_selicYield_selic": { "message": "Taux Selic (par an)" },
-    "field_selicYield_percentOfRate": { "message": "Pourcentage de la Selic versé" },
+    "field_selicYield_selic": { "message": "Taux directeur (Selic, par an)" },
+    "field_selicYield_percentOfRate": { "message": "Part du taux directeur versée" },
     "field_selicYield_taxTreatment": { "message": "Impôt sur le revenu" },
     "out_selicYield_netFinal": { "message": "Montant net à l'échéance" },
     "out_selicYield_netProfit": { "message": "Bénéfice net" },
     "out_selicYield_incomeTax": { "message": "Impôt sur le revenu" },
     "out_selicYield_taxRate": { "message": "Taux d'imposition" },
     "out_selicYield_netAnnualRate": { "message": "Taux net par an" },
-    "choice_selicYield_taxTreatment_1": { "message": "Barème dégressif (CDB, Tesouro)" },
-    "choice_selicYield_taxTreatment_0": { "message": "Exonéré (LCI, LCA)" },
-    "calc_savings_name": { "message": "Livret d'épargne (poupança) ou placement indexé sur la Selic" },
+    "choice_selicYield_taxTreatment_1": { "message": "Barème dégressif (CDB, Trésor)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Exonéré d'impôt (LCI, LCA)" },
+    "calc_savings_name": { "message": "Livret d'épargne (poupança) ou placement indexé sur le taux directeur" },
     "calc_savings_desc": {
-        "message": "Compare le livret d'épargne à un produit à revenu fixe imposé et trouve la part de la Selic où ils s'égalent."
+        "message": "Compare le livret d'épargne (poupança) à un produit à revenu fixe imposé et trouve la part du taux directeur où ils s'égalent."
     },
     "calc_savings_formula": {
         "message": "Épargne : 0,5 % par mois si la Selic dépasse 8,5 %, sinon 70 % de la Selic. Le revenu fixe paie un impôt dégressif"
     },
     "field_savings_amount": { "message": "Montant investi" },
     "field_savings_months": { "message": "Durée (mois)" },
-    "field_savings_selic": { "message": "Taux Selic (par an)" },
-    "field_savings_percentOfRate": { "message": "Pourcentage de la Selic versé (revenu fixe)" },
+    "field_savings_selic": { "message": "Taux directeur (Selic, par an)" },
+    "field_savings_percentOfRate": { "message": "Part du taux directeur versée (revenu fixe)" },
     "out_savings_advantage": { "message": "Avantage du revenu fixe" },
     "out_savings_savingsFinal": { "message": "Livret d'épargne à l'échéance" },
     "out_savings_fixedIncomeFinal": { "message": "Revenu fixe à l'échéance (net)" },
-    "out_savings_breakEvenPercent": { "message": "Part de la Selic pour égaliser" },
+    "out_savings_breakEvenPercent": { "message": "Part du taux directeur pour égaliser" },
     "calc_dollarConversion_name": { "message": "Achat de dollars (spread et IOF)" },
     "calc_dollarConversion_desc": {
         "message": "Combien de dollars vos reais achètent une fois le spread de la banque et l'IOF comptés."
@@ -276,29 +278,29 @@
     "field_dollarConversion_amount": { "message": "Montant en reais" },
     "field_dollarConversion_rate": { "message": "Cours du dollar (R$/US$)" },
     "field_dollarConversion_spread": { "message": "Spread de la banque" },
-    "field_dollarConversion_iof": { "message": "IOF (taxe sur le change)" },
+    "field_dollarConversion_iof": { "message": "IOF (taxe brésilienne sur le change)" },
     "out_dollarConversion_usdReceived": { "message": "Dollars reçus" },
     "out_dollarConversion_effectiveRate": { "message": "Cours effectif payé" },
     "out_dollarConversion_cost": { "message": "Coût du spread et de l'IOF" },
     "out_dollarConversion_costPercent": { "message": "Coût en part du montant" },
-    "calc_dollarVsSelic_name": { "message": "Dollar ou Selic" },
+    "calc_dollarVsSelic_name": { "message": "Dollar ou taux directeur (Selic)" },
     "calc_dollarVsSelic_desc": {
-        "message": "Où le dollar doit-il se situer à l'échéance pour que détenir des dollars batte la Selic ? Comparaison brute, avant impôt sur le revenu."
+        "message": "Où le dollar doit-il se situer à l'échéance pour que détenir des dollars batte le taux directeur (Selic) ? Comparaison brute, avant impôt sur le revenu."
     },
     "calc_dollarVsSelic_formula": {
-        "message": "Dollar d'équilibre = résultat de la Selic ÷ dollars détenus à l'échéance"
+        "message": "Dollar d'équilibre = résultat du taux directeur ÷ dollars détenus à l'échéance"
     },
     "field_dollarVsSelic_amount": { "message": "Montant en reais" },
     "field_dollarVsSelic_months": { "message": "Durée (mois)" },
     "field_dollarVsSelic_spot": { "message": "Dollar aujourd'hui (R$/US$)" },
     "field_dollarVsSelic_expected": { "message": "Dollar attendu à l'échéance" },
-    "field_dollarVsSelic_selic": { "message": "Taux Selic (par an)" },
+    "field_dollarVsSelic_selic": { "message": "Taux directeur (Selic, par an)" },
     "field_dollarVsSelic_usdYield": { "message": "Rendement en dollars (an, US$)" },
     "out_dollarVsSelic_breakEvenRate": { "message": "Dollar d'équilibre" },
     "out_dollarVsSelic_requiredChange": { "message": "Hausse du dollar nécessaire" },
-    "out_dollarVsSelic_selicFinal": { "message": "Selic à l'échéance (brut)" },
+    "out_dollarVsSelic_selicFinal": { "message": "Taux directeur à l'échéance (brut)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Dollars à l'échéance (brut)" },
-    "out_dollarVsSelic_difference": { "message": "Dollar moins Selic" },
+    "out_dollarVsSelic_difference": { "message": "Dollar moins taux directeur" },
     "ratingGood": { "message": "Bon" },
     "ratingNeutral": { "message": "Neutre" },
     "ratingBad": { "message": "Mauvais" },

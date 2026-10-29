@@ -20,6 +20,8 @@
 */
 import { describe, expect, it } from "vitest";
 import { parseNumber } from "../src/core/parse";
+import { LOCALES } from "../src/shared/locales";
+import { CURRENCIES } from "../src/shared/settings";
 import {
     NO_CURRENCY,
     buildReport,
@@ -122,11 +124,42 @@ describe("formatInputValue", () => {
         expect(formatInputValue([400, -1000.5], "series", "en-US")).toBe("400\n-1000.5");
     });
 
-    it("round-trips through the parser in every supported locale", () => {
-        for (const locale of ["en-US", "pt-BR", "es", "es-MX", "de-DE", "de-CH", "fr-FR", "it-IT", "ru-RU", "pl-PL"]) {
+    it("round-trips through the parser in every supported language", () => {
+        for (const { tag } of LOCALES) {
             for (const value of [0, 1, 0.5, 1234.5678, -42.1, 1_000_000, 0.000123]) {
-                const text = formatInputValue(value, "number", locale);
-                expect(parseNumber(text, decimalSeparator(locale)), `${locale}: ${text}`).toBeCloseTo(value, 9);
+                const text = formatInputValue(value, "number", tag);
+                expect(parseNumber(text, decimalSeparator(tag)), `${tag}: ${text}`).toBeCloseTo(value, 9);
+            }
+        }
+    });
+
+    it("writes Latin digits in every supported language, even where the locale uses other digits", () => {
+        for (const { tag } of LOCALES) {
+            expect(formatInputValue(1234.5, "number", tag), tag).toMatch(/^[0-9]+[.,][0-9]$/);
+            expect(formatValue(1234.5, "ratio", { locale: tag, currency: "none", decimals: 2 }), tag).toMatch(/[0-9]/);
+            expect(formatValue(1234.5, "ratio", { locale: tag, currency: "none", decimals: 2 }), tag).not.toMatch(
+                /[٠-٩۰-۹०-९০-৯]/
+            );
+        }
+    });
+
+    it("formats money in every supported language and currency without throwing", () => {
+        for (const { tag } of LOCALES) {
+            for (const currency of CURRENCIES) {
+                const text = formatValue(1234.5, "currency", { locale: tag, currency, decimals: 2 });
+                expect(text, `${tag} ${currency}`).toMatch(/[0-9]/);
+            }
+        }
+    });
+
+    it("leaves out the invisible direction marks that would mirror a Latin currency symbol", () => {
+        const marks = new RegExp(`[${String.fromCharCode(0x200e, 0x200f, 0x061c)}]`);
+        for (const tag of ["ar", "fa", "ur"]) {
+            for (const value of [-1234.5, 1234.5]) {
+                for (const kind of ["currency", "percent", "ratio"] as const) {
+                    const text = formatValue(value, kind, { locale: tag, currency: "BRL", decimals: 2 });
+                    expect(text, `${tag} ${kind} ${value}`).not.toMatch(marks);
+                }
             }
         }
     });

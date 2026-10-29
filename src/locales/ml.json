@@ -1,0 +1,562 @@
+{
+    "extName": { "message": "Valora – ബിസിനസ് കാൽക്കുലേറ്റർ" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "ROI, ദ്രവ്യത, ബ്രേക്ക്-ഈവൻ, NPV, IRR തുടങ്ങിയവയ്ക്കുള്ള ബിസിനസ് കാൽക്കുലേറ്ററുകൾ. കണക്കുകൂട്ടൽ ഉപകരണത്തിൽ തന്നെ."
+    },
+    "actionTitle": { "message": "Valora – ബിസിനസ് കാൽക്കുലേറ്ററുകൾ" },
+    "commandOpen": { "message": "Valora തുറക്കുക" },
+    "tagline": { "message": "ബിസിനസ് കാൽക്കുലേറ്ററുകൾ" },
+    "calculatorLabel": { "message": "കാൽക്കുലേറ്റർ" },
+    "inputsLabel": { "message": "ഇൻപുട്ടുകൾ" },
+    "resultsLabel": { "message": "ഫലങ്ങൾ" },
+    "exampleButton": { "message": "ഉദാഹരണം" },
+    "exampleButtonTitle": { "message": "സാമ്പിൾ മൂല്യങ്ങൾ നിറയ്ക്കുക" },
+    "resetButton": { "message": "റീസെറ്റ്" },
+    "resetButtonTitle": { "message": "എല്ലാ ഫീൽഡുകളും മായ്ക്കുക" },
+    "settingsButtonTitle": { "message": "ക്രമീകരണങ്ങൾ" },
+    "resultsEmpty": { "message": "ഫലങ്ങൾ കാണാൻ ഫീൽഡുകൾ പൂരിപ്പിക്കുക." },
+    "resultUndefined": { "message": "നിർവചിച്ചിട്ടില്ല" },
+    "resultUndefinedHint": {
+        "message": "ഈ മൂല്യങ്ങൾക്ക് ഈ ഫലം നിർവചിച്ചിട്ടില്ല, ഉദാഹരണത്തിന് പൂജ്യം കൊണ്ട് ഹരിക്കുമ്പോഴോ പരിഹാരമില്ലാത്തപ്പോഴോ."
+    },
+    "formulaLabel": { "message": "സൂത്രവാക്യം" },
+    "copyResults": { "message": "ഫലങ്ങൾ പകർത്തുക" },
+    "statusCopied": { "message": "ഫലങ്ങൾ പകർത്തി." },
+    "statusCopyFailed": { "message": "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്താനായില്ല." },
+    "statusSaveFailed": { "message": "നിങ്ങളുടെ ക്രമീകരണങ്ങൾ സംരക്ഷിക്കാനായില്ല." },
+    "footer": {
+        "message": "കണക്കുകൂട്ടൽ നിങ്ങളുടെ ഉപകരണത്തിൽ തന്നെ നടക്കുന്നു; നിങ്ങൾ ടൈപ്പ് ചെയ്യുന്നത് എങ്ങും അയയ്ക്കില്ല. ഇവ ഏകദേശ കണക്കുകളാണ്, സാമ്പത്തിക ഉപദേശമല്ല."
+    },
+    "seriesHint": {
+        "message": "ഓരോ വരിയിലും ഒരു മൂല്യം (അല്ലെങ്കിൽ അർധവിരാമം കൊണ്ട് വേർതിരിക്കുക). പുറത്തേക്കുള്ള തുകകൾക്ക് മൈനസ് ചിഹ്നം ഉപയോഗിക്കുക."
+    },
+    "languageLabel": { "message": "ഭാഷ" },
+    "languageAuto": { "message": "സ്വയമേവ (ബ്രൗസർ ഭാഷ)" },
+    "settingsHeading": { "message": "ക്രമീകരണങ്ങൾ" },
+    "settingsBack": { "message": "പിന്നോട്ട്" },
+    "currencyLabel": { "message": "കറൻസി" },
+    "currencyNone": { "message": "ചിഹ്നമില്ലാതെ" },
+    "decimalsLabel": { "message": "ശതമാനങ്ങൾക്കും അനുപാതങ്ങൾക്കുമുള്ള ദശാംശസ്ഥാനങ്ങൾ" },
+    "rememberInputsLabel": { "message": "ബ്രൗസർ തുറന്നിരിക്കുന്നിടത്തോളം ഞാൻ ടൈപ്പ് ചെയ്തത് ഓർമ്മിക്കുക" },
+    "rememberInputsHint": {
+        "message": "ബ്രൗസറിന്റെ മെമ്മറിയിൽ മാത്രം നിൽക്കും; Chrome അടയ്ക്കുമ്പോൾ മായും. ഇത് ഓഫ് ചെയ്താൽ ഉടൻ മായ്ക്കും."
+    },
+    "errorNotNumber": { "message": "സാധുവായ ഒരു സംഖ്യ നൽകുക." },
+    "errorNotInteger": { "message": "ഒരു പൂർണ്ണസംഖ്യ നൽകുക." },
+    "errorMin": { "message": "കുറഞ്ഞത് $VALUE$ ആയിരിക്കണം.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": {
+        "message": "$VALUE$ നെക്കാൾ കൂടുതലായിരിക്കണം.",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "errorMax": { "message": "പരമാവധി $VALUE$ ആയിരിക്കണം.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "പട്ടികയിൽ നിന്ന് ഒരു മൂല്യം തിരഞ്ഞെടുക്കുക." },
+    "errorTooFewEntries": {
+        "message": "കുറഞ്ഞത് $COUNT$ മൂല്യങ്ങൾ നൽകുക.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "പരമാവധി $COUNT$ മൂല്യങ്ങൾ നൽകുക.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "എൻട്രി $POSITION$ സാധുവായ സംഖ്യയല്ല.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "നേട്ടം" },
+    "group_profitability": { "message": "ലാഭക്ഷമതയും വില നിർണയവും" },
+    "group_liquidity": { "message": "ദ്രവ്യതയും കടം തിരിച്ചടയ്ക്കാനുള്ള ശേഷിയും" },
+    "group_investment": { "message": "നിക്ഷേപവും ധനസഹായവും" },
+    "calc_roi_name": { "message": "നിക്ഷേപത്തിലെ നേട്ടം (ROI)" },
+    "calc_roi_desc": {
+        "message": "നിക്ഷേപിച്ച തുകയോട് താരതമ്യം ചെയ്താൽ ഒരു നിക്ഷേപം എത്ര നേടി അല്ലെങ്കിൽ നഷ്ടപ്പെടുത്തി."
+    },
+    "calc_roi_formula": { "message": "ROI = (തിരികെ കിട്ടിയത് − നിക്ഷേപം) ÷ നിക്ഷേപം" },
+    "field_roi_invested": { "message": "നിക്ഷേപിച്ച തുക" },
+    "field_roi_returned": { "message": "തിരികെ കിട്ടിയ തുക" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "അറ്റാദായം" },
+    "out_roi_multiple": { "message": "നേട്ട ഗുണകം" },
+    "calc_cagr_name": { "message": "സംയുക്ത വാർഷിക വളർച്ചാ നിരക്ക് (CAGR)" },
+    "calc_cagr_desc": {
+        "message": "ഒരു മൂല്യത്തെ തുടക്കത്തിൽ നിന്ന് അവസാനത്തിലേക്ക് എത്തിക്കുന്ന സ്ഥിര വാർഷിക വളർച്ചാ നിരക്ക്."
+    },
+    "calc_cagr_formula": { "message": "CAGR = (അവസാനം ÷ തുടക്കം)^(1 ÷ വർഷങ്ങൾ) − 1" },
+    "field_cagr_startValue": { "message": "ആരംഭ മൂല്യം" },
+    "field_cagr_endValue": { "message": "അന്തിമ മൂല്യം" },
+    "field_cagr_years": { "message": "വർഷങ്ങൾ" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "ആകെ വളർച്ച" },
+    "calc_roe_name": { "message": "ഇക്വിറ്റിയിലും ആസ്തികളിലുമുള്ള നേട്ടം (ROE, ROA)" },
+    "calc_roe_desc": {
+        "message": "ഒരു കമ്പനി അതിന്റെ ഓഹരിയുടമകളുടെ ഇക്വിറ്റിയിൽ നിന്നും ആസ്തികളിൽ നിന്നും എത്ര ലാഭം ഉണ്ടാക്കുന്നു."
+    },
+    "calc_roe_formula": { "message": "ROE = അറ്റ വരുമാനം ÷ ഇക്വിറ്റി · ROA = അറ്റ വരുമാനം ÷ ആസ്തികൾ" },
+    "field_roe_netIncome": { "message": "അറ്റ വരുമാനം" },
+    "field_roe_equity": { "message": "ഓഹരിയുടമകളുടെ ഇക്വിറ്റി" },
+    "field_roe_assets": { "message": "ആകെ ആസ്തികൾ" },
+    "out_roe_roe": { "message": "ഇക്വിറ്റിയിലെ നേട്ടം (ROE)" },
+    "out_roe_roa": { "message": "ആസ്തികളിലെ നേട്ടം (ROA)" },
+    "out_roe_equityMultiplier": { "message": "ഇക്വിറ്റി ഗുണകം" },
+    "calc_margin_name": { "message": "മാർജിനും മാർക്കപ്പും" },
+    "calc_margin_desc": { "message": "വിൽപ്പന വിലയുടെ (മാർജിൻ) അല്ലെങ്കിൽ ചെലവിന്റെ (മാർക്കപ്പ്) അനുപാതമായി ലാഭം." },
+    "calc_margin_formula": { "message": "മാർജിൻ = (വില − ചെലവ്) ÷ വില · മാർക്കപ്പ് = (വില − ചെലവ്) ÷ ചെലവ്" },
+    "field_margin_cost": { "message": "ഒരു യൂണിറ്റിന്റെ ചെലവ്" },
+    "field_margin_price": { "message": "വിൽപ്പന വില" },
+    "out_margin_margin": { "message": "മാർജിൻ" },
+    "out_margin_markup": { "message": "മാർക്കപ്പ്" },
+    "out_margin_profit": { "message": "ഒരു യൂണിറ്റിന്റെ ലാഭം" },
+    "calc_pricing_name": { "message": "ലക്ഷ്യ മാർജിനുള്ള വില" },
+    "calc_pricing_desc": {
+        "message": "നിങ്ങൾ ആഗ്രഹിക്കുന്ന മാർജിൻ നൽകുന്ന വിൽപ്പന വിലയും അതിന് ആവശ്യമായ മാർക്കപ്പും."
+    },
+    "calc_pricing_formula": { "message": "വില = ചെലവ് ÷ (1 − മാർജിൻ) · മാർക്കപ്പ് = മാർജിൻ ÷ (1 − മാർജിൻ)" },
+    "field_pricing_cost": { "message": "ഒരു യൂണിറ്റിന്റെ ചെലവ്" },
+    "field_pricing_targetMargin": { "message": "ലക്ഷ്യ മാർജിൻ" },
+    "out_pricing_price": { "message": "വിൽപ്പന വില" },
+    "out_pricing_markup": { "message": "ആവശ്യമായ മാർക്കപ്പ്" },
+    "out_pricing_profit": { "message": "ഒരു യൂണിറ്റിന്റെ ലാഭം" },
+    "calc_breakeven_name": { "message": "ബ്രേക്ക്-ഈവൻ പോയിന്റ്" },
+    "calc_breakeven_desc": {
+        "message": "സ്ഥിരച്ചെലവുകൾ നികത്താനും വേണമെങ്കിൽ ലാഭലക്ഷ്യം നേടാനും എത്ര യൂണിറ്റ് വിൽക്കണം."
+    },
+    "calc_breakeven_formula": { "message": "യൂണിറ്റുകൾ = (സ്ഥിരച്ചെലവുകൾ + ലക്ഷ്യ ലാഭം) ÷ (വില − മാറുന്ന ചെലവ്)" },
+    "field_breakeven_fixedCosts": { "message": "സ്ഥിരച്ചെലവുകൾ" },
+    "field_breakeven_price": { "message": "യൂണിറ്റ് വില" },
+    "field_breakeven_variableCost": { "message": "ഒരു യൂണിറ്റിന്റെ മാറുന്ന ചെലവ്" },
+    "field_breakeven_targetProfit": { "message": "ലക്ഷ്യ ലാഭം" },
+    "out_breakeven_units": { "message": "വിൽക്കേണ്ട യൂണിറ്റുകൾ" },
+    "out_breakeven_revenue": { "message": "ആവശ്യമായ വരുമാനം" },
+    "out_breakeven_contributionMargin": { "message": "ഒരു യൂണിറ്റിന്റെ കോൺട്രിബ്യൂഷൻ മാർജിൻ" },
+    "out_breakeven_contributionMarginRatio": { "message": "കോൺട്രിബ്യൂഷൻ മാർജിൻ അനുപാതം" },
+    "calc_liquidity_name": { "message": "ദ്രവ്യതാ അനുപാതങ്ങൾ" },
+    "calc_liquidity_desc": {
+        "message": "ഒരു കമ്പനിക്ക് അതിന്റെ ഹ്രസ്വകാല ആസ്തികൾ കൊണ്ട് ഹ്രസ്വകാല ബാധ്യതകൾ തീർക്കാൻ കഴിയുമോ."
+    },
+    "calc_liquidity_formula": {
+        "message": "നിലവിലെ = നിലവിലെ ആസ്തികൾ ÷ നിലവിലെ ബാധ്യതകൾ · ദ്രുത = (പണം + ലഭിക്കാനുള്ളത്) ÷ നിലവിലെ ബാധ്യതകൾ · പണം = പണം ÷ നിലവിലെ ബാധ്യതകൾ"
+    },
+    "field_liquidity_cash": { "message": "പണവും പണത്തിന് തുല്യമായവയും" },
+    "field_liquidity_receivables": { "message": "ലഭിക്കാനുള്ള അക്കൗണ്ടുകൾ" },
+    "field_liquidity_inventory": { "message": "ഇൻവെന്ററി" },
+    "field_liquidity_otherCurrentAssets": { "message": "മറ്റ് നിലവിലെ ആസ്തികൾ" },
+    "field_liquidity_currentLiabilities": { "message": "നിലവിലെ ബാധ്യതകൾ" },
+    "out_liquidity_currentRatio": { "message": "നിലവിലെ അനുപാതം" },
+    "out_liquidity_quickRatio": { "message": "ദ്രുത അനുപാതം" },
+    "out_liquidity_cashRatio": { "message": "പണ അനുപാതം" },
+    "out_liquidity_workingCapital": { "message": "പ്രവർത്തന മൂലധനം" },
+    "calc_cashCycle_name": { "message": "പണ പരിവർത്തന ചക്രം" },
+    "calc_cashCycle_desc": {
+        "message": "വിതരണക്കാർക്ക് പണം നൽകുന്നതിനും ഉപഭോക്താക്കളിൽ നിന്ന് പിരിച്ചെടുക്കുന്നതിനും ഇടയിൽ പണം എത്ര ദിവസം കുടുങ്ങിക്കിടക്കുന്നു."
+    },
+    "calc_cashCycle_formula": { "message": "CCC = ഇൻവെന്ററി ദിവസങ്ങൾ + ലഭിക്കാനുള്ള ദിവസങ്ങൾ − നൽകാനുള്ള ദിവസങ്ങൾ" },
+    "field_cashCycle_revenue": { "message": "കാലയളവിലെ വരുമാനം" },
+    "field_cashCycle_cogs": { "message": "വിറ്റ സാധനങ്ങളുടെ ചെലവ്" },
+    "field_cashCycle_inventory": { "message": "ശരാശരി ഇൻവെന്ററി" },
+    "field_cashCycle_receivables": { "message": "ശരാശരി ലഭിക്കാനുള്ളത്" },
+    "field_cashCycle_payables": { "message": "ശരാശരി നൽകാനുള്ളത്" },
+    "field_cashCycle_periodDays": { "message": "കാലയളവിലെ ദിവസങ്ങൾ" },
+    "out_cashCycle_cashConversionCycle": { "message": "പണ പരിവർത്തന ചക്രം" },
+    "out_cashCycle_daysInventory": { "message": "ഇൻവെന്ററി ദിവസങ്ങൾ" },
+    "out_cashCycle_daysReceivables": { "message": "ലഭിക്കാനുള്ള ദിവസങ്ങൾ" },
+    "out_cashCycle_daysPayables": { "message": "നൽകാനുള്ള ദിവസങ്ങൾ" },
+    "out_cashCycle_inventoryTurnover": { "message": "ഇൻവെന്ററി വിറ്റുവരവ്" },
+    "choice_cashCycle_periodDays_365": { "message": "365 ദിവസം (വർഷം)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 ദിവസം (വാണിജ്യ വർഷം)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 ദിവസം (പാദം)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 ദിവസം (മാസം)" },
+    "calc_leverage_name": { "message": "കടത്തിന്റെ തോതും പലിശ പരിരക്ഷയും" },
+    "calc_leverage_desc": {
+        "message": "ഒരു കമ്പനി കടത്തെ എത്രമാത്രം ആശ്രയിക്കുന്നു, അതിന്റെ വരുമാനം പലിശ എത്ര അനായാസം വഹിക്കുന്നു."
+    },
+    "calc_leverage_formula": {
+        "message": "കടം/ഇക്വിറ്റി = കടം ÷ ഇക്വിറ്റി · കടം/മൂലധനം = കടം ÷ (കടം + ഇക്വിറ്റി) · പരിരക്ഷ = EBIT ÷ പലിശ"
+    },
+    "field_leverage_totalDebt": { "message": "ആകെ കടം" },
+    "field_leverage_equity": { "message": "ഓഹരിയുടമകളുടെ ഇക്വിറ്റി" },
+    "field_leverage_ebit": { "message": "EBIT (പ്രവർത്തന ലാഭം)" },
+    "field_leverage_interestExpense": { "message": "പലിശച്ചെലവ്" },
+    "out_leverage_debtToEquity": { "message": "കടം-ഇക്വിറ്റി അനുപാതം" },
+    "out_leverage_debtToCapital": { "message": "കടം-മൂലധന അനുപാതം" },
+    "out_leverage_interestCoverage": { "message": "പലിശ പരിരക്ഷ" },
+    "calc_investment_name": { "message": "നിക്ഷേപ വിശകലനം (NPV, IRR, പേബാക്ക്)" },
+    "calc_investment_desc": {
+        "message": "പദ്ധതി മൂല്യമുള്ളതാണോ? ഭാവിയിലെ പണമൊഴുക്കുകൾ ഡിസ്കൗണ്ട് ചെയ്ത് ചെലവ് എപ്പോൾ തിരികെ കിട്ടുമെന്ന് കണ്ടെത്തുന്നു."
+    },
+    "calc_investment_formula": { "message": "NPV = Σ CFₜ ÷ (1 + r)ᵗ − നിക്ഷേപം · IRR: NPV = 0 ആകുന്ന നിരക്ക്" },
+    "field_investment_rate": { "message": "ഡിസ്കൗണ്ട് നിരക്ക് (ഒരു കാലയളവിന്)" },
+    "field_investment_initialInvestment": { "message": "പ്രാരംഭ നിക്ഷേപം" },
+    "field_investment_cashFlows": { "message": "പണമൊഴുക്കുകൾ (കാലയളവ് 1, 2, 3…)" },
+    "out_investment_npv": { "message": "അറ്റ വർത്തമാന മൂല്യം (NPV)" },
+    "out_investment_irr": { "message": "ആന്തരിക നേട്ട നിരക്ക് (IRR)" },
+    "out_investment_profitabilityIndex": { "message": "ലാഭക്ഷമതാ സൂചിക" },
+    "out_investment_payback": { "message": "പേബാക്ക് (കാലയളവുകൾ)" },
+    "out_investment_discountedPayback": { "message": "ഡിസ്കൗണ്ടഡ് പേബാക്ക് (കാലയളവുകൾ)" },
+    "calc_futureValue_name": { "message": "ഭാവി മൂല്യം (കൂട്ടുപലിശ)" },
+    "calc_futureValue_desc": { "message": "ക്രമമായ നിക്ഷേപങ്ങളോടെ ഒരു തുക കൂട്ടുപലിശയിൽ എത്ര വളരും." },
+    "calc_futureValue_formula": {
+        "message": "FV = PV × (1 + i)ⁿ + നിക്ഷേപം × ((1 + i)ⁿ − 1) ÷ i, ഇവിടെ i = വാർഷിക നിരക്ക് ÷ വർഷത്തിലെ കാലയളവുകൾ"
+    },
+    "field_futureValue_presentValue": { "message": "പ്രാരംഭ തുക" },
+    "field_futureValue_contribution": { "message": "ഓരോ കാലയളവിലെയും നിക്ഷേപം" },
+    "field_futureValue_annualRate": { "message": "വാർഷിക പലിശ നിരക്ക്" },
+    "field_futureValue_years": { "message": "വർഷങ്ങൾ" },
+    "field_futureValue_frequency": { "message": "കൂട്ടുപലിശയും നിക്ഷേപങ്ങളും" },
+    "out_futureValue_futureValue": { "message": "ഭാവി മൂല്യം" },
+    "out_futureValue_totalContributions": { "message": "ആകെ നിക്ഷേപങ്ങൾ" },
+    "out_futureValue_interestEarned": { "message": "നേടിയ പലിശ" },
+    "choice_futureValue_frequency_12": { "message": "പ്രതിമാസം" },
+    "choice_futureValue_frequency_1": { "message": "വാർഷികം" },
+    "choice_futureValue_frequency_2": { "message": "വർഷത്തിൽ രണ്ടുതവണ" },
+    "choice_futureValue_frequency_4": { "message": "ത്രൈമാസം" },
+    "choice_futureValue_frequency_52": { "message": "പ്രതിവാരം" },
+    "choice_futureValue_frequency_365": { "message": "പ്രതിദിനം" },
+    "calc_loan_name": { "message": "വായ്പാ ഗഡു" },
+    "calc_loan_desc": { "message": "ഒരു വായ്പയുടെ സ്ഥിര പ്രതിമാസ ഗഡുവും ആകെ എത്ര പലിശ ആകുമെന്നതും." },
+    "calc_loan_formula": { "message": "ഗഡു = മുതൽ × i ÷ (1 − (1 + i)⁻ⁿ), ഇവിടെ i = വാർഷിക നിരക്ക് ÷ 12" },
+    "field_loan_principal": { "message": "വായ്പാ തുക" },
+    "field_loan_annualRate": { "message": "വാർഷിക പലിശ നിരക്ക്" },
+    "field_loan_termMonths": { "message": "കാലാവധി (മാസങ്ങൾ)" },
+    "out_loan_monthlyPayment": { "message": "പ്രതിമാസ ഗഡു" },
+    "out_loan_totalPaid": { "message": "ആകെ അടച്ചത്" },
+    "out_loan_totalInterest": { "message": "ആകെ പലിശ" },
+    "marketOff": {
+        "message": "ബ്രസീലിന്റെ നയപരമായ പലിശ നിരക്കും (Selic) ഡോളർ നിരക്കും ബ്രസീൽ സെൻട്രൽ ബാങ്കിൽ നിന്ന് നിറയ്ക്കാം."
+    },
+    "marketEnable": { "message": "നിരക്കുകൾ എടുക്കുക" },
+    "marketUse": { "message": "നിരക്കുകൾ ഉപയോഗിക്കുക" },
+    "marketRetry": { "message": "വീണ്ടും ശ്രമിക്കുക" },
+    "marketLoading": { "message": "നിരക്കുകൾ എടുക്കുന്നു…" },
+    "marketFailed": { "message": "സെൻട്രൽ ബാങ്കിനെ ബന്ധപ്പെടാനായില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിക്കുക." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · ഡോളർ $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "അനുമതി നൽകിയില്ല, അതിനാൽ നിരക്കുകൾ എടുത്തില്ല." },
+    "liveRatesLabel": {
+        "message": "ബ്രസീലിന്റെ നയപരമായ പലിശ നിരക്കും (Selic) ഡോളർ നിരക്കും ബ്രസീൽ സെൻട്രൽ ബാങ്കിൽ നിന്ന് എടുക്കുക"
+    },
+    "liveRatesHint": {
+        "message": "സ്ഥിരമായി ഓഫാണ്. ഓണാക്കിയാൽ, നിങ്ങളെക്കുറിച്ച് ഒരു വിവരവും ലഭിക്കാത്ത api.bcb.gov.br-ലേക്ക് ബന്ധിക്കാൻ Chrome അനുമതി ചോദിക്കും. ഓഫാക്കിയാൽ അനുമതി നീക്കും."
+    },
+    "group_markets": { "message": "റിപ്പോ നിരക്കും ഡോളറും (ബ്രസീൽ)" },
+    "calc_selicYield_name": { "message": "റിപ്പോ നിരക്കുമായി ബന്ധിപ്പിച്ച സ്ഥിര വരുമാനം (Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "സെൻട്രൽ ബാങ്കിന്റെ നയപരമായ പലിശ നിരക്കിന്റെ (ഇന്ത്യയിൽ RBI റിപ്പോ നിരക്ക്, ബ്രസീലിൽ Selic) ഒരു ഭാഗം നൽകുന്ന നിക്ഷേപം ആദായനികുതിക്ക് ശേഷം എത്ര നൽകും."
+    },
+    "calc_selicYield_formula": {
+        "message": "അറ്റ ലാഭം = തുക × (വളർച്ച − 1) × (1 − ആദായനികുതി); വളർച്ച വർഷത്തിലെ 252 പ്രവൃത്തി ദിവസങ്ങളിൽ ദിവസവും ചേരും"
+    },
+    "field_selicYield_amount": { "message": "നിക്ഷേപിച്ച തുക" },
+    "field_selicYield_months": { "message": "കാലാവധി (മാസങ്ങൾ)" },
+    "field_selicYield_selic": { "message": "റിപ്പോ നിരക്ക് (Selic, വർഷത്തിൽ)" },
+    "field_selicYield_percentOfRate": { "message": "നൽകുന്ന റിപ്പോ നിരക്കിന്റെ ഭാഗം" },
+    "field_selicYield_taxTreatment": { "message": "ആദായനികുതി" },
+    "out_selicYield_netFinal": { "message": "അവസാനം അറ്റ തുക" },
+    "out_selicYield_netProfit": { "message": "അറ്റാദായം" },
+    "out_selicYield_incomeTax": { "message": "ആദായനികുതി" },
+    "out_selicYield_taxRate": { "message": "ആദായനികുതി നിരക്ക്" },
+    "out_selicYield_netAnnualRate": { "message": "വർഷത്തിൽ അറ്റ നിരക്ക്" },
+    "choice_selicYield_taxTreatment_1": { "message": "കുറയുന്ന നികുതി പട്ടിക (CDB, സർക്കാർ ബോണ്ട്)" },
+    "choice_selicYield_taxTreatment_0": { "message": "നികുതിയില്ലാത്തത് (LCI, LCA)" },
+    "calc_savings_name": { "message": "സേവിങ്സ് അക്കൗണ്ട് (poupança) vs റിപ്പോ നിരക്കുമായി ബന്ധിപ്പിച്ച നിക്ഷേപം" },
+    "calc_savings_desc": {
+        "message": "സേവിങ്സ് അക്കൗണ്ടിനെ (poupança) നികുതി ബാധകമായ സ്ഥിര വരുമാന ഉൽപ്പന്നവുമായി താരതമ്യം ചെയ്ത് രണ്ടും തുല്യമാകുന്ന റിപ്പോ നിരക്ക് ഭാഗം കണ്ടെത്തുന്നു."
+    },
+    "calc_savings_formula": {
+        "message": "സേവിങ്സ്: Selic 8.5% കവിഞ്ഞാൽ മാസം 0.5%, അല്ലെങ്കിൽ Selic-ന്റെ 70%. സ്ഥിര വരുമാനത്തിന് കുറയുന്ന ആദായനികുതി"
+    },
+    "field_savings_amount": { "message": "നിക്ഷേപിച്ച തുക" },
+    "field_savings_months": { "message": "കാലാവധി (മാസങ്ങൾ)" },
+    "field_savings_selic": { "message": "റിപ്പോ നിരക്ക് (Selic, വർഷത്തിൽ)" },
+    "field_savings_percentOfRate": { "message": "നൽകുന്ന റിപ്പോ നിരക്കിന്റെ ഭാഗം (സ്ഥിര വരുമാനം)" },
+    "out_savings_advantage": { "message": "സ്ഥിര വരുമാനത്തിന്റെ മുൻതൂക്കം" },
+    "out_savings_savingsFinal": { "message": "അവസാനം സേവിങ്സ് അക്കൗണ്ട്" },
+    "out_savings_fixedIncomeFinal": { "message": "അവസാനം സ്ഥിര വരുമാനം (അറ്റം)" },
+    "out_savings_breakEvenPercent": { "message": "തുല്യമാകാൻ റിപ്പോ നിരക്കിന്റെ ഭാഗം" },
+    "calc_dollarConversion_name": { "message": "ഡോളർ വാങ്ങൽ (സ്പ്രെഡും IOF നികുതിയും)" },
+    "calc_dollarConversion_desc": {
+        "message": "ബാങ്കിന്റെ സ്പ്രെഡും IOF വിദേശനാണ്യ നികുതിയും കണക്കാക്കിയ ശേഷം നിങ്ങളുടെ റിയാൽ കൊണ്ട് എത്ര ഡോളർ കിട്ടും."
+    },
+    "calc_dollarConversion_formula": { "message": "ഡോളർ = റിയാൽ ÷ (നിരക്ക് × (1 + സ്പ്രെഡ്) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "റിയാലിലെ തുക" },
+    "field_dollarConversion_rate": { "message": "ഡോളർ നിരക്ക് (ഒരു US$-ന് R$)" },
+    "field_dollarConversion_spread": { "message": "ബാങ്ക് സ്പ്രെഡ്" },
+    "field_dollarConversion_iof": { "message": "IOF (ബ്രസീലിന്റെ വിദേശനാണ്യ നികുതി)" },
+    "out_dollarConversion_usdReceived": { "message": "ലഭിച്ച ഡോളർ" },
+    "out_dollarConversion_effectiveRate": { "message": "അടച്ച യഥാർത്ഥ നിരക്ക്" },
+    "out_dollarConversion_cost": { "message": "സ്പ്രെഡിന്റെയും IOF-ന്റെയും ചെലവ്" },
+    "out_dollarConversion_costPercent": { "message": "തുകയുടെ അനുപാതമായി ചെലവ്" },
+    "calc_dollarVsSelic_name": { "message": "ഡോളർ vs റിപ്പോ നിരക്ക് (Selic)" },
+    "calc_dollarVsSelic_desc": {
+        "message": "ഡോളർ കൈവശം വയ്ക്കുന്നത് റിപ്പോ നിരക്കിനെ (Selic) മറികടക്കാൻ അവസാനം ഡോളർ എവിടെയായിരിക്കണം? ആദായനികുതിക്ക് മുമ്പ്, ആകെ തുകകളിൽ താരതമ്യം."
+    },
+    "calc_dollarVsSelic_formula": { "message": "ബ്രേക്ക്-ഈവൻ ഡോളർ = റിപ്പോ നിരക്കിന്റെ ഫലം ÷ അവസാനം കൈവശമുള്ള ഡോളർ" },
+    "field_dollarVsSelic_amount": { "message": "റിയാലിലെ തുക" },
+    "field_dollarVsSelic_months": { "message": "കാലാവധി (മാസങ്ങൾ)" },
+    "field_dollarVsSelic_spot": { "message": "ഇന്നത്തെ ഡോളർ (ഒരു US$-ന് R$)" },
+    "field_dollarVsSelic_expected": { "message": "അവസാനം പ്രതീക്ഷിക്കുന്ന ഡോളർ" },
+    "field_dollarVsSelic_selic": { "message": "റിപ്പോ നിരക്ക് (Selic, വർഷത്തിൽ)" },
+    "field_dollarVsSelic_usdYield": { "message": "ഡോളറിലെ നേട്ടം (വർഷത്തിൽ, US$-ൽ)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "ബ്രേക്ക്-ഈവൻ ഡോളർ" },
+    "out_dollarVsSelic_requiredChange": { "message": "ആവശ്യമായ ഡോളർ വർധന" },
+    "out_dollarVsSelic_selicFinal": { "message": "അവസാനം റിപ്പോ നിരക്ക് നിക്ഷേപം (നികുതിക്ക് മുമ്പ്)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "അവസാനം ഡോളർ നിക്ഷേപം (നികുതിക്ക് മുമ്പ്)" },
+    "out_dollarVsSelic_difference": { "message": "ഡോളർ മൈനസ് റിപ്പോ നിരക്ക്" },
+    "ratingGood": { "message": "നല്ലത്" },
+    "ratingNeutral": { "message": "നിഷ്പക്ഷം" },
+    "ratingBad": { "message": "മോശം" },
+    "ratingLegend": { "message": "പച്ച: നല്ലത് · സാധാരണ: നിഷ്പക്ഷം · ചുവപ്പ്: മോശം" },
+    "ratingRuleHigher": {
+        "message": "$BAD$-ന് താഴെ: മോശം · $BAD$ മുതൽ $GOOD$ വരെ: നിഷ്പക്ഷം · $GOOD$-ന് മുകളിൽ: നല്ലത്",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "$BAD$-ന് മുകളിൽ: മോശം · $GOOD$ മുതൽ $BAD$ വരെ: നിഷ്പക്ഷം · $GOOD$-ന് താഴെ: നല്ലത്",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "$VALUE$-ന് താഴെ: മോശം · $VALUE$-ൽ: നിഷ്പക്ഷം · $VALUE$-ന് മുകളിൽ: നല്ലത്",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "$VALUE$-ന് മുകളിൽ: മോശം · $VALUE$-ൽ: നിഷ്പക്ഷം · $VALUE$-ന് താഴെ: നല്ലത്",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "പൊതു നിയമം: ഏതാണ് ആരോഗ്യകരം എന്നത് വ്യവസായം അനുസരിച്ച് മാറും." },
+    "group_accounting": { "message": "അക്കൗണ്ടിങ് വിശകലനം" },
+    "calc_incomeStatement_name": { "message": "വരുമാന പ്രസ്താവനാ വിശകലനം (മാർജിനുകൾ)" },
+    "calc_incomeStatement_desc": {
+        "message": "വരുമാനത്തിൽ നിന്ന് അറ്റ വരുമാനത്തിലേക്ക് പോയി ഓരോ ഘട്ടത്തിലും മാർജിൻ കാണിക്കുന്നു."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = വരുമാനം − വിൽപ്പനച്ചെലവ് − പ്രവർത്തനച്ചെലവുകൾ · EBIT = EBITDA − മൂല്യത്തകർച്ച · അറ്റം = (EBIT − പലിശ) × (1 − നികുതി)"
+    },
+    "field_incomeStatement_revenue": { "message": "അറ്റ വരുമാനം (വിൽപ്പന)" },
+    "field_incomeStatement_cogs": { "message": "വിറ്റ സാധനങ്ങളുടെ ചെലവ്" },
+    "field_incomeStatement_operatingExpenses": { "message": "പ്രവർത്തനച്ചെലവുകൾ" },
+    "field_incomeStatement_depreciation": { "message": "മൂല്യത്തകർച്ചയും അമോർട്ടൈസേഷനും" },
+    "field_incomeStatement_interestExpense": { "message": "പലിശച്ചെലവ്" },
+    "field_incomeStatement_taxRate": { "message": "ആദായനികുതി നിരക്ക്" },
+    "out_incomeStatement_netIncome": { "message": "അറ്റ വരുമാനം" },
+    "out_incomeStatement_grossMargin": { "message": "മൊത്ത മാർജിൻ" },
+    "out_incomeStatement_ebitdaMargin": { "message": "EBITDA മാർജിൻ" },
+    "out_incomeStatement_operatingMargin": { "message": "പ്രവർത്തന മാർജിൻ (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "അറ്റ മാർജിൻ" },
+    "calc_dupont_name": { "message": "ഡ്യൂപോണ്ട് വിശകലനം (3 ഘട്ടം)" },
+    "calc_dupont_desc": {
+        "message": "ഇക്വിറ്റിയിലെ നേട്ടത്തെ മാർജിൻ, ആസ്തി വിറ്റുവരവ്, കടത്തിന്റെ തോത് എന്നിങ്ങനെ വിഭജിക്കുന്നു."
+    },
+    "calc_dupont_formula": { "message": "ROE = അറ്റ മാർജിൻ × ആസ്തി വിറ്റുവരവ് × ഇക്വിറ്റി ഗുണകം" },
+    "field_dupont_netIncome": { "message": "അറ്റ വരുമാനം" },
+    "field_dupont_revenue": { "message": "അറ്റ വരുമാനം (വിൽപ്പന)" },
+    "field_dupont_assets": { "message": "ആകെ ആസ്തികൾ" },
+    "field_dupont_equity": { "message": "ഓഹരിയുടമകളുടെ ഇക്വിറ്റി" },
+    "out_dupont_roe": { "message": "ഇക്വിറ്റിയിലെ നേട്ടം (ROE)" },
+    "out_dupont_netMargin": { "message": "അറ്റ മാർജിൻ" },
+    "out_dupont_assetTurnover": { "message": "ആസ്തി വിറ്റുവരവ്" },
+    "out_dupont_equityMultiplier": { "message": "ഇക്വിറ്റി ഗുണകം" },
+    "out_dupont_roa": { "message": "ആസ്തികളിലെ നേട്ടം (ROA)" },
+    "calc_dupont5_name": { "message": "ഡ്യൂപോണ്ട് വിശകലനം (5 ഘട്ടം)" },
+    "calc_dupont5_desc": {
+        "message": "ROE-യെ നികുതി ഭാരം, പലിശ ഭാരം, പ്രവർത്തന മാർജിൻ, ആസ്തി വിറ്റുവരവ്, കടത്തിന്റെ തോത് എന്നിങ്ങനെ വിഭജിക്കുന്നു."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (അ.വ. ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ വരുമാനം) × (വരുമാനം ÷ ആസ്തികൾ) × (ആസ്തികൾ ÷ ഇക്വിറ്റി)"
+    },
+    "field_dupont5_netIncome": { "message": "അറ്റ വരുമാനം (അ.വ.)" },
+    "field_dupont5_pretaxIncome": { "message": "നികുതിക്ക് മുമ്പുള്ള വരുമാനം (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (പ്രവർത്തന ലാഭം)" },
+    "field_dupont5_revenue": { "message": "അറ്റ വരുമാനം (വിൽപ്പന)" },
+    "field_dupont5_assets": { "message": "ആകെ ആസ്തികൾ" },
+    "field_dupont5_equity": { "message": "ഓഹരിയുടമകളുടെ ഇക്വിറ്റി" },
+    "out_dupont5_roe": { "message": "ഇക്വിറ്റിയിലെ നേട്ടം (ROE)" },
+    "out_dupont5_taxBurden": { "message": "നികുതി ഭാരം (അ.വ. ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "പലിശ ഭാരം (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "പ്രവർത്തന മാർജിൻ (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "ആസ്തി വിറ്റുവരവ്" },
+    "out_dupont5_equityMultiplier": { "message": "ഇക്വിറ്റി ഗുണകം" },
+    "calc_fleuriet_name": { "message": "ഫ്ലൂറിയേ മാതൃക (ഡൈനാമിക് പ്രവർത്തന മൂലധനം)" },
+    "calc_fleuriet_desc": {
+        "message": "പ്രവർത്തന മൂലധനം (CDG), അതിന്റെ ആവശ്യം (NCG), പണ ബാക്കി (T) എന്നിവ അടിസ്ഥാനമാക്കി സാമ്പത്തിക ഘടനയെ തരംതിരിക്കുന്നു."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = സ്ഥിര ഫണ്ടുകൾ − നിലവിലല്ലാത്ത ആസ്തികൾ · NCG = പ്രവർത്തന നിലവിലെ ആസ്തികൾ − പ്രവർത്തന നിലവിലെ ബാധ്യതകൾ · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "പ്രവർത്തന നിലവിലെ ആസ്തികൾ" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "പ്രവർത്തന നിലവിലെ ബാധ്യതകൾ" },
+    "field_fleuriet_nonCurrentAssets": { "message": "നിലവിലല്ലാത്ത ആസ്തികൾ" },
+    "field_fleuriet_permanentFunds": { "message": "സ്ഥിര ഫണ്ടുകൾ" },
+    "out_fleuriet_structureType": { "message": "സാമ്പത്തിക ഘടന" },
+    "out_fleuriet_workingCapital": { "message": "പ്രവർത്തന മൂലധനം (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "പ്രവർത്തന മൂലധന ആവശ്യം (NCG)" },
+    "out_fleuriet_treasury": { "message": "പണ ബാക്കി (T)" },
+    "cat_fleuriet_structureType_1": { "message": "തരം I – മികച്ചത്" },
+    "cat_fleuriet_structureType_2": { "message": "തരം II – ഉറച്ചത്" },
+    "cat_fleuriet_structureType_3": { "message": "തരം III – തൃപ്തികരമല്ല" },
+    "cat_fleuriet_structureType_4": { "message": "തരം IV – മോശം" },
+    "cat_fleuriet_structureType_5": { "message": "തരം V – വളരെ മോശം" },
+    "cat_fleuriet_structureType_6": { "message": "തരം VI – ഉയർന്ന അപകടസാധ്യത" },
+    "calc_altman_name": { "message": "ആൾട്ട്മാൻ Z-സ്കോർ (പാപ്പരത്ത സാധ്യത)" },
+    "calc_altman_desc": {
+        "message": "ബാലൻസ് ഷീറ്റിലെയും വരുമാനത്തിലെയും അഞ്ച് അനുപാതങ്ങളിൽ നിന്ന് സാമ്പത്തിക പ്രതിസന്ധിയുടെ സാധ്യത രണ്ട് പതിപ്പുകളിൽ അളക്കുന്നു."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1.2·X1 + 1.4·X2 + 3.3·X3 + 0.6·X4 + 1.0·X5 · Z″ = 3.25 + 6.56·X1 + 3.26·X2 + 6.72·X3 + 1.05·X4"
+    },
+    "field_altman_workingCapital": { "message": "പ്രവർത്തന മൂലധനം" },
+    "field_altman_retainedEarnings": { "message": "നിലനിർത്തിയ വരുമാനം" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "ഇക്വിറ്റിയുടെ മൂല്യം" },
+    "field_altman_sales": { "message": "വിൽപ്പന" },
+    "field_altman_totalAssets": { "message": "ആകെ ആസ്തികൾ" },
+    "field_altman_totalLiabilities": { "message": "ആകെ ബാധ്യതകൾ" },
+    "out_altman_zScore": { "message": "Z-സ്കോർ (യഥാർത്ഥം)" },
+    "out_altman_zZone": { "message": "മേഖല (യഥാർത്ഥം)" },
+    "out_altman_emergingScore": { "message": "Z″-സ്കോർ (വളർന്നുവരുന്ന വിപണികൾ)" },
+    "out_altman_emergingZone": { "message": "മേഖല (വളർന്നുവരുന്ന വിപണികൾ)" },
+    "cat_altman_zZone_0": { "message": "അപകട മേഖല" },
+    "cat_altman_zZone_1": { "message": "ഗ്രേ മേഖല" },
+    "cat_altman_zZone_2": { "message": "സുരക്ഷിത മേഖല" },
+    "cat_altman_emergingZone_0": { "message": "അപകട മേഖല" },
+    "cat_altman_emergingZone_1": { "message": "ഗ്രേ മേഖല" },
+    "cat_altman_emergingZone_2": { "message": "സുരക്ഷിത മേഖല" },
+    "calc_leverageDegrees_name": { "message": "പ്രവർത്തന, സാമ്പത്തിക ലിവറേജിന്റെ തോത്" },
+    "calc_leverageDegrees_desc": {
+        "message": "വിൽപ്പനയിലെ മാറ്റം പ്രവർത്തന ലാഭത്തെയും പലിശയ്ക്ക് ശേഷമുള്ള ലാഭത്തെയും എത്രത്തോളം ചലിപ്പിക്കുന്നു."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = കോൺട്രിബ്യൂഷൻ മാർജിൻ ÷ EBIT · DFL = EBIT ÷ (EBIT − പലിശ) · DTL = DOL × DFL"
+    },
+    "field_leverageDegrees_revenue": { "message": "അറ്റ വരുമാനം (വിൽപ്പന)" },
+    "field_leverageDegrees_variableCosts": { "message": "മാറുന്ന ചെലവുകൾ" },
+    "field_leverageDegrees_fixedCosts": { "message": "സ്ഥിരച്ചെലവുകൾ" },
+    "field_leverageDegrees_interestExpense": { "message": "പലിശച്ചെലവ്" },
+    "out_leverageDegrees_operatingLeverage": { "message": "പ്രവർത്തന ലിവറേജ് (DOL)" },
+    "out_leverageDegrees_financialLeverage": { "message": "സാമ്പത്തിക ലിവറേജ് (DFL)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "ആകെ ലിവറേജ് (DTL)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (പ്രവർത്തന ലാഭം)" },
+    "calc_depreciation_name": { "message": "മൂല്യത്തകർച്ചാ ഷെഡ്യൂൾ" },
+    "calc_depreciation_desc": {
+        "message": "ഒരു വർഷത്തിൽ ഒരു ആസ്തിയുടെ മൂല്യത്തകർച്ച, സഞ്ചിത മൂല്യത്തകർച്ച, ബുക്ക് മൂല്യം; മൂന്ന് രീതികളിൽ."
+    },
+    "calc_depreciation_formula": {
+        "message": "നേർരേഖ = (ചെലവ് − ശേഷിപ്പ്) ÷ ആയുസ്സ് · കുറയുന്ന ബാലൻസ് = ബുക്ക് മൂല്യം × 2 ÷ ആയുസ്സ് · വർഷങ്ങളുടെ അക്കങ്ങളുടെ തുക = (ചെലവ് − ശേഷിപ്പ്) × ശേഷിക്കുന്ന ആയുസ്സ് ÷ Σ വർഷങ്ങൾ"
+    },
+    "field_depreciation_cost": { "message": "ആസ്തിയുടെ ചെലവ്" },
+    "field_depreciation_salvage": { "message": "ശേഷിപ്പ് മൂല്യം" },
+    "field_depreciation_lifeYears": { "message": "ഉപയോഗ ആയുസ്സ് (വർഷങ്ങൾ)" },
+    "field_depreciation_method": { "message": "രീതി" },
+    "field_depreciation_year": { "message": "കാണിക്കേണ്ട വർഷം" },
+    "out_depreciation_charge": { "message": "വർഷത്തിലെ മൂല്യത്തകർച്ച" },
+    "out_depreciation_accumulated": { "message": "സഞ്ചിത മൂല്യത്തകർച്ച" },
+    "out_depreciation_bookValue": { "message": "ബുക്ക് മൂല്യം" },
+    "choice_depreciation_method_1": { "message": "നേർരേഖ" },
+    "choice_depreciation_method_2": { "message": "ഇരട്ടി കുറയുന്ന ബാലൻസ്" },
+    "choice_depreciation_method_3": { "message": "വർഷങ്ങളുടെ അക്കങ്ങളുടെ തുക" },
+    "calc_wacc_name": { "message": "WACC-യും ഇക്വിറ്റി ചെലവും (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "ഒരു കമ്പനിയുടെ ശരാശരി ധനസഹായച്ചെലവ്; CAPM ഇക്വിറ്റി ചെലവിൽ നിന്നും നികുതിക്ക് ശേഷമുള്ള കടച്ചെലവിൽ നിന്നും."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × റിസ്ക് പ്രീമിയം · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − നികുതി)"
+    },
+    "field_wacc_equityValue": { "message": "ഇക്വിറ്റിയുടെ മൂല്യം" },
+    "field_wacc_debtValue": { "message": "കടത്തിന്റെ മൂല്യം" },
+    "field_wacc_riskFree": { "message": "റിസ്ക് ഇല്ലാത്ത നിരക്ക്" },
+    "field_wacc_beta": { "message": "ബീറ്റ" },
+    "field_wacc_marketPremium": { "message": "വിപണി റിസ്ക് പ്രീമിയം" },
+    "field_wacc_costOfDebt": { "message": "കടച്ചെലവ് (നികുതിക്ക് മുമ്പ്)" },
+    "field_wacc_taxRate": { "message": "ആദായനികുതി നിരക്ക്" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "ഇക്വിറ്റി ചെലവ് (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "നികുതിക്ക് ശേഷമുള്ള കടച്ചെലവ് (Kd)" },
+    "out_wacc_equityWeight": { "message": "ഇക്വിറ്റി വെയ്റ്റ്" },
+    "out_wacc_debtWeight": { "message": "കടത്തിന്റെ വെയ്റ്റ്" },
+    "calc_eva_name": { "message": "സാമ്പത്തിക മൂല്യവർധന (EVA)" },
+    "calc_eva_desc": { "message": "ബിസിനസ് അതിൽ നിക്ഷേപിച്ച മൂലധനത്തിന്റെ ചെലവിനേക്കാൾ കൂടുതൽ നേടുന്നുണ്ടോ." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × നിക്ഷേപിച്ച മൂലധനം · NOPAT = EBIT × (1 − നികുതി) · ROIC = NOPAT ÷ നിക്ഷേപിച്ച മൂലധനം"
+    },
+    "field_eva_ebit": { "message": "EBIT (പ്രവർത്തന ലാഭം)" },
+    "field_eva_taxRate": { "message": "ആദായനികുതി നിരക്ക്" },
+    "field_eva_investedCapital": { "message": "നിക്ഷേപിച്ച മൂലധനം" },
+    "field_eva_wacc": { "message": "മൂലധനച്ചെലവ് (WACC)" },
+    "out_eva_eva": { "message": "സാമ്പത്തിക മൂല്യവർധന (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "നിക്ഷേപിച്ച മൂലധനത്തിലെ നേട്ടം (ROIC)" },
+    "out_eva_spread": { "message": "സ്പ്രെഡ് (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "മൂലധന ചാർജ്" },
+    "calc_freeCashFlow_name": { "message": "സ്വതന്ത്ര പണമൊഴുക്ക് (FCFF, FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "പ്രവർത്തനത്തിനും നിക്ഷേപത്തിനും ശേഷം ബാക്കിയാകുന്ന പണം: എല്ലാ മൂലധനദാതാക്കൾക്കും (FCFF) ഓഹരിയുടമകൾക്കും (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − നികുതി) + മൂല്യത്തകർച്ച − CapEx − ΔNWC · FCFE = FCFF − പലിശ × (1 − നികുതി) + അറ്റ കടം"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (പ്രവർത്തന ലാഭം)" },
+    "field_freeCashFlow_taxRate": { "message": "ആദായനികുതി നിരക്ക്" },
+    "field_freeCashFlow_depreciation": { "message": "മൂല്യത്തകർച്ചയും അമോർട്ടൈസേഷനും" },
+    "field_freeCashFlow_capex": { "message": "മൂലധനച്ചെലവഴിക്കൽ (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "പ്രവർത്തന മൂലധനത്തിലെ വർധന" },
+    "field_freeCashFlow_interestExpense": { "message": "പലിശച്ചെലവ്" },
+    "field_freeCashFlow_netBorrowing": { "message": "അറ്റ കടമെടുപ്പ്" },
+    "out_freeCashFlow_fcff": { "message": "സ്ഥാപനത്തിന്റെ സ്വതന്ത്ര പണമൊഴുക്ക് (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "ഓഹരിയുടമകളുടെ സ്വതന്ത്ര പണമൊഴുക്ക് (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "ബോണ്ട് വിലയും ഡ്യൂറേഷനും" },
+    "calc_bond_desc": {
+        "message": "കൂപ്പൺ നൽകുന്ന ബോണ്ടിന്റെ വില, അതിന്റെ പ്രീമിയം അല്ലെങ്കിൽ ഡിസ്കൗണ്ട്, നേട്ടത്തോടുള്ള സംവേദനക്ഷമത."
+    },
+    "calc_bond_formula": {
+        "message": "വില = Σ കൂപ്പൺ ÷ (1 + y)ᵗ + മുഖവില ÷ (1 + y)ⁿ · പരിഷ്കരിച്ച ഡ്യൂറേഷൻ = മക്കാലെ ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "മുഖവില" },
+    "field_bond_couponRate": { "message": "കൂപ്പൺ നിരക്ക് (വർഷത്തിൽ)" },
+    "field_bond_yieldToMaturity": { "message": "കാലാവധി വരെയുള്ള നേട്ടം (വർഷത്തിൽ)" },
+    "field_bond_years": { "message": "കാലാവധി വരെയുള്ള വർഷങ്ങൾ" },
+    "field_bond_frequency": { "message": "വർഷത്തിലെ കൂപ്പണുകൾ" },
+    "out_bond_price": { "message": "ബോണ്ട് വില" },
+    "out_bond_premium": { "message": "പ്രീമിയം (+) അല്ലെങ്കിൽ ഡിസ്കൗണ്ട് (−)" },
+    "out_bond_currentYield": { "message": "നിലവിലെ നേട്ടം" },
+    "out_bond_macaulayDuration": { "message": "മക്കാലെ ഡ്യൂറേഷൻ (വർഷങ്ങൾ)" },
+    "out_bond_modifiedDuration": { "message": "പരിഷ്കരിച്ച ഡ്യൂറേഷൻ (വർഷങ്ങൾ)" },
+    "choice_bond_frequency_2": { "message": "അർധവാർഷികം" },
+    "choice_bond_frequency_1": { "message": "വാർഷികം" },
+    "choice_bond_frequency_4": { "message": "ത്രൈമാസം" },
+    "choice_bond_frequency_12": { "message": "പ്രതിമാസം" },
+    "calc_rates_name": { "message": "പലിശ നിരക്ക് പരിവർത്തനവും യഥാർത്ഥ നിരക്കും" },
+    "calc_rates_desc": {
+        "message": "നാമമാത്ര നിരക്കിനെ ഫലപ്രദ, പ്രതിമാസ, പ്രതിദിന നിരക്കുകളാക്കി മാറ്റി, പണപ്പെരുപ്പം കുറച്ച് യഥാർത്ഥ നിരക്ക് കണ്ടെത്തുന്നു."
+    },
+    "calc_rates_formula": {
+        "message": "ഫലപ്രദം = (1 + നാമമാത്രം ÷ m)ᵐ − 1 · തുല്യം = (1 + ഫലപ്രദം)^(1 ÷ n) − 1 · യഥാർത്ഥം = (1 + ഫലപ്രദം) ÷ (1 + പണപ്പെരുപ്പം) − 1"
+    },
+    "field_rates_nominalRate": { "message": "നാമമാത്ര നിരക്ക് (വർഷത്തിൽ)" },
+    "field_rates_compounding": { "message": "കൂട്ടുപലിശ" },
+    "field_rates_inflation": { "message": "പണപ്പെരുപ്പം (വർഷത്തിൽ)" },
+    "out_rates_effectiveAnnual": { "message": "ഫലപ്രദമായ വാർഷിക നിരക്ക്" },
+    "out_rates_monthlyEquivalent": { "message": "തുല്യമായ പ്രതിമാസ നിരക്ക്" },
+    "out_rates_dailyEquivalent": { "message": "തുല്യമായ പ്രതിദിന നിരക്ക് (252 ദിവസം)" },
+    "out_rates_realRate": { "message": "യഥാർത്ഥ നിരക്ക് (പണപ്പെരുപ്പത്തിന് മുകളിൽ)" },
+    "choice_rates_compounding_12": { "message": "പ്രതിമാസം" },
+    "choice_rates_compounding_1": { "message": "വാർഷികം" },
+    "choice_rates_compounding_2": { "message": "വർഷത്തിൽ രണ്ടുതവണ" },
+    "choice_rates_compounding_4": { "message": "ത്രൈമാസം" },
+    "choice_rates_compounding_365": { "message": "പ്രതിദിനം" },
+    "calc_amortization_name": { "message": "SAC vs Price (വായ്പാ തിരിച്ചടവ്)" },
+    "calc_amortization_desc": {
+        "message": "രണ്ട് തിരിച്ചടവ് രീതികൾ താരതമ്യം ചെയ്യുന്നു: Price-ൽ ഗഡുക്കൾ തുല്യം, SAC-ൽ ഓരോ മാസവും മുതലിന്റെ ഒരേ ഭാഗം അടയ്ക്കുന്നു."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + ശേഷിക്കുന്ന ബാലൻസ് × i, ഇവിടെ i = വാർഷിക നിരക്ക് ÷ 12"
+    },
+    "field_amortization_principal": { "message": "വായ്പാ തുക" },
+    "field_amortization_annualRate": { "message": "വാർഷിക പലിശ നിരക്ക്" },
+    "field_amortization_termMonths": { "message": "കാലാവധി (മാസങ്ങൾ)" },
+    "out_amortization_pricePayment": { "message": "Price: പ്രതിമാസ ഗഡു" },
+    "out_amortization_priceTotalInterest": { "message": "Price: ആകെ പലിശ" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: ആദ്യ ഗഡു" },
+    "out_amortization_sacLastPayment": { "message": "SAC: അവസാന ഗഡു" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: ആകെ പലിശ" }
+}

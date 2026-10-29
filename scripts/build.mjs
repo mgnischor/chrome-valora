@@ -23,22 +23,38 @@
  *
  * The default (production) build is what gets packaged and minifies everything:
  * JavaScript with esbuild, and the static files from `./public` (HTML, CSS and
- * JSON, including the manifest and the translations) with `minify.mjs`.
- * `--watch` produces a readable development build with inline source maps and
- * rebuilds the JavaScript on change.
+ * the manifest) with `minify.mjs`. The translations from `./src/locales` are
+ * bundled into the JavaScript, and the few strings Chrome reads itself are
+ * written to `_locales`. `--watch` produces a readable development build with
+ * inline source maps and rebuilds the JavaScript on change.
  */
 import { build, context } from "esbuild";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { listFiles } from "./files.mjs";
-import { minifyCss, minifyHtml, minifyJson, stripTranslatorNotes } from "./minify.mjs";
+import { MANIFEST_KEYS, MANIFEST_LOCALES } from "./manifest-locales.mjs";
+import { minifyCss, minifyHtml, stripTranslatorNotes } from "./minify.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
 const publicDir = path.join(root, "public");
 const watch = process.argv.includes("--watch");
 const minify = !watch;
+
+/**
+ * esbuild plugin that drops the translator-only notes (`description`, placeholder `example`)
+ * from the translation files while they are bundled into the JavaScript.
+ */
+const stripNotes = {
+    name: "strip-translator-notes",
+    setup(build) {
+        build.onLoad({ filter: /[\\/]src[\\/]locales[\\/][^\\/]+\.json$/ }, async (args) => ({
+            contents: JSON.stringify(stripTranslatorNotes(JSON.parse(await readFile(args.path, "utf8")))),
+            loader: "json",
+        }));
+    },
+};
 
 const buildOptions = {
     entryPoints: {
@@ -48,6 +64,9 @@ const buildOptions = {
     bundle: true,
     format: "iife",
     target: "chrome116",
+    // Keep non-Latin text as UTF-8 instead of \uXXXX escapes, which would triple its size.
+    charset: "utf8",
+    plugins: [stripNotes],
     minify,
     sourcemap: minify ? false : "inline",
     legalComments: "none",
@@ -69,9 +88,6 @@ async function prepareStatic(file, content, version) {
         return minify ? JSON.stringify(manifest) : JSON.stringify(manifest, null, 2) + "\n";
     }
     if (!minify) return content;
-    if (file.startsWith("_locales/") && file.endsWith(".json")) {
-        return minifyJson(JSON.stringify(stripTranslatorNotes(JSON.parse(content.toString("utf8")))));
-    }
     if (file.endsWith(".html")) return minifyHtml(content.toString("utf8"));
     if (file.endsWith(".css")) return minifyCss(content.toString("utf8"));
     return content;
@@ -87,9 +103,30 @@ async function copyStatic() {
     }
 }
 
+/**
+ * Writes the `_locales` folders Chrome reads for the manifest strings: only the manifest's
+ * messages, only for the languages Chrome supports.
+ */
+async function writeManifestLocales() {
+    for (const code of MANIFEST_LOCALES) {
+        const messages = JSON.parse(await readFile(path.join(root, "src", "locales", `${code}.json`), "utf8"));
+        const manifestMessages = Object.fromEntries(
+            MANIFEST_KEYS.map((key) => {
+                if (!messages[key]) throw new Error(`src/locales/${code}.json has no "${key}" message`);
+                return [key, messages[key]];
+            })
+        );
+        const body = stripTranslatorNotes(manifestMessages);
+        const target = path.join(dist, "_locales", code, "messages.json");
+        await mkdir(path.dirname(target), { recursive: true });
+        await writeFile(target, minify ? JSON.stringify(body) : JSON.stringify(body, null, 2) + "\n");
+    }
+}
+
 await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 await copyStatic();
+await writeManifestLocales();
 
 if (watch) {
     const ctx = await context(buildOptions);

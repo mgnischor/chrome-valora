@@ -36,7 +36,7 @@ financiamentos. Tudo é calculado no seu dispositivo.
 - **Convenções exatas** – ROI, margem e markup são coisas diferentes e são identificados como tais;
   percentuais são digitados como percentuais e armazenados como frações; o ponto de equilíbrio é
   arredondado para cima em unidades inteiras, sem ruído de ponto flutuante.
-- **Opções de exibição** – 16 moedas (ou nenhuma), de 0 a 4 casas decimais para percentuais e índices, e
+- **Opções de exibição** – 30 moedas (ou nenhuma), de 0 a 4 casas decimais para percentuais e índices, e
   um símbolo de moeda que segue o seu idioma.
 - **Copiar resultados** – copia o nome da calculadora, os seus dados e os resultados como texto simples.
 - **Exemplo / Limpar** – preencha uma calculadora com valores de exemplo para ver como funciona, ou
@@ -44,10 +44,11 @@ financiamentos. Tudo é calculado no seu dispositivo.
 - **Lembra o que você digitou** (opcional, ativado por padrão) – fica apenas na memória do navegador e é
   apagado quando o Chrome fecha. Veja [Privacidade](#privacidade).
 - **Popup espaçoso**, que usa os 640 × 400 px completos que um popup de extensão pode ter.
-- **Localizado** em inglês (EUA), português do Brasil, espanhol, francês, alemão, italiano, russo e polonês.
-  A extensão segue automaticamente o
-  idioma da interface do navegador; qualquer outro idioma usa o inglês. Veja
-  [Localização](#localização).
+- **Localizado em 31 idiomas**, do inglês e do português do Brasil ao hindi, ao árabe (da direita para a
+  esquerda), ao japonês e ao hauçá. O idioma segue o navegador por padrão e pode ser trocado nas
+  configurações. As traduções são contextuais: a Selic brasileira vira a taxa básica de juros do principal
+  mercado de cada idioma (_taux directeur_, _Leitzins_, repo rate, 政策金利 …). Veja
+  [Localização](#localização) e [`docs/localization.md`](docs/localization.md) (em inglês).
 - **Tema claro / escuro**, acessível pelo teclado, sem análises de uso e sem acesso à rede, a menos que
   você ative as taxas ao vivo.
 - Abra o popup com `Ctrl+Shift+K` (`Command+Shift+K` no macOS); altere o atalho em
@@ -83,8 +84,8 @@ Depois de recompilar, clique no botão de recarregar no cartão da extensão em 
 
 ```
 public/                 Arquivos estáticos copiados para dist/ (manifesto, HTML, CSS, ícones)
-public/_locales/        Traduções: en_US (padrão), pt_BR, es, fr, de, it, ru e pl
-scripts/                Ferramentas de build: build, package, minify, zip e gerador de ícones
+scripts/                Ferramentas de build: build, package, minify, zip, gerador de ícones e idiomas do manifesto
+src/locales/            Traduções: 31 idiomas, um arquivo JSON cada (en_US é a fonte)
 src/core/               Lógica pura, sem DOM: parser, matemática financeira, regras brasileiras, calculadoras, validação
 src/shared/             Configurações, rascunho, formatação, i18n, cliente opcional do Banco Central
 src/popup/              Interface do popup
@@ -262,26 +263,55 @@ importantes.
 
 ### Localização
 
-A extensão usa o sistema `chrome.i18n` do próprio Chrome, então o idioma sempre segue o idioma da
-interface do navegador e não exige nenhuma configuração. O Chrome escolhe a melhor correspondência: um
-idioma exato como `pt_BR`, depois o idioma base como `es` e, por fim, o idioma padrão `en_US`.
+O popup está traduzido para 31 idiomas: inglês, chinês (simplificado e tradicional), espanhol, hindi,
+bengali, português do Brasil, russo, japonês, panjabi, marata, telugo, turco, coreano, francês, alemão,
+vietnamita, tâmil, urdu, javanês, italiano, árabe, guzerate, persa, bhojpuri, hauçá, canarim, indonésio,
+polonês, malaiala e ucraniano. Por padrão o idioma segue o do navegador, e as configurações permitem
+escolher outro, o que o `chrome.i18n` não faz. Por isso as traduções vão dentro da extensão e são lidas
+por `src/shared/i18n.ts`, no mesmo formato de mensagens do Chrome (marcadores `$1` e `$NOME$`). Os idiomas do
+navegador são associados à tradução mais próxima: `pt-PT` usa o português do Brasil, `es-419` usa o
+espanhol, `zh-TW`/`zh-HK` usam o chinês tradicional, qualquer outro chinês usa o simplificado e todo o
+resto cai para o inglês.
 
-- **As mensagens** ficam em `public/_locales/<idioma>/messages.json`. O manifesto (nome, descrição, dica
-  do botão da barra de ferramentas, descrição do atalho) usa referências `__MSG_<chave>__`.
-- **O texto estático do popup** é localizado na inicialização por `applyTranslations`, em
-  `src/shared/i18n.ts`, por meio de atributos `data-i18n` no HTML. As mensagens montadas no código usam
-  `t("chave", substituições)`, e as chaves são verificadas pelo compilador contra `en_US/messages.json`.
+- **As mensagens** ficam em `src/locales/<código>.json`, no formato do `messages.json` do Chrome. O inglês
+  (`en_US`) é a fonte; os demais arquivos precisam definir as mesmas chaves e marcadores.
+- **Os textos do próprio Chrome** (nome, descrição, dica do botão da barra de ferramentas, descrição do
+  atalho) vêm de `_locales`. O build gera essas pastas a partir de `src/locales`, mas só para os 26 idiomas
+  que o Chrome suporta. Panjabi, urdu, javanês, bhojpuri e hauçá não têm idioma de interface no Chrome, então
+  a página de extensões do Chrome mostra inglês para eles. A extensão em si está totalmente traduzida.
+- **Tradução contextual.** O texto é adaptado a cada mercado, em vez de traduzido palavra por palavra. A
+  Selic vira a taxa básica de juros do principal mercado do idioma (_taux directeur_, _Leitzins_,
+  _ключевая ставка_, repo rate, _政策金利_ …); produtos e impostos brasileiros sem equivalente (_CDB_,
+  _LCI_, _poupança_, _IOF_) mantêm o nome e são explicados na própria frase.
+  [`docs/localization.md`](docs/localization.md) lista o termo usado em cada idioma.
+- **O texto estático do popup** é localizado na inicialização, e de novo sempre que o idioma muda, por
+  `applyTranslations`, em `src/shared/i18n.ts`, por meio de atributos `data-i18n` no HTML. As mensagens
+  montadas no código usam `t("chave", substituições)`. As chaves são verificadas contra `en_US.json` e
+  `src/shared/catalog.ts` é tipado de modo que um idioma sem alguma mensagem não compila.
+- **Idiomas da direita para a esquerda** (árabe, persa, urdu) definem `dir="rtl"` na página e espelham o
+  layout. Campos numéricos, fórmulas e valores dos resultados continuam da esquerda para a direita.
 - **Os textos das calculadoras seguem uma convenção de nomes**, montada em `src/shared/labels.ts`:
   `calc_<id>_name`, `calc_<id>_desc`, `calc_<id>_formula`, `field_<id>_<campo>`, `out_<id>_<saída>`,
   `choice_<id>_<campo>_<valor>` e `group_<grupo>`. O compilador não consegue verificar essas chaves,
   então `tests/i18n.test.ts` confere que toda calculadora, campo, saída e opção tem mensagem em todos os
   idiomas e que nenhuma mensagem está sem uso.
-- **Números e moedas** são formatados com `Intl.NumberFormat` no idioma da interface do navegador.
-- **Adicionar um idioma:** copie `public/_locales/en_US` para uma nova pasta com o nome do idioma (por
-  exemplo `fr` ou `de`), traduza cada `message` e mantenha os blocos `placeholders` inalterados. Depois
-  acrescente o nome da pasta a `EXPECTED_LOCALES` em `tests/i18n.test.ts`.
-- **Testar um idioma:** inicie o Chrome com `--lang=pt-BR` (ou mude o idioma em
-  `chrome://settings/languages` e reinicie o Chrome) e recarregue a extensão.
+- **Números e moedas** são formatados com `Intl.NumberFormat` no idioma ativo, sempre com algarismos
+  latinos, para que os resultados combinem com as fórmulas e possam ser lidos de volta. O analisador também
+  aceita algarismos nativos (arábico-índicos, persas, devanágari, bengali, de largura total…), o
+  agrupamento indiano (`12,34,567`) e as marcas decimais e de milhar árabes. As sugestões de moeda seguem
+  o idioma e a região.
+- **Adicionar um idioma:** copie `src/locales/en_US.json` para `src/locales/<código>.json` e traduza cada
+  `message` (mantenha os blocos `placeholders` como estão); adicione uma entrada em `LOCALES`, em
+  `src/shared/locales.ts` (código, nome no próprio idioma, tag de idioma, direção); adicione o import e a
+  entrada em `src/shared/catalog.ts`. Se o Chrome suporta o idioma como idioma de interface, acrescente
+  também o código a `MANIFEST_LOCALES`, em `scripts/manifest-locales.mjs`. Os testes então conferem que o
+  novo arquivo tem as mesmas chaves e marcadores do inglês, que está traduzido e não é uma cópia, que os
+  nomes dos produtos brasileiros foram mantidos, que nenhuma mensagem está sem uso e que a descrição cabe
+  no limite de 132 caracteres da Web Store.
+- **Testar um idioma:** escolha-o nas configurações, ou inicie o Chrome com `--lang=pt-BR` para testar a
+  escolha automática.
+- **Situação da revisão:** as traduções não foram revisadas por falantes nativos; veja
+  [`docs/localization.md`](docs/localization.md).
 
 ### Adicionar uma calculadora
 

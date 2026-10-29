@@ -56,6 +56,11 @@
         "message": "One value per line (or separated by semicolons). Use a minus sign for outflows.",
         "description": "Hint under a list field such as cash flows."
     },
+    "languageLabel": { "message": "Language", "description": "Label of the language drop-down in the settings." },
+    "languageAuto": {
+        "message": "Automatic (browser language)",
+        "description": "Option of the language drop-down that follows the browser's language."
+    },
     "settingsHeading": { "message": "Settings", "description": "Heading of the settings view." },
     "settingsBack": { "message": "Back", "description": "Button that leaves the settings view." },
     "currencyLabel": { "message": "Currency", "description": "Label of the currency drop-down." },
@@ -362,7 +367,7 @@
     "out_loan_totalPaid": { "message": "Total paid", "description": "Label of a result." },
     "out_loan_totalInterest": { "message": "Total interest", "description": "Label of a result." },
     "marketOff": {
-        "message": "Selic and dollar rates can be filled in from the Central Bank of Brazil.",
+        "message": "Brazil's policy rate (Selic) and the dollar quote can be filled in from the Central Bank of Brazil.",
         "description": "Shown under the fields of a market calculator while live rates are off."
     },
     "marketEnable": { "message": "Fetch rates", "description": "Button that turns on live rates and downloads them." },
@@ -390,20 +395,23 @@
         "description": "Status when the user declines the permission to contact the Central Bank."
     },
     "liveRatesLabel": {
-        "message": "Fetch the Selic rate and the dollar quote from the Central Bank of Brazil",
+        "message": "Fetch Brazil's policy rate (Selic) and the dollar quote from the Central Bank of Brazil",
         "description": "Label of the live-rates checkbox."
     },
     "liveRatesHint": {
         "message": "Off by default. When on, Chrome asks permission to contact api.bcb.gov.br, which receives no information about you. Turning this off removes the permission.",
         "description": "Hint under the live-rates checkbox."
     },
-    "group_markets": { "message": "Selic & dollar", "description": "Heading of a group of calculators." },
+    "group_markets": {
+        "message": "Policy rate & dollar (Brazil)",
+        "description": "Heading of a group of calculators."
+    },
     "calc_selicYield_name": {
-        "message": "Selic-linked fixed income (Tesouro Selic, CDB)",
+        "message": "Fixed income linked to the policy rate (Selic, CDB)",
         "description": "Name of the calculator in the list."
     },
     "calc_selicYield_desc": {
-        "message": "What an investment that pays a share of the Selic returns after income tax.",
+        "message": "What an investment that pays a share of the central bank's policy rate (the Selic in Brazil) returns after income tax.",
         "description": "One-sentence explanation shown under the calculator selector."
     },
     "calc_selicYield_formula": {
@@ -412,9 +420,9 @@
     },
     "field_selicYield_amount": { "message": "Amount invested", "description": "Label of an input field." },
     "field_selicYield_months": { "message": "Term (months)", "description": "Label of an input field." },
-    "field_selicYield_selic": { "message": "Selic rate (per year)", "description": "Label of an input field." },
+    "field_selicYield_selic": { "message": "Policy rate (Selic, per year)", "description": "Label of an input field." },
     "field_selicYield_percentOfRate": {
-        "message": "Percentage of the Selic paid",
+        "message": "Share of the policy rate paid",
         "description": "Label of an input field."
     },
     "field_selicYield_taxTreatment": { "message": "Income tax", "description": "Label of an input field." },
@@ -424,19 +432,19 @@
     "out_selicYield_taxRate": { "message": "Income tax rate", "description": "Label of a result." },
     "out_selicYield_netAnnualRate": { "message": "Net rate per year", "description": "Label of a result." },
     "choice_selicYield_taxTreatment_1": {
-        "message": "Regressive table (CDB, Tesouro)",
+        "message": "Regressive table (CDB, Treasury)",
         "description": "Option of a drop-down list."
     },
     "choice_selicYield_taxTreatment_0": {
-        "message": "Exempt (LCI, LCA)",
+        "message": "Tax-exempt (LCI, LCA)",
         "description": "Option of a drop-down list."
     },
     "calc_savings_name": {
-        "message": "Savings account vs Selic investment",
+        "message": "Savings account (poupança) vs policy-rate investment",
         "description": "Name of the calculator in the list."
     },
     "calc_savings_desc": {
-        "message": "Compares the savings account with a taxed fixed-income product, and finds the share of the Selic at which they tie.",
+        "message": "Compares the savings account (poupança) with a taxed fixed-income product, and finds the share of the policy rate at which they tie.",
         "description": "One-sentence explanation shown under the calculator selector."
     },
     "calc_savings_formula": {
@@ -445,21 +453,24 @@
     },
     "field_savings_amount": { "message": "Amount invested", "description": "Label of an input field." },
     "field_savings_months": { "message": "Term (months)", "description": "Label of an input field." },
-    "field_savings_selic": { "message": "Selic rate (per year)", "description": "Label of an input field." },
+    "field_savings_selic": { "message": "Policy rate (Selic, per year)", "description": "Label of an input field." },
     "field_savings_percentOfRate": {
-        "message": "Percentage of the Selic paid (fixed income)",
+        "message": "Share of the policy rate paid (fixed income)",
         "description": "Label of an input field."
     },
     "out_savings_advantage": { "message": "Fixed income advantage", "description": "Label of a result." },
     "out_savings_savingsFinal": { "message": "Savings account at the end", "description": "Label of a result." },
     "out_savings_fixedIncomeFinal": { "message": "Fixed income at the end (net)", "description": "Label of a result." },
-    "out_savings_breakEvenPercent": { "message": "Share of the Selic to tie", "description": "Label of a result." },
+    "out_savings_breakEvenPercent": {
+        "message": "Share of the policy rate to tie",
+        "description": "Label of a result."
+    },
     "calc_dollarConversion_name": {
-        "message": "Buying dollars (spread and IOF)",
+        "message": "Buying dollars (spread and IOF tax)",
         "description": "Name of the calculator in the list."
     },
     "calc_dollarConversion_desc": {
-        "message": "How many dollars your reais buy once the bank's spread and the IOF tax are counted.",
+        "message": "How many dollars your reais buy once the bank's spread and the IOF exchange tax are counted.",
         "description": "One-sentence explanation shown under the calculator selector."
     },
     "calc_dollarConversion_formula": {
@@ -473,7 +484,7 @@
     },
     "field_dollarConversion_spread": { "message": "Bank spread", "description": "Label of an input field." },
     "field_dollarConversion_iof": {
-        "message": "IOF (foreign exchange tax)",
+        "message": "IOF (Brazilian exchange tax)",
         "description": "Label of an input field."
     },
     "out_dollarConversion_usdReceived": { "message": "Dollars received", "description": "Label of a result." },
@@ -483,13 +494,16 @@
         "message": "Cost as a share of the amount",
         "description": "Label of a result."
     },
-    "calc_dollarVsSelic_name": { "message": "Dollar vs Selic", "description": "Name of the calculator in the list." },
+    "calc_dollarVsSelic_name": {
+        "message": "Dollar vs policy rate (Selic)",
+        "description": "Name of the calculator in the list."
+    },
     "calc_dollarVsSelic_desc": {
-        "message": "Where must the dollar be at the end for holding dollars to beat the Selic? Compared gross, before income tax.",
+        "message": "Where must the dollar be at the end for holding dollars to beat the policy rate (Selic)? Compared gross, before income tax.",
         "description": "One-sentence explanation shown under the calculator selector."
     },
     "calc_dollarVsSelic_formula": {
-        "message": "Break-even dollar = Selic result ÷ dollars held at the end",
+        "message": "Break-even dollar = policy-rate result ÷ dollars held at the end",
         "description": "Plain-text formula shown under the results. Keep the operators."
     },
     "field_dollarVsSelic_amount": { "message": "Amount in reais", "description": "Label of an input field." },
@@ -499,16 +513,22 @@
         "message": "Expected dollar at the end",
         "description": "Label of an input field."
     },
-    "field_dollarVsSelic_selic": { "message": "Selic rate (per year)", "description": "Label of an input field." },
+    "field_dollarVsSelic_selic": {
+        "message": "Policy rate (Selic, per year)",
+        "description": "Label of an input field."
+    },
     "field_dollarVsSelic_usdYield": {
         "message": "Dollar yield (per year, in US$)",
         "description": "Label of an input field."
     },
     "out_dollarVsSelic_breakEvenRate": { "message": "Break-even dollar", "description": "Label of a result." },
     "out_dollarVsSelic_requiredChange": { "message": "Dollar rise needed", "description": "Label of a result." },
-    "out_dollarVsSelic_selicFinal": { "message": "Selic at the end (gross)", "description": "Label of a result." },
+    "out_dollarVsSelic_selicFinal": {
+        "message": "Policy rate at the end (gross)",
+        "description": "Label of a result."
+    },
     "out_dollarVsSelic_dollarFinal": { "message": "Dollars at the end (gross)", "description": "Label of a result." },
-    "out_dollarVsSelic_difference": { "message": "Dollar minus Selic", "description": "Label of a result." },
+    "out_dollarVsSelic_difference": { "message": "Dollar minus policy rate", "description": "Label of a result." },
     "ratingGood": { "message": "Good", "description": "How an indicator reads: good (shown in green)." },
     "ratingNeutral": {
         "message": "Neutral",

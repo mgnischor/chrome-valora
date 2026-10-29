@@ -1,0 +1,553 @@
+{
+    "extName": { "message": "Valora – бізнес-калькулятор" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "Бізнес-калькулятори: ROI, ліквідність, беззбитковість, NPV, IRR та інше. Усі розрахунки — на вашому пристрої."
+    },
+    "actionTitle": { "message": "Valora – бізнес-калькулятори" },
+    "commandOpen": { "message": "Відкрити Valora" },
+    "tagline": { "message": "Бізнес-калькулятори" },
+    "calculatorLabel": { "message": "Калькулятор" },
+    "inputsLabel": { "message": "Вхідні дані" },
+    "resultsLabel": { "message": "Результати" },
+    "exampleButton": { "message": "Приклад" },
+    "exampleButtonTitle": { "message": "Заповнити прикладами значень" },
+    "resetButton": { "message": "Очистити" },
+    "resetButtonTitle": { "message": "Очистити всі поля" },
+    "settingsButtonTitle": { "message": "Налаштування" },
+    "resultsEmpty": { "message": "Заповніть поля, щоб побачити результати." },
+    "resultUndefined": { "message": "Не визначено" },
+    "resultUndefinedHint": {
+        "message": "Для цих значень результат не визначений, наприклад через ділення на нуль або через відсутність розв’язку."
+    },
+    "formulaLabel": { "message": "Формула" },
+    "copyResults": { "message": "Копіювати результати" },
+    "statusCopied": { "message": "Результати скопійовано." },
+    "statusCopyFailed": { "message": "Не вдалося скопіювати в буфер обміну." },
+    "statusSaveFailed": { "message": "Не вдалося зберегти налаштування." },
+    "footer": {
+        "message": "Розрахунки на вашому пристрої; введені дані нікуди не надсилаються. Це оцінки, а не фінансова порада."
+    },
+    "seriesHint": {
+        "message": "Одне значення в рядку (або через крапку з комою). Для виплат використовуйте знак мінус."
+    },
+    "languageLabel": { "message": "Мова" },
+    "languageAuto": { "message": "Автоматично (мова браузера)" },
+    "settingsHeading": { "message": "Налаштування" },
+    "settingsBack": { "message": "Назад" },
+    "currencyLabel": { "message": "Валюта" },
+    "currencyNone": { "message": "Без символу" },
+    "decimalsLabel": { "message": "Знаків після коми для відсотків і коефіцієнтів" },
+    "rememberInputsLabel": { "message": "Пам’ятати введене, поки браузер відкритий" },
+    "rememberInputsHint": {
+        "message": "Зберігається лише в пам’яті браузера й видаляється під час закриття Chrome. Якщо вимкнути, дані видаляються одразу."
+    },
+    "errorNotNumber": { "message": "Введіть коректне число." },
+    "errorNotInteger": { "message": "Введіть ціле число." },
+    "errorMin": { "message": "Має бути не менше $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": { "message": "Має бути більше за $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMax": { "message": "Має бути не більше $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "Виберіть значення зі списку." },
+    "errorTooFewEntries": {
+        "message": "Введіть щонайменше $COUNT$ знач.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "Введіть щонайбільше $COUNT$ значень.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "Елемент $POSITION$ не є коректним числом.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "Прибутковість" },
+    "group_profitability": { "message": "Рентабельність і ціноутворення" },
+    "group_liquidity": { "message": "Ліквідність і платоспроможність" },
+    "group_investment": { "message": "Інвестиції та фінансування" },
+    "calc_roi_name": { "message": "Рентабельність інвестицій (ROI)" },
+    "calc_roi_desc": { "message": "Скільки інвестиція принесла або втратила порівняно із вкладеною сумою." },
+    "calc_roi_formula": { "message": "ROI = (Повернуто − Вкладено) ÷ Вкладено" },
+    "field_roi_invested": { "message": "Вкладена сума" },
+    "field_roi_returned": { "message": "Повернена сума" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "Чистий прибуток" },
+    "out_roi_multiple": { "message": "Кратність повернення" },
+    "calc_cagr_name": { "message": "Середньорічний темп зростання (CAGR)" },
+    "calc_cagr_desc": { "message": "Постійний річний темп зростання, що переводить значення з початкового в кінцеве." },
+    "calc_cagr_formula": { "message": "CAGR = (Кінець ÷ Початок)^(1 ÷ Років) − 1" },
+    "field_cagr_startValue": { "message": "Початкове значення" },
+    "field_cagr_endValue": { "message": "Кінцеве значення" },
+    "field_cagr_years": { "message": "Років" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "Загальне зростання" },
+    "calc_roe_name": { "message": "Рентабельність капіталу й активів (ROE, ROA)" },
+    "calc_roe_desc": { "message": "Скільки прибутку компанія отримує зі свого власного капіталу та з активів." },
+    "calc_roe_formula": { "message": "ROE = Чистий прибуток ÷ Капітал · ROA = Чистий прибуток ÷ Активи" },
+    "field_roe_netIncome": { "message": "Чистий прибуток" },
+    "field_roe_equity": { "message": "Власний капітал" },
+    "field_roe_assets": { "message": "Усього активів" },
+    "out_roe_roe": { "message": "Рентабельність капіталу (ROE)" },
+    "out_roe_roa": { "message": "Рентабельність активів (ROA)" },
+    "out_roe_equityMultiplier": { "message": "Мультиплікатор капіталу" },
+    "calc_margin_name": { "message": "Маржа й націнка" },
+    "calc_margin_desc": { "message": "Прибуток як частка ціни продажу (маржа) і собівартості (націнка)." },
+    "calc_margin_formula": {
+        "message": "Маржа = (Ціна − Собівартість) ÷ Ціна · Націнка = (Ціна − Собівартість) ÷ Собівартість"
+    },
+    "field_margin_cost": { "message": "Собівартість одиниці" },
+    "field_margin_price": { "message": "Ціна продажу" },
+    "out_margin_margin": { "message": "Маржа" },
+    "out_margin_markup": { "message": "Націнка" },
+    "out_margin_profit": { "message": "Прибуток на одиницю" },
+    "calc_pricing_name": { "message": "Ціна для цільової маржі" },
+    "calc_pricing_desc": { "message": "Ціна продажу, що дає потрібну маржу, і необхідна для цього націнка." },
+    "calc_pricing_formula": { "message": "Ціна = Собівартість ÷ (1 − Маржа) · Націнка = Маржа ÷ (1 − Маржа)" },
+    "field_pricing_cost": { "message": "Собівартість одиниці" },
+    "field_pricing_targetMargin": { "message": "Цільова маржа" },
+    "out_pricing_price": { "message": "Ціна продажу" },
+    "out_pricing_markup": { "message": "Потрібна націнка" },
+    "out_pricing_profit": { "message": "Прибуток на одиницю" },
+    "calc_breakeven_name": { "message": "Точка беззбитковості" },
+    "calc_breakeven_desc": {
+        "message": "Скільки одиниць потрібно продати, щоб покрити постійні витрати та, за бажанням, досягти цільового прибутку."
+    },
+    "calc_breakeven_formula": {
+        "message": "Одиниць = (Постійні витрати + Цільовий прибуток) ÷ (Ціна − Змінні витрати)"
+    },
+    "field_breakeven_fixedCosts": { "message": "Постійні витрати" },
+    "field_breakeven_price": { "message": "Ціна за одиницю" },
+    "field_breakeven_variableCost": { "message": "Змінні витрати на одиницю" },
+    "field_breakeven_targetProfit": { "message": "Цільовий прибуток" },
+    "out_breakeven_units": { "message": "Одиниць для продажу" },
+    "out_breakeven_revenue": { "message": "Потрібна виручка" },
+    "out_breakeven_contributionMargin": { "message": "Маржинальний дохід на одиницю" },
+    "out_breakeven_contributionMarginRatio": { "message": "Коефіцієнт маржинального доходу" },
+    "calc_liquidity_name": { "message": "Коефіцієнти ліквідності" },
+    "calc_liquidity_desc": {
+        "message": "Чи може компанія погасити короткострокові зобов’язання короткостроковими активами."
+    },
+    "calc_liquidity_formula": {
+        "message": "Поточна = Оборотні активи ÷ Поточні зобов’язання · Швидка = (Гроші + Дебіторка) ÷ Поточні зобов’язання · Абсолютна = Гроші ÷ Поточні зобов’язання"
+    },
+    "field_liquidity_cash": { "message": "Гроші та їх еквіваленти" },
+    "field_liquidity_receivables": { "message": "Дебіторська заборгованість" },
+    "field_liquidity_inventory": { "message": "Запаси" },
+    "field_liquidity_otherCurrentAssets": { "message": "Інші оборотні активи" },
+    "field_liquidity_currentLiabilities": { "message": "Поточні зобов’язання" },
+    "out_liquidity_currentRatio": { "message": "Коефіцієнт поточної ліквідності" },
+    "out_liquidity_quickRatio": { "message": "Коефіцієнт швидкої ліквідності" },
+    "out_liquidity_cashRatio": { "message": "Коефіцієнт абсолютної ліквідності" },
+    "out_liquidity_workingCapital": { "message": "Оборотний капітал" },
+    "calc_cashCycle_name": { "message": "Цикл конвертації грошей" },
+    "calc_cashCycle_desc": {
+        "message": "Скільки днів гроші залишаються «замороженими» між оплатою постачальникам і отриманням коштів від клієнтів."
+    },
+    "calc_cashCycle_formula": { "message": "ЦКГ = Дні запасів + Дні дебіторки − Дні кредиторки" },
+    "field_cashCycle_revenue": { "message": "Виручка за період" },
+    "field_cashCycle_cogs": { "message": "Собівартість продажів" },
+    "field_cashCycle_inventory": { "message": "Середні запаси" },
+    "field_cashCycle_receivables": { "message": "Середня дебіторка" },
+    "field_cashCycle_payables": { "message": "Середня кредиторка" },
+    "field_cashCycle_periodDays": { "message": "Днів у періоді" },
+    "out_cashCycle_cashConversionCycle": { "message": "Цикл конвертації грошей" },
+    "out_cashCycle_daysInventory": { "message": "Дні запасів" },
+    "out_cashCycle_daysReceivables": { "message": "Дні дебіторки" },
+    "out_cashCycle_daysPayables": { "message": "Дні кредиторки" },
+    "out_cashCycle_inventoryTurnover": { "message": "Оборотність запасів" },
+    "choice_cashCycle_periodDays_365": { "message": "365 днів (рік)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 днів (комерційний рік)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 днів (квартал)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 днів (місяць)" },
+    "calc_leverage_name": { "message": "Боргове навантаження та покриття відсотків" },
+    "calc_leverage_desc": {
+        "message": "Наскільки компанія залежить від боргу і з яким запасом її прибуток покриває відсотки."
+    },
+    "calc_leverage_formula": {
+        "message": "Борг/Капітал = Борг ÷ Капітал · Борг/Усього = Борг ÷ (Борг + Капітал) · Покриття = EBIT ÷ Відсотки"
+    },
+    "field_leverage_totalDebt": { "message": "Загальний борг" },
+    "field_leverage_equity": { "message": "Власний капітал" },
+    "field_leverage_ebit": { "message": "EBIT (операційний прибуток)" },
+    "field_leverage_interestExpense": { "message": "Витрати на відсотки" },
+    "out_leverage_debtToEquity": { "message": "Борг до капіталу" },
+    "out_leverage_debtToCapital": { "message": "Борг до загального капіталу" },
+    "out_leverage_interestCoverage": { "message": "Покриття відсотків" },
+    "calc_investment_name": { "message": "Аналіз інвестицій (NPV, IRR, окупність)" },
+    "calc_investment_desc": {
+        "message": "Чи варто вкладатися? Дисконтує майбутні грошові потоки та показує, коли проєкт окупиться."
+    },
+    "calc_investment_formula": { "message": "NPV = Σ ГПₜ ÷ (1 + r)ᵗ − Інвестиції · IRR: ставка, за якої NPV = 0" },
+    "field_investment_rate": { "message": "Ставка дисконтування (за період)" },
+    "field_investment_initialInvestment": { "message": "Початкові інвестиції" },
+    "field_investment_cashFlows": { "message": "Грошові потоки (період 1, 2, 3…)" },
+    "out_investment_npv": { "message": "Чиста приведена вартість (NPV)" },
+    "out_investment_irr": { "message": "Внутрішня норма дохідності (IRR)" },
+    "out_investment_profitabilityIndex": { "message": "Індекс рентабельності" },
+    "out_investment_payback": { "message": "Окупність (періодів)" },
+    "out_investment_discountedPayback": { "message": "Дисконтована окупність (періодів)" },
+    "calc_futureValue_name": { "message": "Майбутня вартість (складний відсоток)" },
+    "calc_futureValue_desc": { "message": "У що виросте сума з регулярними внесками за складного відсотка." },
+    "calc_futureValue_formula": {
+        "message": "МВ = ПВ × (1 + i)ⁿ + Внесок × ((1 + i)ⁿ − 1) ÷ i, де i = річна ставка ÷ періодів на рік"
+    },
+    "field_futureValue_presentValue": { "message": "Початкова сума" },
+    "field_futureValue_contribution": { "message": "Внесок за кожен період" },
+    "field_futureValue_annualRate": { "message": "Річна відсоткова ставка" },
+    "field_futureValue_years": { "message": "Років" },
+    "field_futureValue_frequency": { "message": "Капіталізація та внески" },
+    "out_futureValue_futureValue": { "message": "Майбутня вартість" },
+    "out_futureValue_totalContributions": { "message": "Усього внесено" },
+    "out_futureValue_interestEarned": { "message": "Нараховані відсотки" },
+    "choice_futureValue_frequency_12": { "message": "Щомісяця" },
+    "choice_futureValue_frequency_1": { "message": "Щороку" },
+    "choice_futureValue_frequency_2": { "message": "Двічі на рік" },
+    "choice_futureValue_frequency_4": { "message": "Щокварталу" },
+    "choice_futureValue_frequency_52": { "message": "Щотижня" },
+    "choice_futureValue_frequency_365": { "message": "Щодня" },
+    "calc_loan_name": { "message": "Платіж за кредитом" },
+    "calc_loan_desc": { "message": "Фіксований щомісячний платіж за кредитом і загальна сума відсотків." },
+    "calc_loan_formula": { "message": "Платіж = Сума × i ÷ (1 − (1 + i)⁻ⁿ), де i = річна ставка ÷ 12" },
+    "field_loan_principal": { "message": "Сума кредиту" },
+    "field_loan_annualRate": { "message": "Річна відсоткова ставка" },
+    "field_loan_termMonths": { "message": "Строк (місяців)" },
+    "out_loan_monthlyPayment": { "message": "Щомісячний платіж" },
+    "out_loan_totalPaid": { "message": "Усього сплачено" },
+    "out_loan_totalInterest": { "message": "Усього відсотків" },
+    "marketOff": {
+        "message": "Облікову ставку Бразилії (Selic) і курс долара можна підставити з даних Центрального банку Бразилії."
+    },
+    "marketEnable": { "message": "Отримати ставки" },
+    "marketUse": { "message": "Використати ставки" },
+    "marketRetry": { "message": "Повторити" },
+    "marketLoading": { "message": "Отримання ставок…" },
+    "marketFailed": { "message": "Не вдалося зв’язатися з Центральним банком. Перевірте підключення." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Долар $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "Дозвіл не надано, тому ставки не отримано." },
+    "liveRatesLabel": {
+        "message": "Отримувати облікову ставку Бразилії (Selic) і курс долара від Центрального банку Бразилії"
+    },
+    "liveRatesHint": {
+        "message": "За замовчуванням вимкнено. Після ввімкнення Chrome запитає дозвіл на доступ до api.bcb.gov.br, який не отримує жодних відомостей про вас. Вимкнення знімає дозвіл."
+    },
+    "group_markets": { "message": "Облікова ставка й долар (Бразилія)" },
+    "calc_selicYield_name": { "message": "Фіксований дохід, прив’язаний до облікової ставки (Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "Скільки приносить після податку на доходи вкладення, що виплачує частку облікової ставки центробанку (у Бразилії — Selic, в Україні — облікова ставка НБУ)."
+    },
+    "calc_selicYield_formula": {
+        "message": "Чистий прибуток = Сума × (зростання − 1) × (1 − податок); зростання нараховується щодня, 252 робочі дні на рік"
+    },
+    "field_selicYield_amount": { "message": "Вкладена сума" },
+    "field_selicYield_months": { "message": "Строк (місяців)" },
+    "field_selicYield_selic": { "message": "Облікова ставка (Selic, за рік)" },
+    "field_selicYield_percentOfRate": { "message": "Частка облікової ставки, що виплачується" },
+    "field_selicYield_taxTreatment": { "message": "Податок на доходи" },
+    "out_selicYield_netFinal": { "message": "Чиста сума наприкінці" },
+    "out_selicYield_netProfit": { "message": "Чистий прибуток" },
+    "out_selicYield_incomeTax": { "message": "Податок на доходи" },
+    "out_selicYield_taxRate": { "message": "Ставка податку на доходи" },
+    "out_selicYield_netAnnualRate": { "message": "Чиста ставка за рік" },
+    "choice_selicYield_taxTreatment_1": { "message": "Регресивна шкала (CDB, держоблігації)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Звільнено від податку (LCI, LCA)" },
+    "calc_savings_name": { "message": "Ощадний рахунок (poupança) і вкладення, прив’язане до облікової ставки" },
+    "calc_savings_desc": {
+        "message": "Порівнює ощадний рахунок (poupança) з оподатковуваним продуктом із фіксованим доходом і знаходить частку облікової ставки, за якої вони рівні."
+    },
+    "calc_savings_formula": {
+        "message": "Ощадний рахунок: 0,5% на місяць, якщо Selic вище 8,5%, інакше 70% Selic. Фіксований дохід оподатковується за регресивною шкалою"
+    },
+    "field_savings_amount": { "message": "Вкладена сума" },
+    "field_savings_months": { "message": "Строк (місяців)" },
+    "field_savings_selic": { "message": "Облікова ставка (Selic, за рік)" },
+    "field_savings_percentOfRate": { "message": "Частка облікової ставки (фіксований дохід)" },
+    "out_savings_advantage": { "message": "Перевага фіксованого доходу" },
+    "out_savings_savingsFinal": { "message": "Ощадний рахунок наприкінці" },
+    "out_savings_fixedIncomeFinal": { "message": "Фіксований дохід наприкінці (чистий)" },
+    "out_savings_breakEvenPercent": { "message": "Частка ставки для рівності" },
+    "calc_dollarConversion_name": { "message": "Купівля доларів (спред і податок IOF)" },
+    "calc_dollarConversion_desc": {
+        "message": "Скільки доларів можна купити за реали з урахуванням спреду банку та валютного податку IOF."
+    },
+    "calc_dollarConversion_formula": { "message": "Долари = Реали ÷ (Курс × (1 + Спред) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "Сума в реалах" },
+    "field_dollarConversion_rate": { "message": "Курс долара (R$ за US$)" },
+    "field_dollarConversion_spread": { "message": "Спред банку" },
+    "field_dollarConversion_iof": { "message": "IOF (бразильський податок на обмін валюти)" },
+    "out_dollarConversion_usdReceived": { "message": "Отримано доларів" },
+    "out_dollarConversion_effectiveRate": { "message": "Фактично сплачений курс" },
+    "out_dollarConversion_cost": { "message": "Вартість спреду й IOF" },
+    "out_dollarConversion_costPercent": { "message": "Вартість як частка суми" },
+    "calc_dollarVsSelic_name": { "message": "Долар чи облікова ставка (Selic)" },
+    "calc_dollarVsSelic_desc": {
+        "message": "Яким має бути курс долара наприкінці, щоб утримання доларів випередило облікову ставку (Selic)? Порівняння до податку на доходи."
+    },
+    "calc_dollarVsSelic_formula": {
+        "message": "Беззбитковий курс = результат облікової ставки ÷ долари наприкінці строку"
+    },
+    "field_dollarVsSelic_amount": { "message": "Сума в реалах" },
+    "field_dollarVsSelic_months": { "message": "Строк (місяців)" },
+    "field_dollarVsSelic_spot": { "message": "Долар сьогодні (R$ за US$)" },
+    "field_dollarVsSelic_expected": { "message": "Очікуваний долар наприкінці" },
+    "field_dollarVsSelic_selic": { "message": "Облікова ставка (Selic, за рік)" },
+    "field_dollarVsSelic_usdYield": { "message": "Дохідність у доларах (за рік, у US$)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "Беззбитковий курс долара" },
+    "out_dollarVsSelic_requiredChange": { "message": "Потрібне зростання долара" },
+    "out_dollarVsSelic_selicFinal": { "message": "Облікова ставка наприкінці (до податку)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "Долари наприкінці (до податку)" },
+    "out_dollarVsSelic_difference": { "message": "Долар мінус облікова ставка" },
+    "ratingGood": { "message": "Добре" },
+    "ratingNeutral": { "message": "Нейтрально" },
+    "ratingBad": { "message": "Погано" },
+    "ratingLegend": { "message": "Зелений: добре · Звичайний: нейтрально · Червоний: погано" },
+    "ratingRuleHigher": {
+        "message": "Нижче $BAD$: погано · Від $BAD$ до $GOOD$: нейтрально · Вище $GOOD$: добре",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "Вище $BAD$: погано · Від $GOOD$ до $BAD$: нейтрально · Нижче $GOOD$: добре",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "Нижче $VALUE$: погано · За $VALUE$: нейтрально · Вище $VALUE$: добре",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "Вище $VALUE$: погано · За $VALUE$: нейтрально · Нижче $VALUE$: добре",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "Орієнтир: що вважається нормою, залежить від галузі." },
+    "group_accounting": { "message": "Бухгалтерський аналіз" },
+    "calc_incomeStatement_name": { "message": "Аналіз звіту про фінансові результати (маржі)" },
+    "calc_incomeStatement_desc": {
+        "message": "Проводить від виручки до чистого прибутку й показує маржу на кожному кроці."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = Виручка − Собівартість − Операційні витрати · EBIT = EBITDA − Амортизація · Чистий = (EBIT − Відсотки) × (1 − податок)"
+    },
+    "field_incomeStatement_revenue": { "message": "Чиста виручка" },
+    "field_incomeStatement_cogs": { "message": "Собівартість продажів" },
+    "field_incomeStatement_operatingExpenses": { "message": "Операційні витрати" },
+    "field_incomeStatement_depreciation": { "message": "Амортизація" },
+    "field_incomeStatement_interestExpense": { "message": "Витрати на відсотки" },
+    "field_incomeStatement_taxRate": { "message": "Ставка податку на доходи" },
+    "out_incomeStatement_netIncome": { "message": "Чистий прибуток" },
+    "out_incomeStatement_grossMargin": { "message": "Валова маржа" },
+    "out_incomeStatement_ebitdaMargin": { "message": "Маржа EBITDA" },
+    "out_incomeStatement_operatingMargin": { "message": "Операційна маржа (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "Чиста маржа" },
+    "calc_dupont_name": { "message": "Аналіз Дюпона (3 кроки)" },
+    "calc_dupont_desc": { "message": "Розкладає рентабельність капіталу на маржу, оборотність активів і важіль." },
+    "calc_dupont_formula": { "message": "ROE = Чиста маржа × Оборотність активів × Мультиплікатор капіталу" },
+    "field_dupont_netIncome": { "message": "Чистий прибуток" },
+    "field_dupont_revenue": { "message": "Чиста виручка" },
+    "field_dupont_assets": { "message": "Усього активів" },
+    "field_dupont_equity": { "message": "Власний капітал" },
+    "out_dupont_roe": { "message": "Рентабельність капіталу (ROE)" },
+    "out_dupont_netMargin": { "message": "Чиста маржа" },
+    "out_dupont_assetTurnover": { "message": "Оборотність активів" },
+    "out_dupont_equityMultiplier": { "message": "Мультиплікатор капіталу" },
+    "out_dupont_roa": { "message": "Рентабельність активів (ROA)" },
+    "calc_dupont5_name": { "message": "Аналіз Дюпона (5 кроків)" },
+    "calc_dupont5_desc": {
+        "message": "Розкладає ROE на податкове та відсоткове навантаження, операційну маржу, оборотність і важіль."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (ЧП ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ Виручка) × (Виручка ÷ Активи) × (Активи ÷ Капітал)"
+    },
+    "field_dupont5_netIncome": { "message": "Чистий прибуток (ЧП)" },
+    "field_dupont5_pretaxIncome": { "message": "Прибуток до оподаткування (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (операційний прибуток)" },
+    "field_dupont5_revenue": { "message": "Чиста виручка" },
+    "field_dupont5_assets": { "message": "Усього активів" },
+    "field_dupont5_equity": { "message": "Власний капітал" },
+    "out_dupont5_roe": { "message": "Рентабельність капіталу (ROE)" },
+    "out_dupont5_taxBurden": { "message": "Податкове навантаження (ЧП ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "Відсоткове навантаження (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "Операційна маржа (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "Оборотність активів" },
+    "out_dupont5_equityMultiplier": { "message": "Мультиплікатор капіталу" },
+    "calc_fleuriet_name": { "message": "Модель Флер’є (динамічний оборотний капітал)" },
+    "calc_fleuriet_desc": {
+        "message": "Класифікує фінансову структуру за оборотним капіталом (CDG), потребою в ньому (NCG) і сальдо казначейства (T)."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = Постійні джерела − Необоротні активи · NCG = Операційні оборотні активи − Операційні поточні зобов’язання · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "Операційні оборотні активи" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "Операційні поточні зобов’язання" },
+    "field_fleuriet_nonCurrentAssets": { "message": "Необоротні активи" },
+    "field_fleuriet_permanentFunds": { "message": "Постійні джерела" },
+    "out_fleuriet_structureType": { "message": "Фінансова структура" },
+    "out_fleuriet_workingCapital": { "message": "Оборотний капітал (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "Потреба в оборотному капіталі (NCG)" },
+    "out_fleuriet_treasury": { "message": "Сальдо казначейства (T)" },
+    "cat_fleuriet_structureType_1": { "message": "Тип I – Відмінна" },
+    "cat_fleuriet_structureType_2": { "message": "Тип II – Надійна" },
+    "cat_fleuriet_structureType_3": { "message": "Тип III – Незадовільна" },
+    "cat_fleuriet_structureType_4": { "message": "Тип IV – Погана" },
+    "cat_fleuriet_structureType_5": { "message": "Тип V – Дуже погана" },
+    "cat_fleuriet_structureType_6": { "message": "Тип VI – Високий ризик" },
+    "calc_altman_name": { "message": "Z-рахунок Альтмана (ризик банкрутства)" },
+    "calc_altman_desc": {
+        "message": "Оцінює ризик фінансових труднощів за п’ятьма коефіцієнтами балансу та звіту про прибутки, у двох версіях."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1,2·X1 + 1,4·X2 + 3,3·X3 + 0,6·X4 + 1,0·X5 · Z″ = 3,25 + 6,56·X1 + 3,26·X2 + 6,72·X3 + 1,05·X4"
+    },
+    "field_altman_workingCapital": { "message": "Оборотний капітал" },
+    "field_altman_retainedEarnings": { "message": "Нерозподілений прибуток" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "Вартість власного капіталу" },
+    "field_altman_sales": { "message": "Продажі" },
+    "field_altman_totalAssets": { "message": "Усього активів" },
+    "field_altman_totalLiabilities": { "message": "Усього зобов’язань" },
+    "out_altman_zScore": { "message": "Z-рахунок (оригінальний)" },
+    "out_altman_zZone": { "message": "Зона (оригінальний)" },
+    "out_altman_emergingScore": { "message": "Z″-рахунок (ринки, що розвиваються)" },
+    "out_altman_emergingZone": { "message": "Зона (ринки, що розвиваються)" },
+    "cat_altman_zZone_0": { "message": "Зона ризику" },
+    "cat_altman_zZone_1": { "message": "Сіра зона" },
+    "cat_altman_zZone_2": { "message": "Безпечна зона" },
+    "cat_altman_emergingZone_0": { "message": "Зона ризику" },
+    "cat_altman_emergingZone_1": { "message": "Сіра зона" },
+    "cat_altman_emergingZone_2": { "message": "Безпечна зона" },
+    "calc_leverageDegrees_name": { "message": "Ступені операційного та фінансового важеля" },
+    "calc_leverageDegrees_desc": {
+        "message": "Наскільки зміна продажів змінює операційний прибуток і прибуток після відсотків."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = Маржинальний дохід ÷ EBIT · DFL = EBIT ÷ (EBIT − Відсотки) · DTL = DOL × DFL"
+    },
+    "field_leverageDegrees_revenue": { "message": "Чиста виручка" },
+    "field_leverageDegrees_variableCosts": { "message": "Змінні витрати" },
+    "field_leverageDegrees_fixedCosts": { "message": "Постійні витрати" },
+    "field_leverageDegrees_interestExpense": { "message": "Витрати на відсотки" },
+    "out_leverageDegrees_operatingLeverage": { "message": "Операційний важіль (DOL)" },
+    "out_leverageDegrees_financialLeverage": { "message": "Фінансовий важіль (DFL)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "Сукупний важіль (DTL)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (операційний прибуток)" },
+    "calc_depreciation_name": { "message": "Графік амортизації" },
+    "calc_depreciation_desc": {
+        "message": "Амортизація, накопичена амортизація та балансова вартість активу за рік, трьома методами."
+    },
+    "calc_depreciation_formula": {
+        "message": "Прямолінійний = (Вартість − Ліквід.) ÷ Строк · Зменш. залишку = Балансова × 2 ÷ Строк · За сумою чисел років = (Вартість − Ліквід.) × Залишок ÷ Σ років"
+    },
+    "field_depreciation_cost": { "message": "Вартість активу" },
+    "field_depreciation_salvage": { "message": "Ліквідаційна вартість" },
+    "field_depreciation_lifeYears": { "message": "Строк корисного використання (років)" },
+    "field_depreciation_method": { "message": "Метод" },
+    "field_depreciation_year": { "message": "Рік для показу" },
+    "out_depreciation_charge": { "message": "Амортизація за рік" },
+    "out_depreciation_accumulated": { "message": "Накопичена амортизація" },
+    "out_depreciation_bookValue": { "message": "Балансова вартість" },
+    "choice_depreciation_method_1": { "message": "Прямолінійний" },
+    "choice_depreciation_method_2": { "message": "Подвійного зменшення залишку" },
+    "choice_depreciation_method_3": { "message": "За сумою чисел років" },
+    "calc_wacc_name": { "message": "WACC і вартість капіталу (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "Середня вартість фінансування компанії: вартість власного капіталу (CAPM) і боргу після податку."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × Премія · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − податок)"
+    },
+    "field_wacc_equityValue": { "message": "Вартість власного капіталу" },
+    "field_wacc_debtValue": { "message": "Вартість боргу" },
+    "field_wacc_riskFree": { "message": "Безризикова ставка" },
+    "field_wacc_beta": { "message": "Бета" },
+    "field_wacc_marketPremium": { "message": "Премія за ринковий ризик" },
+    "field_wacc_costOfDebt": { "message": "Вартість боргу (до податку)" },
+    "field_wacc_taxRate": { "message": "Ставка податку на доходи" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "Вартість власного капіталу (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Вартість боргу після податку (Kd)" },
+    "out_wacc_equityWeight": { "message": "Частка власного капіталу" },
+    "out_wacc_debtWeight": { "message": "Частка боргу" },
+    "calc_eva_name": { "message": "Економічна додана вартість (EVA)" },
+    "calc_eva_desc": { "message": "Чи заробляє бізнес більше, ніж коштує вкладений у нього капітал." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × Інвест. капітал · NOPAT = EBIT × (1 − податок) · ROIC = NOPAT ÷ Інвест. капітал"
+    },
+    "field_eva_ebit": { "message": "EBIT (операційний прибуток)" },
+    "field_eva_taxRate": { "message": "Ставка податку на доходи" },
+    "field_eva_investedCapital": { "message": "Інвестований капітал" },
+    "field_eva_wacc": { "message": "Вартість капіталу (WACC)" },
+    "out_eva_eva": { "message": "Економічна додана вартість (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "Рентабельність інвестованого капіталу (ROIC)" },
+    "out_eva_spread": { "message": "Спред (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "Плата за капітал" },
+    "calc_freeCashFlow_name": { "message": "Вільний грошовий потік (FCFF і FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "Гроші після операцій та інвестицій: для всіх надавачів капіталу (FCFF) і для акціонерів (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − податок) + Аморт. − CapEx − ΔОК · FCFE = FCFF − Відсотки × (1 − податок) + Чистий борг"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (операційний прибуток)" },
+    "field_freeCashFlow_taxRate": { "message": "Ставка податку на доходи" },
+    "field_freeCashFlow_depreciation": { "message": "Амортизація" },
+    "field_freeCashFlow_capex": { "message": "Капітальні витрати (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "Приріст оборотного капіталу" },
+    "field_freeCashFlow_interestExpense": { "message": "Витрати на відсотки" },
+    "field_freeCashFlow_netBorrowing": { "message": "Чисте запозичення" },
+    "out_freeCashFlow_fcff": { "message": "Вільний потік компанії (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "Вільний потік акціонерів (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "Ціна та дюрація облігації" },
+    "calc_bond_desc": { "message": "Ціна купонної облігації, її премія чи дисконт і чутливість до дохідності." },
+    "calc_bond_formula": {
+        "message": "Ціна = Σ Купон ÷ (1 + y)ᵗ + Номінал ÷ (1 + y)ⁿ · Модиф. дюрація = Маколея ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "Номінал" },
+    "field_bond_couponRate": { "message": "Ставка купона (за рік)" },
+    "field_bond_yieldToMaturity": { "message": "Дохідність до погашення (за рік)" },
+    "field_bond_years": { "message": "Років до погашення" },
+    "field_bond_frequency": { "message": "Купонів на рік" },
+    "out_bond_price": { "message": "Ціна облігації" },
+    "out_bond_premium": { "message": "Премія (+) або дисконт (−)" },
+    "out_bond_currentYield": { "message": "Поточна дохідність" },
+    "out_bond_macaulayDuration": { "message": "Дюрація Маколея (років)" },
+    "out_bond_modifiedDuration": { "message": "Модифікована дюрація (років)" },
+    "choice_bond_frequency_2": { "message": "Раз на півроку" },
+    "choice_bond_frequency_1": { "message": "Раз на рік" },
+    "choice_bond_frequency_4": { "message": "Щокварталу" },
+    "choice_bond_frequency_12": { "message": "Щомісяця" },
+    "calc_rates_name": { "message": "Перерахунок ставок і реальна ставка" },
+    "calc_rates_desc": {
+        "message": "Перетворює номінальну ставку на ефективну, місячну та денну й віднімає інфляцію, щоб знайти реальну."
+    },
+    "calc_rates_formula": {
+        "message": "Ефективна = (1 + номінальна ÷ m)ᵐ − 1 · Еквівалентна = (1 + ефект.)^(1 ÷ n) − 1 · Реальна = (1 + ефект.) ÷ (1 + інфляція) − 1"
+    },
+    "field_rates_nominalRate": { "message": "Номінальна ставка (за рік)" },
+    "field_rates_compounding": { "message": "Капіталізація" },
+    "field_rates_inflation": { "message": "Інфляція (за рік)" },
+    "out_rates_effectiveAnnual": { "message": "Ефективна річна ставка" },
+    "out_rates_monthlyEquivalent": { "message": "Еквівалентна місячна ставка" },
+    "out_rates_dailyEquivalent": { "message": "Еквівалентна денна ставка (252 дні)" },
+    "out_rates_realRate": { "message": "Реальна ставка (понад інфляцію)" },
+    "choice_rates_compounding_12": { "message": "Щомісяця" },
+    "choice_rates_compounding_1": { "message": "Щороку" },
+    "choice_rates_compounding_2": { "message": "Двічі на рік" },
+    "choice_rates_compounding_4": { "message": "Щокварталу" },
+    "choice_rates_compounding_365": { "message": "Щодня" },
+    "calc_amortization_name": { "message": "SAC і Price (погашення кредиту)" },
+    "calc_amortization_desc": {
+        "message": "Порівнює дві системи погашення: Price — рівні платежі, SAC — однакова частка основного боргу щомісяця."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + залишок боргу × i, де i = річна ставка ÷ 12"
+    },
+    "field_amortization_principal": { "message": "Сума кредиту" },
+    "field_amortization_annualRate": { "message": "Річна відсоткова ставка" },
+    "field_amortization_termMonths": { "message": "Строк (місяців)" },
+    "out_amortization_pricePayment": { "message": "Price: щомісячний платіж" },
+    "out_amortization_priceTotalInterest": { "message": "Price: усього відсотків" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: перший платіж" },
+    "out_amortization_sacLastPayment": { "message": "SAC: останній платіж" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: усього відсотків" }
+}

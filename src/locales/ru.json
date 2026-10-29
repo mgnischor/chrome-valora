@@ -31,6 +31,8 @@
     "seriesHint": {
         "message": "Одно значение в строке (или через точку с запятой). Для выплат используйте знак минус."
     },
+    "languageLabel": { "message": "Язык" },
+    "languageAuto": { "message": "Автоматически (язык браузера)" },
     "settingsHeading": { "message": "Настройки" },
     "settingsBack": { "message": "Назад" },
     "currencyLabel": { "message": "Валюта" },
@@ -213,7 +215,9 @@
     "out_loan_monthlyPayment": { "message": "Ежемесячный платёж" },
     "out_loan_totalPaid": { "message": "Всего выплачено" },
     "out_loan_totalInterest": { "message": "Всего процентов" },
-    "marketOff": { "message": "Ставку Selic и курс доллара можно подставить из данных Центрального банка Бразилии." },
+    "marketOff": {
+        "message": "Ключевую ставку Бразилии (Selic) и курс доллара можно подставить из данных Центрального банка Бразилии."
+    },
     "marketEnable": { "message": "Получить ставки" },
     "marketUse": { "message": "Использовать ставки" },
     "marketRetry": { "message": "Повторить" },
@@ -224,45 +228,47 @@
         "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
     },
     "statusMarketPermissionDenied": { "message": "Разрешение не дано, поэтому ставки не получены." },
-    "liveRatesLabel": { "message": "Получать ставку Selic и курс доллара от Центрального банка Бразилии" },
+    "liveRatesLabel": {
+        "message": "Получать ключевую ставку Бразилии (Selic) и курс доллара от Центрального банка Бразилии"
+    },
     "liveRatesHint": {
         "message": "По умолчанию отключено. При включении Chrome запросит разрешение на доступ к api.bcb.gov.br, который не получает никаких сведений о вас. При отключении разрешение снимается."
     },
-    "group_markets": { "message": "Selic и доллар" },
-    "calc_selicYield_name": { "message": "Фиксированный доход, привязанный к Selic (Tesouro Selic, CDB)" },
+    "group_markets": { "message": "Ключевая ставка и доллар (Бразилия)" },
+    "calc_selicYield_name": { "message": "Фиксированный доход, привязанный к ключевой ставке (Selic, CDB)" },
     "calc_selicYield_desc": {
-        "message": "Сколько приносит после подоходного налога вложение, выплачивающее долю ставки Selic."
+        "message": "Сколько приносит после подоходного налога вложение, выплачивающее долю ключевой ставки центрального банка (в Бразилии — Selic)."
     },
     "calc_selicYield_formula": {
         "message": "Чистая прибыль = Сумма × (рост − 1) × (1 − налог); рост начисляется ежедневно, 252 рабочих дня в году"
     },
     "field_selicYield_amount": { "message": "Вложенная сумма" },
     "field_selicYield_months": { "message": "Срок (месяцев)" },
-    "field_selicYield_selic": { "message": "Ставка Selic (в год)" },
-    "field_selicYield_percentOfRate": { "message": "Доля Selic, которую платят" },
+    "field_selicYield_selic": { "message": "Ключевая ставка (Selic, в год)" },
+    "field_selicYield_percentOfRate": { "message": "Доля ключевой ставки, которую платят" },
     "field_selicYield_taxTreatment": { "message": "Подоходный налог" },
     "out_selicYield_netFinal": { "message": "Чистая сумма в конце" },
     "out_selicYield_netProfit": { "message": "Чистая прибыль" },
     "out_selicYield_incomeTax": { "message": "Подоходный налог" },
     "out_selicYield_taxRate": { "message": "Налоговая ставка" },
     "out_selicYield_netAnnualRate": { "message": "Чистая ставка в год" },
-    "choice_selicYield_taxTreatment_1": { "message": "Регрессивная шкала (CDB, Tesouro)" },
-    "choice_selicYield_taxTreatment_0": { "message": "Освобождено (LCI, LCA)" },
-    "calc_savings_name": { "message": "Сберегательный счёт (poupança) или вложение, привязанное к Selic" },
+    "choice_selicYield_taxTreatment_1": { "message": "Регрессивная шкала (CDB, гособлигации)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Освобождено от налога (LCI, LCA)" },
+    "calc_savings_name": { "message": "Сберегательный счёт (poupança) или вложение, привязанное к ключевой ставке" },
     "calc_savings_desc": {
-        "message": "Сравнивает сберегательный счёт с облагаемым налогом продуктом с фиксированным доходом и находит долю Selic, при которой они равны."
+        "message": "Сравнивает сберегательный счёт (poupança) с облагаемым налогом продуктом с фиксированным доходом и находит долю ключевой ставки, при которой они равны."
     },
     "calc_savings_formula": {
         "message": "Счёт: 0,5% в месяц при Selic выше 8,5%, иначе 70% Selic. Фиксированный доход облагается регрессивным налогом"
     },
     "field_savings_amount": { "message": "Вложенная сумма" },
     "field_savings_months": { "message": "Срок (месяцев)" },
-    "field_savings_selic": { "message": "Ставка Selic (в год)" },
-    "field_savings_percentOfRate": { "message": "Доля Selic (фикс. доход)" },
+    "field_savings_selic": { "message": "Ключевая ставка (Selic, в год)" },
+    "field_savings_percentOfRate": { "message": "Доля ключевой ставки (фикс. доход)" },
     "out_savings_advantage": { "message": "Преимущество фикс. дохода" },
     "out_savings_savingsFinal": { "message": "Сберегательный счёт в конце" },
     "out_savings_fixedIncomeFinal": { "message": "Фикс. доход в конце (чистый)" },
-    "out_savings_breakEvenPercent": { "message": "Доля Selic для равенства" },
+    "out_savings_breakEvenPercent": { "message": "Доля ставки для равенства" },
     "calc_dollarConversion_name": { "message": "Покупка долларов (спред и IOF)" },
     "calc_dollarConversion_desc": {
         "message": "Сколько долларов можно купить на реалы с учётом спреда банка и налога IOF."
@@ -271,27 +277,29 @@
     "field_dollarConversion_amount": { "message": "Сумма в реалах" },
     "field_dollarConversion_rate": { "message": "Курс доллара (R$/US$)" },
     "field_dollarConversion_spread": { "message": "Спред банка" },
-    "field_dollarConversion_iof": { "message": "IOF (налог на обмен валюты)" },
+    "field_dollarConversion_iof": { "message": "IOF (бразильский налог на обмен валюты)" },
     "out_dollarConversion_usdReceived": { "message": "Получено долларов" },
     "out_dollarConversion_effectiveRate": { "message": "Фактически уплаченный курс" },
     "out_dollarConversion_cost": { "message": "Стоимость спреда и IOF" },
     "out_dollarConversion_costPercent": { "message": "Стоимость в доле от суммы" },
-    "calc_dollarVsSelic_name": { "message": "Доллар или Selic" },
+    "calc_dollarVsSelic_name": { "message": "Доллар или ключевая ставка (Selic)" },
     "calc_dollarVsSelic_desc": {
-        "message": "Каким должен быть курс доллара в конце, чтобы хранение долларов обошло Selic? Сравнение до подоходного налога."
+        "message": "Каким должен быть курс доллара в конце, чтобы хранение долларов обошло ключевую ставку (Selic)? Сравнение до подоходного налога."
     },
-    "calc_dollarVsSelic_formula": { "message": "Безубыточный курс = результат Selic ÷ доллары в конце срока" },
+    "calc_dollarVsSelic_formula": {
+        "message": "Безубыточный курс = результат ключевой ставки ÷ доллары в конце срока"
+    },
     "field_dollarVsSelic_amount": { "message": "Сумма в реалах" },
     "field_dollarVsSelic_months": { "message": "Срок (месяцев)" },
     "field_dollarVsSelic_spot": { "message": "Доллар сегодня (R$/US$)" },
     "field_dollarVsSelic_expected": { "message": "Ожидаемый доллар в конце" },
-    "field_dollarVsSelic_selic": { "message": "Ставка Selic (в год)" },
+    "field_dollarVsSelic_selic": { "message": "Ключевая ставка (Selic, в год)" },
     "field_dollarVsSelic_usdYield": { "message": "Доходность в USD (в год)" },
     "out_dollarVsSelic_breakEvenRate": { "message": "Безубыточный курс доллара" },
     "out_dollarVsSelic_requiredChange": { "message": "Необходимый рост доллара" },
-    "out_dollarVsSelic_selicFinal": { "message": "Selic в конце (до налога)" },
+    "out_dollarVsSelic_selicFinal": { "message": "Ключевая ставка в конце (до налога)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Доллары в конце (до налога)" },
-    "out_dollarVsSelic_difference": { "message": "Доллар минус Selic" },
+    "out_dollarVsSelic_difference": { "message": "Доллар минус ключевая ставка" },
     "ratingGood": { "message": "Хорошо" },
     "ratingNeutral": { "message": "Нейтрально" },
     "ratingBad": { "message": "Плохо" },
