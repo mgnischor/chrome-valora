@@ -3,7 +3,7 @@
     Copyright (C) 2026 Miguel Nischor
 
     File: src/shared/i18n.ts
-    Description: Localization helpers built on chrome.i18n for the extension pages.
+    Description: Localization helpers: the active language, message lookup and placeholder expansion for the extension pages.
     Author: Miguel Nischor <miguel@nischor.com.br>
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,17 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-import type defaultMessages from "../../public/_locales/en_US/messages.json";
+import type defaultMessages from "../locales/en_US.json";
+import { CATALOG, type MessageEntry } from "./catalog";
+import {
+    AUTO_LANGUAGE,
+    DEFAULT_LOCALE,
+    isLocaleCode,
+    localeInfo,
+    matchLocale,
+    type LocaleCode,
+    type TextDirection,
+} from "./locales";
 
 /**
  * Every message key defined in the default locale (`en_US`). Typing keys from
@@ -36,20 +46,95 @@ const ATTRIBUTE_BINDINGS = [
     ["placeholder", "data-i18n-placeholder"],
 ] as const;
 
+/** The language the lookups below currently use. */
+let activeLocale: LocaleCode = DEFAULT_LOCALE;
+
 /**
- * Looks up a message in the locale matching the browser's UI language.
+ * Chooses the language used by {@link t} and friends.
  *
- * Chrome picks the locale on its own: an exact match such as `pt_BR` first,
- * then the base language such as `es`, and finally the default locale
- * (`en_US`).
+ * The extension can follow the browser or use a language of the user's choice. Chrome's own
+ * `chrome.i18n` is not used for this, because it cannot be told to use another language.
  *
- * @param key - Message name defined in `_locales/<locale>/messages.json`.
+ * @param preference - `"auto"` to follow the browser, or the code of a supported language.
+ * @param browserLanguage - The browser's UI language tag, used when `preference` is `"auto"`.
+ * @returns The language that is now active.
+ */
+export function setLanguage(preference: string, browserLanguage: string): LocaleCode {
+    activeLocale = preference !== AUTO_LANGUAGE && isLocaleCode(preference) ? preference : matchLocale(browserLanguage);
+    return activeLocale;
+}
+
+/**
+ * Reads the browser's UI language.
+ *
+ * @returns A BCP 47 tag such as `pt-BR`, `es` or `en-US`.
+ */
+export function browserLanguage(): string {
+    return chrome.i18n.getUILanguage();
+}
+
+/**
+ * Returns the BCP 47 tag of the active language, for the `lang` attribute and for date formatting.
+ *
+ * @returns A tag such as `pt-BR`.
+ */
+export function languageTag(): string {
+    return localeInfo(activeLocale).tag;
+}
+
+/**
+ * Returns the reading direction of the active language.
+ *
+ * @returns `"rtl"` for Arabic, Persian and Urdu, otherwise `"ltr"`.
+ */
+export function textDirection(): TextDirection {
+    return localeInfo(activeLocale).dir;
+}
+
+/**
+ * Expands a message the way Chrome does: `$name$` placeholders are replaced by their `content`,
+ * `$1`..`$9` by the substitutions, and `$$` by a literal `$`.
+ *
+ * @param entry - The message and its placeholder definitions.
+ * @param substitutions - Values for `$1`, `$2`, ...
+ * @returns The final text.
+ */
+export function formatMessage(entry: MessageEntry, substitutions?: Substitutions): string {
+    const values =
+        substitutions === undefined ? [] : typeof substitutions === "string" ? [substitutions] : substitutions;
+    const placeholders = new Map(
+        Object.entries(entry.placeholders ?? {}).map(([name, placeholder]) => [name.toLowerCase(), placeholder.content])
+    );
+    /**
+     * Replaces `$1`..`$9` in a text with the substitutions.
+     *
+     * @param text - Text that may contain positional markers.
+     * @returns The text with every marker filled, or emptied when no value was given for it.
+     */
+    const fillValues = (text: string): string =>
+        text.replace(/\$(\d)/g, (_, digit: string) => values[Number(digit) - 1] ?? "");
+
+    return entry.message.replace(
+        /\$(\$)|\$(\d)|\$([A-Za-z0-9_@]+)\$/g,
+        (_match, dollar?: string, digit?: string, name?: string) => {
+            if (dollar) return "$";
+            if (digit) return values[Number(digit) - 1] ?? "";
+            return fillValues(placeholders.get((name ?? "").toLowerCase()) ?? "");
+        }
+    );
+}
+
+/**
+ * Looks up a message in the active language, falling back to English when the active language
+ * lacks it.
+ *
+ * @param key - Message name defined in `src/locales/en_US.json`.
  * @param substitutions - Values for the message's `$1`, `$2`, ... placeholders.
- * @returns The localized text, or the key itself when the message is missing.
+ * @returns The localized text, or the key itself when the message is missing everywhere.
  */
 export function t(key: MessageKey, substitutions?: Substitutions): string {
-    const message = chrome.i18n.getMessage(key, substitutions as string | string[] | undefined);
-    return message || key;
+    const entry = CATALOG[activeLocale][key] ?? CATALOG[DEFAULT_LOCALE][key];
+    return entry ? formatMessage(entry, substitutions) : key;
 }
 
 /**
@@ -77,13 +162,4 @@ export function applyTranslations(
             node.setAttribute(attribute, t(key, substitutions[key]));
         }
     }
-}
-
-/**
- * Returns the browser's UI language as a BCP 47 tag.
- *
- * @returns A tag such as `pt-BR`, `es` or `en-US`.
- */
-export function uiLanguage(): string {
-    return chrome.i18n.getUILanguage();
 }

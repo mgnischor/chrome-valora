@@ -19,7 +19,8 @@
     limitations under the License.
 */
 import { CALCULATORS, GROUPS, getCalculator, isCalculatorId } from "../core/calculators";
-import { evaluate, readInputs, type FieldError } from "../core/inputs";
+import { evaluate, readField, readInputs, type FieldError } from "../core/inputs";
+import type { DecimalSeparator } from "../core/parse";
 import type { Calculator, FieldSpec, Rating, Result, Values } from "../core/types";
 import { clearDraft, loadDraft, saveDraft, type Draft } from "../shared/draft";
 import {
@@ -32,7 +33,16 @@ import {
     type FormatOptions,
     type ReportRow,
 } from "../shared/format";
-import { applyTranslations, t, uiLanguage, type MessageKey } from "../shared/i18n";
+import {
+    applyTranslations,
+    browserLanguage,
+    languageTag,
+    setLanguage,
+    t,
+    textDirection,
+    type MessageKey,
+} from "../shared/i18n";
+import { LOCALES } from "../shared/locales";
 import {
     MARKET_PERMISSIONS,
     clearRates,
@@ -109,6 +119,7 @@ const ui = {
     formula: el<HTMLElement>("formula"),
     copy: el<HTMLButtonElement>("copy"),
     status: el<HTMLElement>("status"),
+    language: el<HTMLSelectElement>("language"),
     currency: el<HTMLSelectElement>("currency"),
     decimals: el<HTMLSelectElement>("decimals"),
     rememberInputs: el<HTMLInputElement>("remember-inputs"),
@@ -116,8 +127,10 @@ const ui = {
     settingsStatus: el<HTMLElement>("settings-status"),
 };
 
-const language = uiLanguage();
-const decimal = decimalSeparator(language);
+/** BCP 47 tag of the active language, for number and date formats. Set by {@link refreshLanguage}. */
+let language = "en-US";
+/** Decimal mark of the active language. */
+let decimal: DecimalSeparator = ".";
 
 let settings: Settings;
 let calculator: Calculator;
@@ -452,6 +465,8 @@ function ratingTooltip(result: Result, level: Rating): string {
 function showValue(node: HTMLElement, result: Result): void {
     const text = resultText(result);
     node.textContent = text;
+    // A figure keeps its own left-to-right order inside a right-to-left page; a translated name follows its own script.
+    node.dir = "auto";
     node.classList.toggle("undefined", result.value === null);
     node.classList.toggle("text", result.kind === "category");
     node.removeAttribute("title");
@@ -620,7 +635,7 @@ function showSettings(visible: boolean): void {
  */
 function formatDay(iso: string): string {
     const [year, month, day] = iso.split("-").map(Number) as [number, number, number];
-    return new Date(year, month - 1, day).toLocaleDateString(language, { dateStyle: "short" });
+    return new Date(year, month - 1, day).toLocaleDateString(language, { dateStyle: "short", numberingSystem: "latn" });
 }
 
 /** Shows or hides the market bar and describes the state of the rates. */
@@ -753,7 +768,7 @@ async function onSettingsChanged(): Promise<void> {
             decimals: Number(ui.decimals.value),
             rememberInputs: ui.rememberInputs.checked,
         },
-        language
+        browserLanguage()
     );
     scheduleSave();
     if (wasRemembering && !settings.rememberInputs) {
@@ -761,6 +776,73 @@ async function onSettingsChanged(): Promise<void> {
         await saveSettings(settings).catch(() => setStatus(t("statusSaveFailed"), true));
         await clearDraft().catch(() => undefined);
     }
+}
+
+/** Fills the language selector with "automatic" and every supported language, each named in its own language. */
+function populateLanguages(): void {
+    const automatic = document.createElement("option");
+    automatic.value = "auto";
+    automatic.textContent = t("languageAuto");
+    ui.language.replaceChildren(
+        automatic,
+        ...LOCALES.map((locale) => {
+            const option = document.createElement("option");
+            option.value = locale.code;
+            option.textContent = locale.name;
+            option.lang = locale.tag;
+            return option;
+        })
+    );
+    ui.language.value = settings.language;
+}
+
+/**
+ * Rewrites what the user typed in every calculator in the number format of a new language, so that a value typed as
+ * `1.234,5` in Portuguese is still 1,234.5 after switching to English instead of being read as 1.2345.
+ *
+ * @param from - Decimal mark of the language the texts were typed in.
+ */
+function reformatDraft(from: DecimalSeparator): void {
+    for (const [id, texts] of Object.entries(draft)) {
+        const typed = CALCULATORS.find((candidate) => candidate.id === id);
+        if (!typed) continue;
+        for (const field of typed.fields) {
+            const text = texts[field.id];
+            if (text === undefined || text.trim() === "") continue;
+            const reading = readField(field, text, from);
+            if (reading.ok) texts[field.id] = formatInputValue(reading.value, field.kind, language);
+        }
+    }
+}
+
+/**
+ * Switches the whole interface to the language in the settings: the page's language and reading direction, every
+ * translated text, the number format of the fields and the texts that are built in code.
+ */
+function refreshLanguage(): void {
+    const firstTime = controls.size === 0;
+    if (!firstTime) draft[calculator.id] = currentTexts();
+    const previousDecimal = decimal;
+
+    setLanguage(settings.language, browserLanguage());
+    language = languageTag();
+    decimal = decimalSeparator(language);
+    document.documentElement.lang = language;
+    document.documentElement.dir = textDirection();
+    applyTranslations(document);
+    if (!firstTime && previousDecimal !== decimal) reformatDraft(previousDecimal);
+
+    renderSettings();
+    buildCalculatorSelect();
+    buildForm();
+    refresh();
+}
+
+/** Applies the language selector: every text of the popup switches immediately. */
+function onLanguageChanged(): void {
+    settings = sanitizeSettings({ ...settings, language: ui.language.value }, browserLanguage());
+    refreshLanguage();
+    scheduleSave();
 }
 
 /** Fills the currency and decimals selectors and shows the current settings. */
@@ -790,6 +872,7 @@ function renderSettings(): void {
             return option;
         })
     );
+    populateLanguages();
     ui.currency.value = settings.currency;
     ui.decimals.value = String(settings.decimals);
     ui.rememberInputs.checked = settings.rememberInputs;
@@ -807,6 +890,7 @@ function bindEvents(): void {
     for (const control of [ui.currency, ui.decimals, ui.rememberInputs]) {
         control.addEventListener("change", () => void onSettingsChanged());
     }
+    ui.language.addEventListener("change", onLanguageChanged);
     ui.liveRates.addEventListener("change", () => void (ui.liveRates.checked ? enableLiveRates() : disableLiveRates()));
     ui.marketAction.addEventListener("click", () => void onMarketAction());
     // The popup can close before the debounce fires; write what is pending.
@@ -815,18 +899,12 @@ function bindEvents(): void {
 
 /** Localizes the page, loads the settings and the draft, and shows the last calculator used. */
 async function init(): Promise<void> {
-    document.documentElement.lang = language;
-    applyTranslations(document);
-
-    settings = await loadSettings(language);
+    settings = await loadSettings(browserLanguage());
     draft = settings.rememberInputs ? await loadDraft() : {};
     calculator = getCalculator(settings.lastCalculator);
 
-    renderSettings();
-    buildCalculatorSelect();
+    refreshLanguage();
     bindEvents();
-    buildForm();
-    refresh();
     controls.values().next().value?.focus();
     await initMarket();
 }

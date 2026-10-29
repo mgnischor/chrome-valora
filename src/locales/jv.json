@@ -1,0 +1,552 @@
+{
+    "extName": { "message": "Valora – Kalkulator Bisnis" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "Kalkulator bisnis kanggo ROI, likuiditas, titik impas, NPV, IRR, lan liyane. Kabeh diitung ing piranti sampeyan."
+    },
+    "actionTitle": { "message": "Valora – kalkulator bisnis" },
+    "commandOpen": { "message": "Bukak Valora" },
+    "tagline": { "message": "Kalkulator bisnis" },
+    "calculatorLabel": { "message": "Kalkulator" },
+    "inputsLabel": { "message": "Data sing dilebokake" },
+    "resultsLabel": { "message": "Asil" },
+    "exampleButton": { "message": "Conto" },
+    "exampleButtonTitle": { "message": "Isi nganggo nilai conto" },
+    "resetButton": { "message": "Reset" },
+    "resetButtonTitle": { "message": "Kosongke kabeh kolom" },
+    "settingsButtonTitle": { "message": "Setelan" },
+    "resultsEmpty": { "message": "Isi kolom kanggo ndeleng asile." },
+    "resultUndefined": { "message": "Ora ditemtokake" },
+    "resultUndefinedHint": {
+        "message": "Asil iki ora ditemtokake kanggo nilai kasebut, contone amarga dibagi nol utawa ora ana solusi."
+    },
+    "formulaLabel": { "message": "Rumus" },
+    "copyResults": { "message": "Salin asil" },
+    "statusCopied": { "message": "Asil wis disalin." },
+    "statusCopyFailed": { "message": "Ora bisa nyalin menyang papan klip." },
+    "statusSaveFailed": { "message": "Ora bisa nyimpen setelan sampeyan." },
+    "footer": {
+        "message": "Diitung ing piranti sampeyan; apa wae sing sampeyan ketik ora dikirim menyang endi-endi. Mung prakiraan, dudu pitutur keuangan."
+    },
+    "seriesHint": {
+        "message": "Siji nilai saben baris (utawa dipisahake titik koma). Gunakake tandha minus kanggo dhuwit metu."
+    },
+    "languageLabel": { "message": "Basa" },
+    "languageAuto": { "message": "Otomatis (basa browser)" },
+    "settingsHeading": { "message": "Setelan" },
+    "settingsBack": { "message": "Bali" },
+    "currencyLabel": { "message": "Mata uang" },
+    "currencyNone": { "message": "Tanpa simbol" },
+    "decimalsLabel": { "message": "Angka desimal kanggo persentase lan rasio" },
+    "rememberInputsLabel": { "message": "Eling apa sing dakketik salawase browser mbukak" },
+    "rememberInputsHint": {
+        "message": "Mung disimpen ing memori browser lan dibusak nalika Chrome ditutup. Yen dipateni, langsung dibusak."
+    },
+    "errorNotNumber": { "message": "Lebokna angka sing bener." },
+    "errorNotInteger": { "message": "Lebokna wilangan bulet." },
+    "errorMin": { "message": "Kudu paling sethithik $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": {
+        "message": "Kudu luwih gedhe tinimbang $VALUE$.",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "errorMax": { "message": "Kudu paling akeh $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "Pilih nilai saka dhaptar." },
+    "errorTooFewEntries": {
+        "message": "Lebokna paling sethithik $COUNT$ nilai.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "Lebokna paling akeh $COUNT$ nilai.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "Entri $POSITION$ dudu angka sing bener.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "Asil investasi" },
+    "group_profitability": { "message": "Bathi lan nemtokake rega" },
+    "group_liquidity": { "message": "Likuiditas lan solvabilitas" },
+    "group_investment": { "message": "Investasi lan pembiayaan" },
+    "calc_roi_name": { "message": "Asil investasi (ROI)" },
+    "calc_roi_desc": { "message": "Pira investasi untung utawa rugi dibandhingake karo dhuwit sing ditanem." },
+    "calc_roi_formula": { "message": "ROI = (Bali − Diinvestasikake) ÷ Diinvestasikake" },
+    "field_roi_invested": { "message": "Jumlah sing diinvestasikake" },
+    "field_roi_returned": { "message": "Jumlah sing bali" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "Bathi resik" },
+    "out_roi_multiple": { "message": "Kaping pira asile" },
+    "calc_cagr_name": { "message": "Tingkat pertumbuhan majemuk taunan (CAGR)" },
+    "calc_cagr_desc": { "message": "Tingkat pertumbuhan taunan tetep sing nggawa nilai saka wiwitan tekan pungkasan." },
+    "calc_cagr_formula": { "message": "CAGR = (Pungkasan ÷ Wiwitan)^(1 ÷ Taun) − 1" },
+    "field_cagr_startValue": { "message": "Nilai wiwitan" },
+    "field_cagr_endValue": { "message": "Nilai pungkasan" },
+    "field_cagr_years": { "message": "Taun" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "Total pertumbuhan" },
+    "calc_roe_name": { "message": "Asil ekuitas lan aset (ROE, ROA)" },
+    "calc_roe_desc": { "message": "Pira bathi sing digawe perusahaan saka ekuitas pemegang saham lan saka asete." },
+    "calc_roe_formula": { "message": "ROE = Bathi resik ÷ Ekuitas · ROA = Bathi resik ÷ Aset" },
+    "field_roe_netIncome": { "message": "Bathi resik" },
+    "field_roe_equity": { "message": "Ekuitas pemegang saham" },
+    "field_roe_assets": { "message": "Total aset" },
+    "out_roe_roe": { "message": "Asil ekuitas (ROE)" },
+    "out_roe_roa": { "message": "Asil aset (ROA)" },
+    "out_roe_equityMultiplier": { "message": "Pangganda ekuitas" },
+    "calc_margin_name": { "message": "Margin lan markup" },
+    "calc_margin_desc": { "message": "Bathi minangka bagean saka rega adol (margin) lan saka biaya (markup)." },
+    "calc_margin_formula": { "message": "Margin = (Rega − Biaya) ÷ Rega · Markup = (Rega − Biaya) ÷ Biaya" },
+    "field_margin_cost": { "message": "Biaya saben unit" },
+    "field_margin_price": { "message": "Rega adol" },
+    "out_margin_margin": { "message": "Margin" },
+    "out_margin_markup": { "message": "Markup" },
+    "out_margin_profit": { "message": "Bathi saben unit" },
+    "calc_pricing_name": { "message": "Rega kanggo margin target" },
+    "calc_pricing_desc": { "message": "Rega adol sing ngasilake margin sing dikarepake, lan markup sing dibutuhake." },
+    "calc_pricing_formula": { "message": "Rega = Biaya ÷ (1 − Margin) · Markup = Margin ÷ (1 − Margin)" },
+    "field_pricing_cost": { "message": "Biaya saben unit" },
+    "field_pricing_targetMargin": { "message": "Margin target" },
+    "out_pricing_price": { "message": "Rega adol" },
+    "out_pricing_markup": { "message": "Markup sing dibutuhake" },
+    "out_pricing_profit": { "message": "Bathi saben unit" },
+    "calc_breakeven_name": { "message": "Titik impas" },
+    "calc_breakeven_desc": {
+        "message": "Pira unit sing kudu didol kanggo nutupi biaya tetep lan, yen kepengin, entuk target bathi."
+    },
+    "calc_breakeven_formula": { "message": "Unit = (Biaya tetep + Bathi target) ÷ (Rega − Biaya variabel)" },
+    "field_breakeven_fixedCosts": { "message": "Biaya tetep" },
+    "field_breakeven_price": { "message": "Rega saben unit" },
+    "field_breakeven_variableCost": { "message": "Biaya variabel saben unit" },
+    "field_breakeven_targetProfit": { "message": "Bathi target" },
+    "out_breakeven_units": { "message": "Unit sing kudu didol" },
+    "out_breakeven_revenue": { "message": "Pendapatan sing dibutuhake" },
+    "out_breakeven_contributionMargin": { "message": "Margin kontribusi saben unit" },
+    "out_breakeven_contributionMarginRatio": { "message": "Rasio margin kontribusi" },
+    "calc_liquidity_name": { "message": "Rasio likuiditas" },
+    "calc_liquidity_desc": {
+        "message": "Apa perusahaan bisa mbayar kewajiban jangka cendhak nganggo aset jangka cendhak."
+    },
+    "calc_liquidity_formula": {
+        "message": "Lancar = Aset lancar ÷ Utang jangka cendhak · Cepet = (Kas + Piutang) ÷ Utang jangka cendhak · Kas = Kas ÷ Utang jangka cendhak"
+    },
+    "field_liquidity_cash": { "message": "Kas lan setara kas" },
+    "field_liquidity_receivables": { "message": "Piutang usaha" },
+    "field_liquidity_inventory": { "message": "Persediaan" },
+    "field_liquidity_otherCurrentAssets": { "message": "Aset lancar liyane" },
+    "field_liquidity_currentLiabilities": { "message": "Utang jangka cendhak" },
+    "out_liquidity_currentRatio": { "message": "Rasio lancar" },
+    "out_liquidity_quickRatio": { "message": "Rasio cepet" },
+    "out_liquidity_cashRatio": { "message": "Rasio kas" },
+    "out_liquidity_workingCapital": { "message": "Modal kerja" },
+    "calc_cashCycle_name": { "message": "Siklus konversi kas" },
+    "calc_cashCycle_desc": {
+        "message": "Pira dina kas kecekel antarane mbayar pemasok lan nampa bayaran saka pelanggan."
+    },
+    "calc_cashCycle_formula": { "message": "CCC = Dina persediaan + Dina piutang − Dina utang usaha" },
+    "field_cashCycle_revenue": { "message": "Pendapatan periode" },
+    "field_cashCycle_cogs": { "message": "Rega pokok dodolan" },
+    "field_cashCycle_inventory": { "message": "Persediaan rata-rata" },
+    "field_cashCycle_receivables": { "message": "Piutang rata-rata" },
+    "field_cashCycle_payables": { "message": "Utang usaha rata-rata" },
+    "field_cashCycle_periodDays": { "message": "Jumlah dina ing periode" },
+    "out_cashCycle_cashConversionCycle": { "message": "Siklus konversi kas" },
+    "out_cashCycle_daysInventory": { "message": "Dina persediaan" },
+    "out_cashCycle_daysReceivables": { "message": "Dina piutang" },
+    "out_cashCycle_daysPayables": { "message": "Dina utang usaha" },
+    "out_cashCycle_inventoryTurnover": { "message": "Puteran persediaan" },
+    "choice_cashCycle_periodDays_365": { "message": "365 dina (taun)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 dina (taun dagang)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 dina (kuartal)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 dina (sasi)" },
+    "calc_leverage_name": { "message": "Leverage lan rasio nutupi bunga" },
+    "calc_leverage_desc": {
+        "message": "Pira perusahaan gumantung marang utang, lan pira longgar bathine nutupi bunga."
+    },
+    "calc_leverage_formula": {
+        "message": "Utang/Ekuitas = Utang ÷ Ekuitas · Utang/Modal = Utang ÷ (Utang + Ekuitas) · Nutupi = EBIT ÷ Bunga"
+    },
+    "field_leverage_totalDebt": { "message": "Total utang" },
+    "field_leverage_equity": { "message": "Ekuitas pemegang saham" },
+    "field_leverage_ebit": { "message": "EBIT (bathi operasi)" },
+    "field_leverage_interestExpense": { "message": "Beban bunga" },
+    "out_leverage_debtToEquity": { "message": "Utang tumrap ekuitas" },
+    "out_leverage_debtToCapital": { "message": "Utang tumrap modal" },
+    "out_leverage_interestCoverage": { "message": "Rasio nutupi bunga" },
+    "calc_investment_name": { "message": "Analisis investasi (NPV, IRR, bali modal)" },
+    "calc_investment_desc": {
+        "message": "Apa proyek iki patut? Ngurangi arus kas mbesuk lan nemokake kapan proyek bali modal."
+    },
+    "calc_investment_formula": { "message": "NPV = Σ AKₜ ÷ (1 + r)ᵗ − Investasi · IRR: tingkat nalika NPV = 0" },
+    "field_investment_rate": { "message": "Tingkat diskonto (saben periode)" },
+    "field_investment_initialInvestment": { "message": "Investasi wiwitan" },
+    "field_investment_cashFlows": { "message": "Arus kas (periode 1, 2, 3…)" },
+    "out_investment_npv": { "message": "Nilai saiki resik (NPV)" },
+    "out_investment_irr": { "message": "Tingkat asil internal (IRR)" },
+    "out_investment_profitabilityIndex": { "message": "Indeks bathi" },
+    "out_investment_payback": { "message": "Bali modal (periode)" },
+    "out_investment_discountedPayback": { "message": "Bali modal sing didiskonto (periode)" },
+    "calc_futureValue_name": { "message": "Nilai mbesuk (bunga majemuk)" },
+    "calc_futureValue_desc": {
+        "message": "Pira gedhene jumlah dhuwit, ditambah setoran rutin, tuwuh nganggo bunga majemuk."
+    },
+    "calc_futureValue_formula": {
+        "message": "NM = NS × (1 + i)ⁿ + Setoran × ((1 + i)ⁿ − 1) ÷ i, kanthi i = bunga taunan ÷ periode saben taun"
+    },
+    "field_futureValue_presentValue": { "message": "Jumlah wiwitan" },
+    "field_futureValue_contribution": { "message": "Setoran saben periode" },
+    "field_futureValue_annualRate": { "message": "Bunga taunan" },
+    "field_futureValue_years": { "message": "Taun" },
+    "field_futureValue_frequency": { "message": "Pemajemukan lan setoran" },
+    "out_futureValue_futureValue": { "message": "Nilai mbesuk" },
+    "out_futureValue_totalContributions": { "message": "Total setoran" },
+    "out_futureValue_interestEarned": { "message": "Bunga sing entuk" },
+    "choice_futureValue_frequency_12": { "message": "Saben sasi" },
+    "choice_futureValue_frequency_1": { "message": "Saben taun" },
+    "choice_futureValue_frequency_2": { "message": "Kaping pindho saben taun" },
+    "choice_futureValue_frequency_4": { "message": "Saben telung sasi" },
+    "choice_futureValue_frequency_52": { "message": "Saben minggu" },
+    "choice_futureValue_frequency_365": { "message": "Saben dina" },
+    "calc_loan_name": { "message": "Angsuran silihan" },
+    "calc_loan_desc": { "message": "Angsuran tetep saben sasi saka silihan lan pira bunga sing kudu dibayar kabeh." },
+    "calc_loan_formula": { "message": "Angsuran = Pokok × i ÷ (1 − (1 + i)⁻ⁿ), kanthi i = bunga taunan ÷ 12" },
+    "field_loan_principal": { "message": "Jumlah silihan" },
+    "field_loan_annualRate": { "message": "Bunga taunan" },
+    "field_loan_termMonths": { "message": "Jangka (sasi)" },
+    "out_loan_monthlyPayment": { "message": "Angsuran saben sasi" },
+    "out_loan_totalPaid": { "message": "Total sing wis dibayar" },
+    "out_loan_totalInterest": { "message": "Total bunga" },
+    "marketOff": { "message": "BI-Rate Brasil (Selic) lan kurs dolar bisa diisi saka Bank Sentral Brasil." },
+    "marketEnable": { "message": "Jupuk bunga" },
+    "marketUse": { "message": "Gunakake bunga" },
+    "marketRetry": { "message": "Coba maneh" },
+    "marketLoading": { "message": "Njupuk bunga…" },
+    "marketFailed": { "message": "Ora bisa nyambung menyang Bank Sentral. Priksa sambungan sampeyan." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Dolar $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "Ijin ditolak, mula ora ana bunga sing dijupuk." },
+    "liveRatesLabel": { "message": "Jupuk bunga acuan Brasil (Selic) lan kurs dolar saka Bank Sentral Brasil" },
+    "liveRatesHint": {
+        "message": "Mati kanthi baku. Yen dipateni, Chrome njaluk ijin nyambung menyang api.bcb.gov.br, sing ora nampa informasi apa wae babagan sampeyan. Yen dipateni, ijin dicabut."
+    },
+    "group_markets": { "message": "Bunga acuan lan dolar (Brasil)" },
+    "calc_selicYield_name": { "message": "Pendapatan tetep sing kaiket karo bunga acuan (Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "Asil, sawise pajak penghasilan, saka investasi sing mbayar sapérangan bunga acuan bank sentral (ing Brasil Selic, ing Indonesia BI-Rate)."
+    },
+    "calc_selicYield_formula": {
+        "message": "Bathi resik = Jumlah × (pertumbuhan − 1) × (1 − pajak penghasilan); pertumbuhan diitung saben dina ing 252 dina kerja saben taun"
+    },
+    "field_selicYield_amount": { "message": "Jumlah sing diinvestasikake" },
+    "field_selicYield_months": { "message": "Jangka (sasi)" },
+    "field_selicYield_selic": { "message": "Bunga acuan (Selic, saben taun)" },
+    "field_selicYield_percentOfRate": { "message": "Bagean bunga acuan sing dibayar" },
+    "field_selicYield_taxTreatment": { "message": "Pajak penghasilan" },
+    "out_selicYield_netFinal": { "message": "Jumlah resik ing pungkasan" },
+    "out_selicYield_netProfit": { "message": "Bathi resik" },
+    "out_selicYield_incomeTax": { "message": "Pajak penghasilan" },
+    "out_selicYield_taxRate": { "message": "Tarif pajak penghasilan" },
+    "out_selicYield_netAnnualRate": { "message": "Bunga resik saben taun" },
+    "choice_selicYield_taxTreatment_1": { "message": "Tabel regresif (CDB, obligasi pemerintah)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Bebas pajak (LCI, LCA)" },
+    "calc_savings_name": { "message": "Tabungan (poupança) vs investasi sing kaiket karo bunga acuan" },
+    "calc_savings_desc": {
+        "message": "Mbandhingake tabungan (poupança) karo produk pendapatan tetep sing kena pajak lan nemokake bagean bunga acuan sing nggawe loro-lorone padha."
+    },
+    "calc_savings_formula": {
+        "message": "Tabungan: 0,5% saben sasi yen Selic ing ndhuwur 8,5%, yen ora 70% saka Selic. Pendapatan tetep kena pajak penghasilan regresif"
+    },
+    "field_savings_amount": { "message": "Jumlah sing diinvestasikake" },
+    "field_savings_months": { "message": "Jangka (sasi)" },
+    "field_savings_selic": { "message": "Bunga acuan (Selic, saben taun)" },
+    "field_savings_percentOfRate": { "message": "Bagean bunga acuan sing dibayar (pendapatan tetep)" },
+    "out_savings_advantage": { "message": "Kaunggulan pendapatan tetep" },
+    "out_savings_savingsFinal": { "message": "Tabungan ing pungkasan" },
+    "out_savings_fixedIncomeFinal": { "message": "Pendapatan tetep ing pungkasan (resik)" },
+    "out_savings_breakEvenPercent": { "message": "Bagean bunga kanggo padha" },
+    "calc_dollarConversion_name": { "message": "Tuku dolar (spread lan pajak IOF)" },
+    "calc_dollarConversion_desc": {
+        "message": "Pira dolar sing bisa dituku nganggo real sawise spread bank lan pajak valuta asing IOF diitung."
+    },
+    "calc_dollarConversion_formula": { "message": "Dolar = Real ÷ (Kurs × (1 + Spread) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "Jumlah ing real" },
+    "field_dollarConversion_rate": { "message": "Kurs dolar (R$ saben US$)" },
+    "field_dollarConversion_spread": { "message": "Spread bank" },
+    "field_dollarConversion_iof": { "message": "IOF (pajak valuta asing Brasil)" },
+    "out_dollarConversion_usdReceived": { "message": "Dolar sing ditampa" },
+    "out_dollarConversion_effectiveRate": { "message": "Kurs efektif sing dibayar" },
+    "out_dollarConversion_cost": { "message": "Biaya spread lan IOF" },
+    "out_dollarConversion_costPercent": { "message": "Biaya minangka bagean saka jumlah" },
+    "calc_dollarVsSelic_name": { "message": "Dolar vs bunga acuan (Selic)" },
+    "calc_dollarVsSelic_desc": {
+        "message": "Dolar kudu ana ing ngendi ing pungkasan supaya nyekel dolar ngungkuli bunga acuan (Selic)? Dibandhingake kotor, sadurunge pajak penghasilan."
+    },
+    "calc_dollarVsSelic_formula": {
+        "message": "Dolar titik impas = asil bunga acuan ÷ dolar sing dicekel ing pungkasan"
+    },
+    "field_dollarVsSelic_amount": { "message": "Jumlah ing real" },
+    "field_dollarVsSelic_months": { "message": "Jangka (sasi)" },
+    "field_dollarVsSelic_spot": { "message": "Dolar dina iki (R$ saben US$)" },
+    "field_dollarVsSelic_expected": { "message": "Dolar sing dikarepake ing pungkasan" },
+    "field_dollarVsSelic_selic": { "message": "Bunga acuan (Selic, saben taun)" },
+    "field_dollarVsSelic_usdYield": { "message": "Asil dolar (saben taun, ing US$)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "Dolar titik impas" },
+    "out_dollarVsSelic_requiredChange": { "message": "Kenaikan dolar sing dibutuhake" },
+    "out_dollarVsSelic_selicFinal": { "message": "Bunga acuan ing pungkasan (kotor)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "Dolar ing pungkasan (kotor)" },
+    "out_dollarVsSelic_difference": { "message": "Dolar dikurangi bunga acuan" },
+    "ratingGood": { "message": "Apik" },
+    "ratingNeutral": { "message": "Netral" },
+    "ratingBad": { "message": "Ala" },
+    "ratingLegend": { "message": "Ijo: apik · Biasa: netral · Abang: ala" },
+    "ratingRuleHigher": {
+        "message": "Ing ngisor $BAD$: ala · $BAD$ nganti $GOOD$: netral · Ing ndhuwur $GOOD$: apik",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "Ing ndhuwur $BAD$: ala · $GOOD$ nganti $BAD$: netral · Ing ngisor $GOOD$: apik",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "Ing ngisor $VALUE$: ala · Ing $VALUE$: netral · Ing ndhuwur $VALUE$: apik",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "Ing ndhuwur $VALUE$: ala · Ing $VALUE$: netral · Ing ngisor $VALUE$: apik",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "Aturan praktis: apa sing sehat beda-beda miturut industri." },
+    "group_accounting": { "message": "Analisis akuntansi" },
+    "calc_incomeStatement_name": { "message": "Analisis laporan laba rugi (margin)" },
+    "calc_incomeStatement_desc": {
+        "message": "Mlaku saka pendapatan menyang bathi resik lan nuduhake margin ing saben langkah."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = Pendapatan − HPP − Beban operasi · EBIT = EBITDA − Penyusutan · Resik = (EBIT − Bunga) × (1 − pajak)"
+    },
+    "field_incomeStatement_revenue": { "message": "Pendapatan resik" },
+    "field_incomeStatement_cogs": { "message": "Rega pokok dodolan" },
+    "field_incomeStatement_operatingExpenses": { "message": "Beban operasi" },
+    "field_incomeStatement_depreciation": { "message": "Penyusutan lan amortisasi" },
+    "field_incomeStatement_interestExpense": { "message": "Beban bunga" },
+    "field_incomeStatement_taxRate": { "message": "Tarif pajak penghasilan" },
+    "out_incomeStatement_netIncome": { "message": "Bathi resik" },
+    "out_incomeStatement_grossMargin": { "message": "Margin kotor" },
+    "out_incomeStatement_ebitdaMargin": { "message": "Margin EBITDA" },
+    "out_incomeStatement_operatingMargin": { "message": "Margin operasi (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "Margin resik" },
+    "calc_dupont_name": { "message": "Analisis DuPont (3 langkah)" },
+    "calc_dupont_desc": { "message": "Nguraikan ROE dadi margin, puteran aset, lan leverage." },
+    "calc_dupont_formula": { "message": "ROE = Margin resik × Puteran aset × Pangganda ekuitas" },
+    "field_dupont_netIncome": { "message": "Bathi resik" },
+    "field_dupont_revenue": { "message": "Pendapatan resik" },
+    "field_dupont_assets": { "message": "Total aset" },
+    "field_dupont_equity": { "message": "Ekuitas pemegang saham" },
+    "out_dupont_roe": { "message": "Asil ekuitas (ROE)" },
+    "out_dupont_netMargin": { "message": "Margin resik" },
+    "out_dupont_assetTurnover": { "message": "Puteran aset" },
+    "out_dupont_equityMultiplier": { "message": "Pangganda ekuitas" },
+    "out_dupont_roa": { "message": "Asil aset (ROA)" },
+    "calc_dupont5_name": { "message": "Analisis DuPont (5 langkah)" },
+    "calc_dupont5_desc": {
+        "message": "Mbagi ROE dadi beban pajak, beban bunga, margin operasi, puteran aset, lan leverage."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (BR ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ Pendapatan) × (Pendapatan ÷ Aset) × (Aset ÷ Ekuitas)"
+    },
+    "field_dupont5_netIncome": { "message": "Bathi resik (BR)" },
+    "field_dupont5_pretaxIncome": { "message": "Bathi sadurunge pajak (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (bathi operasi)" },
+    "field_dupont5_revenue": { "message": "Pendapatan resik" },
+    "field_dupont5_assets": { "message": "Total aset" },
+    "field_dupont5_equity": { "message": "Ekuitas pemegang saham" },
+    "out_dupont5_roe": { "message": "Asil ekuitas (ROE)" },
+    "out_dupont5_taxBurden": { "message": "Beban pajak (BR ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "Beban bunga (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "Margin operasi (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "Puteran aset" },
+    "out_dupont5_equityMultiplier": { "message": "Pangganda ekuitas" },
+    "calc_fleuriet_name": { "message": "Model Fleuriet (modal kerja dinamis)" },
+    "calc_fleuriet_desc": {
+        "message": "Ngelompokake struktur keuangan miturut modal kerja (CDG), kabutuhane (NCG), lan saldo kas (T)."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = Dana permanen − Aset ora lancar · NCG = Aset lancar operasional − Utang lancar operasional · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "Aset lancar operasional" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "Utang lancar operasional" },
+    "field_fleuriet_nonCurrentAssets": { "message": "Aset ora lancar" },
+    "field_fleuriet_permanentFunds": { "message": "Dana permanen" },
+    "out_fleuriet_structureType": { "message": "Struktur keuangan" },
+    "out_fleuriet_workingCapital": { "message": "Modal kerja (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "Kabutuhan modal kerja (NCG)" },
+    "out_fleuriet_treasury": { "message": "Saldo kas (T)" },
+    "cat_fleuriet_structureType_1": { "message": "Tipe I – Apik banget" },
+    "cat_fleuriet_structureType_2": { "message": "Tipe II – Kuwat" },
+    "cat_fleuriet_structureType_3": { "message": "Tipe III – Durung marem" },
+    "cat_fleuriet_structureType_4": { "message": "Tipe IV – Ala" },
+    "cat_fleuriet_structureType_5": { "message": "Tipe V – Ala banget" },
+    "cat_fleuriet_structureType_6": { "message": "Tipe VI – Resiko dhuwur" },
+    "calc_altman_name": { "message": "Skor Z Altman (resiko bangkrut)" },
+    "calc_altman_desc": {
+        "message": "Menehi skor resiko kesulitan keuangan saka lima rasio neraca lan laba rugi, ing rong versi."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1,2·X1 + 1,4·X2 + 3,3·X3 + 0,6·X4 + 1,0·X5 · Z″ = 3,25 + 6,56·X1 + 3,26·X2 + 6,72·X3 + 1,05·X4"
+    },
+    "field_altman_workingCapital": { "message": "Modal kerja" },
+    "field_altman_retainedEarnings": { "message": "Bathi sing ditahan" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "Nilai ekuitas" },
+    "field_altman_sales": { "message": "Dodolan" },
+    "field_altman_totalAssets": { "message": "Total aset" },
+    "field_altman_totalLiabilities": { "message": "Total kewajiban" },
+    "out_altman_zScore": { "message": "Skor Z (asli)" },
+    "out_altman_zZone": { "message": "Zona (asli)" },
+    "out_altman_emergingScore": { "message": "Skor Z″ (pasar berkembang)" },
+    "out_altman_emergingZone": { "message": "Zona (pasar berkembang)" },
+    "cat_altman_zZone_0": { "message": "Zona bebaya" },
+    "cat_altman_zZone_1": { "message": "Zona abu-abu" },
+    "cat_altman_zZone_2": { "message": "Zona aman" },
+    "cat_altman_emergingZone_0": { "message": "Zona bebaya" },
+    "cat_altman_emergingZone_1": { "message": "Zona abu-abu" },
+    "cat_altman_emergingZone_2": { "message": "Zona aman" },
+    "calc_leverageDegrees_name": { "message": "Derajat leverage operasi lan keuangan" },
+    "calc_leverageDegrees_desc": {
+        "message": "Pira owah-owahan dodolan nggerakake bathi operasi lan bathi sawise bunga."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = Margin kontribusi ÷ EBIT · DFL = EBIT ÷ (EBIT − Bunga) · DTL = DOL × DFL"
+    },
+    "field_leverageDegrees_revenue": { "message": "Pendapatan resik" },
+    "field_leverageDegrees_variableCosts": { "message": "Biaya variabel" },
+    "field_leverageDegrees_fixedCosts": { "message": "Biaya tetep" },
+    "field_leverageDegrees_interestExpense": { "message": "Beban bunga" },
+    "out_leverageDegrees_operatingLeverage": { "message": "Leverage operasi (DOL)" },
+    "out_leverageDegrees_financialLeverage": { "message": "Leverage keuangan (DFL)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "Leverage total (DTL)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (bathi operasi)" },
+    "calc_depreciation_name": { "message": "Jadwal penyusutan" },
+    "calc_depreciation_desc": {
+        "message": "Beban penyusutan, akumulasi penyusutan, lan nilai buku sawijining aset ing taun tartamtu, nganggo telung cara."
+    },
+    "calc_depreciation_formula": {
+        "message": "Garis lurus = (Biaya − Sisa) ÷ Umur · Saldo mudhun = Nilai buku × 2 ÷ Umur · Jumlah angka taun = (Biaya − Sisa) × Umur sing isih ana ÷ Σ taun"
+    },
+    "field_depreciation_cost": { "message": "Biaya aset" },
+    "field_depreciation_salvage": { "message": "Nilai sisa" },
+    "field_depreciation_lifeYears": { "message": "Umur manfaat (taun)" },
+    "field_depreciation_method": { "message": "Cara" },
+    "field_depreciation_year": { "message": "Taun sing ditampilake" },
+    "out_depreciation_charge": { "message": "Penyusutan ing taun iki" },
+    "out_depreciation_accumulated": { "message": "Akumulasi penyusutan" },
+    "out_depreciation_bookValue": { "message": "Nilai buku" },
+    "choice_depreciation_method_1": { "message": "Garis lurus" },
+    "choice_depreciation_method_2": { "message": "Saldo mudhun ganda" },
+    "choice_depreciation_method_3": { "message": "Jumlah angka taun" },
+    "calc_wacc_name": { "message": "WACC lan biaya ekuitas (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "Biaya pendanaan rata-rata perusahaan, saka biaya ekuitas CAPM lan biaya utang sawise pajak."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × Premi resiko · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − pajak)"
+    },
+    "field_wacc_equityValue": { "message": "Nilai ekuitas" },
+    "field_wacc_debtValue": { "message": "Nilai utang" },
+    "field_wacc_riskFree": { "message": "Bunga tanpa resiko" },
+    "field_wacc_beta": { "message": "Beta" },
+    "field_wacc_marketPremium": { "message": "Premi resiko pasar" },
+    "field_wacc_costOfDebt": { "message": "Biaya utang (sadurunge pajak)" },
+    "field_wacc_taxRate": { "message": "Tarif pajak penghasilan" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "Biaya ekuitas (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Biaya utang sawise pajak (Kd)" },
+    "out_wacc_equityWeight": { "message": "Bobot ekuitas" },
+    "out_wacc_debtWeight": { "message": "Bobot utang" },
+    "calc_eva_name": { "message": "Nilai tambah ekonomi (EVA)" },
+    "calc_eva_desc": { "message": "Apa operasi ngasilake luwih akeh tinimbang biaya modal sing ditanem ing kono." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × Modal sing ditanem · NOPAT = EBIT × (1 − pajak) · ROIC = NOPAT ÷ Modal sing ditanem"
+    },
+    "field_eva_ebit": { "message": "EBIT (bathi operasi)" },
+    "field_eva_taxRate": { "message": "Tarif pajak penghasilan" },
+    "field_eva_investedCapital": { "message": "Modal sing ditanem" },
+    "field_eva_wacc": { "message": "Biaya modal (WACC)" },
+    "out_eva_eva": { "message": "Nilai tambah ekonomi (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "Asil modal sing ditanem (ROIC)" },
+    "out_eva_spread": { "message": "Selisih (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "Beban modal" },
+    "calc_freeCashFlow_name": { "message": "Arus kas bebas (FCFF lan FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "Kas sing isih sawise operasi lan investasi, kanggo kabeh panyedhiya modal (FCFF) lan pemegang saham (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − pajak) + Penyusutan − CapEx − ΔMK · FCFE = FCFF − Bunga × (1 − pajak) + Silihan resik"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (bathi operasi)" },
+    "field_freeCashFlow_taxRate": { "message": "Tarif pajak penghasilan" },
+    "field_freeCashFlow_depreciation": { "message": "Penyusutan lan amortisasi" },
+    "field_freeCashFlow_capex": { "message": "Belanja modal (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "Munggahe modal kerja" },
+    "field_freeCashFlow_interestExpense": { "message": "Beban bunga" },
+    "field_freeCashFlow_netBorrowing": { "message": "Silihan resik" },
+    "out_freeCashFlow_fcff": { "message": "Arus kas bebas perusahaan (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "Arus kas bebas pemegang saham (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "Rega lan durasi obligasi" },
+    "calc_bond_desc": {
+        "message": "Rega obligasi sing mbayar kupon, premi utawa diskone, lan pira pekaa marang asil."
+    },
+    "calc_bond_formula": {
+        "message": "Rega = Σ Kupon ÷ (1 + y)ᵗ + Nominal ÷ (1 + y)ⁿ · Durasi modifikasi = Macaulay ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "Nilai nominal" },
+    "field_bond_couponRate": { "message": "Tingkat kupon (saben taun)" },
+    "field_bond_yieldToMaturity": { "message": "Asil nganti tempo (saben taun)" },
+    "field_bond_years": { "message": "Taun nganti tempo" },
+    "field_bond_frequency": { "message": "Kupon saben taun" },
+    "out_bond_price": { "message": "Rega obligasi" },
+    "out_bond_premium": { "message": "Premi (+) utawa diskon (−)" },
+    "out_bond_currentYield": { "message": "Asil saiki" },
+    "out_bond_macaulayDuration": { "message": "Durasi Macaulay (taun)" },
+    "out_bond_modifiedDuration": { "message": "Durasi modifikasi (taun)" },
+    "choice_bond_frequency_2": { "message": "Saben semester" },
+    "choice_bond_frequency_1": { "message": "Saben taun" },
+    "choice_bond_frequency_4": { "message": "Saben telung sasi" },
+    "choice_bond_frequency_12": { "message": "Saben sasi" },
+    "calc_rates_name": { "message": "Konversi bunga lan bunga riil" },
+    "calc_rates_desc": {
+        "message": "Ngowahi bunga nominal dadi bunga efektif, saben sasi, lan saben dina, banjur ngilangi inflasi kanggo entuk bunga riil."
+    },
+    "calc_rates_formula": {
+        "message": "Efektif = (1 + nominal ÷ m)ᵐ − 1 · Padha = (1 + efektif)^(1 ÷ n) − 1 · Riil = (1 + efektif) ÷ (1 + inflasi) − 1"
+    },
+    "field_rates_nominalRate": { "message": "Bunga nominal (saben taun)" },
+    "field_rates_compounding": { "message": "Pemajemukan" },
+    "field_rates_inflation": { "message": "Inflasi (saben taun)" },
+    "out_rates_effectiveAnnual": { "message": "Bunga efektif taunan" },
+    "out_rates_monthlyEquivalent": { "message": "Bunga saben sasi sing padha" },
+    "out_rates_dailyEquivalent": { "message": "Bunga saben dina sing padha (252 dina)" },
+    "out_rates_realRate": { "message": "Bunga riil (ing ndhuwur inflasi)" },
+    "choice_rates_compounding_12": { "message": "Saben sasi" },
+    "choice_rates_compounding_1": { "message": "Saben taun" },
+    "choice_rates_compounding_2": { "message": "Kaping pindho saben taun" },
+    "choice_rates_compounding_4": { "message": "Saben telung sasi" },
+    "choice_rates_compounding_365": { "message": "Saben dina" },
+    "calc_amortization_name": { "message": "SAC vs Price (amortisasi silihan)" },
+    "calc_amortization_desc": {
+        "message": "Mbandhingake rong sistem amortisasi: Price mbayar angsuran padha, SAC nglunasi pokok sing padha saben sasi."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + sisa saldo × i, kanthi i = bunga taunan ÷ 12"
+    },
+    "field_amortization_principal": { "message": "Jumlah silihan" },
+    "field_amortization_annualRate": { "message": "Bunga taunan" },
+    "field_amortization_termMonths": { "message": "Jangka (sasi)" },
+    "out_amortization_pricePayment": { "message": "Price: angsuran saben sasi" },
+    "out_amortization_priceTotalInterest": { "message": "Price: total bunga" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: angsuran sepisanan" },
+    "out_amortization_sacLastPayment": { "message": "SAC: angsuran pungkasan" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: total bunga" }
+}

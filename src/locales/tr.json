@@ -1,0 +1,551 @@
+{
+    "extName": { "message": "Valora – İş Hesaplayıcısı" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "ROI, likidite, başabaş, NBD, İVO ve daha fazlası için iş hesaplayıcıları. Her şey cihazınızda hesaplanır."
+    },
+    "actionTitle": { "message": "Valora – iş hesaplayıcıları" },
+    "commandOpen": { "message": "Valora'yı aç" },
+    "tagline": { "message": "İş hesaplayıcıları" },
+    "calculatorLabel": { "message": "Hesaplayıcı" },
+    "inputsLabel": { "message": "Girdiler" },
+    "resultsLabel": { "message": "Sonuçlar" },
+    "exampleButton": { "message": "Örnek" },
+    "exampleButtonTitle": { "message": "Örnek değerlerle doldur" },
+    "resetButton": { "message": "Sıfırla" },
+    "resetButtonTitle": { "message": "Tüm alanları temizle" },
+    "settingsButtonTitle": { "message": "Ayarlar" },
+    "resultsEmpty": { "message": "Sonuçları görmek için alanları doldurun." },
+    "resultUndefined": { "message": "Tanımsız" },
+    "resultUndefinedHint": {
+        "message": "Bu sonuç bu değerler için tanımsızdır; örneğin sıfıra bölme olduğu veya çözüm bulunmadığı için."
+    },
+    "formulaLabel": { "message": "Formül" },
+    "copyResults": { "message": "Sonuçları kopyala" },
+    "statusCopied": { "message": "Sonuçlar kopyalandı." },
+    "statusCopyFailed": { "message": "Panoya kopyalanamadı." },
+    "statusSaveFailed": { "message": "Ayarlarınız kaydedilemedi." },
+    "footer": {
+        "message": "Cihazınızda hesaplanır; yazdığınız hiçbir şey gönderilmez. Tahmindir, finansal tavsiye değildir."
+    },
+    "seriesHint": {
+        "message": "Her satıra bir değer (veya noktalı virgülle ayırın). Çıkışlar için eksi işareti kullanın."
+    },
+    "languageLabel": { "message": "Dil" },
+    "languageAuto": { "message": "Otomatik (tarayıcı dili)" },
+    "settingsHeading": { "message": "Ayarlar" },
+    "settingsBack": { "message": "Geri" },
+    "currencyLabel": { "message": "Para birimi" },
+    "currencyNone": { "message": "Simgesiz" },
+    "decimalsLabel": { "message": "Yüzdeler ve oranlar için ondalık basamak" },
+    "rememberInputsLabel": { "message": "Tarayıcı açıkken yazdıklarımı hatırla" },
+    "rememberInputsHint": {
+        "message": "Yalnızca tarayıcı belleğinde tutulur ve Chrome kapandığında silinir. Bunu kapatmak hemen siler."
+    },
+    "errorNotNumber": { "message": "Geçerli bir sayı girin." },
+    "errorNotInteger": { "message": "Tam sayı girin." },
+    "errorMin": { "message": "En az $VALUE$ olmalıdır.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": {
+        "message": "$VALUE$ değerinden büyük olmalıdır.",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "errorMax": { "message": "En fazla $VALUE$ olmalıdır.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "Listeden bir değer seçin." },
+    "errorTooFewEntries": { "message": "En az $COUNT$ değer girin.", "placeholders": { "count": { "content": "$1" } } },
+    "errorTooManyEntries": {
+        "message": "En fazla $COUNT$ değer girin.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "$POSITION$. girdi geçerli bir sayı değil.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "Getiriler" },
+    "group_profitability": { "message": "Kârlılık ve fiyatlandırma" },
+    "group_liquidity": { "message": "Likidite ve ödeme gücü" },
+    "group_investment": { "message": "Yatırım ve finansman" },
+    "calc_roi_name": { "message": "Yatırım getirisi (ROI)" },
+    "calc_roi_desc": { "message": "Bir yatırımın, konulan paraya göre ne kadar kazandırdığı veya kaybettirdiği." },
+    "calc_roi_formula": { "message": "ROI = (Geri dönen − Yatırılan) ÷ Yatırılan" },
+    "field_roi_invested": { "message": "Yatırılan tutar" },
+    "field_roi_returned": { "message": "Geri dönen tutar" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "Net kâr" },
+    "out_roi_multiple": { "message": "Getiri çarpanı" },
+    "calc_cagr_name": { "message": "Bileşik yıllık büyüme oranı (CAGR)" },
+    "calc_cagr_desc": { "message": "Bir değeri başlangıçtan sona taşıyan sabit yıllık büyüme oranı." },
+    "calc_cagr_formula": { "message": "CAGR = (Son ÷ Başlangıç)^(1 ÷ Yıl) − 1" },
+    "field_cagr_startValue": { "message": "Başlangıç değeri" },
+    "field_cagr_endValue": { "message": "Bitiş değeri" },
+    "field_cagr_years": { "message": "Yıl" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "Toplam büyüme" },
+    "calc_roe_name": { "message": "Özkaynak ve aktif kârlılığı (ROE, ROA)" },
+    "calc_roe_desc": { "message": "Bir şirketin özkaynaklarından ve varlıklarından ne kadar kâr elde ettiği." },
+    "calc_roe_formula": { "message": "ROE = Net kâr ÷ Özkaynak · ROA = Net kâr ÷ Aktifler" },
+    "field_roe_netIncome": { "message": "Net kâr" },
+    "field_roe_equity": { "message": "Özkaynak" },
+    "field_roe_assets": { "message": "Toplam aktifler" },
+    "out_roe_roe": { "message": "Özkaynak kârlılığı (ROE)" },
+    "out_roe_roa": { "message": "Aktif kârlılığı (ROA)" },
+    "out_roe_equityMultiplier": { "message": "Özkaynak çarpanı" },
+    "calc_margin_name": { "message": "Marj ve ek maliyet oranı (markup)" },
+    "calc_margin_desc": { "message": "Kârın satış fiyatındaki (marj) ve maliyetteki (markup) payı." },
+    "calc_margin_formula": { "message": "Marj = (Fiyat − Maliyet) ÷ Fiyat · Markup = (Fiyat − Maliyet) ÷ Maliyet" },
+    "field_margin_cost": { "message": "Birim maliyet" },
+    "field_margin_price": { "message": "Satış fiyatı" },
+    "out_margin_margin": { "message": "Marj" },
+    "out_margin_markup": { "message": "Markup" },
+    "out_margin_profit": { "message": "Birim başına kâr" },
+    "calc_pricing_name": { "message": "Hedef marj için fiyat" },
+    "calc_pricing_desc": { "message": "İstediğiniz marjı veren satış fiyatı ve bunun için gereken markup." },
+    "calc_pricing_formula": { "message": "Fiyat = Maliyet ÷ (1 − Marj) · Markup = Marj ÷ (1 − Marj)" },
+    "field_pricing_cost": { "message": "Birim maliyet" },
+    "field_pricing_targetMargin": { "message": "Hedef marj" },
+    "out_pricing_price": { "message": "Satış fiyatı" },
+    "out_pricing_markup": { "message": "Gereken markup" },
+    "out_pricing_profit": { "message": "Birim başına kâr" },
+    "calc_breakeven_name": { "message": "Başabaş noktası" },
+    "calc_breakeven_desc": {
+        "message": "Sabit giderleri karşılamak ve isterseniz bir kâr hedefine ulaşmak için kaç birim satmanız gerektiği."
+    },
+    "calc_breakeven_formula": { "message": "Birim = (Sabit giderler + Hedef kâr) ÷ (Fiyat − Değişken maliyet)" },
+    "field_breakeven_fixedCosts": { "message": "Sabit giderler" },
+    "field_breakeven_price": { "message": "Birim fiyat" },
+    "field_breakeven_variableCost": { "message": "Birim başına değişken maliyet" },
+    "field_breakeven_targetProfit": { "message": "Hedef kâr" },
+    "out_breakeven_units": { "message": "Satılacak birim" },
+    "out_breakeven_revenue": { "message": "Gereken gelir" },
+    "out_breakeven_contributionMargin": { "message": "Birim başına katkı payı" },
+    "out_breakeven_contributionMarginRatio": { "message": "Katkı payı oranı" },
+    "calc_liquidity_name": { "message": "Likidite oranları" },
+    "calc_liquidity_desc": {
+        "message": "Bir şirketin kısa vadeli yükümlülüklerini kısa vadeli varlıklarıyla ödeyip ödeyemeyeceği."
+    },
+    "calc_liquidity_formula": {
+        "message": "Cari = Dönen varlıklar ÷ Kısa vadeli borçlar · Asit-test = (Nakit + Alacaklar) ÷ Kısa vadeli borçlar · Nakit = Nakit ÷ Kısa vadeli borçlar"
+    },
+    "field_liquidity_cash": { "message": "Nakit ve nakit benzerleri" },
+    "field_liquidity_receivables": { "message": "Ticari alacaklar" },
+    "field_liquidity_inventory": { "message": "Stoklar" },
+    "field_liquidity_otherCurrentAssets": { "message": "Diğer dönen varlıklar" },
+    "field_liquidity_currentLiabilities": { "message": "Kısa vadeli borçlar" },
+    "out_liquidity_currentRatio": { "message": "Cari oran" },
+    "out_liquidity_quickRatio": { "message": "Asit-test oranı" },
+    "out_liquidity_cashRatio": { "message": "Nakit oranı" },
+    "out_liquidity_workingCapital": { "message": "İşletme sermayesi" },
+    "calc_cashCycle_name": { "message": "Nakit dönüşüm süresi" },
+    "calc_cashCycle_desc": {
+        "message": "Nakdin, tedarikçilere ödeme ile müşterilerden tahsilat arasında kaç gün bağlı kaldığı."
+    },
+    "calc_cashCycle_formula": { "message": "NDS = Stok günü + Alacak günü − Borç günü" },
+    "field_cashCycle_revenue": { "message": "Dönem geliri" },
+    "field_cashCycle_cogs": { "message": "Satışların maliyeti" },
+    "field_cashCycle_inventory": { "message": "Ortalama stok" },
+    "field_cashCycle_receivables": { "message": "Ortalama alacaklar" },
+    "field_cashCycle_payables": { "message": "Ortalama borçlar" },
+    "field_cashCycle_periodDays": { "message": "Dönemdeki gün sayısı" },
+    "out_cashCycle_cashConversionCycle": { "message": "Nakit dönüşüm süresi" },
+    "out_cashCycle_daysInventory": { "message": "Stok günü" },
+    "out_cashCycle_daysReceivables": { "message": "Alacak günü" },
+    "out_cashCycle_daysPayables": { "message": "Borç günü" },
+    "out_cashCycle_inventoryTurnover": { "message": "Stok devir hızı" },
+    "choice_cashCycle_periodDays_365": { "message": "365 gün (yıl)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 gün (ticari yıl)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 gün (çeyrek)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 gün (ay)" },
+    "calc_leverage_name": { "message": "Borçluluk ve faiz karşılama" },
+    "calc_leverage_desc": {
+        "message": "Bir şirketin borca ne kadar bağımlı olduğu ve kazancının faizi ne kadar rahat karşıladığı."
+    },
+    "calc_leverage_formula": {
+        "message": "Borç/Özkaynak = Borç ÷ Özkaynak · Borç/Sermaye = Borç ÷ (Borç + Özkaynak) · Karşılama = FVÖK ÷ Faiz"
+    },
+    "field_leverage_totalDebt": { "message": "Toplam borç" },
+    "field_leverage_equity": { "message": "Özkaynak" },
+    "field_leverage_ebit": { "message": "FVÖK (faaliyet kârı)" },
+    "field_leverage_interestExpense": { "message": "Faiz gideri" },
+    "out_leverage_debtToEquity": { "message": "Borç/özkaynak" },
+    "out_leverage_debtToCapital": { "message": "Borç/sermaye" },
+    "out_leverage_interestCoverage": { "message": "Faiz karşılama oranı" },
+    "calc_investment_name": { "message": "Yatırım analizi (NBD, İVO, geri ödeme)" },
+    "calc_investment_desc": {
+        "message": "Proje buna değer mi? Gelecekteki nakit akışlarını iskonto eder ve ne zaman kendini amorti ettiğini bulur."
+    },
+    "calc_investment_formula": { "message": "NBD = Σ NAₜ ÷ (1 + r)ᵗ − Yatırım · İVO: NBD = 0 olan oran" },
+    "field_investment_rate": { "message": "İskonto oranı (dönem başına)" },
+    "field_investment_initialInvestment": { "message": "İlk yatırım" },
+    "field_investment_cashFlows": { "message": "Nakit akışları (dönem 1, 2, 3…)" },
+    "out_investment_npv": { "message": "Net bugünkü değer (NBD)" },
+    "out_investment_irr": { "message": "İç verim oranı (İVO)" },
+    "out_investment_profitabilityIndex": { "message": "Kârlılık endeksi" },
+    "out_investment_payback": { "message": "Geri ödeme (dönem)" },
+    "out_investment_discountedPayback": { "message": "İskontolu geri ödeme (dönem)" },
+    "calc_futureValue_name": { "message": "Gelecek değer (bileşik faiz)" },
+    "calc_futureValue_desc": {
+        "message": "Bir tutarın, düzenli ödemelerle birlikte bileşik faizle ne kadar büyüdüğü."
+    },
+    "calc_futureValue_formula": {
+        "message": "GD = BD × (1 + i)ⁿ + Ödeme × ((1 + i)ⁿ − 1) ÷ i, burada i = yıllık oran ÷ yıldaki dönem sayısı"
+    },
+    "field_futureValue_presentValue": { "message": "Başlangıç tutarı" },
+    "field_futureValue_contribution": { "message": "Her dönemki ödeme" },
+    "field_futureValue_annualRate": { "message": "Yıllık faiz oranı" },
+    "field_futureValue_years": { "message": "Yıl" },
+    "field_futureValue_frequency": { "message": "Bileşik faiz ve ödemeler" },
+    "out_futureValue_futureValue": { "message": "Gelecek değer" },
+    "out_futureValue_totalContributions": { "message": "Toplam yatırılan" },
+    "out_futureValue_interestEarned": { "message": "Kazanılan faiz" },
+    "choice_futureValue_frequency_12": { "message": "Aylık" },
+    "choice_futureValue_frequency_1": { "message": "Yıllık" },
+    "choice_futureValue_frequency_2": { "message": "Yılda iki kez" },
+    "choice_futureValue_frequency_4": { "message": "Üç aylık" },
+    "choice_futureValue_frequency_52": { "message": "Haftalık" },
+    "choice_futureValue_frequency_365": { "message": "Günlük" },
+    "calc_loan_name": { "message": "Kredi taksiti" },
+    "calc_loan_desc": { "message": "Bir kredinin sabit aylık taksiti ve toplamda ne kadar faiz getirdiği." },
+    "calc_loan_formula": { "message": "Taksit = Anapara × i ÷ (1 − (1 + i)⁻ⁿ), burada i = yıllık oran ÷ 12" },
+    "field_loan_principal": { "message": "Kredi tutarı" },
+    "field_loan_annualRate": { "message": "Yıllık faiz oranı" },
+    "field_loan_termMonths": { "message": "Vade (ay)" },
+    "out_loan_monthlyPayment": { "message": "Aylık taksit" },
+    "out_loan_totalPaid": { "message": "Toplam ödenen" },
+    "out_loan_totalInterest": { "message": "Toplam faiz" },
+    "marketOff": {
+        "message": "Brezilya'nın politika faizi (Selic) ve dolar kuru, Brezilya Merkez Bankası'ndan doldurulabilir."
+    },
+    "marketEnable": { "message": "Oranları getir" },
+    "marketUse": { "message": "Oranları kullan" },
+    "marketRetry": { "message": "Yeniden dene" },
+    "marketLoading": { "message": "Oranlar getiriliyor…" },
+    "marketFailed": { "message": "Merkez Bankası'na ulaşılamadı. Bağlantınızı kontrol edin." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Dolar $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "İzin verilmedi, bu yüzden oran getirilmedi." },
+    "liveRatesLabel": {
+        "message": "Brezilya'nın politika faizini (Selic) ve dolar kurunu Brezilya Merkez Bankası'ndan getir"
+    },
+    "liveRatesHint": {
+        "message": "Varsayılan olarak kapalıdır. Açıldığında Chrome, sizinle ilgili hiçbir bilgi almayan api.bcb.gov.br'ye bağlanma izni ister. Kapatmak izni kaldırır."
+    },
+    "group_markets": { "message": "Politika faizi ve dolar (Brezilya)" },
+    "calc_selicYield_name": { "message": "Politika faizine bağlı sabit getirili yatırım (Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "Merkez bankası politika faizinin (Brezilya'da Selic; Türkiye'de TCMB politika faizi gibi) bir payını ödeyen yatırımın gelir vergisi sonrası getirisi."
+    },
+    "calc_selicYield_formula": {
+        "message": "Net kâr = Tutar × (büyüme − 1) × (1 − gelir vergisi); büyüme yılda 252 iş günü üzerinden günlük işler"
+    },
+    "field_selicYield_amount": { "message": "Yatırılan tutar" },
+    "field_selicYield_months": { "message": "Vade (ay)" },
+    "field_selicYield_selic": { "message": "Politika faizi (Selic, yıllık)" },
+    "field_selicYield_percentOfRate": { "message": "Ödenen politika faizi payı" },
+    "field_selicYield_taxTreatment": { "message": "Gelir vergisi" },
+    "out_selicYield_netFinal": { "message": "Vade sonunda net tutar" },
+    "out_selicYield_netProfit": { "message": "Net kâr" },
+    "out_selicYield_incomeTax": { "message": "Gelir vergisi" },
+    "out_selicYield_taxRate": { "message": "Gelir vergisi oranı" },
+    "out_selicYield_netAnnualRate": { "message": "Yıllık net oran" },
+    "choice_selicYield_taxTreatment_1": { "message": "Kademeli azalan tablo (CDB, devlet tahvili)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Vergiden muaf (LCI, LCA)" },
+    "calc_savings_name": { "message": "Tasarruf hesabı (poupança) ve politika faizine bağlı yatırım" },
+    "calc_savings_desc": {
+        "message": "Tasarruf hesabını (poupança) vergilendirilen sabit getirili bir ürünle karşılaştırır ve ikisinin eşitlendiği politika faizi payını bulur."
+    },
+    "calc_savings_formula": {
+        "message": "Tasarruf: Selic %8,5'in üzerindeyse ayda %0,5, değilse Selic'in %70'i. Sabit getirili ürün kademeli azalan gelir vergisi öder"
+    },
+    "field_savings_amount": { "message": "Yatırılan tutar" },
+    "field_savings_months": { "message": "Vade (ay)" },
+    "field_savings_selic": { "message": "Politika faizi (Selic, yıllık)" },
+    "field_savings_percentOfRate": { "message": "Ödenen politika faizi payı (sabit getirili)" },
+    "out_savings_advantage": { "message": "Sabit getirili ürünün avantajı" },
+    "out_savings_savingsFinal": { "message": "Vade sonunda tasarruf hesabı" },
+    "out_savings_fixedIncomeFinal": { "message": "Vade sonunda sabit getirili (net)" },
+    "out_savings_breakEvenPercent": { "message": "Eşitlik için politika faizi payı" },
+    "calc_dollarConversion_name": { "message": "Dolar alımı (spread ve IOF vergisi)" },
+    "calc_dollarConversion_desc": {
+        "message": "Bankanın spread'i ve IOF döviz vergisi hesaba katıldığında reallerinizle kaç dolar alabileceğiniz."
+    },
+    "calc_dollarConversion_formula": { "message": "Dolar = Real ÷ (Kur × (1 + Spread) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "Real cinsinden tutar" },
+    "field_dollarConversion_rate": { "message": "Dolar kuru (US$ başına R$)" },
+    "field_dollarConversion_spread": { "message": "Banka spread'i" },
+    "field_dollarConversion_iof": { "message": "IOF (Brezilya döviz vergisi)" },
+    "out_dollarConversion_usdReceived": { "message": "Alınan dolar" },
+    "out_dollarConversion_effectiveRate": { "message": "Ödenen efektif kur" },
+    "out_dollarConversion_cost": { "message": "Spread ve IOF maliyeti" },
+    "out_dollarConversion_costPercent": { "message": "Maliyetin tutara oranı" },
+    "calc_dollarVsSelic_name": { "message": "Dolar ve politika faizi (Selic) karşılaştırması" },
+    "calc_dollarVsSelic_desc": {
+        "message": "Dolar tutmanın politika faizini (Selic) geçmesi için vade sonunda doların nerede olması gerekir? Brüt, gelir vergisinden önce karşılaştırılır."
+    },
+    "calc_dollarVsSelic_formula": {
+        "message": "Başabaş doları = politika faizi sonucu ÷ vade sonunda elde tutulan dolar"
+    },
+    "field_dollarVsSelic_amount": { "message": "Real cinsinden tutar" },
+    "field_dollarVsSelic_months": { "message": "Vade (ay)" },
+    "field_dollarVsSelic_spot": { "message": "Bugünkü dolar (US$ başına R$)" },
+    "field_dollarVsSelic_expected": { "message": "Vade sonunda beklenen dolar" },
+    "field_dollarVsSelic_selic": { "message": "Politika faizi (Selic, yıllık)" },
+    "field_dollarVsSelic_usdYield": { "message": "Dolar getirisi (yıllık, US$ cinsinden)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "Başabaş doları" },
+    "out_dollarVsSelic_requiredChange": { "message": "Gereken dolar artışı" },
+    "out_dollarVsSelic_selicFinal": { "message": "Vade sonunda politika faizi (brüt)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "Vade sonunda dolar (brüt)" },
+    "out_dollarVsSelic_difference": { "message": "Dolar eksi politika faizi" },
+    "ratingGood": { "message": "İyi" },
+    "ratingNeutral": { "message": "Nötr" },
+    "ratingBad": { "message": "Kötü" },
+    "ratingLegend": { "message": "Yeşil: iyi · Normal: nötr · Kırmızı: kötü" },
+    "ratingRuleHigher": {
+        "message": "$BAD$ altı: kötü · $BAD$ ile $GOOD$ arası: nötr · $GOOD$ üstü: iyi",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "$BAD$ üstü: kötü · $GOOD$ ile $BAD$ arası: nötr · $GOOD$ altı: iyi",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "$VALUE$ altı: kötü · $VALUE$: nötr · $VALUE$ üstü: iyi",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "$VALUE$ üstü: kötü · $VALUE$: nötr · $VALUE$ altı: iyi",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "Genel kural: neyin sağlıklı olduğu sektöre göre değişir." },
+    "group_accounting": { "message": "Muhasebe analizi" },
+    "calc_incomeStatement_name": { "message": "Gelir tablosu analizi (marjlar)" },
+    "calc_incomeStatement_desc": { "message": "Gelirden net kâra gider ve her adımdaki marjı gösterir." },
+    "calc_incomeStatement_formula": {
+        "message": "FAVÖK = Gelir − Satışların maliyeti − Faaliyet giderleri · FVÖK = FAVÖK − Amortisman · Net = (FVÖK − Faiz) × (1 − vergi)"
+    },
+    "field_incomeStatement_revenue": { "message": "Net gelir" },
+    "field_incomeStatement_cogs": { "message": "Satışların maliyeti" },
+    "field_incomeStatement_operatingExpenses": { "message": "Faaliyet giderleri" },
+    "field_incomeStatement_depreciation": { "message": "Amortisman ve itfa" },
+    "field_incomeStatement_interestExpense": { "message": "Faiz gideri" },
+    "field_incomeStatement_taxRate": { "message": "Gelir vergisi oranı" },
+    "out_incomeStatement_netIncome": { "message": "Net kâr" },
+    "out_incomeStatement_grossMargin": { "message": "Brüt marj" },
+    "out_incomeStatement_ebitdaMargin": { "message": "FAVÖK marjı" },
+    "out_incomeStatement_operatingMargin": { "message": "Faaliyet marjı (FVÖK)" },
+    "out_incomeStatement_netMargin": { "message": "Net marj" },
+    "calc_dupont_name": { "message": "DuPont analizi (3 adım)" },
+    "calc_dupont_desc": { "message": "Özkaynak kârlılığını marj, aktif devir hızı ve kaldıraca ayırır." },
+    "calc_dupont_formula": { "message": "ROE = Net marj × Aktif devir hızı × Özkaynak çarpanı" },
+    "field_dupont_netIncome": { "message": "Net kâr" },
+    "field_dupont_revenue": { "message": "Net gelir" },
+    "field_dupont_assets": { "message": "Toplam aktifler" },
+    "field_dupont_equity": { "message": "Özkaynak" },
+    "out_dupont_roe": { "message": "Özkaynak kârlılığı (ROE)" },
+    "out_dupont_netMargin": { "message": "Net marj" },
+    "out_dupont_assetTurnover": { "message": "Aktif devir hızı" },
+    "out_dupont_equityMultiplier": { "message": "Özkaynak çarpanı" },
+    "out_dupont_roa": { "message": "Aktif kârlılığı (ROA)" },
+    "calc_dupont5_name": { "message": "DuPont analizi (5 adım)" },
+    "calc_dupont5_desc": {
+        "message": "ROE'yi vergi yükü, faiz yükü, faaliyet marjı, aktif devir hızı ve kaldıraca ayırır."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (NK ÷ VÖK) × (VÖK ÷ FVÖK) × (FVÖK ÷ Gelir) × (Gelir ÷ Aktifler) × (Aktifler ÷ Özkaynak)"
+    },
+    "field_dupont5_netIncome": { "message": "Net kâr (NK)" },
+    "field_dupont5_pretaxIncome": { "message": "Vergi öncesi kâr (VÖK)" },
+    "field_dupont5_ebit": { "message": "FVÖK (faaliyet kârı)" },
+    "field_dupont5_revenue": { "message": "Net gelir" },
+    "field_dupont5_assets": { "message": "Toplam aktifler" },
+    "field_dupont5_equity": { "message": "Özkaynak" },
+    "out_dupont5_roe": { "message": "Özkaynak kârlılığı (ROE)" },
+    "out_dupont5_taxBurden": { "message": "Vergi yükü (NK ÷ VÖK)" },
+    "out_dupont5_interestBurden": { "message": "Faiz yükü (VÖK ÷ FVÖK)" },
+    "out_dupont5_operatingMargin": { "message": "Faaliyet marjı (FVÖK)" },
+    "out_dupont5_assetTurnover": { "message": "Aktif devir hızı" },
+    "out_dupont5_equityMultiplier": { "message": "Özkaynak çarpanı" },
+    "calc_fleuriet_name": { "message": "Fleuriet modeli (dinamik işletme sermayesi)" },
+    "calc_fleuriet_desc": {
+        "message": "Finansal yapıyı işletme sermayesine (CDG), buna duyulan ihtiyaca (NCG) ve nakit dengesine (T) göre sınıflandırır."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = Kalıcı fonlar − Duran varlıklar · NCG = Operasyonel dönen varlıklar − Operasyonel kısa vadeli borçlar · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "Operasyonel dönen varlıklar" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "Operasyonel kısa vadeli borçlar" },
+    "field_fleuriet_nonCurrentAssets": { "message": "Duran varlıklar" },
+    "field_fleuriet_permanentFunds": { "message": "Kalıcı fonlar" },
+    "out_fleuriet_structureType": { "message": "Finansal yapı" },
+    "out_fleuriet_workingCapital": { "message": "İşletme sermayesi (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "İşletme sermayesi ihtiyacı (NCG)" },
+    "out_fleuriet_treasury": { "message": "Nakit dengesi (T)" },
+    "cat_fleuriet_structureType_1": { "message": "Tip I – Mükemmel" },
+    "cat_fleuriet_structureType_2": { "message": "Tip II – Sağlam" },
+    "cat_fleuriet_structureType_3": { "message": "Tip III – Yetersiz" },
+    "cat_fleuriet_structureType_4": { "message": "Tip IV – Kötü" },
+    "cat_fleuriet_structureType_5": { "message": "Tip V – Çok kötü" },
+    "cat_fleuriet_structureType_6": { "message": "Tip VI – Yüksek risk" },
+    "calc_altman_name": { "message": "Altman Z-skoru (iflas riski)" },
+    "calc_altman_desc": {
+        "message": "Mali sıkıntı riskini bilanço ve gelir tablosundan beş oranla, iki sürümde puanlar."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1,2·X1 + 1,4·X2 + 3,3·X3 + 0,6·X4 + 1,0·X5 · Z″ = 3,25 + 6,56·X1 + 3,26·X2 + 6,72·X3 + 1,05·X4"
+    },
+    "field_altman_workingCapital": { "message": "İşletme sermayesi" },
+    "field_altman_retainedEarnings": { "message": "Dağıtılmamış kârlar" },
+    "field_altman_ebit": { "message": "FVÖK" },
+    "field_altman_equityValue": { "message": "Özkaynak değeri" },
+    "field_altman_sales": { "message": "Satışlar" },
+    "field_altman_totalAssets": { "message": "Toplam aktifler" },
+    "field_altman_totalLiabilities": { "message": "Toplam yükümlülükler" },
+    "out_altman_zScore": { "message": "Z-skoru (orijinal)" },
+    "out_altman_zZone": { "message": "Bölge (orijinal)" },
+    "out_altman_emergingScore": { "message": "Z″-skoru (gelişmekte olan piyasalar)" },
+    "out_altman_emergingZone": { "message": "Bölge (gelişmekte olan piyasalar)" },
+    "cat_altman_zZone_0": { "message": "Risk bölgesi" },
+    "cat_altman_zZone_1": { "message": "Gri bölge" },
+    "cat_altman_zZone_2": { "message": "Güvenli bölge" },
+    "cat_altman_emergingZone_0": { "message": "Risk bölgesi" },
+    "cat_altman_emergingZone_1": { "message": "Gri bölge" },
+    "cat_altman_emergingZone_2": { "message": "Güvenli bölge" },
+    "calc_leverageDegrees_name": { "message": "Faaliyet ve finansal kaldıraç dereceleri" },
+    "calc_leverageDegrees_desc": {
+        "message": "Satışlardaki bir değişimin faaliyet kârını ve faiz sonrası kârı ne kadar oynattığı."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "FKD = Katkı payı ÷ FVÖK · FKD(fin.) = FVÖK ÷ (FVÖK − Faiz) · Toplam = Faaliyet × Finansal"
+    },
+    "field_leverageDegrees_revenue": { "message": "Net gelir" },
+    "field_leverageDegrees_variableCosts": { "message": "Değişken maliyetler" },
+    "field_leverageDegrees_fixedCosts": { "message": "Sabit giderler" },
+    "field_leverageDegrees_interestExpense": { "message": "Faiz gideri" },
+    "out_leverageDegrees_operatingLeverage": { "message": "Faaliyet kaldıracı" },
+    "out_leverageDegrees_financialLeverage": { "message": "Finansal kaldıraç" },
+    "out_leverageDegrees_combinedLeverage": { "message": "Toplam kaldıraç" },
+    "out_leverageDegrees_ebit": { "message": "FVÖK (faaliyet kârı)" },
+    "calc_depreciation_name": { "message": "Amortisman planı" },
+    "calc_depreciation_desc": {
+        "message": "Bir varlığın belirli bir yıldaki amortisman gideri, birikmiş amortismanı ve net defter değeri; üç yöntemle."
+    },
+    "calc_depreciation_formula": {
+        "message": "Doğrusal = (Maliyet − Hurda) ÷ Ömür · Azalan bakiyeler = Defter değeri × 2 ÷ Ömür · Yılların toplamı = (Maliyet − Hurda) × Kalan ömür ÷ Σ yıl"
+    },
+    "field_depreciation_cost": { "message": "Varlığın maliyeti" },
+    "field_depreciation_salvage": { "message": "Hurda değeri" },
+    "field_depreciation_lifeYears": { "message": "Faydalı ömür (yıl)" },
+    "field_depreciation_method": { "message": "Yöntem" },
+    "field_depreciation_year": { "message": "Gösterilecek yıl" },
+    "out_depreciation_charge": { "message": "Yıllık amortisman" },
+    "out_depreciation_accumulated": { "message": "Birikmiş amortisman" },
+    "out_depreciation_bookValue": { "message": "Defter değeri" },
+    "choice_depreciation_method_1": { "message": "Doğrusal" },
+    "choice_depreciation_method_2": { "message": "Çift azalan bakiyeler" },
+    "choice_depreciation_method_3": { "message": "Yılların toplamı yöntemi" },
+    "calc_wacc_name": { "message": "WACC ve özkaynak maliyeti (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "Bir şirketin ortalama finansman maliyeti; CAPM özkaynak maliyeti ile vergi sonrası borç maliyetinden hesaplanır."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × Risk primi · WACC = Ö ÷ (B + Ö) × Ke + B ÷ (B + Ö) × Kd × (1 − vergi)"
+    },
+    "field_wacc_equityValue": { "message": "Özkaynak değeri" },
+    "field_wacc_debtValue": { "message": "Borç değeri" },
+    "field_wacc_riskFree": { "message": "Risksiz faiz oranı" },
+    "field_wacc_beta": { "message": "Beta" },
+    "field_wacc_marketPremium": { "message": "Piyasa risk primi" },
+    "field_wacc_costOfDebt": { "message": "Borç maliyeti (vergi öncesi)" },
+    "field_wacc_taxRate": { "message": "Gelir vergisi oranı" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "Özkaynak maliyeti (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Vergi sonrası borç maliyeti (Kd)" },
+    "out_wacc_equityWeight": { "message": "Özkaynak ağırlığı" },
+    "out_wacc_debtWeight": { "message": "Borç ağırlığı" },
+    "calc_eva_name": { "message": "Ekonomik katma değer (EVA)" },
+    "calc_eva_desc": {
+        "message": "Faaliyetin, kendisine yatırılan sermayenin maliyetinden fazla kazanıp kazanmadığı."
+    },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × Yatırılan sermaye · NOPAT = FVÖK × (1 − vergi) · ROIC = NOPAT ÷ Yatırılan sermaye"
+    },
+    "field_eva_ebit": { "message": "FVÖK (faaliyet kârı)" },
+    "field_eva_taxRate": { "message": "Gelir vergisi oranı" },
+    "field_eva_investedCapital": { "message": "Yatırılan sermaye" },
+    "field_eva_wacc": { "message": "Sermaye maliyeti (WACC)" },
+    "out_eva_eva": { "message": "Ekonomik katma değer (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "Yatırılan sermaye getirisi (ROIC)" },
+    "out_eva_spread": { "message": "Fark (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "Sermaye maliyeti tutarı" },
+    "calc_freeCashFlow_name": { "message": "Serbest nakit akışı (FCFF ve FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "Faaliyetler ve yatırımlardan sonra kalan nakit; tüm sermaye sağlayıcıları (FCFF) ve hissedarlar (FCFE) için."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = FVÖK × (1 − vergi) + Amort. − CapEx − ΔİSD · FCFE = FCFF − Faiz × (1 − vergi) + Net borçlanma"
+    },
+    "field_freeCashFlow_ebit": { "message": "FVÖK (faaliyet kârı)" },
+    "field_freeCashFlow_taxRate": { "message": "Gelir vergisi oranı" },
+    "field_freeCashFlow_depreciation": { "message": "Amortisman ve itfa" },
+    "field_freeCashFlow_capex": { "message": "Yatırım harcaması (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "İşletme sermayesindeki artış" },
+    "field_freeCashFlow_interestExpense": { "message": "Faiz gideri" },
+    "field_freeCashFlow_netBorrowing": { "message": "Net borçlanma" },
+    "out_freeCashFlow_fcff": { "message": "Firma serbest nakit akışı (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "Hissedar serbest nakit akışı (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "Tahvil fiyatı ve duration" },
+    "calc_bond_desc": { "message": "Kupon ödeyen bir tahvilin fiyatı, primi veya iskontosu ve getiriye duyarlılığı." },
+    "calc_bond_formula": {
+        "message": "Fiyat = Σ Kupon ÷ (1 + y)ᵗ + Nominal ÷ (1 + y)ⁿ · Modifiye duration = Macaulay ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "Nominal değer" },
+    "field_bond_couponRate": { "message": "Kupon oranı (yıllık)" },
+    "field_bond_yieldToMaturity": { "message": "Vadeye kadar getiri (yıllık)" },
+    "field_bond_years": { "message": "Vadeye kalan yıl" },
+    "field_bond_frequency": { "message": "Yıllık kupon sayısı" },
+    "out_bond_price": { "message": "Tahvil fiyatı" },
+    "out_bond_premium": { "message": "Prim (+) veya iskonto (−)" },
+    "out_bond_currentYield": { "message": "Cari getiri" },
+    "out_bond_macaulayDuration": { "message": "Macaulay duration (yıl)" },
+    "out_bond_modifiedDuration": { "message": "Modifiye duration (yıl)" },
+    "choice_bond_frequency_2": { "message": "Altı aylık" },
+    "choice_bond_frequency_1": { "message": "Yıllık" },
+    "choice_bond_frequency_4": { "message": "Üç aylık" },
+    "choice_bond_frequency_12": { "message": "Aylık" },
+    "calc_rates_name": { "message": "Faiz oranı dönüşümü ve reel faiz" },
+    "calc_rates_desc": {
+        "message": "Nominal faizi efektif, aylık ve günlük orana çevirir, enflasyonu çıkararak reel faizi bulur."
+    },
+    "calc_rates_formula": {
+        "message": "Efektif = (1 + nominal ÷ m)ᵐ − 1 · Eşdeğer = (1 + efektif)^(1 ÷ n) − 1 · Reel = (1 + efektif) ÷ (1 + enflasyon) − 1"
+    },
+    "field_rates_nominalRate": { "message": "Nominal faiz (yıllık)" },
+    "field_rates_compounding": { "message": "Bileşik faiz" },
+    "field_rates_inflation": { "message": "Enflasyon (yıllık)" },
+    "out_rates_effectiveAnnual": { "message": "Efektif yıllık faiz" },
+    "out_rates_monthlyEquivalent": { "message": "Eşdeğer aylık faiz" },
+    "out_rates_dailyEquivalent": { "message": "Eşdeğer günlük faiz (252 gün)" },
+    "out_rates_realRate": { "message": "Reel faiz (enflasyonun üzerinde)" },
+    "choice_rates_compounding_12": { "message": "Aylık" },
+    "choice_rates_compounding_1": { "message": "Yıllık" },
+    "choice_rates_compounding_2": { "message": "Yılda iki kez" },
+    "choice_rates_compounding_4": { "message": "Üç aylık" },
+    "choice_rates_compounding_365": { "message": "Günlük" },
+    "calc_amortization_name": { "message": "SAC ve Price (kredi itfa sistemleri)" },
+    "calc_amortization_desc": {
+        "message": "İki itfa sistemini karşılaştırır: Price eşit taksit öder, SAC her ay aynı anaparayı öder."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + kalan bakiye × i, burada i = yıllık oran ÷ 12"
+    },
+    "field_amortization_principal": { "message": "Kredi tutarı" },
+    "field_amortization_annualRate": { "message": "Yıllık faiz oranı" },
+    "field_amortization_termMonths": { "message": "Vade (ay)" },
+    "out_amortization_pricePayment": { "message": "Price: aylık taksit" },
+    "out_amortization_priceTotalInterest": { "message": "Price: toplam faiz" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: ilk taksit" },
+    "out_amortization_sacLastPayment": { "message": "SAC: son taksit" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: toplam faiz" }
+}

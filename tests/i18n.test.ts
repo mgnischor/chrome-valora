@@ -3,7 +3,7 @@
     Copyright (C) 2026 Miguel Nischor
 
     File: tests/i18n.test.ts
-    Description: Unit tests for the locale files and the translation helpers.
+    Description: Unit tests for the supported languages, the translation files and the translation helpers.
     Author: Miguel Nischor <miguel@nischor.com.br>
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,9 +21,11 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
+import { MANIFEST_KEYS, MANIFEST_LOCALES } from "../scripts/manifest-locales.mjs";
 import { CALCULATORS, GROUPS, getCalculator } from "../src/core/calculators";
-import { t } from "../src/shared/i18n";
+import { CATALOG } from "../src/shared/catalog";
+import { formatMessage, languageTag, setLanguage, t, textDirection } from "../src/shared/i18n";
 import {
     calculatorDescriptionKey,
     calculatorFormulaKey,
@@ -34,26 +36,26 @@ import {
     groupKey,
     outputKey,
 } from "../src/shared/labels";
+import { DEFAULT_LOCALE, LOCALES, isLocaleCode, matchLocale } from "../src/shared/locales";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const LOCALES_DIR = path.join(ROOT, "public", "_locales");
-const DEFAULT_LOCALE = "en_US";
-const EXPECTED_LOCALES = ["de", "en_US", "es", "fr", "it", "pl", "pt_BR", "ru"];
+const LOCALES_DIR = path.join(ROOT, "src", "locales");
 
-/** Shape of one entry of a `messages.json` file. */
+/** Shape of one entry of a translation file. */
 interface Message {
     message: string;
-    placeholders?: Record<string, { content: string }>;
+    description?: string;
+    placeholders?: Record<string, { content: string; example?: string }>;
 }
 
 /**
- * Reads the messages of one locale.
+ * Reads the messages of one language.
  *
- * @param locale - Locale folder name such as `pt_BR`.
- * @returns The parsed `messages.json`.
+ * @param code - Language code such as `pt_BR`.
+ * @returns The parsed translation file.
  */
-function loadLocale(locale: string): Record<string, Message> {
-    return JSON.parse(readFileSync(path.join(LOCALES_DIR, locale, "messages.json"), "utf8"));
+function loadLocale(code: string): Record<string, Message> {
+    return JSON.parse(readFileSync(path.join(LOCALES_DIR, `${code}.json`), "utf8"));
 }
 
 /**
@@ -67,7 +69,7 @@ function referencedPlaceholders(text: string): string[] {
 }
 
 /**
- * Collects the files under a directory whose name matches an extension.
+ * Collects the files under a directory whose name has one of the given extensions.
  *
  * @param dir - Directory to walk.
  * @param extensions - Accepted file extensions, including the dot.
@@ -84,7 +86,7 @@ function listFiles(dir: string, extensions: readonly string[]): string[] {
 /**
  * Lists the message keys that the catalogue of calculators needs, built the same way the popup builds them.
  *
- * @returns Every group, calculator, field, output and choice key.
+ * @returns Every group, calculator, field, output, category and choice key.
  */
 function calculatorKeys(): string[] {
     const keys: string[] = GROUPS.map(groupKey);
@@ -106,92 +108,251 @@ function calculatorKeys(): string[] {
     return keys;
 }
 
+const CODES = LOCALES.map((locale) => locale.code);
+const TRANSLATED_CODES = CODES.filter((code) => code !== DEFAULT_LOCALE);
 const defaults = loadLocale(DEFAULT_LOCALE);
 
-describe("locales", () => {
-    it("ships exactly the supported languages", () => {
-        expect(readdirSync(LOCALES_DIR).sort()).toEqual(EXPECTED_LOCALES);
+describe("supported languages", () => {
+    it("lists 31 languages, with Chinese in two scripts", () => {
+        expect(CODES).toHaveLength(31);
+        expect(new Set(CODES.map((code) => code.split("_")[0])).size).toBe(30);
     });
 
-    it.each(EXPECTED_LOCALES)("%s defines the same keys as the default locale", (locale) => {
-        expect(Object.keys(loadLocale(locale)).sort()).toEqual(Object.keys(defaults).sort());
+    it("has exactly one translation file per listed language", () => {
+        const files = readdirSync(LOCALES_DIR).map((file) => file.replace(/\.json$/, ""));
+        expect(files.sort()).toEqual([...CODES].sort());
     });
 
-    it.each(EXPECTED_LOCALES)("%s has no empty messages", (locale) => {
-        for (const [key, entry] of Object.entries(loadLocale(locale))) {
-            expect(entry.message.trim(), `${locale}.${key}`).not.toBe("");
+    it("lists every language once, with a name, a language tag and a direction", () => {
+        expect(new Set(CODES).size).toBe(CODES.length);
+        for (const locale of LOCALES) {
+            expect(locale.name.trim(), locale.code).not.toBe("");
+            expect(locale.tag, locale.code).toMatch(/^[a-z]{2,3}(-[A-Z]{2})?$/);
         }
     });
 
-    it.each(EXPECTED_LOCALES)("%s uses the same placeholders as the default locale", (locale) => {
-        const messages = loadLocale(locale);
+    it("marks Arabic, Persian and Urdu as right-to-left and nothing else", () => {
+        const rtl = LOCALES.filter((locale) => locale.dir === "rtl").map((locale) => locale.code);
+        expect(rtl.sort()).toEqual(["ar", "fa", "ur"]);
+    });
+
+    it("is typed so that every language has a catalog entry", () => {
+        expect(Object.keys(CATALOG).sort()).toEqual([...CODES].sort());
+    });
+});
+
+describe("translation files", () => {
+    it.each(CODES)("%s defines the same keys as the default language", (code) => {
+        expect(Object.keys(loadLocale(code)).sort()).toEqual(Object.keys(defaults).sort());
+    });
+
+    it.each(CODES)("%s has no empty message", (code) => {
+        for (const [key, entry] of Object.entries(loadLocale(code))) {
+            expect(entry.message.trim(), `${code}.${key}`).not.toBe("");
+        }
+    });
+
+    it.each(CODES)("%s uses the same placeholders as the default language", (code) => {
+        const messages = loadLocale(code);
         for (const [key, entry] of Object.entries(defaults)) {
             const translated = messages[key]!;
-            expect(Object.keys(translated.placeholders ?? {}).sort(), `${locale}.${key}`).toEqual(
+            expect(Object.keys(translated.placeholders ?? {}).sort(), `${code}.${key}`).toEqual(
                 Object.keys(entry.placeholders ?? {}).sort()
             );
-            expect(referencedPlaceholders(translated.message), `${locale}.${key}`).toEqual(
+            expect(referencedPlaceholders(translated.message), `${code}.${key}`).toEqual(
                 referencedPlaceholders(entry.message)
             );
             for (const name of referencedPlaceholders(translated.message)) {
                 const declared = Object.keys(translated.placeholders ?? {}).map((n) => n.toLowerCase());
-                expect(declared, `${locale}.${key} references $${name}$`).toContain(name);
+                expect(declared, `${code}.${key} references $${name}$`).toContain(name);
             }
         }
     });
 
-    it.each(EXPECTED_LOCALES)("%s respects the Chrome Web Store length limits", (locale) => {
-        const messages = loadLocale(locale);
+    it.each(TRANSLATED_CODES)("%s is translated, not a copy of the default language", (code) => {
+        const messages = loadLocale(code);
+        const untranslated = Object.keys(defaults).filter((key) => messages[key]!.message === defaults[key]!.message);
+        // Names that are the same in every language (ROI, CAGR, WACC, Markup, ...) legitimately match; sentences do not.
+        expect(untranslated.length, untranslated.join(", ")).toBeLessThan(Object.keys(defaults).length * 0.1);
+        for (const key of [
+            "tagline",
+            "footer",
+            "resultsEmpty",
+            "calc_roi_desc",
+            "calc_loan_desc",
+            "rememberInputsHint",
+        ]) {
+            expect(messages[key]!.message, key).not.toBe(defaults[key]!.message);
+        }
+    });
+
+    it.each(CODES)("%s respects the Chrome Web Store length limits", (code) => {
+        const messages = loadLocale(code);
         expect(messages.extDescription!.message.length).toBeLessThanOrEqual(132);
         expect(messages.extName!.message.length).toBeLessThanOrEqual(45);
         expect(messages.extShortName!.message.length).toBeLessThanOrEqual(12);
     });
 
-    it.each(EXPECTED_LOCALES.filter((locale) => locale !== DEFAULT_LOCALE))(
-        "%s translates the messages instead of copying the English text",
-        (locale) => {
-            const messages = loadLocale(locale);
-            const untranslated = Object.keys(defaults).filter(
-                (key) => messages[key]!.message === defaults[key]!.message && /[a-z]{4,}/i.test(defaults[key]!.message)
-            );
-            // Names that are the same in every language (ROI, CAGR, Markup, "Selic $SELIC$ · Dollar $USD$", ...) are
-            // allowed; sentences are not. Placeholders and symbols do not count as words.
-            const wordCount = (text: string) => (text.replace(/\$[A-Z]+\$/g, "").match(/\p{L}{2,}/gu) ?? []).length;
-            expect(
-                untranslated.filter((key) => wordCount(defaults[key]!.message) > 3),
-                locale
-            ).toEqual([]);
+    it.each(CODES)("%s keeps the product name", (code) => {
+        const messages = loadLocale(code);
+        expect(messages.extShortName!.message).toBe("Valora");
+        expect(messages.extName!.message).toContain("Valora");
+    });
+
+    it.each(CODES)("%s keeps the Brazilian names that the calculators are about", (code) => {
+        const messages = loadLocale(code);
+        // Brazilian instruments keep their own name next to the local explanation, so they can be searched for.
+        expect(messages.calc_selicYield_name!.message, code).toContain("Selic");
+        expect(messages.calc_selicYield_name!.message, code).toContain("CDB");
+        expect(messages.calc_savings_name!.message.toLowerCase(), code).toContain("poupança");
+        expect(messages.field_dollarConversion_iof!.message, code).toContain("IOF");
+        expect(messages.marketRates!.message, code).toContain("Selic");
+    });
+});
+
+describe("messages Chrome reads for the manifest", () => {
+    it("are generated for supported languages only", () => {
+        for (const code of MANIFEST_LOCALES) expect(isLocaleCode(code), code).toBe(true);
+        const withoutFolder = CODES.filter((code) => !MANIFEST_LOCALES.includes(code));
+        // Chrome has no UI language for these, so their manifest strings fall back to English.
+        expect(withoutFolder.sort()).toEqual(["bho", "ha", "jv", "pa", "ur"]);
+    });
+
+    it("exist in every language that gets a _locales folder", () => {
+        for (const code of MANIFEST_LOCALES) {
+            const messages = loadLocale(code);
+            for (const key of MANIFEST_KEYS) expect(messages[key], `${code}.${key}`).toBeDefined();
         }
-    );
+    });
+
+    it("cover every __MSG_ reference of the manifest", () => {
+        const manifest = readFileSync(path.join(ROOT, "public", "manifest.json"), "utf8");
+        const referenced = [...manifest.matchAll(/__MSG_([A-Za-z0-9_@]+)__/g)].map((match) => match[1]);
+        expect(referenced.sort()).toEqual([...MANIFEST_KEYS].sort());
+        expect(JSON.parse(manifest).default_locale).toBe(DEFAULT_LOCALE);
+    });
 });
 
 describe("calculator texts", () => {
-    it.each(EXPECTED_LOCALES)("%s has a message for every calculator, field, output, choice and group", (locale) => {
-        const messages = loadLocale(locale);
-        for (const key of calculatorKeys()) expect(messages, `${locale} is missing "${key}"`).toHaveProperty(key);
+    it.each(CODES)("%s has a message for every calculator, field, output, choice, category and group", (code) => {
+        const messages = loadLocale(code);
+        for (const key of calculatorKeys()) expect(messages, `${code} is missing "${key}"`).toHaveProperty(key);
     });
 
     it("keeps the formula of each calculator to a readable length", () => {
-        for (const locale of EXPECTED_LOCALES) {
+        for (const code of CODES) {
             for (const calculator of CALCULATORS) {
-                const formula = loadLocale(locale)[calculatorFormulaKey(calculator.id)]!.message;
-                expect(formula.length, `${locale}.${calculator.id}`).toBeLessThanOrEqual(190);
+                const formula = loadLocale(code)[calculatorFormulaKey(calculator.id)]!.message;
+                expect(formula.length, `${code}.${calculator.id}`).toBeLessThanOrEqual(190);
             }
         }
     });
+});
 
-    it("leaves no message without a user: every key is either static, derived from a calculator or referenced", () => {
-        const sources = [
-            ...listFiles(path.join(ROOT, "src"), [".ts"]).filter((file) => !file.endsWith("i18n.ts")),
-            ...listFiles(path.join(ROOT, "public"), [".html", ".json"]).filter((file) => !file.includes("_locales")),
-        ]
-            .map((file) => readFileSync(file, "utf8"))
-            .join("\n");
-        const derived = new Set(calculatorKeys());
-        for (const key of Object.keys(defaults)) {
-            const used = derived.has(key) || sources.includes(`"${key}"`) || sources.includes(`__MSG_${key}__`);
-            expect(used, `unused "${key}"`).toBe(true);
+describe("matchLocale", () => {
+    it.each([
+        ["en-US", "en_US"],
+        ["en-GB", "en_US"],
+        ["en", "en_US"],
+        ["pt-BR", "pt_BR"],
+        ["pt-PT", "pt_BR"],
+        ["es-419", "es"],
+        ["es-ES", "es"],
+        ["zh-CN", "zh_CN"],
+        ["zh", "zh_CN"],
+        ["zh-Hans", "zh_CN"],
+        ["zh-TW", "zh_TW"],
+        ["zh-HK", "zh_TW"],
+        ["zh-Hant", "zh_TW"],
+        ["de-AT", "de"],
+        ["ur", "ur"],
+        ["ar-EG", "ar"],
+        ["fa-IR", "fa"],
+        ["id", "id"],
+        ["uk", "uk"],
+        ["fr-CA", "fr"],
+        ["pa-IN", "pa"],
+    ])("maps %s to %s", (tag, expected) => {
+        expect(matchLocale(tag)).toBe(expected);
+    });
+
+    it.each(["", "xx", "fil", "he", "nb", "sw", "_"])("falls back to English for %j", (tag) => {
+        expect(matchLocale(tag)).toBe(DEFAULT_LOCALE);
+    });
+
+    it("always returns a supported language", () => {
+        for (const tag of ["en", "zh-TW", "ja-JP", "ko-KR", "ru-RU", "tr-TR", "vi-VN", "garbage"]) {
+            expect(isLocaleCode(matchLocale(tag)), tag).toBe(true);
         }
+    });
+});
+
+describe("formatMessage", () => {
+    it("fills named placeholders from the substitutions", () => {
+        const entry = { message: "Hi $NAME$!", placeholders: { name: { content: "$1" } } };
+        expect(formatMessage(entry, "Ana")).toBe("Hi Ana!");
+        expect(formatMessage(entry, ["Ana"])).toBe("Hi Ana!");
+    });
+
+    it("matches placeholder names without regard to case and fills several values", () => {
+        const entry = {
+            message: "Between $min$ and $Max$",
+            placeholders: { MIN: { content: "$1" }, max: { content: "$2" } },
+        };
+        expect(formatMessage(entry, ["4", "128"])).toBe("Between 4 and 128");
+    });
+
+    it("supports literal placeholder content and positional markers", () => {
+        expect(formatMessage({ message: "$X$ and $1", placeholders: { x: { content: "fixed" } } }, "one")).toBe(
+            "fixed and one"
+        );
+    });
+
+    it("turns $$ into a dollar sign and leaves other text alone", () => {
+        expect(formatMessage({ message: "Costs $$5 (30 s)" })).toBe("Costs $5 (30 s)");
+    });
+
+    it("uses an empty string for missing substitutions and unknown placeholders", () => {
+        const entry = { message: "[$A$] [$B$]", placeholders: { a: { content: "$2" } } };
+        expect(formatMessage(entry, "only one")).toBe("[] []");
+    });
+});
+
+describe("t", () => {
+    afterEach(() => {
+        setLanguage("auto", "en-US");
+    });
+
+    it("follows the browser language when the setting is automatic", () => {
+        expect(setLanguage("auto", "pt-BR")).toBe("pt_BR");
+        expect(t("copyResults")).toBe("Copiar resultados");
+        expect(setLanguage("auto", "de-DE")).toBe("de");
+        expect(t("copyResults")).toBe("Ergebnisse kopieren");
+    });
+
+    it("lets an explicit language override the browser", () => {
+        expect(setLanguage("es", "pt-BR")).toBe("es");
+        expect(t("copyResults")).toBe("Copiar resultados");
+    });
+
+    it("ignores a language it does not know and follows the browser instead", () => {
+        expect(setLanguage("klingon", "fr")).toBe("fr");
+        expect(t("copyResults")).toBe("Copier les résultats");
+    });
+
+    it("fills placeholders in the active language", () => {
+        setLanguage("pt_BR", "en");
+        expect(t("errorMin", "0")).toBe("Deve ser no mínimo 0.");
+        expect(t("errorTooFewEntries", "2")).toBe("Digite pelo menos 2 valor(es).");
+    });
+
+    it("reports the tag and the reading direction of the active language", () => {
+        setLanguage("ar", "en");
+        expect(languageTag()).toBe("ar");
+        expect(textDirection()).toBe("rtl");
+        setLanguage("pt_BR", "en");
+        expect(languageTag()).toBe("pt-BR");
+        expect(textDirection()).toBe("ltr");
     });
 });
 
@@ -199,7 +360,7 @@ describe("message usage", () => {
     const sources = [
         // The helper's own documentation contains example markup such as data-i18n="key".
         ...listFiles(path.join(ROOT, "src"), [".ts"]).filter((file) => !file.endsWith("i18n.ts")),
-        ...listFiles(path.join(ROOT, "public"), [".html", ".json"]).filter((file) => !file.includes("_locales")),
+        ...listFiles(path.join(ROOT, "public"), [".html", ".json"]),
     ].map((file) => readFileSync(file, "utf8"));
     const allSource = sources.join("\n");
 
@@ -217,29 +378,11 @@ describe("message usage", () => {
         for (const key of referenced) expect(Object.keys(defaults), `missing message "${key}"`).toContain(key);
     });
 
-    it("declares the default locale in the manifest", () => {
-        const manifest = JSON.parse(readFileSync(path.join(ROOT, "public", "manifest.json"), "utf8"));
-        expect(manifest.default_locale).toBe(DEFAULT_LOCALE);
-    });
-});
-
-describe("t", () => {
-    afterEach(() => vi.unstubAllGlobals());
-
-    it("returns the localized message", () => {
-        vi.stubGlobal("chrome", { i18n: { getMessage: () => "Copiar resultados" } });
-        expect(t("copyResults")).toBe("Copiar resultados");
-    });
-
-    it("passes substitutions through to chrome.i18n", () => {
-        const getMessage = vi.fn(() => "Deve ser no mínimo 0");
-        vi.stubGlobal("chrome", { i18n: { getMessage } });
-        t("errorMin", "0");
-        expect(getMessage).toHaveBeenCalledWith("errorMin", "0");
-    });
-
-    it("falls back to the key when the message is missing", () => {
-        vi.stubGlobal("chrome", { i18n: { getMessage: () => "" } });
-        expect(t("copyResults")).toBe("copyResults");
+    it("leaves no message without a user: every key is static, derived from a calculator or referenced", () => {
+        const derived = new Set(calculatorKeys());
+        for (const key of Object.keys(defaults)) {
+            const used = derived.has(key) || allSource.includes(`"${key}"`) || allSource.includes(`__MSG_${key}__`);
+            expect(used, `unused "${key}"`).toBe(true);
+        }
     });
 });

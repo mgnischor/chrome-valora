@@ -1,0 +1,553 @@
+{
+    "extName": { "message": "Valora – Máy tính kinh doanh" },
+    "extShortName": { "message": "Valora" },
+    "extDescription": {
+        "message": "Máy tính kinh doanh cho ROI, thanh khoản, hòa vốn, NPV, IRR và hơn thế nữa. Mọi thứ được tính ngay trên thiết bị của bạn."
+    },
+    "actionTitle": { "message": "Valora – máy tính kinh doanh" },
+    "commandOpen": { "message": "Mở Valora" },
+    "tagline": { "message": "Máy tính kinh doanh" },
+    "calculatorLabel": { "message": "Máy tính" },
+    "inputsLabel": { "message": "Dữ liệu nhập" },
+    "resultsLabel": { "message": "Kết quả" },
+    "exampleButton": { "message": "Ví dụ" },
+    "exampleButtonTitle": { "message": "Điền giá trị mẫu" },
+    "resetButton": { "message": "Xóa" },
+    "resetButtonTitle": { "message": "Xóa tất cả các trường" },
+    "settingsButtonTitle": { "message": "Cài đặt" },
+    "resultsEmpty": { "message": "Điền vào các trường để xem kết quả." },
+    "resultUndefined": { "message": "Không xác định" },
+    "resultUndefinedHint": {
+        "message": "Kết quả này không xác định với các giá trị này, ví dụ do chia cho 0 hoặc không có nghiệm."
+    },
+    "formulaLabel": { "message": "Công thức" },
+    "copyResults": { "message": "Sao chép kết quả" },
+    "statusCopied": { "message": "Đã sao chép kết quả." },
+    "statusCopyFailed": { "message": "Không thể sao chép vào bộ nhớ tạm." },
+    "statusSaveFailed": { "message": "Không thể lưu cài đặt của bạn." },
+    "footer": {
+        "message": "Tính ngay trên thiết bị của bạn; không có gì bạn nhập bị gửi đi đâu cả. Chỉ là ước tính, không phải tư vấn tài chính."
+    },
+    "seriesHint": {
+        "message": "Mỗi dòng một giá trị (hoặc ngăn cách bằng dấu chấm phẩy). Dùng dấu trừ cho dòng tiền ra."
+    },
+    "languageLabel": { "message": "Ngôn ngữ" },
+    "languageAuto": { "message": "Tự động (ngôn ngữ trình duyệt)" },
+    "settingsHeading": { "message": "Cài đặt" },
+    "settingsBack": { "message": "Quay lại" },
+    "currencyLabel": { "message": "Tiền tệ" },
+    "currencyNone": { "message": "Không ký hiệu" },
+    "decimalsLabel": { "message": "Số chữ số thập phân cho tỷ lệ phần trăm và các chỉ số" },
+    "rememberInputsLabel": { "message": "Nhớ những gì tôi đã nhập khi trình duyệt còn mở" },
+    "rememberInputsHint": {
+        "message": "Chỉ lưu trong bộ nhớ của trình duyệt và bị xóa khi đóng Chrome. Tắt tùy chọn này sẽ xóa ngay."
+    },
+    "errorNotNumber": { "message": "Hãy nhập một số hợp lệ." },
+    "errorNotInteger": { "message": "Hãy nhập một số nguyên." },
+    "errorMin": { "message": "Phải ít nhất là $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMinExclusive": { "message": "Phải lớn hơn $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorMax": { "message": "Phải nhiều nhất là $VALUE$.", "placeholders": { "value": { "content": "$1" } } },
+    "errorNotAllowed": { "message": "Hãy chọn một giá trị trong danh sách." },
+    "errorTooFewEntries": {
+        "message": "Hãy nhập ít nhất $COUNT$ giá trị.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorTooManyEntries": {
+        "message": "Hãy nhập nhiều nhất $COUNT$ giá trị.",
+        "placeholders": { "count": { "content": "$1" } }
+    },
+    "errorInvalidEntry": {
+        "message": "Mục $POSITION$ không phải là số hợp lệ.",
+        "placeholders": { "position": { "content": "$1" } }
+    },
+    "group_returns": { "message": "Lợi suất" },
+    "group_profitability": { "message": "Khả năng sinh lời và định giá" },
+    "group_liquidity": { "message": "Thanh khoản và khả năng thanh toán" },
+    "group_investment": { "message": "Đầu tư và tài trợ" },
+    "calc_roi_name": { "message": "Tỷ suất hoàn vốn đầu tư (ROI)" },
+    "calc_roi_desc": { "message": "Khoản đầu tư đã lãi hay lỗ bao nhiêu so với số tiền bỏ ra." },
+    "calc_roi_formula": { "message": "ROI = (Thu về − Đầu tư) ÷ Đầu tư" },
+    "field_roi_invested": { "message": "Số tiền đầu tư" },
+    "field_roi_returned": { "message": "Số tiền thu về" },
+    "out_roi_roi": { "message": "ROI" },
+    "out_roi_netProfit": { "message": "Lợi nhuận ròng" },
+    "out_roi_multiple": { "message": "Bội số thu hồi" },
+    "calc_cagr_name": { "message": "Tốc độ tăng trưởng kép hằng năm (CAGR)" },
+    "calc_cagr_desc": { "message": "Tốc độ tăng trưởng hằng năm không đổi đưa một giá trị từ đầu kỳ đến cuối kỳ." },
+    "calc_cagr_formula": { "message": "CAGR = (Cuối ÷ Đầu)^(1 ÷ Số năm) − 1" },
+    "field_cagr_startValue": { "message": "Giá trị ban đầu" },
+    "field_cagr_endValue": { "message": "Giá trị cuối kỳ" },
+    "field_cagr_years": { "message": "Số năm" },
+    "out_cagr_cagr": { "message": "CAGR" },
+    "out_cagr_totalGrowth": { "message": "Tổng tăng trưởng" },
+    "calc_roe_name": { "message": "Tỷ suất sinh lời trên vốn và tài sản (ROE, ROA)" },
+    "calc_roe_desc": { "message": "Doanh nghiệp tạo ra bao nhiêu lợi nhuận từ vốn chủ sở hữu và từ tài sản." },
+    "calc_roe_formula": { "message": "ROE = Lợi nhuận ròng ÷ Vốn chủ sở hữu · ROA = Lợi nhuận ròng ÷ Tài sản" },
+    "field_roe_netIncome": { "message": "Lợi nhuận ròng" },
+    "field_roe_equity": { "message": "Vốn chủ sở hữu" },
+    "field_roe_assets": { "message": "Tổng tài sản" },
+    "out_roe_roe": { "message": "Tỷ suất sinh lời trên vốn chủ sở hữu (ROE)" },
+    "out_roe_roa": { "message": "Tỷ suất sinh lời trên tài sản (ROA)" },
+    "out_roe_equityMultiplier": { "message": "Hệ số nhân vốn chủ sở hữu" },
+    "calc_margin_name": { "message": "Biên lợi nhuận và tỷ lệ cộng thêm (markup)" },
+    "calc_margin_desc": { "message": "Lợi nhuận tính theo giá bán (biên lợi nhuận) và theo giá vốn (markup)." },
+    "calc_margin_formula": { "message": "Biên = (Giá − Giá vốn) ÷ Giá · Markup = (Giá − Giá vốn) ÷ Giá vốn" },
+    "field_margin_cost": { "message": "Giá vốn đơn vị" },
+    "field_margin_price": { "message": "Giá bán" },
+    "out_margin_margin": { "message": "Biên lợi nhuận" },
+    "out_margin_markup": { "message": "Markup" },
+    "out_margin_profit": { "message": "Lợi nhuận mỗi đơn vị" },
+    "calc_pricing_name": { "message": "Giá cho biên lợi nhuận mục tiêu" },
+    "calc_pricing_desc": { "message": "Giá bán cho ra biên lợi nhuận mong muốn và markup cần thiết." },
+    "calc_pricing_formula": { "message": "Giá = Giá vốn ÷ (1 − Biên) · Markup = Biên ÷ (1 − Biên)" },
+    "field_pricing_cost": { "message": "Giá vốn đơn vị" },
+    "field_pricing_targetMargin": { "message": "Biên lợi nhuận mục tiêu" },
+    "out_pricing_price": { "message": "Giá bán" },
+    "out_pricing_markup": { "message": "Markup cần thiết" },
+    "out_pricing_profit": { "message": "Lợi nhuận mỗi đơn vị" },
+    "calc_breakeven_name": { "message": "Điểm hòa vốn" },
+    "calc_breakeven_desc": {
+        "message": "Cần bán bao nhiêu đơn vị để bù chi phí cố định và, nếu muốn, đạt mục tiêu lợi nhuận."
+    },
+    "calc_breakeven_formula": {
+        "message": "Số đơn vị = (Chi phí cố định + Lợi nhuận mục tiêu) ÷ (Giá − Chi phí biến đổi)"
+    },
+    "field_breakeven_fixedCosts": { "message": "Chi phí cố định" },
+    "field_breakeven_price": { "message": "Giá mỗi đơn vị" },
+    "field_breakeven_variableCost": { "message": "Chi phí biến đổi mỗi đơn vị" },
+    "field_breakeven_targetProfit": { "message": "Lợi nhuận mục tiêu" },
+    "out_breakeven_units": { "message": "Số đơn vị cần bán" },
+    "out_breakeven_revenue": { "message": "Doanh thu cần có" },
+    "out_breakeven_contributionMargin": { "message": "Số dư đảm phí mỗi đơn vị" },
+    "out_breakeven_contributionMarginRatio": { "message": "Tỷ lệ số dư đảm phí" },
+    "calc_liquidity_name": { "message": "Các chỉ số thanh khoản" },
+    "calc_liquidity_desc": {
+        "message": "Doanh nghiệp có thể trả các khoản nợ ngắn hạn bằng tài sản ngắn hạn hay không."
+    },
+    "calc_liquidity_formula": {
+        "message": "Hiện hành = Tài sản ngắn hạn ÷ Nợ ngắn hạn · Nhanh = (Tiền + Phải thu) ÷ Nợ ngắn hạn · Tiền = Tiền ÷ Nợ ngắn hạn"
+    },
+    "field_liquidity_cash": { "message": "Tiền và các khoản tương đương tiền" },
+    "field_liquidity_receivables": { "message": "Các khoản phải thu" },
+    "field_liquidity_inventory": { "message": "Hàng tồn kho" },
+    "field_liquidity_otherCurrentAssets": { "message": "Tài sản ngắn hạn khác" },
+    "field_liquidity_currentLiabilities": { "message": "Nợ ngắn hạn" },
+    "out_liquidity_currentRatio": { "message": "Hệ số thanh toán hiện hành" },
+    "out_liquidity_quickRatio": { "message": "Hệ số thanh toán nhanh" },
+    "out_liquidity_cashRatio": { "message": "Hệ số thanh toán tiền mặt" },
+    "out_liquidity_workingCapital": { "message": "Vốn lưu động" },
+    "calc_cashCycle_name": { "message": "Chu kỳ chuyển đổi tiền mặt" },
+    "calc_cashCycle_desc": { "message": "Số ngày tiền bị chôn giữa lúc trả nhà cung cấp và lúc thu tiền khách hàng." },
+    "calc_cashCycle_formula": { "message": "CCC = Số ngày tồn kho + Số ngày thu tiền − Số ngày trả tiền" },
+    "field_cashCycle_revenue": { "message": "Doanh thu trong kỳ" },
+    "field_cashCycle_cogs": { "message": "Giá vốn hàng bán" },
+    "field_cashCycle_inventory": { "message": "Hàng tồn kho bình quân" },
+    "field_cashCycle_receivables": { "message": "Phải thu bình quân" },
+    "field_cashCycle_payables": { "message": "Phải trả bình quân" },
+    "field_cashCycle_periodDays": { "message": "Số ngày trong kỳ" },
+    "out_cashCycle_cashConversionCycle": { "message": "Chu kỳ chuyển đổi tiền mặt" },
+    "out_cashCycle_daysInventory": { "message": "Số ngày tồn kho" },
+    "out_cashCycle_daysReceivables": { "message": "Số ngày thu tiền" },
+    "out_cashCycle_daysPayables": { "message": "Số ngày trả tiền" },
+    "out_cashCycle_inventoryTurnover": { "message": "Vòng quay hàng tồn kho" },
+    "choice_cashCycle_periodDays_365": { "message": "365 ngày (năm)" },
+    "choice_cashCycle_periodDays_360": { "message": "360 ngày (năm thương mại)" },
+    "choice_cashCycle_periodDays_90": { "message": "90 ngày (quý)" },
+    "choice_cashCycle_periodDays_30": { "message": "30 ngày (tháng)" },
+    "calc_leverage_name": { "message": "Đòn bẩy và khả năng trả lãi" },
+    "calc_leverage_desc": {
+        "message": "Doanh nghiệp phụ thuộc vào nợ đến đâu và lợi nhuận bù lãi vay thoải mái ra sao."
+    },
+    "calc_leverage_formula": {
+        "message": "Nợ/Vốn CSH = Nợ ÷ Vốn CSH · Nợ/Vốn = Nợ ÷ (Nợ + Vốn CSH) · Khả năng trả lãi = EBIT ÷ Lãi vay"
+    },
+    "field_leverage_totalDebt": { "message": "Tổng nợ" },
+    "field_leverage_equity": { "message": "Vốn chủ sở hữu" },
+    "field_leverage_ebit": { "message": "EBIT (lợi nhuận hoạt động)" },
+    "field_leverage_interestExpense": { "message": "Chi phí lãi vay" },
+    "out_leverage_debtToEquity": { "message": "Nợ trên vốn chủ sở hữu" },
+    "out_leverage_debtToCapital": { "message": "Nợ trên tổng vốn" },
+    "out_leverage_interestCoverage": { "message": "Khả năng trả lãi" },
+    "calc_investment_name": { "message": "Phân tích đầu tư (NPV, IRR, hoàn vốn)" },
+    "calc_investment_desc": {
+        "message": "Dự án có đáng làm không? Chiết khấu các dòng tiền tương lai và cho biết khi nào hoàn vốn."
+    },
+    "calc_investment_formula": { "message": "NPV = Σ DTₜ ÷ (1 + r)ᵗ − Vốn đầu tư · IRR: tỷ suất để NPV = 0" },
+    "field_investment_rate": { "message": "Tỷ suất chiết khấu (mỗi kỳ)" },
+    "field_investment_initialInvestment": { "message": "Vốn đầu tư ban đầu" },
+    "field_investment_cashFlows": { "message": "Dòng tiền (kỳ 1, 2, 3…)" },
+    "out_investment_npv": { "message": "Giá trị hiện tại ròng (NPV)" },
+    "out_investment_irr": { "message": "Tỷ suất hoàn vốn nội bộ (IRR)" },
+    "out_investment_profitabilityIndex": { "message": "Chỉ số sinh lời" },
+    "out_investment_payback": { "message": "Thời gian hoàn vốn (kỳ)" },
+    "out_investment_discountedPayback": { "message": "Thời gian hoàn vốn có chiết khấu (kỳ)" },
+    "calc_futureValue_name": { "message": "Giá trị tương lai (lãi kép)" },
+    "calc_futureValue_desc": {
+        "message": "Một khoản tiền cùng các khoản góp đều đặn sẽ tăng lên bao nhiêu nhờ lãi kép."
+    },
+    "calc_futureValue_formula": {
+        "message": "FV = PV × (1 + i)ⁿ + Khoản góp × ((1 + i)ⁿ − 1) ÷ i, với i = lãi suất năm ÷ số kỳ mỗi năm"
+    },
+    "field_futureValue_presentValue": { "message": "Số tiền ban đầu" },
+    "field_futureValue_contribution": { "message": "Khoản góp mỗi kỳ" },
+    "field_futureValue_annualRate": { "message": "Lãi suất hằng năm" },
+    "field_futureValue_years": { "message": "Số năm" },
+    "field_futureValue_frequency": { "message": "Ghép lãi và khoản góp" },
+    "out_futureValue_futureValue": { "message": "Giá trị tương lai" },
+    "out_futureValue_totalContributions": { "message": "Tổng số đã góp" },
+    "out_futureValue_interestEarned": { "message": "Tiền lãi nhận được" },
+    "choice_futureValue_frequency_12": { "message": "Hằng tháng" },
+    "choice_futureValue_frequency_1": { "message": "Hằng năm" },
+    "choice_futureValue_frequency_2": { "message": "Hai lần một năm" },
+    "choice_futureValue_frequency_4": { "message": "Hằng quý" },
+    "choice_futureValue_frequency_52": { "message": "Hằng tuần" },
+    "choice_futureValue_frequency_365": { "message": "Hằng ngày" },
+    "calc_loan_name": { "message": "Khoản trả nợ vay" },
+    "calc_loan_desc": { "message": "Khoản trả cố định hằng tháng của một khoản vay và tổng tiền lãi phải trả." },
+    "calc_loan_formula": { "message": "Khoản trả = Gốc × i ÷ (1 − (1 + i)⁻ⁿ), với i = lãi suất năm ÷ 12" },
+    "field_loan_principal": { "message": "Số tiền vay" },
+    "field_loan_annualRate": { "message": "Lãi suất hằng năm" },
+    "field_loan_termMonths": { "message": "Kỳ hạn (tháng)" },
+    "out_loan_monthlyPayment": { "message": "Khoản trả hằng tháng" },
+    "out_loan_totalPaid": { "message": "Tổng đã trả" },
+    "out_loan_totalInterest": { "message": "Tổng tiền lãi" },
+    "marketOff": {
+        "message": "Lãi suất điều hành của Brazil (Selic) và tỷ giá đô la có thể được điền từ Ngân hàng Trung ương Brazil."
+    },
+    "marketEnable": { "message": "Lấy tỷ lệ" },
+    "marketUse": { "message": "Dùng tỷ lệ" },
+    "marketRetry": { "message": "Thử lại" },
+    "marketLoading": { "message": "Đang lấy tỷ lệ…" },
+    "marketFailed": { "message": "Không thể kết nối với Ngân hàng Trung ương. Hãy kiểm tra kết nối của bạn." },
+    "marketRates": {
+        "message": "Selic $SELIC$ · Đô la $USD$ · $DATE$",
+        "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
+    },
+    "statusMarketPermissionDenied": { "message": "Quyền bị từ chối nên không lấy được tỷ lệ nào." },
+    "liveRatesLabel": {
+        "message": "Lấy lãi suất điều hành của Brazil (Selic) và tỷ giá đô la từ Ngân hàng Trung ương Brazil"
+    },
+    "liveRatesHint": {
+        "message": "Mặc định tắt. Khi bật, Chrome sẽ xin quyền kết nối tới api.bcb.gov.br, nơi không nhận bất kỳ thông tin nào về bạn. Tắt đi sẽ thu hồi quyền."
+    },
+    "group_markets": { "message": "Lãi suất điều hành và đô la (Brazil)" },
+    "calc_selicYield_name": { "message": "Thu nhập cố định gắn với lãi suất điều hành (Selic, CDB)" },
+    "calc_selicYield_desc": {
+        "message": "Một khoản đầu tư trả một phần lãi suất điều hành của ngân hàng trung ương (ở Brazil là Selic, ở Việt Nam là lãi suất tái cấp vốn của NHNN) sinh lời bao nhiêu sau thuế thu nhập."
+    },
+    "calc_selicYield_formula": {
+        "message": "Lợi nhuận ròng = Số tiền × (tăng trưởng − 1) × (1 − thuế thu nhập); tăng trưởng tích lũy hằng ngày trên 252 ngày làm việc mỗi năm"
+    },
+    "field_selicYield_amount": { "message": "Số tiền đầu tư" },
+    "field_selicYield_months": { "message": "Kỳ hạn (tháng)" },
+    "field_selicYield_selic": { "message": "Lãi suất điều hành (Selic, mỗi năm)" },
+    "field_selicYield_percentOfRate": { "message": "Tỷ lệ lãi suất điều hành được trả" },
+    "field_selicYield_taxTreatment": { "message": "Thuế thu nhập" },
+    "out_selicYield_netFinal": { "message": "Số tiền ròng cuối kỳ" },
+    "out_selicYield_netProfit": { "message": "Lợi nhuận ròng" },
+    "out_selicYield_incomeTax": { "message": "Thuế thu nhập" },
+    "out_selicYield_taxRate": { "message": "Thuế suất thuế thu nhập" },
+    "out_selicYield_netAnnualRate": { "message": "Lãi suất ròng mỗi năm" },
+    "choice_selicYield_taxTreatment_1": { "message": "Biểu thuế giảm dần (CDB, trái phiếu chính phủ)" },
+    "choice_selicYield_taxTreatment_0": { "message": "Miễn thuế (LCI, LCA)" },
+    "calc_savings_name": { "message": "Tài khoản tiết kiệm (poupança) và đầu tư gắn với lãi suất điều hành" },
+    "calc_savings_desc": {
+        "message": "So sánh tài khoản tiết kiệm (poupança) với sản phẩm thu nhập cố định chịu thuế và tìm tỷ lệ lãi suất điều hành để hai bên bằng nhau."
+    },
+    "calc_savings_formula": {
+        "message": "Tiết kiệm: 0,5% mỗi tháng nếu Selic trên 8,5%, nếu không thì 70% Selic. Thu nhập cố định chịu thuế thu nhập giảm dần"
+    },
+    "field_savings_amount": { "message": "Số tiền đầu tư" },
+    "field_savings_months": { "message": "Kỳ hạn (tháng)" },
+    "field_savings_selic": { "message": "Lãi suất điều hành (Selic, mỗi năm)" },
+    "field_savings_percentOfRate": { "message": "Tỷ lệ lãi suất điều hành được trả (thu nhập cố định)" },
+    "out_savings_advantage": { "message": "Lợi thế của thu nhập cố định" },
+    "out_savings_savingsFinal": { "message": "Tài khoản tiết kiệm cuối kỳ" },
+    "out_savings_fixedIncomeFinal": { "message": "Thu nhập cố định cuối kỳ (ròng)" },
+    "out_savings_breakEvenPercent": { "message": "Tỷ lệ lãi suất để hòa" },
+    "calc_dollarConversion_name": { "message": "Mua đô la (chênh lệch và thuế IOF)" },
+    "calc_dollarConversion_desc": {
+        "message": "Số đô la mua được bằng reais sau khi tính chênh lệch của ngân hàng và thuế ngoại hối IOF."
+    },
+    "calc_dollarConversion_formula": { "message": "Đô la = Reais ÷ (Tỷ giá × (1 + Chênh lệch) × (1 + IOF))" },
+    "field_dollarConversion_amount": { "message": "Số tiền bằng reais" },
+    "field_dollarConversion_rate": { "message": "Tỷ giá đô la (R$ cho mỗi US$)" },
+    "field_dollarConversion_spread": { "message": "Chênh lệch của ngân hàng" },
+    "field_dollarConversion_iof": { "message": "IOF (thuế ngoại hối của Brazil)" },
+    "out_dollarConversion_usdReceived": { "message": "Số đô la nhận được" },
+    "out_dollarConversion_effectiveRate": { "message": "Tỷ giá thực tế đã trả" },
+    "out_dollarConversion_cost": { "message": "Chi phí chênh lệch và IOF" },
+    "out_dollarConversion_costPercent": { "message": "Chi phí tính theo tỷ lệ số tiền" },
+    "calc_dollarVsSelic_name": { "message": "Đô la so với lãi suất điều hành (Selic)" },
+    "calc_dollarVsSelic_desc": {
+        "message": "Đô la phải ở mức nào vào cuối kỳ để giữ đô la hơn được lãi suất điều hành (Selic)? So sánh trước thuế thu nhập."
+    },
+    "calc_dollarVsSelic_formula": {
+        "message": "Đô la hòa vốn = kết quả lãi suất điều hành ÷ số đô la nắm giữ cuối kỳ"
+    },
+    "field_dollarVsSelic_amount": { "message": "Số tiền bằng reais" },
+    "field_dollarVsSelic_months": { "message": "Kỳ hạn (tháng)" },
+    "field_dollarVsSelic_spot": { "message": "Đô la hôm nay (R$ cho mỗi US$)" },
+    "field_dollarVsSelic_expected": { "message": "Đô la kỳ vọng cuối kỳ" },
+    "field_dollarVsSelic_selic": { "message": "Lãi suất điều hành (Selic, mỗi năm)" },
+    "field_dollarVsSelic_usdYield": { "message": "Lợi suất bằng đô la (mỗi năm, tính bằng US$)" },
+    "out_dollarVsSelic_breakEvenRate": { "message": "Đô la hòa vốn" },
+    "out_dollarVsSelic_requiredChange": { "message": "Mức tăng đô la cần thiết" },
+    "out_dollarVsSelic_selicFinal": { "message": "Lãi suất điều hành cuối kỳ (trước thuế)" },
+    "out_dollarVsSelic_dollarFinal": { "message": "Đô la cuối kỳ (trước thuế)" },
+    "out_dollarVsSelic_difference": { "message": "Đô la trừ lãi suất điều hành" },
+    "ratingGood": { "message": "Tốt" },
+    "ratingNeutral": { "message": "Trung lập" },
+    "ratingBad": { "message": "Xấu" },
+    "ratingLegend": { "message": "Xanh lá: tốt · Bình thường: trung lập · Đỏ: xấu" },
+    "ratingRuleHigher": {
+        "message": "Dưới $BAD$: xấu · Từ $BAD$ đến $GOOD$: trung lập · Trên $GOOD$: tốt",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleLower": {
+        "message": "Trên $BAD$: xấu · Từ $GOOD$ đến $BAD$: trung lập · Dưới $GOOD$: tốt",
+        "placeholders": { "bad": { "content": "$1" }, "good": { "content": "$2" } }
+    },
+    "ratingRuleSplitHigher": {
+        "message": "Dưới $VALUE$: xấu · Bằng $VALUE$: trung lập · Trên $VALUE$: tốt",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingRuleSplitLower": {
+        "message": "Trên $VALUE$: xấu · Bằng $VALUE$: trung lập · Dưới $VALUE$: tốt",
+        "placeholders": { "value": { "content": "$1" } }
+    },
+    "ratingDisclaimer": { "message": "Quy tắc kinh nghiệm: mức lành mạnh khác nhau tùy ngành." },
+    "group_accounting": { "message": "Phân tích kế toán" },
+    "calc_incomeStatement_name": { "message": "Phân tích báo cáo kết quả kinh doanh (biên lợi nhuận)" },
+    "calc_incomeStatement_desc": {
+        "message": "Đi từ doanh thu đến lợi nhuận ròng và cho thấy biên lợi nhuận ở từng bước."
+    },
+    "calc_incomeStatement_formula": {
+        "message": "EBITDA = Doanh thu − Giá vốn − Chi phí hoạt động · EBIT = EBITDA − Khấu hao · Ròng = (EBIT − Lãi vay) × (1 − thuế)"
+    },
+    "field_incomeStatement_revenue": { "message": "Doanh thu thuần" },
+    "field_incomeStatement_cogs": { "message": "Giá vốn hàng bán" },
+    "field_incomeStatement_operatingExpenses": { "message": "Chi phí hoạt động" },
+    "field_incomeStatement_depreciation": { "message": "Khấu hao và phân bổ" },
+    "field_incomeStatement_interestExpense": { "message": "Chi phí lãi vay" },
+    "field_incomeStatement_taxRate": { "message": "Thuế suất thuế thu nhập" },
+    "out_incomeStatement_netIncome": { "message": "Lợi nhuận ròng" },
+    "out_incomeStatement_grossMargin": { "message": "Biên lợi nhuận gộp" },
+    "out_incomeStatement_ebitdaMargin": { "message": "Biên EBITDA" },
+    "out_incomeStatement_operatingMargin": { "message": "Biên lợi nhuận hoạt động (EBIT)" },
+    "out_incomeStatement_netMargin": { "message": "Biên lợi nhuận ròng" },
+    "calc_dupont_name": { "message": "Phân tích DuPont (3 bước)" },
+    "calc_dupont_desc": { "message": "Tách ROE thành biên lợi nhuận, vòng quay tài sản và đòn bẩy." },
+    "calc_dupont_formula": { "message": "ROE = Biên lợi nhuận ròng × Vòng quay tài sản × Hệ số nhân vốn CSH" },
+    "field_dupont_netIncome": { "message": "Lợi nhuận ròng" },
+    "field_dupont_revenue": { "message": "Doanh thu thuần" },
+    "field_dupont_assets": { "message": "Tổng tài sản" },
+    "field_dupont_equity": { "message": "Vốn chủ sở hữu" },
+    "out_dupont_roe": { "message": "Tỷ suất sinh lời trên vốn chủ sở hữu (ROE)" },
+    "out_dupont_netMargin": { "message": "Biên lợi nhuận ròng" },
+    "out_dupont_assetTurnover": { "message": "Vòng quay tài sản" },
+    "out_dupont_equityMultiplier": { "message": "Hệ số nhân vốn chủ sở hữu" },
+    "out_dupont_roa": { "message": "Tỷ suất sinh lời trên tài sản (ROA)" },
+    "calc_dupont5_name": { "message": "Phân tích DuPont (5 bước)" },
+    "calc_dupont5_desc": {
+        "message": "Tách ROE thành gánh nặng thuế, gánh nặng lãi vay, biên lợi nhuận hoạt động, vòng quay tài sản và đòn bẩy."
+    },
+    "calc_dupont5_formula": {
+        "message": "ROE = (LNR ÷ EBT) × (EBT ÷ EBIT) × (EBIT ÷ Doanh thu) × (Doanh thu ÷ Tài sản) × (Tài sản ÷ Vốn CSH)"
+    },
+    "field_dupont5_netIncome": { "message": "Lợi nhuận ròng (LNR)" },
+    "field_dupont5_pretaxIncome": { "message": "Lợi nhuận trước thuế (EBT)" },
+    "field_dupont5_ebit": { "message": "EBIT (lợi nhuận hoạt động)" },
+    "field_dupont5_revenue": { "message": "Doanh thu thuần" },
+    "field_dupont5_assets": { "message": "Tổng tài sản" },
+    "field_dupont5_equity": { "message": "Vốn chủ sở hữu" },
+    "out_dupont5_roe": { "message": "Tỷ suất sinh lời trên vốn chủ sở hữu (ROE)" },
+    "out_dupont5_taxBurden": { "message": "Gánh nặng thuế (LNR ÷ EBT)" },
+    "out_dupont5_interestBurden": { "message": "Gánh nặng lãi vay (EBT ÷ EBIT)" },
+    "out_dupont5_operatingMargin": { "message": "Biên lợi nhuận hoạt động (EBIT)" },
+    "out_dupont5_assetTurnover": { "message": "Vòng quay tài sản" },
+    "out_dupont5_equityMultiplier": { "message": "Hệ số nhân vốn chủ sở hữu" },
+    "calc_fleuriet_name": { "message": "Mô hình Fleuriet (vốn lưu động động)" },
+    "calc_fleuriet_desc": {
+        "message": "Phân loại cơ cấu tài chính theo vốn lưu động (CDG), nhu cầu vốn lưu động (NCG) và số dư ngân quỹ (T)."
+    },
+    "calc_fleuriet_formula": {
+        "message": "CDG = Nguồn vốn dài hạn − Tài sản dài hạn · NCG = Tài sản ngắn hạn hoạt động − Nợ ngắn hạn hoạt động · T = CDG − NCG"
+    },
+    "field_fleuriet_operatingCurrentAssets": { "message": "Tài sản ngắn hạn hoạt động" },
+    "field_fleuriet_operatingCurrentLiabilities": { "message": "Nợ ngắn hạn hoạt động" },
+    "field_fleuriet_nonCurrentAssets": { "message": "Tài sản dài hạn" },
+    "field_fleuriet_permanentFunds": { "message": "Nguồn vốn dài hạn" },
+    "out_fleuriet_structureType": { "message": "Cơ cấu tài chính" },
+    "out_fleuriet_workingCapital": { "message": "Vốn lưu động (CDG)" },
+    "out_fleuriet_workingCapitalNeed": { "message": "Nhu cầu vốn lưu động (NCG)" },
+    "out_fleuriet_treasury": { "message": "Số dư ngân quỹ (T)" },
+    "cat_fleuriet_structureType_1": { "message": "Loại I – Xuất sắc" },
+    "cat_fleuriet_structureType_2": { "message": "Loại II – Vững chắc" },
+    "cat_fleuriet_structureType_3": { "message": "Loại III – Chưa đạt" },
+    "cat_fleuriet_structureType_4": { "message": "Loại IV – Xấu" },
+    "cat_fleuriet_structureType_5": { "message": "Loại V – Rất xấu" },
+    "cat_fleuriet_structureType_6": { "message": "Loại VI – Rủi ro cao" },
+    "calc_altman_name": { "message": "Điểm Z của Altman (rủi ro mất khả năng thanh toán)" },
+    "calc_altman_desc": {
+        "message": "Chấm điểm rủi ro khó khăn tài chính từ năm tỷ số của bảng cân đối và báo cáo kết quả, theo hai phiên bản."
+    },
+    "calc_altman_formula": {
+        "message": "Z = 1,2·X1 + 1,4·X2 + 3,3·X3 + 0,6·X4 + 1,0·X5 · Z″ = 3,25 + 6,56·X1 + 3,26·X2 + 6,72·X3 + 1,05·X4"
+    },
+    "field_altman_workingCapital": { "message": "Vốn lưu động" },
+    "field_altman_retainedEarnings": { "message": "Lợi nhuận giữ lại" },
+    "field_altman_ebit": { "message": "EBIT" },
+    "field_altman_equityValue": { "message": "Giá trị vốn chủ sở hữu" },
+    "field_altman_sales": { "message": "Doanh số" },
+    "field_altman_totalAssets": { "message": "Tổng tài sản" },
+    "field_altman_totalLiabilities": { "message": "Tổng nợ phải trả" },
+    "out_altman_zScore": { "message": "Điểm Z (bản gốc)" },
+    "out_altman_zZone": { "message": "Vùng (bản gốc)" },
+    "out_altman_emergingScore": { "message": "Điểm Z″ (thị trường mới nổi)" },
+    "out_altman_emergingZone": { "message": "Vùng (thị trường mới nổi)" },
+    "cat_altman_zZone_0": { "message": "Vùng nguy hiểm" },
+    "cat_altman_zZone_1": { "message": "Vùng xám" },
+    "cat_altman_zZone_2": { "message": "Vùng an toàn" },
+    "cat_altman_emergingZone_0": { "message": "Vùng nguy hiểm" },
+    "cat_altman_emergingZone_1": { "message": "Vùng xám" },
+    "cat_altman_emergingZone_2": { "message": "Vùng an toàn" },
+    "calc_leverageDegrees_name": { "message": "Độ nghiêng đòn bẩy hoạt động và tài chính" },
+    "calc_leverageDegrees_desc": {
+        "message": "Doanh số thay đổi làm lợi nhuận hoạt động và lợi nhuận sau lãi vay biến động bao nhiêu."
+    },
+    "calc_leverageDegrees_formula": {
+        "message": "DOL = Số dư đảm phí ÷ EBIT · DFL = EBIT ÷ (EBIT − Lãi vay) · DTL = DOL × DFL"
+    },
+    "field_leverageDegrees_revenue": { "message": "Doanh thu thuần" },
+    "field_leverageDegrees_variableCosts": { "message": "Chi phí biến đổi" },
+    "field_leverageDegrees_fixedCosts": { "message": "Chi phí cố định" },
+    "field_leverageDegrees_interestExpense": { "message": "Chi phí lãi vay" },
+    "out_leverageDegrees_operatingLeverage": { "message": "Đòn bẩy hoạt động (DOL)" },
+    "out_leverageDegrees_financialLeverage": { "message": "Đòn bẩy tài chính (DFL)" },
+    "out_leverageDegrees_combinedLeverage": { "message": "Đòn bẩy tổng hợp (DTL)" },
+    "out_leverageDegrees_ebit": { "message": "EBIT (lợi nhuận hoạt động)" },
+    "calc_depreciation_name": { "message": "Bảng khấu hao" },
+    "calc_depreciation_desc": {
+        "message": "Chi phí khấu hao, khấu hao lũy kế và giá trị sổ sách của tài sản trong một năm, theo ba phương pháp."
+    },
+    "calc_depreciation_formula": {
+        "message": "Đường thẳng = (Nguyên giá − Giá trị thanh lý) ÷ Thời gian · Số dư giảm dần = Giá trị sổ sách × 2 ÷ Thời gian · Tổng số năm = (Nguyên giá − Thanh lý) × Thời gian còn lại ÷ Σ năm"
+    },
+    "field_depreciation_cost": { "message": "Nguyên giá tài sản" },
+    "field_depreciation_salvage": { "message": "Giá trị thanh lý" },
+    "field_depreciation_lifeYears": { "message": "Thời gian sử dụng hữu ích (năm)" },
+    "field_depreciation_method": { "message": "Phương pháp" },
+    "field_depreciation_year": { "message": "Năm cần xem" },
+    "out_depreciation_charge": { "message": "Khấu hao trong năm" },
+    "out_depreciation_accumulated": { "message": "Khấu hao lũy kế" },
+    "out_depreciation_bookValue": { "message": "Giá trị sổ sách" },
+    "choice_depreciation_method_1": { "message": "Đường thẳng" },
+    "choice_depreciation_method_2": { "message": "Số dư giảm dần kép" },
+    "choice_depreciation_method_3": { "message": "Tổng số các chữ số của năm" },
+    "calc_wacc_name": { "message": "WACC và chi phí vốn chủ sở hữu (CAPM)" },
+    "calc_wacc_desc": {
+        "message": "Chi phí tài trợ bình quân của doanh nghiệp, từ chi phí vốn chủ sở hữu (CAPM) và chi phí nợ sau thuế."
+    },
+    "calc_wacc_formula": {
+        "message": "Ke = Rf + β × Phần bù rủi ro · WACC = E ÷ (D + E) × Ke + D ÷ (D + E) × Kd × (1 − thuế)"
+    },
+    "field_wacc_equityValue": { "message": "Giá trị vốn chủ sở hữu" },
+    "field_wacc_debtValue": { "message": "Giá trị nợ" },
+    "field_wacc_riskFree": { "message": "Lãi suất phi rủi ro" },
+    "field_wacc_beta": { "message": "Beta" },
+    "field_wacc_marketPremium": { "message": "Phần bù rủi ro thị trường" },
+    "field_wacc_costOfDebt": { "message": "Chi phí nợ (trước thuế)" },
+    "field_wacc_taxRate": { "message": "Thuế suất thuế thu nhập" },
+    "out_wacc_wacc": { "message": "WACC" },
+    "out_wacc_costOfEquity": { "message": "Chi phí vốn chủ sở hữu (Ke)" },
+    "out_wacc_afterTaxCostOfDebt": { "message": "Chi phí nợ sau thuế (Kd)" },
+    "out_wacc_equityWeight": { "message": "Tỷ trọng vốn chủ sở hữu" },
+    "out_wacc_debtWeight": { "message": "Tỷ trọng nợ" },
+    "calc_eva_name": { "message": "Giá trị kinh tế gia tăng (EVA)" },
+    "calc_eva_desc": { "message": "Hoạt động có kiếm được nhiều hơn chi phí của vốn đã đầu tư vào đó hay không." },
+    "calc_eva_formula": {
+        "message": "EVA = NOPAT − WACC × Vốn đầu tư · NOPAT = EBIT × (1 − thuế) · ROIC = NOPAT ÷ Vốn đầu tư"
+    },
+    "field_eva_ebit": { "message": "EBIT (lợi nhuận hoạt động)" },
+    "field_eva_taxRate": { "message": "Thuế suất thuế thu nhập" },
+    "field_eva_investedCapital": { "message": "Vốn đầu tư" },
+    "field_eva_wacc": { "message": "Chi phí vốn (WACC)" },
+    "out_eva_eva": { "message": "Giá trị kinh tế gia tăng (EVA)" },
+    "out_eva_nopat": { "message": "NOPAT" },
+    "out_eva_roic": { "message": "Tỷ suất sinh lời trên vốn đầu tư (ROIC)" },
+    "out_eva_spread": { "message": "Chênh lệch (ROIC − WACC)" },
+    "out_eva_capitalCharge": { "message": "Chi phí sử dụng vốn" },
+    "calc_freeCashFlow_name": { "message": "Dòng tiền tự do (FCFF và FCFE)" },
+    "calc_freeCashFlow_desc": {
+        "message": "Tiền còn lại sau hoạt động và đầu tư, cho mọi nhà cung cấp vốn (FCFF) và cho cổ đông (FCFE)."
+    },
+    "calc_freeCashFlow_formula": {
+        "message": "FCFF = EBIT × (1 − thuế) + Khấu hao − CapEx − ΔVLĐ · FCFE = FCFF − Lãi vay × (1 − thuế) + Vay ròng"
+    },
+    "field_freeCashFlow_ebit": { "message": "EBIT (lợi nhuận hoạt động)" },
+    "field_freeCashFlow_taxRate": { "message": "Thuế suất thuế thu nhập" },
+    "field_freeCashFlow_depreciation": { "message": "Khấu hao và phân bổ" },
+    "field_freeCashFlow_capex": { "message": "Chi đầu tư vốn (CapEx)" },
+    "field_freeCashFlow_changeInWorkingCapital": { "message": "Tăng vốn lưu động" },
+    "field_freeCashFlow_interestExpense": { "message": "Chi phí lãi vay" },
+    "field_freeCashFlow_netBorrowing": { "message": "Vay ròng" },
+    "out_freeCashFlow_fcff": { "message": "Dòng tiền tự do của doanh nghiệp (FCFF)" },
+    "out_freeCashFlow_fcfe": { "message": "Dòng tiền tự do của cổ đông (FCFE)" },
+    "out_freeCashFlow_nopat": { "message": "NOPAT" },
+    "calc_bond_name": { "message": "Giá và kỳ hạn bình quân (duration) của trái phiếu" },
+    "calc_bond_desc": {
+        "message": "Giá của trái phiếu trả lãi coupon, mức phụ trội hoặc chiết khấu và độ nhạy với lợi suất."
+    },
+    "calc_bond_formula": {
+        "message": "Giá = Σ Coupon ÷ (1 + y)ᵗ + Mệnh giá ÷ (1 + y)ⁿ · Duration điều chỉnh = Macaulay ÷ (1 + y)"
+    },
+    "field_bond_faceValue": { "message": "Mệnh giá" },
+    "field_bond_couponRate": { "message": "Lãi suất coupon (mỗi năm)" },
+    "field_bond_yieldToMaturity": { "message": "Lợi suất đến khi đáo hạn (mỗi năm)" },
+    "field_bond_years": { "message": "Số năm đến khi đáo hạn" },
+    "field_bond_frequency": { "message": "Số coupon mỗi năm" },
+    "out_bond_price": { "message": "Giá trái phiếu" },
+    "out_bond_premium": { "message": "Phụ trội (+) hoặc chiết khấu (−)" },
+    "out_bond_currentYield": { "message": "Lợi suất hiện hành" },
+    "out_bond_macaulayDuration": { "message": "Duration Macaulay (năm)" },
+    "out_bond_modifiedDuration": { "message": "Duration điều chỉnh (năm)" },
+    "choice_bond_frequency_2": { "message": "Nửa năm một lần" },
+    "choice_bond_frequency_1": { "message": "Hằng năm" },
+    "choice_bond_frequency_4": { "message": "Hằng quý" },
+    "choice_bond_frequency_12": { "message": "Hằng tháng" },
+    "calc_rates_name": { "message": "Quy đổi lãi suất và lãi suất thực" },
+    "calc_rates_desc": {
+        "message": "Chuyển lãi suất danh nghĩa thành lãi suất thực tế, hằng tháng và hằng ngày, rồi trừ lạm phát để ra lãi suất thực."
+    },
+    "calc_rates_formula": {
+        "message": "Thực tế = (1 + danh nghĩa ÷ m)ᵐ − 1 · Tương đương = (1 + thực tế)^(1 ÷ n) − 1 · Thực = (1 + thực tế) ÷ (1 + lạm phát) − 1"
+    },
+    "field_rates_nominalRate": { "message": "Lãi suất danh nghĩa (mỗi năm)" },
+    "field_rates_compounding": { "message": "Ghép lãi" },
+    "field_rates_inflation": { "message": "Lạm phát (mỗi năm)" },
+    "out_rates_effectiveAnnual": { "message": "Lãi suất thực tế hằng năm" },
+    "out_rates_monthlyEquivalent": { "message": "Lãi suất tháng tương đương" },
+    "out_rates_dailyEquivalent": { "message": "Lãi suất ngày tương đương (252 ngày)" },
+    "out_rates_realRate": { "message": "Lãi suất thực (trên lạm phát)" },
+    "choice_rates_compounding_12": { "message": "Hằng tháng" },
+    "choice_rates_compounding_1": { "message": "Hằng năm" },
+    "choice_rates_compounding_2": { "message": "Hai lần một năm" },
+    "choice_rates_compounding_4": { "message": "Hằng quý" },
+    "choice_rates_compounding_365": { "message": "Hằng ngày" },
+    "calc_amortization_name": { "message": "SAC và Price (hoàn trả khoản vay)" },
+    "calc_amortization_desc": {
+        "message": "So sánh hai hệ thống hoàn trả: Price trả đều từng kỳ, SAC trả cùng một khoản gốc mỗi tháng."
+    },
+    "calc_amortization_formula": {
+        "message": "Price = P × i ÷ (1 − (1 + i)⁻ⁿ) · SAC = P ÷ n + dư nợ × i, với i = lãi suất năm ÷ 12"
+    },
+    "field_amortization_principal": { "message": "Số tiền vay" },
+    "field_amortization_annualRate": { "message": "Lãi suất hằng năm" },
+    "field_amortization_termMonths": { "message": "Kỳ hạn (tháng)" },
+    "out_amortization_pricePayment": { "message": "Price: khoản trả hằng tháng" },
+    "out_amortization_priceTotalInterest": { "message": "Price: tổng tiền lãi" },
+    "out_amortization_sacFirstPayment": { "message": "SAC: khoản trả đầu tiên" },
+    "out_amortization_sacLastPayment": { "message": "SAC: khoản trả cuối cùng" },
+    "out_amortization_sacTotalInterest": { "message": "SAC: tổng tiền lãi" }
+}

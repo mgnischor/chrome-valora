@@ -37,6 +37,33 @@ export interface FormatOptions {
 /** Digits kept when a stored value is turned back into text for an input field. */
 const INPUT_DIGITS = 10;
 
+/** The Arabic decimal separator (U+066B), which Arabic locales use when they write Arabic-Indic digits. */
+const ARABIC_DECIMAL_SEPARATOR = String.fromCharCode(0x066b);
+
+/**
+ * The invisible marks (LRM, RLM, ALM) that Arabic, Persian and Urdu number formats add. They would force a right-to-left
+ * base direction on text such as `11,134.38 R$` and mirror its Latin currency symbol, so results drop them and let the
+ * browser pick the direction from the text itself.
+ */
+const DIRECTION_MARKS = new RegExp(`[${String.fromCharCode(0x200e, 0x200f, 0x061c)}]`, "g");
+
+/**
+ * Builds a number formatter that writes Latin digits whatever the language, so that numbers match the rest of the
+ * interface and can be read back by the parser. Decimal and thousands marks still follow the language. When the
+ * runtime does not know the language, English is used.
+ *
+ * @param tag - A BCP 47 language tag such as `pt-BR`.
+ * @param options - Formatting options.
+ * @returns A formatter.
+ */
+export function numberFormat(tag: string, options: Intl.NumberFormatOptions = {}): Intl.NumberFormat {
+    try {
+        return new Intl.NumberFormat(tag, { numberingSystem: "latn", ...options });
+    } catch {
+        return new Intl.NumberFormat("en", { numberingSystem: "latn", ...options });
+    }
+}
+
 /**
  * Finds the decimal mark of a locale.
  *
@@ -44,8 +71,10 @@ const INPUT_DIGITS = 10;
  * @returns `","` for locales such as `pt-BR` or `es`, `"."` for `en-US`.
  */
 export function decimalSeparator(locale: string): DecimalSeparator {
-    const part = new Intl.NumberFormat(locale).formatToParts(1.1).find((item) => item.type === "decimal");
-    return part?.value === "," ? "," : ".";
+    const part = numberFormat(locale)
+        .formatToParts(1.1)
+        .find((item) => item.type === "decimal");
+    return part?.value === "," || part?.value === ARABIC_DECIMAL_SEPARATOR ? "," : ".";
 }
 
 /**
@@ -68,7 +97,7 @@ function withoutNegativeZero(value: number, fractionDigits: number): number {
  * @returns The formatted text.
  */
 function formatNumber(value: number, locale: string, style: Intl.NumberFormatOptions): string {
-    return new Intl.NumberFormat(locale, style).format(value);
+    return numberFormat(locale, style).format(value).replace(DIRECTION_MARKS, "");
 }
 
 /**
@@ -141,7 +170,7 @@ export function formatValue(value: number, kind: ValueKind, options: FormatOptio
  * @returns The number of fraction digits.
  */
 function currencyDigits(locale: string, currency: string): number {
-    return new Intl.NumberFormat(locale, { style: "currency", currency }).resolvedOptions().maximumFractionDigits ?? 2;
+    return numberFormat(locale, { style: "currency", currency }).resolvedOptions().maximumFractionDigits ?? 2;
 }
 
 /**
@@ -153,7 +182,7 @@ function currencyDigits(locale: string, currency: string): number {
  */
 export function currencySymbol(locale: string, currency: string): string {
     if (currency === NO_CURRENCY) return "";
-    const parts = new Intl.NumberFormat(locale, { style: "currency", currency }).formatToParts(0);
+    const parts = numberFormat(locale, { style: "currency", currency }).formatToParts(0);
     return parts.find((part) => part.type === "currency")?.value ?? currency;
 }
 
@@ -169,7 +198,7 @@ export function currencySymbol(locale: string, currency: string): string {
 export function formatInputValue(value: number | readonly number[], kind: FieldKind, locale: string): string {
     if (typeof value !== "number") return value.map((item) => formatInputValue(item, kind, locale)).join("\n");
     const shown = kind === "percent" ? Number((value * 100).toPrecision(12)) : value;
-    return new Intl.NumberFormat(locale, { useGrouping: false, maximumFractionDigits: INPUT_DIGITS }).format(shown);
+    return numberFormat(locale, { useGrouping: false, maximumFractionDigits: INPUT_DIGITS }).format(shown);
 }
 
 /** One line of a plain-text report: a label and its formatted value. */

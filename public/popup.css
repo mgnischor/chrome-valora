@@ -105,7 +105,7 @@ main {
 }
 
 .tagline {
-    margin-right: auto;
+    margin-inline-end: auto;
     font-size: 12px;
 }
 
@@ -138,7 +138,7 @@ h2 {
     font-size: 12px;
 }
 
-/* Inputs on the left, results on the right. */
+/* Inputs first, results second; the order follows the reading direction. */
 .layout {
     display: grid;
     flex: 1;
@@ -191,6 +191,8 @@ h2 {
 
 label {
     font-weight: 600;
+    /* Long unbroken words (Dravidian scripts, German compounds) must wrap instead of widening the grid. */
+    overflow-wrap: anywhere;
 }
 
 .field > label {
@@ -376,7 +378,7 @@ button:disabled {
 }
 
 [data-rating]::before {
-    margin-right: 0.35em;
+    margin-inline-end: 0.35em;
     font-size: 0.55em;
     vertical-align: 0.2em;
 }
@@ -408,7 +410,7 @@ button:disabled {
     margin: 0;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
-    text-align: right;
+    text-align: end;
 }
 
 .result-list dd.undefined,
@@ -429,7 +431,7 @@ button:disabled {
 }
 
 .formula strong {
-    margin-right: 4px;
+    margin-inline-end: 4px;
 }
 
 .actions {
@@ -477,4 +479,25 @@ button:disabled {
     align-items: center;
     gap: 8px;
     font-weight: 400;
+}
+
+/*
+ * Right-to-left languages mirror the layout, but figures, signs and currency symbols stay in their own left-to-right
+ * order, so a minus sign or a "%" never jumps to the other side of a number. Values that may hold a translated name
+ * (a category such as "Safe zone") follow the first strong character instead (`dir="auto"` in the markup).
+ */
+input[type="text"],
+textarea {
+    direction: ltr;
+    text-align: start;
+}
+
+:root[dir="rtl"] input[type="text"],
+:root[dir="rtl"] textarea {
+    text-align: right;
+}
+
+.affix {
+    unicode-bidi: isolate;
+    direction: ltr;
 }

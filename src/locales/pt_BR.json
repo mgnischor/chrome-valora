@@ -31,6 +31,8 @@
     "seriesHint": {
         "message": "Um valor por linha (ou separados por ponto e vírgula). Use o sinal de menos para saídas."
     },
+    "languageLabel": { "message": "Idioma" },
+    "languageAuto": { "message": "Automático (idioma do navegador)" },
     "settingsHeading": { "message": "Configurações" },
     "settingsBack": { "message": "Voltar" },
     "currencyLabel": { "message": "Moeda" },

@@ -29,6 +29,8 @@
         "message": "Calculado en tu dispositivo; nada de lo que escribes se envía. Estimaciones, no asesoramiento financiero."
     },
     "seriesHint": { "message": "Un valor por línea (o separados por punto y coma). Usa el signo menos para salidas." },
+    "languageLabel": { "message": "Idioma" },
+    "languageAuto": { "message": "Automático (idioma del navegador)" },
     "settingsHeading": { "message": "Ajustes" },
     "settingsBack": { "message": "Volver" },
     "currencyLabel": { "message": "Moneda" },
@@ -207,7 +209,9 @@
     "out_loan_monthlyPayment": { "message": "Cuota mensual" },
     "out_loan_totalPaid": { "message": "Total pagado" },
     "out_loan_totalInterest": { "message": "Total de intereses" },
-    "marketOff": { "message": "La Selic y el dólar se pueden completar con datos del Banco Central de Brasil." },
+    "marketOff": {
+        "message": "La tasa de política monetaria de Brasil (Selic) y el dólar se pueden completar con datos del Banco Central de Brasil."
+    },
     "marketEnable": { "message": "Obtener tasas" },
     "marketUse": { "message": "Usar tasas" },
     "marketRetry": { "message": "Reintentar" },
@@ -218,22 +222,24 @@
         "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
     },
     "statusMarketPermissionDenied": { "message": "Permiso denegado, por lo que no se obtuvieron tasas." },
-    "liveRatesLabel": { "message": "Obtener la tasa Selic y la cotización del dólar del Banco Central de Brasil" },
+    "liveRatesLabel": {
+        "message": "Obtener la tasa de política monetaria de Brasil (Selic) y la cotización del dólar del Banco Central de Brasil"
+    },
     "liveRatesHint": {
         "message": "Desactivado por defecto. Al activarlo, Chrome pide permiso para acceder a api.bcb.gov.br, que no recibe ninguna información sobre ti. Desactivarlo elimina el permiso."
     },
-    "group_markets": { "message": "Selic y dólar" },
-    "calc_selicYield_name": { "message": "Renta fija ligada a la Selic (Tesouro Selic, CDB)" },
+    "group_markets": { "message": "Tasa de política y dólar (Brasil)" },
+    "calc_selicYield_name": { "message": "Renta fija ligada a la tasa de política monetaria (Selic, CDB)" },
     "calc_selicYield_desc": {
-        "message": "Cuánto rinde, después del impuesto a la renta, una inversión que paga una parte de la Selic."
+        "message": "Cuánto rinde, después del impuesto a la renta, una inversión que paga una parte de la tasa de política monetaria (la Selic en Brasil)."
     },
     "calc_selicYield_formula": {
         "message": "Beneficio neto = Monto × (crecimiento − 1) × (1 − impuesto); el crecimiento es diario, base de 252 días hábiles al año"
     },
     "field_selicYield_amount": { "message": "Monto invertido" },
     "field_selicYield_months": { "message": "Plazo (meses)" },
-    "field_selicYield_selic": { "message": "Tasa Selic (anual)" },
-    "field_selicYield_percentOfRate": { "message": "Porcentaje de la Selic pagado" },
+    "field_selicYield_selic": { "message": "Tasa de política (Selic, anual)" },
+    "field_selicYield_percentOfRate": { "message": "Porcentaje de la tasa pagado" },
     "field_selicYield_taxTreatment": { "message": "Impuesto a la renta" },
     "out_selicYield_netFinal": { "message": "Monto neto al final" },
     "out_selicYield_netProfit": { "message": "Beneficio neto" },
@@ -242,21 +248,21 @@
     "out_selicYield_netAnnualRate": { "message": "Tasa neta anual" },
     "choice_selicYield_taxTreatment_1": { "message": "Tabla regresiva (CDB, Tesouro)" },
     "choice_selicYield_taxTreatment_0": { "message": "Exento (LCI, LCA)" },
-    "calc_savings_name": { "message": "Cuenta de ahorro (poupança) vs inversión ligada a la Selic" },
+    "calc_savings_name": { "message": "Cuenta de ahorro (poupança) vs inversión ligada a la tasa de política" },
     "calc_savings_desc": {
-        "message": "Compara la cuenta de ahorro con un producto de renta fija con impuesto y halla el porcentaje de la Selic en que empatan."
+        "message": "Compara la cuenta de ahorro (poupança) con un producto de renta fija con impuesto y halla el porcentaje de la tasa en que empatan."
     },
     "calc_savings_formula": {
         "message": "Ahorro: 0,5% al mes si la Selic supera 8,5%, si no 70% de la Selic. La renta fija paga impuesto regresivo"
     },
     "field_savings_amount": { "message": "Monto invertido" },
     "field_savings_months": { "message": "Plazo (meses)" },
-    "field_savings_selic": { "message": "Tasa Selic (anual)" },
-    "field_savings_percentOfRate": { "message": "Porcentaje de la Selic pagado (renta fija)" },
+    "field_savings_selic": { "message": "Tasa de política (Selic, anual)" },
+    "field_savings_percentOfRate": { "message": "Porcentaje de la tasa pagado (renta fija)" },
     "out_savings_advantage": { "message": "Ventaja de la renta fija" },
     "out_savings_savingsFinal": { "message": "Ahorro al final" },
     "out_savings_fixedIncomeFinal": { "message": "Renta fija al final (neta)" },
-    "out_savings_breakEvenPercent": { "message": "% de la Selic para empatar" },
+    "out_savings_breakEvenPercent": { "message": "% de la tasa para empatar" },
     "calc_dollarConversion_name": { "message": "Compra de dólares (spread e IOF)" },
     "calc_dollarConversion_desc": {
         "message": "Cuántos dólares compran tus reales una vez contados el spread del banco y el IOF."
@@ -265,27 +271,27 @@
     "field_dollarConversion_amount": { "message": "Monto en reales" },
     "field_dollarConversion_rate": { "message": "Cotización del dólar (R$ por US$)" },
     "field_dollarConversion_spread": { "message": "Spread del banco" },
-    "field_dollarConversion_iof": { "message": "IOF (impuesto sobre cambio)" },
+    "field_dollarConversion_iof": { "message": "IOF (impuesto brasileño sobre cambio)" },
     "out_dollarConversion_usdReceived": { "message": "Dólares recibidos" },
     "out_dollarConversion_effectiveRate": { "message": "Cotización efectiva pagada" },
     "out_dollarConversion_cost": { "message": "Costo del spread y del IOF" },
     "out_dollarConversion_costPercent": { "message": "Costo como parte del monto" },
-    "calc_dollarVsSelic_name": { "message": "Dólar vs Selic" },
+    "calc_dollarVsSelic_name": { "message": "Dólar vs tasa de política (Selic)" },
     "calc_dollarVsSelic_desc": {
-        "message": "¿Dónde debe estar el dólar al final para que tener dólares supere a la Selic? Comparación antes del impuesto a la renta."
+        "message": "¿Dónde debe estar el dólar al final para que tener dólares supere a la tasa de política (Selic)? Comparación antes del impuesto a la renta."
     },
-    "calc_dollarVsSelic_formula": { "message": "Dólar de equilibrio = resultado de la Selic ÷ dólares al final" },
+    "calc_dollarVsSelic_formula": { "message": "Dólar de equilibrio = resultado de la tasa ÷ dólares al final" },
     "field_dollarVsSelic_amount": { "message": "Monto en reales" },
     "field_dollarVsSelic_months": { "message": "Plazo (meses)" },
     "field_dollarVsSelic_spot": { "message": "Dólar hoy (R$ por US$)" },
     "field_dollarVsSelic_expected": { "message": "Dólar esperado al final" },
-    "field_dollarVsSelic_selic": { "message": "Tasa Selic (anual)" },
+    "field_dollarVsSelic_selic": { "message": "Tasa de política (Selic, anual)" },
     "field_dollarVsSelic_usdYield": { "message": "Rendimiento en dólares (anual, en US$)" },
     "out_dollarVsSelic_breakEvenRate": { "message": "Dólar de equilibrio" },
     "out_dollarVsSelic_requiredChange": { "message": "Alza del dólar necesaria" },
-    "out_dollarVsSelic_selicFinal": { "message": "Selic al final (bruto)" },
+    "out_dollarVsSelic_selicFinal": { "message": "Tasa de política al final (bruto)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Dólares al final (bruto)" },
-    "out_dollarVsSelic_difference": { "message": "Dólar menos Selic" },
+    "out_dollarVsSelic_difference": { "message": "Dólar menos tasa de política" },
     "ratingGood": { "message": "Bueno" },
     "ratingNeutral": { "message": "Neutro" },
     "ratingBad": { "message": "Malo" },

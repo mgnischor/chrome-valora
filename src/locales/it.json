@@ -29,6 +29,8 @@
         "message": "Calcolato sul tuo dispositivo; nulla di ciò che digiti viene inviato. Stime, non consulenza finanziaria."
     },
     "seriesHint": { "message": "Un valore per riga (o separati da punto e virgola). Usa il segno meno per le uscite." },
+    "languageLabel": { "message": "Lingua" },
+    "languageAuto": { "message": "Automatica (lingua del browser)" },
     "settingsHeading": { "message": "Impostazioni" },
     "settingsBack": { "message": "Indietro" },
     "currencyLabel": { "message": "Valuta" },
@@ -209,7 +211,7 @@
     "out_loan_totalPaid": { "message": "Totale pagato" },
     "out_loan_totalInterest": { "message": "Totale interessi" },
     "marketOff": {
-        "message": "La Selic e il dollaro possono essere compilati con i dati della Banca centrale del Brasile."
+        "message": "Il tasso di riferimento del Brasile (Selic) e il dollaro possono essere compilati con i dati della Banca centrale del Brasile."
     },
     "marketEnable": { "message": "Scarica i tassi" },
     "marketUse": { "message": "Usa i tassi" },
@@ -222,46 +224,48 @@
     },
     "statusMarketPermissionDenied": { "message": "Autorizzazione negata: nessun tasso è stato scaricato." },
     "liveRatesLabel": {
-        "message": "Scarica il tasso Selic e la quotazione del dollaro dalla Banca centrale del Brasile"
+        "message": "Scarica il tasso di riferimento del Brasile (Selic) e la quotazione del dollaro dalla Banca centrale del Brasile"
     },
     "liveRatesHint": {
         "message": "Disattivato per impostazione predefinita. Quando è attivo, Chrome chiede l'autorizzazione a contattare api.bcb.gov.br, che non riceve alcuna informazione su di te. Disattivando l'opzione l'autorizzazione viene rimossa."
     },
-    "group_markets": { "message": "Selic e dollaro" },
-    "calc_selicYield_name": { "message": "Reddito fisso legato alla Selic (Tesouro Selic, CDB)" },
+    "group_markets": { "message": "Tasso di riferimento e dollaro (Brasile)" },
+    "calc_selicYield_name": { "message": "Reddito fisso legato al tasso di riferimento (Selic, CDB)" },
     "calc_selicYield_desc": {
-        "message": "Quanto rende, dopo l'imposta sul reddito, un investimento che paga una quota della Selic."
+        "message": "Quanto rende, dopo l'imposta sul reddito, un investimento che paga una quota del tasso di riferimento della banca centrale (in Brasile la Selic)."
     },
     "calc_selicYield_formula": {
         "message": "Utile netto = Importo × (crescita − 1) × (1 − imposta); la crescita matura ogni giorno su 252 giorni lavorativi l'anno"
     },
     "field_selicYield_amount": { "message": "Importo investito" },
     "field_selicYield_months": { "message": "Durata (mesi)" },
-    "field_selicYield_selic": { "message": "Tasso Selic (annuo)" },
-    "field_selicYield_percentOfRate": { "message": "Percentuale della Selic pagata" },
+    "field_selicYield_selic": { "message": "Tasso di riferimento (Selic, annuo)" },
+    "field_selicYield_percentOfRate": { "message": "Quota del tasso di riferimento pagata" },
     "field_selicYield_taxTreatment": { "message": "Imposta sul reddito" },
     "out_selicYield_netFinal": { "message": "Importo netto finale" },
     "out_selicYield_netProfit": { "message": "Utile netto" },
     "out_selicYield_incomeTax": { "message": "Imposta sul reddito" },
     "out_selicYield_taxRate": { "message": "Aliquota dell'imposta" },
     "out_selicYield_netAnnualRate": { "message": "Tasso netto annuo" },
-    "choice_selicYield_taxTreatment_1": { "message": "Tabella regressiva (CDB, Tesouro)" },
+    "choice_selicYield_taxTreatment_1": { "message": "Tabella regressiva (CDB, Titoli di Stato)" },
     "choice_selicYield_taxTreatment_0": { "message": "Esente (LCI, LCA)" },
-    "calc_savings_name": { "message": "Libretto di risparmio (poupança) o investimento legato alla Selic" },
+    "calc_savings_name": {
+        "message": "Libretto di risparmio (poupança) o investimento legato al tasso di riferimento"
+    },
     "calc_savings_desc": {
-        "message": "Confronta il libretto di risparmio con un prodotto a reddito fisso tassato e trova la quota di Selic in cui si pareggiano."
+        "message": "Confronta il libretto di risparmio (poupança) con un prodotto a reddito fisso tassato e trova la quota del tasso di riferimento in cui si pareggiano."
     },
     "calc_savings_formula": {
         "message": "Risparmio: 0,5% al mese se la Selic supera 8,5%, altrimenti 70% della Selic. Il reddito fisso paga imposta regressiva"
     },
     "field_savings_amount": { "message": "Importo investito" },
     "field_savings_months": { "message": "Durata (mesi)" },
-    "field_savings_selic": { "message": "Tasso Selic (annuo)" },
-    "field_savings_percentOfRate": { "message": "Percentuale della Selic pagata (reddito fisso)" },
+    "field_savings_selic": { "message": "Tasso di riferimento (Selic, annuo)" },
+    "field_savings_percentOfRate": { "message": "Quota del tasso di riferimento pagata (reddito fisso)" },
     "out_savings_advantage": { "message": "Vantaggio del reddito fisso" },
     "out_savings_savingsFinal": { "message": "Libretto di risparmio alla fine" },
     "out_savings_fixedIncomeFinal": { "message": "Reddito fisso alla fine (netto)" },
-    "out_savings_breakEvenPercent": { "message": "Quota di Selic per pareggiare" },
+    "out_savings_breakEvenPercent": { "message": "Quota del tasso per pareggiare" },
     "calc_dollarConversion_name": { "message": "Acquisto di dollari (spread e IOF)" },
     "calc_dollarConversion_desc": {
         "message": "Quanti dollari comprano i tuoi reais una volta conteggiati lo spread della banca e l'imposta IOF."
@@ -270,29 +274,29 @@
     "field_dollarConversion_amount": { "message": "Importo in reais" },
     "field_dollarConversion_rate": { "message": "Cambio del dollaro (R$ per US$)" },
     "field_dollarConversion_spread": { "message": "Spread della banca" },
-    "field_dollarConversion_iof": { "message": "IOF (imposta sui cambi)" },
+    "field_dollarConversion_iof": { "message": "IOF (imposta brasiliana sui cambi)" },
     "out_dollarConversion_usdReceived": { "message": "Dollari ricevuti" },
     "out_dollarConversion_effectiveRate": { "message": "Cambio effettivo pagato" },
     "out_dollarConversion_cost": { "message": "Costo di spread e IOF" },
     "out_dollarConversion_costPercent": { "message": "Costo come quota dell'importo" },
-    "calc_dollarVsSelic_name": { "message": "Dollaro contro Selic" },
+    "calc_dollarVsSelic_name": { "message": "Dollaro contro tasso di riferimento (Selic)" },
     "calc_dollarVsSelic_desc": {
-        "message": "Dove deve trovarsi il dollaro alla fine perché tenere dollari batta la Selic? Confronto lordo, prima dell'imposta sul reddito."
+        "message": "Dove deve trovarsi il dollaro alla fine perché tenere dollari batta il tasso di riferimento (Selic)? Confronto lordo, prima dell'imposta sul reddito."
     },
     "calc_dollarVsSelic_formula": {
-        "message": "Dollaro di pareggio = risultato della Selic ÷ dollari detenuti alla fine"
+        "message": "Dollaro di pareggio = risultato del tasso di riferimento ÷ dollari detenuti alla fine"
     },
     "field_dollarVsSelic_amount": { "message": "Importo in reais" },
     "field_dollarVsSelic_months": { "message": "Durata (mesi)" },
     "field_dollarVsSelic_spot": { "message": "Dollaro oggi (R$ per US$)" },
     "field_dollarVsSelic_expected": { "message": "Dollaro atteso alla fine" },
-    "field_dollarVsSelic_selic": { "message": "Tasso Selic (annuo)" },
+    "field_dollarVsSelic_selic": { "message": "Tasso di riferimento (Selic, annuo)" },
     "field_dollarVsSelic_usdYield": { "message": "Rendimento in dollari (annuo, in US$)" },
     "out_dollarVsSelic_breakEvenRate": { "message": "Dollaro di pareggio" },
     "out_dollarVsSelic_requiredChange": { "message": "Rialzo del dollaro necessario" },
-    "out_dollarVsSelic_selicFinal": { "message": "Selic alla fine (lordo)" },
+    "out_dollarVsSelic_selicFinal": { "message": "Tasso di riferimento alla fine (lordo)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Dollari alla fine (lordo)" },
-    "out_dollarVsSelic_difference": { "message": "Dollaro meno Selic" },
+    "out_dollarVsSelic_difference": { "message": "Dollaro meno tasso di riferimento" },
     "ratingGood": { "message": "Buono" },
     "ratingNeutral": { "message": "Neutro" },
     "ratingBad": { "message": "Cattivo" },

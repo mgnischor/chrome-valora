@@ -31,6 +31,8 @@
     "seriesHint": {
         "message": "Ein Wert pro Zeile (oder durch Semikolons getrennt). Verwenden Sie ein Minuszeichen für Auszahlungen."
     },
+    "languageLabel": { "message": "Sprache" },
+    "languageAuto": { "message": "Automatisch (Browsersprache)" },
     "settingsHeading": { "message": "Einstellungen" },
     "settingsBack": { "message": "Zurück" },
     "currencyLabel": { "message": "Währung" },
@@ -226,7 +228,9 @@
     "out_loan_monthlyPayment": { "message": "Monatliche Rate" },
     "out_loan_totalPaid": { "message": "Insgesamt gezahlt" },
     "out_loan_totalInterest": { "message": "Zinsen insgesamt" },
-    "marketOff": { "message": "Selic und Dollar können von der Zentralbank von Brasilien übernommen werden." },
+    "marketOff": {
+        "message": "Der Leitzins Brasiliens (Selic) und der Dollarkurs können von der Zentralbank von Brasilien übernommen werden."
+    },
     "marketEnable": { "message": "Kurse abrufen" },
     "marketUse": { "message": "Kurse verwenden" },
     "marketRetry": { "message": "Erneut versuchen" },
@@ -237,45 +241,47 @@
         "placeholders": { "selic": { "content": "$1" }, "usd": { "content": "$2" }, "date": { "content": "$3" } }
     },
     "statusMarketPermissionDenied": { "message": "Berechtigung verweigert, daher wurden keine Kurse abgerufen." },
-    "liveRatesLabel": { "message": "Selic-Satz und Dollarkurs von der Zentralbank von Brasilien abrufen" },
+    "liveRatesLabel": {
+        "message": "Leitzins Brasiliens (Selic) und Dollarkurs von der Zentralbank von Brasilien abrufen"
+    },
     "liveRatesHint": {
         "message": "Standardmäßig aus. Wenn aktiviert, fragt Chrome nach der Berechtigung, api.bcb.gov.br zu kontaktieren, das keine Informationen über Sie erhält. Beim Ausschalten wird die Berechtigung entfernt."
     },
-    "group_markets": { "message": "Selic und Dollar" },
-    "calc_selicYield_name": { "message": "An die Selic gekoppelte Festverzinsung (Tesouro Selic, CDB)" },
+    "group_markets": { "message": "Leitzins und Dollar (Brasilien)" },
+    "calc_selicYield_name": { "message": "An den Leitzins gekoppelte Festverzinsung (Selic, CDB)" },
     "calc_selicYield_desc": {
-        "message": "Was eine Anlage, die einen Anteil der Selic zahlt, nach Einkommensteuer abwirft."
+        "message": "Was eine Anlage, die einen Anteil des Leitzinses der Zentralbank (in Brasilien die Selic) zahlt, nach Einkommensteuer abwirft."
     },
     "calc_selicYield_formula": {
         "message": "Nettogewinn = Betrag × (Wachstum − 1) × (1 − Steuer); das Wachstum läuft täglich über 252 Geschäftstage im Jahr"
     },
     "field_selicYield_amount": { "message": "Angelegter Betrag" },
     "field_selicYield_months": { "message": "Laufzeit (Monate)" },
-    "field_selicYield_selic": { "message": "Selic-Satz (pro Jahr)" },
-    "field_selicYield_percentOfRate": { "message": "Gezahlter Anteil der Selic" },
+    "field_selicYield_selic": { "message": "Leitzins (Selic, pro Jahr)" },
+    "field_selicYield_percentOfRate": { "message": "Gezahlter Anteil des Leitzinses" },
     "field_selicYield_taxTreatment": { "message": "Einkommensteuer" },
     "out_selicYield_netFinal": { "message": "Nettobetrag am Ende" },
     "out_selicYield_netProfit": { "message": "Nettogewinn" },
     "out_selicYield_incomeTax": { "message": "Einkommensteuer" },
     "out_selicYield_taxRate": { "message": "Steuersatz" },
     "out_selicYield_netAnnualRate": { "message": "Nettosatz pro Jahr" },
-    "choice_selicYield_taxTreatment_1": { "message": "Regressive Tabelle (CDB, Tesouro)" },
+    "choice_selicYield_taxTreatment_1": { "message": "Regressive Tabelle (CDB, Staatsanleihe)" },
     "choice_selicYield_taxTreatment_0": { "message": "Steuerfrei (LCI, LCA)" },
-    "calc_savings_name": { "message": "Sparkonto (Poupança) oder an die Selic gekoppelte Anlage" },
+    "calc_savings_name": { "message": "Sparkonto (Poupança) oder an den Leitzins gekoppelte Anlage" },
     "calc_savings_desc": {
-        "message": "Vergleicht das Sparkonto mit einem besteuerten Festzinsprodukt und findet den Selic-Anteil, bei dem beide gleichauf liegen."
+        "message": "Vergleicht das Sparkonto (Poupança) mit einem besteuerten Festzinsprodukt und findet den Leitzinsanteil, bei dem beide gleichauf liegen."
     },
     "calc_savings_formula": {
         "message": "Sparkonto: 0,5 % pro Monat, wenn die Selic über 8,5 % liegt, sonst 70 % der Selic. Festzins zahlt regressive Einkommensteuer"
     },
     "field_savings_amount": { "message": "Angelegter Betrag" },
     "field_savings_months": { "message": "Laufzeit (Monate)" },
-    "field_savings_selic": { "message": "Selic-Satz (pro Jahr)" },
-    "field_savings_percentOfRate": { "message": "Gezahlter Anteil der Selic (Festzins)" },
+    "field_savings_selic": { "message": "Leitzins (Selic, pro Jahr)" },
+    "field_savings_percentOfRate": { "message": "Gezahlter Anteil des Leitzinses (Festzins)" },
     "out_savings_advantage": { "message": "Vorteil der Festverzinsung" },
     "out_savings_savingsFinal": { "message": "Sparkonto am Ende" },
     "out_savings_fixedIncomeFinal": { "message": "Festverzinsung am Ende (netto)" },
-    "out_savings_breakEvenPercent": { "message": "Selic-Anteil für Gleichstand" },
+    "out_savings_breakEvenPercent": { "message": "Leitzinsanteil für Gleichstand" },
     "calc_dollarConversion_name": { "message": "Dollarkauf (Spread und IOF)" },
     "calc_dollarConversion_desc": {
         "message": "Wie viele Dollar Ihre Reais kaufen, wenn der Spread der Bank und die IOF-Steuer eingerechnet sind."
@@ -284,27 +290,29 @@
     "field_dollarConversion_amount": { "message": "Betrag in Reais" },
     "field_dollarConversion_rate": { "message": "Dollarkurs (R$ pro US$)" },
     "field_dollarConversion_spread": { "message": "Spread der Bank" },
-    "field_dollarConversion_iof": { "message": "IOF (Devisensteuer)" },
+    "field_dollarConversion_iof": { "message": "IOF (brasilianische Devisensteuer)" },
     "out_dollarConversion_usdReceived": { "message": "Erhaltene Dollar" },
     "out_dollarConversion_effectiveRate": { "message": "Gezahlter effektiver Kurs" },
     "out_dollarConversion_cost": { "message": "Kosten für Spread und IOF" },
     "out_dollarConversion_costPercent": { "message": "Kosten als Anteil des Betrags" },
-    "calc_dollarVsSelic_name": { "message": "Dollar gegen Selic" },
+    "calc_dollarVsSelic_name": { "message": "Dollar gegen Leitzins (Selic)" },
     "calc_dollarVsSelic_desc": {
-        "message": "Wo muss der Dollar am Ende stehen, damit das Halten von Dollar die Selic schlägt? Brutto verglichen, vor Einkommensteuer."
+        "message": "Wo muss der Dollar am Ende stehen, damit das Halten von Dollar den Leitzins (Selic) schlägt? Brutto verglichen, vor Einkommensteuer."
     },
-    "calc_dollarVsSelic_formula": { "message": "Break-even-Dollar = Selic-Ergebnis ÷ am Ende gehaltene Dollar" },
+    "calc_dollarVsSelic_formula": {
+        "message": "Break-even-Dollar = Ergebnis des Leitzinses ÷ am Ende gehaltene Dollar"
+    },
     "field_dollarVsSelic_amount": { "message": "Betrag in Reais" },
     "field_dollarVsSelic_months": { "message": "Laufzeit (Monate)" },
     "field_dollarVsSelic_spot": { "message": "Dollar heute (R$ pro US$)" },
     "field_dollarVsSelic_expected": { "message": "Erwarteter Dollar am Ende" },
-    "field_dollarVsSelic_selic": { "message": "Selic-Satz (pro Jahr)" },
+    "field_dollarVsSelic_selic": { "message": "Leitzins (Selic, pro Jahr)" },
     "field_dollarVsSelic_usdYield": { "message": "Dollar-Rendite (pro Jahr, in US$)" },
     "out_dollarVsSelic_breakEvenRate": { "message": "Break-even-Dollar" },
     "out_dollarVsSelic_requiredChange": { "message": "Nötiger Dollar-Anstieg" },
-    "out_dollarVsSelic_selicFinal": { "message": "Selic am Ende (brutto)" },
+    "out_dollarVsSelic_selicFinal": { "message": "Leitzins am Ende (brutto)" },
     "out_dollarVsSelic_dollarFinal": { "message": "Dollar am Ende (brutto)" },
-    "out_dollarVsSelic_difference": { "message": "Dollar minus Selic" },
+    "out_dollarVsSelic_difference": { "message": "Dollar minus Leitzins" },
     "ratingGood": { "message": "Gut" },
     "ratingNeutral": { "message": "Neutral" },
     "ratingBad": { "message": "Schlecht" },
